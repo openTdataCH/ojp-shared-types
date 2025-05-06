@@ -1,0 +1,96 @@
+openapi: 3.0.3
+info:
+  title: Empty API
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    # modified from 'openapi/ojp-shared.yml#/components/schemas/DatedJourney'
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
+    DatedJourney:
+      type: object
+      xml:
+        name: Service
+      required:
+        - operatingDayRef
+        - journeyRef
+        - lineRef
+        - mode
+        - attribute
+        - publishedLineName
+      properties:
+        conventionalModeOfOperation:
+          type: string
+          xml:
+            name: ConventionalModeOfOperation
+        operatingDayRef:
+          type: string
+          xml:
+            name: OperatingDayRef
+        journeyRef:
+          type: string
+          xml:
+            name: JourneyRef
+        publicCode:
+          type: string
+          xml:
+            name: PublicCode
+        lineRef:
+          type: string
+          xml:
+            name: LineRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        directionRef:
+          type: string
+          xml:
+            name: DirectionRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        mode:
+          $ref: '../../ojp-shared.yml#/components/schemas/ModeStructure'
+          xml:
+            name: Mode
+        productCategory:
+          $ref: '../../ojp-shared.yml#/components/schemas/ProductCategory'
+          xml:
+            name: ProductCategory
+        publishedLineName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: PublishedLineName
+        trainNumber:
+          type: string
+          xml:
+            name: TrainNumber
+        attribute:
+          type: array
+          xml:
+            name: Attribute
+          items:
+            $ref: '../../ojp-shared.yml#/components/schemas/GeneralAttribute'
+        operatorRef:
+          type: string
+          xml:
+            name: OperatorRef
+        destinationStopPointRef:
+          type: string
+          xml:
+            name: DestinationStopPointRef
+        destinationText:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: 
+        unplanned:
+          type: boolean
+          xml:
+            name: Unplanned
+        cancelled:
+          type: boolean
+          xml:
+            name: Cancelled
+        deviation:
+          type: boolean
+          xml:
+            name: Deviation
+    # DatedJourney
