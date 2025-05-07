@@ -11,17 +11,17 @@ Notes
 
 ## Usage 
 
-- include the `@ojp/shared-types` package in the `./package.json` dependencies of the project 
+- include the `ojp-shared-types` package in the `./package.json` dependencies of the project 
 ```
   "dependencies": {
-    "@ojp/shared-types": "0.0.1"
+    "ojp-shared-types": "0.0.1"
   }
 ```
 
 - consume the OJP types in your application
 
 ```
-import * as OJP_Types from '@ojp/shared-types';
+import * as OJP_Types from 'ojp-shared-types';
 
 export class MyOJPReques implements OJP_Types.TripRequestSchema {
     ....
