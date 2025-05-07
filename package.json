@@ -1,5 +1,5 @@
 {
-  "name": "@ojp/shared-types",
+  "name": "ojp-shared-types",
   "version": "0.0.1",
   "description": "Shared types for OJP models based on OpenAPI / XSD Schema",
   "main": "dist/index.cjs",
