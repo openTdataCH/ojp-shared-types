@@ -1,0 +1,211 @@
+openapi: 3.0.3
+info:
+  title: XML OJP 2.0 API
+  description: API that returns trip data in XML format.
+  version: 0.0.1
+
+servers:
+  - url: https://api.example.com
+
+paths:
+  /ojp:
+    post:
+      summary: Main /ojp endpoint
+      description: Main /ojp endpoint
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OJP"
+        "500":
+          description: Server error
+
+components:
+  schemas:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__FareProductStructure
+    FareProduct:
+      type: object
+      required:
+        - fareProductId
+        - fareProductName
+        - fareAuthorityRef
+        - fareAuthorityText
+      properties:
+        fareProductId:
+          type: string # or number?
+          xml:
+            name: FareProductId
+        fareProductName:
+          type: string
+          xml:
+            name: FareProductName
+        fareAuthorityRef:
+          type: string
+          xml:
+            name: FareAuthorityRef
+        fareAuthorityText:
+          type: string
+          xml:
+            name: FareAuthorityText
+        price:
+          type: string
+          xml:
+            name: Price
+        netPrice:
+          type: string
+          xml:
+            name: NetPrice
+        currency:
+          type: string
+          xml:
+            name: Currency
+        vatRate:
+          type: number
+          xml:
+            name: VatRate
+        travelClass: # TODO - FareClass in OJP v2
+          type: string
+          xml:
+            name: TravelClass
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripFareResultStructure
+    TripFareResult:
+      type: object
+      xml:
+        name: TripFareResult
+      required:
+        - fromTripLegIdRef
+        - toTripLegIdRef
+        - fareProduct
+      properties:
+        fromTripLegIdRef:
+          type: number
+          xml:
+            name: FromTripLegIdRef
+        toTripLegIdRef:
+          type: number
+          xml:
+            name: ToTripLegIdRef
+        fareProduct:
+          type: array
+          xml:
+            name: FareProduct
+          items:
+            $ref: '#/components/schemas/FareProduct'
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__FareResultStructure
+    FareResult:
+      type: object
+      xml:
+        name: FareResult
+      required:
+        - resultId
+        - tripFareResult
+      properties:
+        resultId:
+          type: string
+          xml:
+            name: ResultId
+        # TODO: in XSD (v2) this is not an array
+        #   -> see below commented
+        #   -> https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__FareResultStructure
+        tripFareResult:
+          type: array
+          xml:
+            name: TripFareResult
+          items:
+            $ref: '#/components/schemas/TripFareResult'
+
+        # tripFareResult:
+        #   $ref: '#/components/schemas/TripFareResult'
+        #   xml:
+        #     name: TripFareResult
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPFareDeliveryStructure
+    OJPFareDelivery:
+      type: object
+      xml:
+        name: OJPFareDelivery
+      required:
+        - responseTimestamp
+        - fareResult
+      properties:
+        responseTimestamp:
+          type: string
+          xml:
+            name: ResponseTimestamp
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        requestMessageRef:
+          type: string
+          xml:
+            name: RequestMessageRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        status:
+          type: boolean
+          xml:
+            name: Status
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        defaultLanguage:
+          type: string
+          xml:
+            name: DefaultLanguage
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        calcTime:
+          type: string
+          xml:
+            name: CalcTime
+        fareResult:
+          type: array
+          xml:
+            name: FareResult
+          items:
+            $ref: "#/components/schemas/FareResult"
+
+    OJP:
+      type: object
+      xml:
+        name: OJP
+      required:
+        - OJPResponse
+      properties:
+        OJPResponse:
+          type: object
+          xml:
+            name: OJPResponse
+          required:
+            - serviceDelivery
+          properties:
+            serviceDelivery:
+              type: object
+              xml:
+                name: ServiceDelivery
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              required:
+                - responseTimestamp
+                - producerRef
+                - OJPFareDelivery
+              properties:
+                responseTimestamp:
+                  type: string
+                  xml:
+                    name: ResponseTimestamp
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                producerRef:
+                  type: string
+                  xml:
+                    name: ProducerRef
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                OJPFareDelivery:
+                  $ref: '#/components/schemas/OJPFareDelivery'
+                  xml:
+                    name: OJPFareDelivery
+    # OJP

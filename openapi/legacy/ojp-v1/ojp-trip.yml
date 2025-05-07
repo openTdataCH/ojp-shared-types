@@ -1,0 +1,116 @@
+openapi: 3.0.3
+info:
+  title: Empty API
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/TimedLeg'
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TimedLegStructure
+    TimedLeg:
+      type: object
+      xml:
+        name: TimedLeg
+      required:
+        - legBoard
+        - legIntermediates
+        - legAlight
+        - service
+      properties:
+        legBoard:
+          $ref: '../../ojp-tr-response.yml#/components/schemas/LegBoard'
+          xml:
+            name: LegBoard
+        legIntermediates: # in v2 is legIntermediate
+          type: array
+          xml:
+            name: LegIntermediates # in v2 is LegIntermediate
+          items:
+            $ref: '../../ojp-tr-response.yml#/components/schemas/LegIntermediate'
+        legAlight:
+          $ref: '../../ojp-tr-response.yml#/components/schemas/LegAlight'
+          xml:
+            name: LegAlight
+        service:
+          $ref: './ojp-shared.yml#/components/schemas/DatedJourney'
+          xml:
+            name: Service
+        legTrack:
+          $ref: '../../ojp-tr-response.yml#/components/schemas/LegTrack'
+          xml:
+            name: LegTrack
+    # TimedLeg
+
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/Leg'
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegStructure
+    TripLeg:
+      type: object
+      xml:
+        name: TripLeg
+      required:
+        - legId
+      properties:
+        legId:
+          type: string
+          xml:
+            name: LegId
+        duration:
+          type: string
+          xml:
+            name: Duration
+        # Using oneOf requires additional boilerplate code, use optionals instead
+        timedLeg:
+          $ref: '#/components/schemas/TimedLeg'
+          xml:
+            name: TimedLeg
+        transferLeg:
+          $ref: '../../ojp-tr-response.yml#/components/schemas/TransferLeg'
+          xml:
+            name: TransferLeg
+        continuousLeg:
+          $ref: '../../ojp-tr-response.yml#/components/schemas/ContinuousLeg'
+          xml:
+            name: ContinuousLeg
+    
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/Trip'
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripStructure
+    Trip:
+      type: object
+      xml:
+        name: Trip
+      required:
+        - tripId
+        - duration
+        - startTime
+        - endTime
+        - transfers
+        - tripLeg
+      properties:
+        tripId:
+          type: string
+          xml:
+            name: TripId
+        duration:
+          type: string
+          xml:
+            name: Duration
+        startTime:
+          type: string
+          format: date-time
+          xml:
+            name: StartTime
+        endTime:
+          type: string
+          format: date-time
+          xml:
+            name: EndTime
+        transfers:
+          type: number
+          xml:
+            name: Transfers
+        tripLeg:
+          type: array
+          xml:
+            name: TripLeg
+          items:
+            $ref: '#/components/schemas/TripLeg'

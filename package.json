@@ -1,0 +1,28 @@
+{
+  "name": "@ojp/shared-types",
+  "version": "0.0.1",
+  "description": "Shared types for OJP models based on OpenAPI / XSD Schema",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "rm -rf dist && tsup src/index.ts --dts --format esm,cjs --out-dir dist",
+    "dev": "tsup src/index.ts --dts --format esm,cjs --out-dir dist --watch",
+    "generate:ts": "bash ./scripts/generate_models.sh"
+  },
+  "keywords": [],
+  "author": "Vasile Cotovanu",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "8.4.0",
+    "typescript": "5.8.3"
+  }
+}

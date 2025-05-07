@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  title: XML OJP 2.0 API
+  description: API that returns trip data in XML format.
+  version: 0.0.1
+
+servers:
+  - url: https://api.example.com
+
+paths:
+  /ojp:
+    post:
+      summary: Main /ojp endpoint
+      description: Main /ojp endpoint
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OJP"
+        "500":
+          description: Server error
+
+components:
+  schemas:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripFareRequestStructure
+    TripFareRequest:
+      type: object
+      xml:
+        name: TripFareRequest
+      required:
+        - trip
+      properties:
+        trip:
+          $ref: './legacy/ojp-v1/ojp-trip.yml#/components/schemas/Trip'
+          xml:
+            name: Trip
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PassengerCategoryEnumeration
+    PassengerCategoryEnum:
+      type: string
+      enum: [Adult, Child, Senior, Youth, Disabled, Dog, Bicycle, Motorcycle, Car, Truck, Group]
+      xml:
+        name: PassengerCategory
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__EntitlementProductStructure
+    EntitlementProduct:
+      type: object
+      required:
+        - fareAuthorityRef
+        - entitlementProductRef
+        - entitlementProductName
+      properties:
+        fareAuthorityRef:
+          type: string
+          xml:
+            name: FareAuthorityRef
+        entitlementProductRef:
+          type: string
+          xml:
+            name: EntitlementProductRef
+        entitlementProductName:
+          type: string
+          xml:
+            name: EntitlementProductName
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__FarePassengerStructure
+    FarePassengerStructure:
+      type: object
+      xml:
+        name: FarePassengerStructure
+      properties:
+        age:
+          type: number
+          xml:
+            name: Age
+        passengerCategory:
+          $ref: '#/components/schemas/PassengerCategoryEnum'
+          xml:
+            name: PassengerCategory
+        entitlementProducts:
+          type: object
+          xml:
+            name: EntitlementProducts
+          required:
+            - entitlementProduct
+          properties:
+            entitlementProduct:
+              type: array
+              xml:
+                name: EntitlementProduct
+              items:
+                $ref: '#/components/schemas/EntitlementProduct'
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__FareParamStructure
+    FareParamStructure:
+      type: object
+      xml:
+        name: FareParamStructure
+      required:
+        - fareAuthorityFilter
+        - passengerCategory
+        - traveller
+      properties:
+        fareAuthorityFilter:
+          type: array
+          xml:
+            name: FareAuthorityFilter
+          items:
+            type: string
+            xml:
+              name: FareAuthorityFilter
+        passengerCategory:
+          type: array
+          xml:
+            name: PassengerCategory
+          items:
+            $ref: '#/components/schemas/PassengerCategoryEnum'
+            
+        # TODO - FareClass in OJP v2
+        # see https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__FareParamStructure
+        travelClass:
+          type: string
+          xml:
+            name: TravelClass
+        traveller:
+          type: array
+          xml:
+            name: Traveller
+          items:
+            $ref: '#/components/schemas/FarePassengerStructure'
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPFareRequestStructure
+    OJPFareRequest:
+      type: object
+      required:
+        - requestTimestamp
+        - tripFareRequest
+      properties:
+        requestTimestamp:
+          type: string
+          xml:
+            name: RequestTimestamp
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        tripFareRequest:
+          $ref: '#/components/schemas/TripFareRequest'
+          xml:
+            name: TripFareRequest
+        params:
+          $ref: '#/components/schemas/FareParamStructure'
+          xml:
+            name: Params
+
+    # This doesnt exist in XSD schema, 
+    #   - is created to allow FareRequest() model instantiation
+    OJPFareRequests:
+      type: object
+      required:
+        - itemsWrapper
+      properties:
+        itemsWrapper:
+          type: array
+          xml:
+            name: OJPFareRequest
+          items:
+            $ref: '#/components/schemas/OJPFareRequest'
+
+    OJP:
+      type: object
+      xml:
+        name: OJP
+      required:
+        - OJPRequest
+      properties:
+        OJPRequest:
+          type: object
+          xml:
+            name: OJPRequest
+          required:
+            - serviceRequest
+          properties:
+            serviceRequest:
+              type: object
+              xml:
+                name: ServiceRequest
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              required:
+                - requestTimestamp
+                - requestorRef
+                - OJPFareRequest
+              properties:
+                serviceRequestContext:
+                  $ref: './ojp-shared.yml#/components/schemas/ServiceRequestContext'
+                  xml:
+                    name: ServiceRequestContext
+                requestTimestamp:
+                  type: string
+                  xml:
+                    name: RequestTimestamp
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                requestorRef:
+                  type: string
+                  xml:
+                    name: RequestorRef
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                OJPFareRequest:
+                  type: array
+                  xml:
+                    name: OJPFareRequest
+                  items:
+                    $ref: '#/components/schemas/OJPFareRequest'
+        
