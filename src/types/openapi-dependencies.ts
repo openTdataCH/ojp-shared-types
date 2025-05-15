@@ -79,7 +79,7 @@ const MapParentArrayTags: Record<string, string[]> = {
   'trackSection.linkProjection': ['position'],
 
   // LIR Request
-  'restrictions.placeParam': ['type'],
+  'restrictions.placeParam': ['type', 'mode'],
 
   // LIR Response
   'place.pointOfInterest': ['pointOfInterestCategory'],
