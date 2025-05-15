@@ -16,7 +16,7 @@
   "scripts": {
     "build": "rm -rf dist && tsup src/index.ts --dts --format esm,cjs --out-dir dist",
     "dev": "tsup src/index.ts --dts --format esm,cjs --out-dir dist --watch",
-    "generate:ts": "bash ./scripts/generate_models.sh"
+    "generate:ts": "bash ./scripts/generate-ts.sh"
   },
   "keywords": [],
   "author": "Vasile Cotovanu",
