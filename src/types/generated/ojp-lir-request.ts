@@ -40,7 +40,7 @@ export interface paths {
                                     };
                                     requestTimestamp: string;
                                     requestorRef: string;
-                                    OJPLocationInformationRequest?: {
+                                    OJPLocationInformationRequest: {
                                         requestTimestamp: string;
                                         initialInput?: {
                                             name?: string;
@@ -160,7 +160,7 @@ export interface components {
                     };
                     requestTimestamp: string;
                     requestorRef: string;
-                    OJPLocationInformationRequest?: {
+                    OJPLocationInformationRequest: {
                         requestTimestamp: string;
                         initialInput?: {
                             name?: string;

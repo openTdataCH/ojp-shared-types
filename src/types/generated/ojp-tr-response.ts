@@ -42,6 +42,86 @@ export interface paths {
                                         requestMessageRef?: string;
                                         defaultLanguage?: string;
                                         calcTime?: string;
+                                        tripResponseContext?: {
+                                            places: {
+                                                place: {
+                                                    stopPoint?: {
+                                                        stopPointRef: string;
+                                                        stopPointName: {
+                                                            text: string;
+                                                        };
+                                                        plannedQuay?: {
+                                                            text: string;
+                                                        };
+                                                        estimatedQuay?: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    stopPlace?: {
+                                                        stopPlaceRef?: string;
+                                                        stopPlaceName?: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    topographicPlace?: {
+                                                        topographicPlaceCode: string;
+                                                        topographicPlaceName: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    pointOfInterest?: {
+                                                        publicCode: string;
+                                                        name: {
+                                                            text: string;
+                                                        };
+                                                        pointOfInterestCategory: {
+                                                            osmTag?: {
+                                                                tag: string;
+                                                                value: string;
+                                                            };
+                                                        }[];
+                                                        topographicPlaceRef?: string;
+                                                    };
+                                                    address?: {
+                                                        publicCode: string;
+                                                        name: {
+                                                            text: string;
+                                                        };
+                                                        postCode?: string;
+                                                        topographicPlaceName?: string;
+                                                        TopographicPlaceRef?: string;
+                                                        Street?: string;
+                                                        HouseNumber?: string;
+                                                    };
+                                                    name: {
+                                                        text: string;
+                                                    };
+                                                    geoPosition: {
+                                                        longitude: number;
+                                                        latitude: number;
+                                                    };
+                                                    mode: {
+                                                        /** @enum {string} */
+                                                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                                                        airSubmode?: string;
+                                                        busSubmode?: string;
+                                                        coachSubmode?: string;
+                                                        funicularSubmode?: string;
+                                                        metroSubmode?: string;
+                                                        tramSubmode?: string;
+                                                        telecabinSubmode?: string;
+                                                        railSubmode?: string;
+                                                        waterSubmode?: string;
+                                                        name?: {
+                                                            text: string;
+                                                        };
+                                                        shortName?: {
+                                                            text: string;
+                                                        };
+                                                    }[];
+                                                }[];
+                                            };
+                                        };
                                         tripResult: {
                                             id: string;
                                             trip: {
@@ -227,7 +307,7 @@ export interface paths {
                                                                         latitude: number;
                                                                     }[];
                                                                 };
-                                                            };
+                                                            }[];
                                                         };
                                                     };
                                                     transferLeg?: {
@@ -406,74 +486,6 @@ export interface components {
             noBoardingAtStop?: boolean;
             noAlightingAtStop?: boolean;
         };
-        LinkProjection: {
-            position: {
-                longitude: number;
-                latitude: number;
-            }[];
-        };
-        TrackSection: {
-            trackSectionStart?: {
-                stopPointRef?: string;
-                stopPlaceRef?: string;
-                geoPosition?: {
-                    longitude: number;
-                    latitude: number;
-                };
-                name: {
-                    text: string;
-                };
-            };
-            trackSectionEnd?: {
-                stopPointRef?: string;
-                stopPlaceRef?: string;
-                geoPosition?: {
-                    longitude: number;
-                    latitude: number;
-                };
-                name: {
-                    text: string;
-                };
-            };
-            linkProjection?: {
-                position: {
-                    longitude: number;
-                    latitude: number;
-                }[];
-            };
-        };
-        LegTrack: {
-            trackSection: {
-                trackSectionStart?: {
-                    stopPointRef?: string;
-                    stopPlaceRef?: string;
-                    geoPosition?: {
-                        longitude: number;
-                        latitude: number;
-                    };
-                    name: {
-                        text: string;
-                    };
-                };
-                trackSectionEnd?: {
-                    stopPointRef?: string;
-                    stopPlaceRef?: string;
-                    geoPosition?: {
-                        longitude: number;
-                        latitude: number;
-                    };
-                    name: {
-                        text: string;
-                    };
-                };
-                linkProjection?: {
-                    position: {
-                        longitude: number;
-                        latitude: number;
-                    }[];
-                };
-            };
-        };
         ContinuousService: {
             personalModeOfOperation?: string;
             personalMode?: string;
@@ -650,7 +662,7 @@ export interface components {
                             latitude: number;
                         }[];
                     };
-                };
+                }[];
             };
         };
         TransferLeg: {
@@ -884,7 +896,7 @@ export interface components {
                                 latitude: number;
                             }[];
                         };
-                    };
+                    }[];
                 };
             };
             transferLeg?: {
@@ -1127,7 +1139,7 @@ export interface components {
                                     latitude: number;
                                 }[];
                             };
-                        };
+                        }[];
                     };
                 };
                 transferLeg?: {
@@ -1378,7 +1390,7 @@ export interface components {
                                         latitude: number;
                                     }[];
                                 };
-                            };
+                            }[];
                         };
                     };
                     transferLeg?: {
@@ -1450,6 +1462,86 @@ export interface components {
             requestMessageRef?: string;
             defaultLanguage?: string;
             calcTime?: string;
+            tripResponseContext?: {
+                places: {
+                    place: {
+                        stopPoint?: {
+                            stopPointRef: string;
+                            stopPointName: {
+                                text: string;
+                            };
+                            plannedQuay?: {
+                                text: string;
+                            };
+                            estimatedQuay?: {
+                                text: string;
+                            };
+                        };
+                        stopPlace?: {
+                            stopPlaceRef?: string;
+                            stopPlaceName?: {
+                                text: string;
+                            };
+                        };
+                        topographicPlace?: {
+                            topographicPlaceCode: string;
+                            topographicPlaceName: {
+                                text: string;
+                            };
+                        };
+                        pointOfInterest?: {
+                            publicCode: string;
+                            name: {
+                                text: string;
+                            };
+                            pointOfInterestCategory: {
+                                osmTag?: {
+                                    tag: string;
+                                    value: string;
+                                };
+                            }[];
+                            topographicPlaceRef?: string;
+                        };
+                        address?: {
+                            publicCode: string;
+                            name: {
+                                text: string;
+                            };
+                            postCode?: string;
+                            topographicPlaceName?: string;
+                            TopographicPlaceRef?: string;
+                            Street?: string;
+                            HouseNumber?: string;
+                        };
+                        name: {
+                            text: string;
+                        };
+                        geoPosition: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        mode: {
+                            /** @enum {string} */
+                            ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                            airSubmode?: string;
+                            busSubmode?: string;
+                            coachSubmode?: string;
+                            funicularSubmode?: string;
+                            metroSubmode?: string;
+                            tramSubmode?: string;
+                            telecabinSubmode?: string;
+                            railSubmode?: string;
+                            waterSubmode?: string;
+                            name?: {
+                                text: string;
+                            };
+                            shortName?: {
+                                text: string;
+                            };
+                        }[];
+                    }[];
+                };
+            };
             tripResult: {
                 id: string;
                 trip: {
@@ -1635,7 +1727,7 @@ export interface components {
                                             latitude: number;
                                         }[];
                                     };
-                                };
+                                }[];
                             };
                         };
                         transferLeg?: {
@@ -1713,6 +1805,86 @@ export interface components {
                         requestMessageRef?: string;
                         defaultLanguage?: string;
                         calcTime?: string;
+                        tripResponseContext?: {
+                            places: {
+                                place: {
+                                    stopPoint?: {
+                                        stopPointRef: string;
+                                        stopPointName: {
+                                            text: string;
+                                        };
+                                        plannedQuay?: {
+                                            text: string;
+                                        };
+                                        estimatedQuay?: {
+                                            text: string;
+                                        };
+                                    };
+                                    stopPlace?: {
+                                        stopPlaceRef?: string;
+                                        stopPlaceName?: {
+                                            text: string;
+                                        };
+                                    };
+                                    topographicPlace?: {
+                                        topographicPlaceCode: string;
+                                        topographicPlaceName: {
+                                            text: string;
+                                        };
+                                    };
+                                    pointOfInterest?: {
+                                        publicCode: string;
+                                        name: {
+                                            text: string;
+                                        };
+                                        pointOfInterestCategory: {
+                                            osmTag?: {
+                                                tag: string;
+                                                value: string;
+                                            };
+                                        }[];
+                                        topographicPlaceRef?: string;
+                                    };
+                                    address?: {
+                                        publicCode: string;
+                                        name: {
+                                            text: string;
+                                        };
+                                        postCode?: string;
+                                        topographicPlaceName?: string;
+                                        TopographicPlaceRef?: string;
+                                        Street?: string;
+                                        HouseNumber?: string;
+                                    };
+                                    name: {
+                                        text: string;
+                                    };
+                                    geoPosition: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    mode: {
+                                        /** @enum {string} */
+                                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                                        airSubmode?: string;
+                                        busSubmode?: string;
+                                        coachSubmode?: string;
+                                        funicularSubmode?: string;
+                                        metroSubmode?: string;
+                                        tramSubmode?: string;
+                                        telecabinSubmode?: string;
+                                        railSubmode?: string;
+                                        waterSubmode?: string;
+                                        name?: {
+                                            text: string;
+                                        };
+                                        shortName?: {
+                                            text: string;
+                                        };
+                                    }[];
+                                }[];
+                            };
+                        };
                         tripResult: {
                             id: string;
                             trip: {
@@ -1898,7 +2070,7 @@ export interface components {
                                                         latitude: number;
                                                     }[];
                                                 };
-                                            };
+                                            }[];
                                         };
                                     };
                                     transferLeg?: {

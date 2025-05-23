@@ -299,6 +299,122 @@ export interface components {
             cancelled?: boolean;
             deviation?: boolean;
         };
+        ResponseContextStructure: {
+            places: {
+                place: {
+                    stopPoint?: {
+                        stopPointRef: string;
+                        stopPointName: {
+                            text: string;
+                        };
+                        plannedQuay?: {
+                            text: string;
+                        };
+                        estimatedQuay?: {
+                            text: string;
+                        };
+                    };
+                    stopPlace?: {
+                        stopPlaceRef?: string;
+                        stopPlaceName?: {
+                            text: string;
+                        };
+                    };
+                    topographicPlace?: {
+                        topographicPlaceCode: string;
+                        topographicPlaceName: {
+                            text: string;
+                        };
+                    };
+                    pointOfInterest?: {
+                        publicCode: string;
+                        name: {
+                            text: string;
+                        };
+                        pointOfInterestCategory: {
+                            osmTag?: {
+                                tag: string;
+                                value: string;
+                            };
+                        }[];
+                        topographicPlaceRef?: string;
+                    };
+                    address?: {
+                        publicCode: string;
+                        name: {
+                            text: string;
+                        };
+                        postCode?: string;
+                        topographicPlaceName?: string;
+                        TopographicPlaceRef?: string;
+                        Street?: string;
+                        HouseNumber?: string;
+                    };
+                    name: {
+                        text: string;
+                    };
+                    geoPosition: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    mode: {
+                        /** @enum {string} */
+                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                        airSubmode?: string;
+                        busSubmode?: string;
+                        coachSubmode?: string;
+                        funicularSubmode?: string;
+                        metroSubmode?: string;
+                        tramSubmode?: string;
+                        telecabinSubmode?: string;
+                        railSubmode?: string;
+                        waterSubmode?: string;
+                        name?: {
+                            text: string;
+                        };
+                        shortName?: {
+                            text: string;
+                        };
+                    }[];
+                }[];
+            };
+        };
+        LinkProjection: {
+            position: {
+                longitude: number;
+                latitude: number;
+            }[];
+        };
+        TrackSectionStructure: {
+            trackSectionStart?: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                name: {
+                    text: string;
+                };
+            };
+            trackSectionEnd?: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                name: {
+                    text: string;
+                };
+            };
+            linkProjection?: {
+                position: {
+                    longitude: number;
+                    latitude: number;
+                }[];
+            };
+        };
     };
     responses: never;
     parameters: never;

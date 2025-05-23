@@ -40,7 +40,7 @@ export interface paths {
                                     };
                                     requestTimestamp: string;
                                     requestorRef: string;
-                                    OJPStopEventRequest?: {
+                                    OJPStopEventRequest: {
                                         requestTimestamp: string;
                                         location: {
                                             placeRef: {
@@ -150,7 +150,7 @@ export interface components {
                     };
                     requestTimestamp: string;
                     requestorRef: string;
-                    OJPStopEventRequest?: {
+                    OJPStopEventRequest: {
                         requestTimestamp: string;
                         location: {
                             placeRef: {

@@ -40,7 +40,7 @@ export interface paths {
                                     };
                                     requestTimestamp: string;
                                     requestorRef: string;
-                                    OJPTripRefineRequest?: {
+                                    OJPTripRefineRequest: {
                                         requestTimestamp: string;
                                         refineParams?: {
                                             numberOfResults?: number;
@@ -234,7 +234,7 @@ export interface paths {
                                                                         latitude: number;
                                                                     }[];
                                                                 };
-                                                            };
+                                                            }[];
                                                         };
                                                     };
                                                     transferLeg?: {
@@ -527,7 +527,7 @@ export interface components {
                                             latitude: number;
                                         }[];
                                     };
-                                };
+                                }[];
                             };
                         };
                         transferLeg?: {
@@ -603,7 +603,7 @@ export interface components {
                     };
                     requestTimestamp: string;
                     requestorRef: string;
-                    OJPTripRefineRequest?: {
+                    OJPTripRefineRequest: {
                         requestTimestamp: string;
                         refineParams?: {
                             numberOfResults?: number;
@@ -797,7 +797,7 @@ export interface components {
                                                         latitude: number;
                                                     }[];
                                                 };
-                                            };
+                                            }[];
                                         };
                                     };
                                     transferLeg?: {

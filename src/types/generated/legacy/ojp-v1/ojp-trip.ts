@@ -179,7 +179,7 @@ export interface components {
                             latitude: number;
                         }[];
                     };
-                };
+                }[];
             };
         };
         TripLeg: {
@@ -357,7 +357,7 @@ export interface components {
                                 latitude: number;
                             }[];
                         };
-                    };
+                    }[];
                 };
             };
             transferLeg?: {
@@ -600,7 +600,7 @@ export interface components {
                                     latitude: number;
                                 }[];
                             };
-                        };
+                        }[];
                     };
                 };
                 transferLeg?: {
