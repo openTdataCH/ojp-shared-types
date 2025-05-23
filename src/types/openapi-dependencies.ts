@@ -15,8 +15,12 @@ const MapNS_Tags: Record<string, string> = {
 
   // TRR
   'OJPTripRefineRequest.RequestTimestamp': 'siri',
+  
   // FareRequest
   'OJPFareRequest.RequestTimestamp': 'siri',
+
+  // TripInfoRequest  
+  'OJPTripInfoRequest.RequestTimestamp': 'siri',
 
   // TripRequest  
   'OJPTripRequest.RequestTimestamp': 'siri',
@@ -98,6 +102,12 @@ const MapArrayTags: Record<string, boolean> = {
   // Fare Response
   'fareResult.tripFareResult': true, // TODO - this is not in the current schema (v2)
   'tripFareResult.fareProduct': true,
+
+  // TripInfoResult
+  'OJPTripInfoDelivery.tripInfoResult': true,
+  'tripInfoResult.previousCall': true,
+  'tripInfoResult.onwardCall': true,
+  'journeyTrack.trackSection': true,
 };
 
 // TODO - this should be generated
@@ -108,6 +118,7 @@ const MapModelKeepPropertiesXML: Record<string, string[]> = {
   'OJPTripRequest': ['requestTimestamp', 'origin', 'destination', 'via', 'params'],
   'OJPStopEventRequest': ['requestTimestamp', 'location', 'params'],
   'OJPTripRefineRequest': ['requestTimestamp', 'refineParams', 'tripResult'],
+  'OJPTripInfoRequest': ['requestTimestamp', 'journeyRef', 'operatingDayRef', 'params'],
   'geoPosition': ['longitude', 'latitude'],
 };
 
