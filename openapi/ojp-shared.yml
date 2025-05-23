@@ -586,6 +586,28 @@ components:
             name: Deviation
     # DatedJourney
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
+    ResponseContextStructure:
+      type: object
+      xml:
+        name: ResponseContext
+      required:
+        - places
+      properties:
+        places:
+          type: object
+          xml:
+            name: Places
+          required:
+            - place
+          properties:
+            place:
+              type: array
+              xml:
+                name: Place
+              items:
+                $ref: '#/components/schemas/Place'
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LinearShapeStructure
     LinkProjection:
       type: object
