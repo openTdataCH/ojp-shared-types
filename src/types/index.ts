@@ -44,6 +44,8 @@ export type PointOfInterestSchema = sharedComponents['schemas']['PointOfInterest
 export type AddressSchema = sharedComponents['schemas']['Address']
 export type PlaceModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 
+export type ResponseContextSchema = sharedComponents['schemas']['ResponseContextStructure'];
+
 export type TripRequestOJP = tripRequestComponents["schemas"]["OJP"];
 export type TripParamsSchema = tripRequestComponents["schemas"]["TripParam"];
 export type TripRequestSchema = tripRequestComponents["schemas"]["OJPTripRequest"];
@@ -59,6 +61,9 @@ export type LegSchema = tripReponseComponents["schemas"]["Leg"];
 export type TimedLegSchema = tripReponseComponents["schemas"]["TimedLeg"];
 export type TransferLegSchema = tripReponseComponents["schemas"]["TransferLeg"];
 export type ContinuousLegSchema = tripReponseComponents["schemas"]["ContinuousLeg"];
+
+export type TripRequestResponseOJP = tripReponseComponents['schemas']['OJP'];
+export type TripDeliverySchema = tripReponseComponents['schemas']['OJPTripDelivery'];
 
 export type InitialInputSchema = locationInformationRequestComponents['schemas']['InitialInput']
 export type LIR_RequestParamsSchema = locationInformationRequestComponents['schemas']['PlaceParam']
