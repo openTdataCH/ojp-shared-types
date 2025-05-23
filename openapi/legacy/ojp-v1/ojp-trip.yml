@@ -36,9 +36,18 @@ components:
           xml:
             name: Service
         legTrack:
-          $ref: '../../ojp-shared.yml#/components/schemas/LegTrack'
+          type: object
           xml:
             name: LegTrack
+          required:
+            - trackSection
+          properties:
+            trackSection:
+              type: array
+              xml:
+                name: TrackSection
+              items:
+                $ref: '../../ojp-shared.yml#/components/schemas/TrackSectionStructure'
     # TimedLeg
 
     # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/Leg'
