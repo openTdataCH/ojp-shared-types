@@ -318,6 +318,10 @@ components:
           type: string
           xml:
             name: CalcTime
+        tripResponseContext:
+          $ref: './ojp-shared.yml#/components/schemas/ResponseContextStructure'
+          xml:
+            name: TripResponseContext
         tripResult:
           type: array
           xml:
