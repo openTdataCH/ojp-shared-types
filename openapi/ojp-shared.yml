@@ -571,7 +571,7 @@ components:
         destinationText:
           $ref: '#/components/schemas/InternationalText'
           xml:
-            name: 
+            name: DestinationText
         unplanned:
           type: boolean
           xml:

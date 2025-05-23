@@ -131,7 +131,7 @@ components:
               required:
                 - requestTimestamp
                 - requestorRef
-                - OJPTripRequest
+                - OJPLocationInformationRequest
               properties:
                 serviceRequestContext:
                   $ref: './ojp-shared.yml#/components/schemas/ServiceRequestContext'

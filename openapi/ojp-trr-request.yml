@@ -94,7 +94,7 @@ components:
               required:
                 - requestTimestamp
                 - requestorRef
-                - OJPTripRequest
+                - OJPTripRefineRequest
               properties:
                 serviceRequestContext:
                   $ref: './ojp-shared.yml#/components/schemas/ServiceRequestContext'
