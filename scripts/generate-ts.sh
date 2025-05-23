@@ -18,6 +18,9 @@ SRC_FILES=(
     
     "ojp-ser-request.yml"
     "ojp-ser-response.yml"
+
+    "ojp-tir-request.yml"
+    "ojp-tir-response.yml"
     
     "ojp-tr-request.yml"
     "ojp-tr-response.yml"
