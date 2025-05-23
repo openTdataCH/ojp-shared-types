@@ -585,3 +585,38 @@ components:
           xml:
             name: Deviation
     # DatedJourney
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LinearShapeStructure
+    LinkProjection:
+      type: object
+      xml:
+        name: LinkProjection
+      required:
+        - position
+      properties:
+        position:
+          type: array
+          xml:
+            name: Position
+          items:
+            $ref: '#/components/schemas/GeoPosition'
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TrackSectionStructure
+    TrackSectionStructure:
+      type: object
+      xml:
+        name: TrackSection
+      properties:
+        trackSectionStart:
+          $ref: '#/components/schemas/PlaceRef'
+          xml:
+            name: TrackSectionStart
+        trackSectionEnd:
+          $ref: '#/components/schemas/PlaceRef'
+          xml:
+            name: TrackSectionEnd
+        linkProjection:
+          $ref: '#/components/schemas/LinkProjection'
+          xml:
+            name: LinkProjection
+        
