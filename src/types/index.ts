@@ -9,6 +9,9 @@ import { components as locationInformationResponseComponents } from './generated
 import { components as stopEventRequestComponents } from './generated/ojp-ser-request'
 import { components as stopEventResponseComponents } from './generated/ojp-ser-response'
 
+import { components as tripInfoRequestComponents } from './generated/ojp-tir-request';
+import { components as tripInfoResponseComponents } from './generated/ojp-tir-response';
+
 import { components as tripRequestComponents } from './generated/ojp-tr-request';
 import { components as tripReponseComponents } from './generated/ojp-tr-response';
 
@@ -90,3 +93,10 @@ export type FareRequestsSchema = fareRequestComponents['schemas']['OJPFareReques
 export type FareRequestOJP = fareRequestComponents['schemas']['OJP'];
 export type FareResponseOJP = fareResponseComponents['schemas']['OJP'];
 export type FareResultSchema = fareResponseComponents['schemas']['FareResult'];
+
+export type TIR_RequestParamsSchema = tripInfoRequestComponents['schemas']['TripInfoParamStructure'];
+export type TIR_RequestSchema = tripInfoRequestComponents['schemas']['OJPTripInfoRequest'];
+export type TIR_RequestOJP = tripInfoRequestComponents['schemas']['OJP'];
+
+export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
+export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
