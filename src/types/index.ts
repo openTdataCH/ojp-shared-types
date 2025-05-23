@@ -5,11 +5,15 @@ import { components as ojpV1_TripComponents } from './generated/legacy/ojp-v1/oj
 
 import { components as locationInformationRequestComponents } from './generated/ojp-lir-request';
 import { components as locationInformationResponseComponents } from './generated/ojp-lir-response';
+
 import { components as stopEventRequestComponents } from './generated/ojp-ser-request'
 import { components as stopEventResponseComponents } from './generated/ojp-ser-response'
+
 import { components as tripRequestComponents } from './generated/ojp-tr-request';
 import { components as tripReponseComponents } from './generated/ojp-tr-response';
+
 import { components as trrRequestComponents } from './generated/ojp-trr-request';
+
 import { components as fareRequestComponents } from './generated/ojp-fare-request';
 import { components as fareResponseComponents } from './generated/ojp-fare-response';
 
@@ -38,7 +42,7 @@ export type StopPlaceSchema = sharedComponents['schemas']['StopPlace']
 export type TopographicPlaceSchema = sharedComponents['schemas']['TopographicPlace']
 export type PointOfInterestSchema = sharedComponents['schemas']['PointOfInterest']
 export type AddressSchema = sharedComponents['schemas']['Address']
-export type PlaceModeStructureSchema = sharedComponents['schemas']['ModeStructure']
+export type PlaceModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 
 export type TripRequestOJP = tripRequestComponents["schemas"]["OJP"];
 export type TripParamsSchema = tripRequestComponents["schemas"]["TripParam"];
