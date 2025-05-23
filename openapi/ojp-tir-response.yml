@@ -1,0 +1,151 @@
+openapi: 3.0.3
+info:
+  title: XML OJP 2.0 API
+  description: API that returns trip data in XML format.
+  version: 0.0.1
+
+servers:
+  - url: https://api.example.com
+
+paths:
+  /ojp:
+    post:
+      summary: Main /ojp endpoint
+      description: Main /ojp endpoint
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OJP"
+        "500":
+          description: Server error
+
+components:
+  schemas:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripInfoResultStructure
+    TripInfoResultStructure:
+      type: object
+      xml:
+        name: TripInfoResult
+      required:
+        - previousCall
+        - onwardCall
+      properties:
+        previousCall:
+          type: array
+          xml:
+            name: PreviousCall
+          items:
+            $ref: './ojp-shared.yml#/components/schemas/CallAtStop'
+        onwardCall:
+          type: array
+          xml:
+            name: OnwardCall
+          items:
+            $ref: './ojp-shared.yml#/components/schemas/CallAtStop'
+        service:
+          $ref: './ojp-shared.yml#/components/schemas/DatedJourney'
+          xml:
+            name: Service
+        journeyTrack:
+          type: object
+          xml:
+            name: JourneyTrack
+          required:
+            - trackSection
+          properties:
+            trackSection:
+              type: array
+              xml:
+                name: TrackSection
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
+          
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPTripInfoDeliveryStructure
+    OJPTripInfoDelivery:
+      type: object
+      xml:
+        name: OJPTripDelivery
+      required:
+        - responseTimestamp
+        - tripInfoResult
+      properties:
+        responseTimestamp:
+          type: string
+          xml:
+            name: ResponseTimestamp
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        requestMessageRef:
+          type: string
+          xml:
+            name: RequestMessageRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        defaultLanguage:
+          type: string
+          xml:
+            name: DefaultLanguage
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        calcTime:
+          type: string
+          xml:
+            name: CalcTime
+        tripInfoResponseContext:
+          $ref: './ojp-shared.yml#/components/schemas/ResponseContextStructure'
+          xml:
+            name: TripInfoResponseContext
+        tripInfoResult:
+          type: array
+          xml:
+            name: TripInfoResult
+          items:
+            $ref: "#/components/schemas/TripInfoResultStructure"
+
+    OJP:
+      type: object
+      xml:
+        name: OJP
+      required:
+        - OJPResponse
+      properties:
+        OJPResponse:
+          type: object
+          xml:
+            name: OJPResponse
+          required:
+            - serviceDelivery
+          properties:
+            serviceDelivery:
+              type: object
+              xml:
+                name: ServiceDelivery
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              required:
+                - responseTimestamp
+                - producerRef
+                - OJPTripInfoDelivery
+              properties:
+                responseTimestamp:
+                  type: string
+                  xml:
+                    name: ResponseTimestamp
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                producerRef:
+                  type: string
+                  xml:
+                    name: ProducerRef
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                OJPTripInfoDelivery:
+                  $ref: '#/components/schemas/OJPTripInfoDelivery'
+                  xml:
+                    name: OJPTripInfoDelivery
+    # OJP
+        
