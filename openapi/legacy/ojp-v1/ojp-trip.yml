@@ -36,7 +36,7 @@ components:
           xml:
             name: Service
         legTrack:
-          $ref: '../../ojp-tr-response.yml#/components/schemas/LegTrack'
+          $ref: '../../ojp-shared.yml#/components/schemas/LegTrack'
           xml:
             name: LegTrack
     # TimedLeg

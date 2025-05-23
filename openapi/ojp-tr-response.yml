@@ -59,53 +59,6 @@ components:
         - stopPointName
         - serviceArrival
 
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LinearShapeStructure
-    LinkProjection:
-      type: object
-      xml:
-        name: LinkProjection
-      required:
-        - position
-      properties:
-        position:
-          type: array
-          xml:
-            name: Position
-          items:
-            $ref: './ojp-shared.yml#/components/schemas/GeoPosition'
-
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TrackSectionStructure
-    TrackSection:
-      type: object
-      xml:
-        name: TrackSection
-      properties:
-        trackSectionStart:
-          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
-          xml:
-            name: TrackSectionStart
-        trackSectionEnd:
-          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
-          xml:
-            name: TrackSectionEnd
-        linkProjection:
-          $ref: '#/components/schemas/LinkProjection'
-          xml:
-            name: LinkProjection
-    
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegTrackStructure
-    LegTrack:
-      type: object
-      xml:
-        name: LegTrack
-      required:
-        - trackSection
-      properties:
-        trackSection:
-          $ref: '#/components/schemas/TrackSection'
-          xml:
-            name: TrackSection
-
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
     ContinuousService:
       type: object
@@ -153,9 +106,18 @@ components:
           xml:
             name: Service
         legTrack:
-          $ref: '#/components/schemas/LegTrack'
+          type: object
           xml:
             name: LegTrack
+          required:
+            - trackSection
+          properties:
+            trackSection:
+              type: array
+              xml:
+                name: TrackSection
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
     # TimedLeg
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferLegStructure
