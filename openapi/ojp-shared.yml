@@ -411,6 +411,9 @@ components:
       type: object
       xml:
         name: CallAtStop
+      required:
+        - stopPointRef
+        - stopPointName
       properties:
         stopPointRef:
           type: string
