@@ -202,8 +202,8 @@ export interface components {
             estimatedTime?: string;
         };
         CallAtStop: {
-            stopPointRef?: string;
-            stopPointName?: {
+            stopPointRef: string;
+            stopPointName: {
                 text: string;
             };
             nameSuffix?: {

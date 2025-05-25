@@ -124,8 +124,8 @@ export interface paths {
                                         };
                                         tripInfoResult: {
                                             previousCall: {
-                                                stopPointRef?: string;
-                                                stopPointName?: {
+                                                stopPointRef: string;
+                                                stopPointName: {
                                                     text: string;
                                                 };
                                                 nameSuffix?: {
@@ -153,8 +153,8 @@ export interface paths {
                                                 noAlightingAtStop?: boolean;
                                             }[];
                                             onwardCall: {
-                                                stopPointRef?: string;
-                                                stopPointName?: {
+                                                stopPointRef: string;
+                                                stopPointName: {
                                                     text: string;
                                                 };
                                                 nameSuffix?: {
@@ -295,8 +295,8 @@ export interface components {
     schemas: {
         TripInfoResultStructure: {
             previousCall: {
-                stopPointRef?: string;
-                stopPointName?: {
+                stopPointRef: string;
+                stopPointName: {
                     text: string;
                 };
                 nameSuffix?: {
@@ -324,8 +324,8 @@ export interface components {
                 noAlightingAtStop?: boolean;
             }[];
             onwardCall: {
-                stopPointRef?: string;
-                stopPointName?: {
+                stopPointRef: string;
+                stopPointName: {
                     text: string;
                 };
                 nameSuffix?: {
@@ -526,8 +526,8 @@ export interface components {
             };
             tripInfoResult: {
                 previousCall: {
-                    stopPointRef?: string;
-                    stopPointName?: {
+                    stopPointRef: string;
+                    stopPointName: {
                         text: string;
                     };
                     nameSuffix?: {
@@ -555,8 +555,8 @@ export interface components {
                     noAlightingAtStop?: boolean;
                 }[];
                 onwardCall: {
-                    stopPointRef?: string;
-                    stopPointName?: {
+                    stopPointRef: string;
+                    stopPointName: {
                         text: string;
                     };
                     nameSuffix?: {
@@ -763,8 +763,8 @@ export interface components {
                         };
                         tripInfoResult: {
                             previousCall: {
-                                stopPointRef?: string;
-                                stopPointName?: {
+                                stopPointRef: string;
+                                stopPointName: {
                                     text: string;
                                 };
                                 nameSuffix?: {
@@ -792,8 +792,8 @@ export interface components {
                                 noAlightingAtStop?: boolean;
                             }[];
                             onwardCall: {
-                                stopPointRef?: string;
-                                stopPointName?: {
+                                stopPointRef: string;
+                                stopPointName: {
                                     text: string;
                                 };
                                 nameSuffix?: {
