@@ -200,6 +200,10 @@ export interface paths {
                                                             destinationText?: {
                                                                 text: string;
                                                             };
+                                                            situationFullRefs?: {
+                                                                participantRef: string;
+                                                                situationNumber: string;
+                                                            }[];
                                                             unplanned?: boolean;
                                                             cancelled?: boolean;
                                                             deviation?: boolean;
@@ -493,6 +497,10 @@ export interface components {
                                 destinationText?: {
                                     text: string;
                                 };
+                                situationFullRefs?: {
+                                    participantRef: string;
+                                    situationNumber: string;
+                                }[];
                                 unplanned?: boolean;
                                 cancelled?: boolean;
                                 deviation?: boolean;
@@ -763,6 +771,10 @@ export interface components {
                                             destinationText?: {
                                                 text: string;
                                             };
+                                            situationFullRefs?: {
+                                                participantRef: string;
+                                                situationNumber: string;
+                                            }[];
                                             unplanned?: boolean;
                                             cancelled?: boolean;
                                             deviation?: boolean;

@@ -501,6 +501,24 @@ components:
           xml:
             name: Code
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#element_ojp__SituationFullRef
+    SituationFullRef:
+      type: object
+      xml:
+        name: SituationFullRef
+      required:
+        - participantRef
+        - situationNumber
+      properties:
+        participantRef:
+          type: string
+          xml:
+            name: ParticipantRef
+        situationNumber:
+          type: string
+          xml:
+            name: SituationNumber
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
     DatedJourney:
       type: object
@@ -572,6 +590,12 @@ components:
           $ref: '#/components/schemas/InternationalText'
           xml:
             name: 
+        situationFullRefs:
+          type: array
+          xml:
+            name: SituationFullRef
+          items:
+            $ref: '#/components/schemas/SituationFullRef'
         unplanned:
           type: boolean
           xml:

@@ -95,6 +95,7 @@ const MapArrayTags: Record<string, boolean> = {
   'trip.leg': true,
   'timedLeg.legIntermediate': true,
   'service.attribute': true,
+  'service.situationFullRefs': true,
   'linkProjection.position': true,
 
   // LIR Response

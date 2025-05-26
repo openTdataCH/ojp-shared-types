@@ -245,6 +245,10 @@ export interface components {
             };
             code: string;
         };
+        SituationFullRef: {
+            participantRef: string;
+            situationNumber: string;
+        };
         DatedJourney: {
             conventionalModeOfOperation?: string;
             operatingDayRef: string;
@@ -295,6 +299,10 @@ export interface components {
             destinationText?: {
                 text: string;
             };
+            situationFullRefs?: {
+                participantRef: string;
+                situationNumber: string;
+            }[];
             unplanned?: boolean;
             cancelled?: boolean;
             deviation?: boolean;
