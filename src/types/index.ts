@@ -11,6 +11,7 @@ import { components as stopEventResponseComponents } from './generated/ojp-ser-r
 
 import { components as tripInfoRequestComponents } from './generated/ojp-tir-request';
 import { components as tripInfoResponseComponents } from './generated/ojp-tir-response';
+import { components as ojpV1_tripInfoResponseComponents } from './generated/legacy/ojp-v1/ojp-tir-response';
 
 import { components as tripRequestComponents } from './generated/ojp-tr-request';
 import { components as tripReponseComponents } from './generated/ojp-tr-response';
@@ -103,3 +104,7 @@ export type TIR_RequestOJP = tripInfoRequestComponents['schemas']['OJP'];
 export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
 export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
+
+export type OJPv1_TripInfoResponseOJP = ojpV1_tripInfoResponseComponents['schemas']['OJP'];
+export type OJPv1_TripInfoDeliverySchema = ojpV1_tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
+export type OJPv1_TripInfoResultStructureSchema = ojpV1_tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
