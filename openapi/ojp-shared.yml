@@ -594,8 +594,6 @@ components:
       type: object
       xml:
         name: ResponseContext
-      required:
-        - places
       properties:
         places:
           type: object
