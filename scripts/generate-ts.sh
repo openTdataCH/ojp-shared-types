@@ -6,6 +6,7 @@ OPENAPI_GENERATED_TS_PATH=$APP_PATH/src/types/generated
 
 SRC_FILES=(
     "legacy/ojp-v1/ojp-shared.yml"
+    "legacy/ojp-v1/ojp-tir-response.yml"
     "legacy/ojp-v1/ojp-trip.yml"
 
     "ojp-shared.yml"
