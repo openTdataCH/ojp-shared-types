@@ -46,6 +46,8 @@ export type TopographicPlaceSchema = sharedComponents['schemas']['TopographicPla
 export type PointOfInterestSchema = sharedComponents['schemas']['PointOfInterest']
 export type AddressSchema = sharedComponents['schemas']['Address']
 export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
+export type ProductCategorySchema = sharedComponents['schemas']['ProductCategory'];
+export type GeneralAttributeSchema = sharedComponents['schemas']['GeneralAttribute'];
 
 export type ResponseContextSchema = sharedComponents['schemas']['ResponseContextStructure'];
 
@@ -100,3 +102,4 @@ export type TIR_RequestOJP = tripInfoRequestComponents['schemas']['OJP'];
 
 export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
 export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
+export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
