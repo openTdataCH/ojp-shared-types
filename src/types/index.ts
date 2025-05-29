@@ -5,17 +5,25 @@ import { components as ojpV1_TripComponents } from './generated/legacy/ojp-v1/oj
 
 import { components as locationInformationRequestComponents } from './generated/ojp-lir-request';
 import { components as locationInformationResponseComponents } from './generated/ojp-lir-response';
+
 import { components as stopEventRequestComponents } from './generated/ojp-ser-request'
 import { components as stopEventResponseComponents } from './generated/ojp-ser-response'
+
+import { components as tripInfoRequestComponents } from './generated/ojp-tir-request';
+import { components as tripInfoResponseComponents } from './generated/ojp-tir-response';
+import { components as ojpV1_tripInfoResponseComponents } from './generated/legacy/ojp-v1/ojp-tir-response';
+
 import { components as tripRequestComponents } from './generated/ojp-tr-request';
 import { components as tripReponseComponents } from './generated/ojp-tr-response';
+
 import { components as trrRequestComponents } from './generated/ojp-trr-request';
+
 import { components as fareRequestComponents } from './generated/ojp-fare-request';
 import { components as fareResponseComponents } from './generated/ojp-fare-response';
 
 // TODO - this can be generated
 
-export type OJPv1_TimedLegServiceSchema = ojpV1_SharedComponents['schemas']['DatedJourney'];
+export type OJPv1_DatedJourneySchema = ojpV1_SharedComponents['schemas']['DatedJourney'];
 export type OJPv1_TimedLegSchema = ojpV1_TripComponents['schemas']['TimedLeg']
 export type OJPv1_TripLegSchema = ojpV1_TripComponents['schemas']['TripLeg'];
 export type OJPv1_TripSchema = ojpV1_TripComponents['schemas']['Trip'];
@@ -38,7 +46,11 @@ export type StopPlaceSchema = sharedComponents['schemas']['StopPlace']
 export type TopographicPlaceSchema = sharedComponents['schemas']['TopographicPlace']
 export type PointOfInterestSchema = sharedComponents['schemas']['PointOfInterest']
 export type AddressSchema = sharedComponents['schemas']['Address']
-export type PlaceModeStructureSchema = sharedComponents['schemas']['ModeStructure']
+export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
+export type ProductCategorySchema = sharedComponents['schemas']['ProductCategory'];
+export type GeneralAttributeSchema = sharedComponents['schemas']['GeneralAttribute'];
+
+export type ResponseContextSchema = sharedComponents['schemas']['ResponseContextStructure'];
 
 export type TripRequestOJP = tripRequestComponents["schemas"]["OJP"];
 export type TripParamsSchema = tripRequestComponents["schemas"]["TripParam"];
@@ -55,6 +67,9 @@ export type LegSchema = tripReponseComponents["schemas"]["Leg"];
 export type TimedLegSchema = tripReponseComponents["schemas"]["TimedLeg"];
 export type TransferLegSchema = tripReponseComponents["schemas"]["TransferLeg"];
 export type ContinuousLegSchema = tripReponseComponents["schemas"]["ContinuousLeg"];
+
+export type TripRequestResponseOJP = tripReponseComponents['schemas']['OJP'];
+export type TripDeliverySchema = tripReponseComponents['schemas']['OJPTripDelivery'];
 
 export type InitialInputSchema = locationInformationRequestComponents['schemas']['InitialInput']
 export type LIR_RequestParamsSchema = locationInformationRequestComponents['schemas']['PlaceParam']
@@ -81,3 +96,15 @@ export type FareRequestsSchema = fareRequestComponents['schemas']['OJPFareReques
 export type FareRequestOJP = fareRequestComponents['schemas']['OJP'];
 export type FareResponseOJP = fareResponseComponents['schemas']['OJP'];
 export type FareResultSchema = fareResponseComponents['schemas']['FareResult'];
+
+export type TIR_RequestParamsSchema = tripInfoRequestComponents['schemas']['TripInfoParamStructure'];
+export type TIR_RequestSchema = tripInfoRequestComponents['schemas']['OJPTripInfoRequest'];
+export type TIR_RequestOJP = tripInfoRequestComponents['schemas']['OJP'];
+
+export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
+export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
+export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
+
+export type OJPv1_TripInfoResponseOJP = ojpV1_tripInfoResponseComponents['schemas']['OJP'];
+export type OJPv1_TripInfoDeliverySchema = ojpV1_tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
+export type OJPv1_TripInfoResultStructureSchema = ojpV1_tripInfoResponseComponents['schemas']['TripInfoResultStructure'];

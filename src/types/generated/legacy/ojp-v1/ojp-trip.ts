@@ -179,6 +179,17 @@ export interface components {
                             latitude: number;
                         }[];
                     };
+                }[];
+            };
+            extension?: {
+                transportTypeName?: {
+                    text: string;
+                };
+                publishedJourneyNumber?: {
+                    text: string;
+                };
+                operatorName?: {
+                    text: string;
                 };
             };
         };
@@ -357,6 +368,17 @@ export interface components {
                                 latitude: number;
                             }[];
                         };
+                    }[];
+                };
+                extension?: {
+                    transportTypeName?: {
+                        text: string;
+                    };
+                    publishedJourneyNumber?: {
+                        text: string;
+                    };
+                    operatorName?: {
+                        text: string;
                     };
                 };
             };
@@ -600,6 +622,17 @@ export interface components {
                                     latitude: number;
                                 }[];
                             };
+                        }[];
+                    };
+                    extension?: {
+                        transportTypeName?: {
+                            text: string;
+                        };
+                        publishedJourneyNumber?: {
+                            text: string;
+                        };
+                        operatorName?: {
+                            text: string;
                         };
                     };
                 };

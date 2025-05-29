@@ -15,8 +15,12 @@ const MapNS_Tags: Record<string, string> = {
 
   // TRR
   'OJPTripRefineRequest.RequestTimestamp': 'siri',
+  
   // FareRequest
   'OJPFareRequest.RequestTimestamp': 'siri',
+
+  // TripInfoRequest  
+  'OJPTripInfoRequest.RequestTimestamp': 'siri',
 
   // TripRequest  
   'OJPTripRequest.RequestTimestamp': 'siri',
@@ -70,32 +74,21 @@ const MapNS_Tags: Record<string, string> = {
 };
 
 // TODO - this should be generated
-// // they are all camelCase because the tags are already transformed in XMLParser.isArrayHandler
-// - in response (parser) XML
-const MapParentArrayTags: Record<string, string[]> = {
-  'TripResult.trip': ['leg'],
-  'leg.timedLeg': ['legIntermediate'],
-  'timedLeg.service': ['attribute'],
-  'trackSection.linkProjection': ['position'],
-
-  // LIR Request
-  'restrictions.placeParam': ['type'],
-
-  // LIR Response
-  'place.pointOfInterest': ['pointOfInterestCategory'],
-  'placeResult.place': ['mode'],
-  'serviceDelivery.OJPLocationInformationDelivery': ['placeResult'],
-
-  // SER Response
-  'stopEventResult.stopEvent': ['previousCall', 'onwardCall'],
-};
+// - this is used by the parser.isArrayHandler - to always return arrays even when there is only one result
 // - in response (parser) XML
 const MapArrayTags: Record<string, boolean> = {
+  // Shared
+  'places.place': true,
+  'situations.ptSituation': true,
+  'linkProjection.position': true,
+
+  // Service
+  'service.attribute': true,
+
   // TR Response
   'trip.leg': true,
   'timedLeg.legIntermediate': true,
-  'service.attribute': true,
-  'linkProjection.position': true,
+  'legTrack.trackSection': true,
 
   // LIR Response
   'pointOfInterest.pointOfInterestCategory': true,
@@ -109,6 +102,12 @@ const MapArrayTags: Record<string, boolean> = {
   // Fare Response
   'fareResult.tripFareResult': true, // TODO - this is not in the current schema (v2)
   'tripFareResult.fareProduct': true,
+
+  // TripInfoResult
+  'OJPTripInfoDelivery.tripInfoResult': true,
+  'tripInfoResult.previousCall': true,
+  'tripInfoResult.onwardCall': true,
+  'journeyTrack.trackSection': true,
 };
 
 // TODO - this should be generated
@@ -119,6 +118,7 @@ const MapModelKeepPropertiesXML: Record<string, string[]> = {
   'OJPTripRequest': ['requestTimestamp', 'origin', 'destination', 'via', 'params'],
   'OJPStopEventRequest': ['requestTimestamp', 'location', 'params'],
   'OJPTripRefineRequest': ['requestTimestamp', 'refineParams', 'tripResult'],
+  'OJPTripInfoRequest': ['requestTimestamp', 'journeyRef', 'operatingDayRef', 'params'],
   'geoPosition': ['longitude', 'latitude'],
 };
 
@@ -130,7 +130,6 @@ const MapStringValues: Record<string, boolean> = {
 
 export const OpenAPI_Dependencies = {
   MapNS_Tags: MapNS_Tags,
-  MapParentArrayTags: MapParentArrayTags,
   MapArrayTags: MapArrayTags,
   MapModelKeepPropertiesXML: MapModelKeepPropertiesXML,
   MapStringValues: MapStringValues,

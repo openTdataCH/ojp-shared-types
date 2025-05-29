@@ -227,7 +227,7 @@ export interface paths {
                                                                         latitude: number;
                                                                     }[];
                                                                 };
-                                                            };
+                                                            }[];
                                                         };
                                                     };
                                                     transferLeg?: {
@@ -509,7 +509,7 @@ export interface components {
                                             latitude: number;
                                         }[];
                                     };
-                                };
+                                }[];
                             };
                         };
                         transferLeg?: {
@@ -772,7 +772,7 @@ export interface components {
                                                         latitude: number;
                                                     }[];
                                                 };
-                                            };
+                                            }[];
                                         };
                                     };
                                     transferLeg?: {

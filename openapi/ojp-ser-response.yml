@@ -243,26 +243,6 @@ components:
           xml:
             name: Probability
 
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
-    StopEventResponseContext:
-      type: object
-      xml:
-        name: StopEventResponseContext
-      properties:
-        places:
-          type: object
-          xml:
-            name: StopEventResponseContextPlaces
-          required:
-            - place
-          properties:
-            place:
-              type: array
-              xml:
-                name: Place
-              items:
-                $ref: './ojp-shared.yml#/components/schemas/Place'
-
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtNearStopStructure
     CallAtNearStop:
       type: object
@@ -377,7 +357,7 @@ components:
           xml:
             name: CalcTime
         stopEventResponseContext:
-          $ref: '#/components/schemas/StopEventResponseContext'
+          $ref: './ojp-shared.yml#/components/schemas/ResponseContextStructure'
           xml:
             name: StopEventResponseContext
         stopEventResult:

@@ -43,7 +43,7 @@ export interface paths {
                                         defaultLanguage?: string;
                                         calcTime?: string;
                                         stopEventResponseContext?: {
-                                            places?: {
+                                            places: {
                                                 place: {
                                                     stopPoint?: {
                                                         stopPointRef: string;
@@ -127,8 +127,8 @@ export interface paths {
                                             stopEvent: {
                                                 previousCall: {
                                                     callAtStop: {
-                                                        stopPointRef?: string;
-                                                        stopPointName?: {
+                                                        stopPointRef: string;
+                                                        stopPointName: {
                                                             text: string;
                                                         };
                                                         nameSuffix?: {
@@ -158,8 +158,8 @@ export interface paths {
                                                 }[];
                                                 thisCall: {
                                                     callAtStop: {
-                                                        stopPointRef?: string;
-                                                        stopPointName?: {
+                                                        stopPointRef: string;
+                                                        stopPointName: {
                                                             text: string;
                                                         };
                                                         nameSuffix?: {
@@ -189,8 +189,8 @@ export interface paths {
                                                 };
                                                 onwardCall: {
                                                     callAtStop: {
-                                                        stopPointRef?: string;
-                                                        stopPointName?: {
+                                                        stopPointRef: string;
+                                                        stopPointName: {
                                                             text: string;
                                                         };
                                                         nameSuffix?: {
@@ -478,90 +478,10 @@ export interface components {
             complete: boolean;
             probability?: number;
         };
-        StopEventResponseContext: {
-            places?: {
-                place: {
-                    stopPoint?: {
-                        stopPointRef: string;
-                        stopPointName: {
-                            text: string;
-                        };
-                        plannedQuay?: {
-                            text: string;
-                        };
-                        estimatedQuay?: {
-                            text: string;
-                        };
-                    };
-                    stopPlace?: {
-                        stopPlaceRef?: string;
-                        stopPlaceName?: {
-                            text: string;
-                        };
-                    };
-                    topographicPlace?: {
-                        topographicPlaceCode: string;
-                        topographicPlaceName: {
-                            text: string;
-                        };
-                    };
-                    pointOfInterest?: {
-                        publicCode: string;
-                        name: {
-                            text: string;
-                        };
-                        pointOfInterestCategory: {
-                            osmTag?: {
-                                tag: string;
-                                value: string;
-                            };
-                        }[];
-                        topographicPlaceRef?: string;
-                    };
-                    address?: {
-                        publicCode: string;
-                        name: {
-                            text: string;
-                        };
-                        postCode?: string;
-                        topographicPlaceName?: string;
-                        TopographicPlaceRef?: string;
-                        Street?: string;
-                        HouseNumber?: string;
-                    };
-                    name: {
-                        text: string;
-                    };
-                    geoPosition: {
-                        longitude: number;
-                        latitude: number;
-                    };
-                    mode: {
-                        /** @enum {string} */
-                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
-                        airSubmode?: string;
-                        busSubmode?: string;
-                        coachSubmode?: string;
-                        funicularSubmode?: string;
-                        metroSubmode?: string;
-                        tramSubmode?: string;
-                        telecabinSubmode?: string;
-                        railSubmode?: string;
-                        waterSubmode?: string;
-                        name?: {
-                            text: string;
-                        };
-                        shortName?: {
-                            text: string;
-                        };
-                    }[];
-                }[];
-            };
-        };
         CallAtNearStop: {
             callAtStop: {
-                stopPointRef?: string;
-                stopPointName?: {
+                stopPointRef: string;
+                stopPointName: {
                     text: string;
                 };
                 nameSuffix?: {
@@ -592,8 +512,8 @@ export interface components {
         StopEvent: {
             previousCall: {
                 callAtStop: {
-                    stopPointRef?: string;
-                    stopPointName?: {
+                    stopPointRef: string;
+                    stopPointName: {
                         text: string;
                     };
                     nameSuffix?: {
@@ -623,8 +543,8 @@ export interface components {
             }[];
             thisCall: {
                 callAtStop: {
-                    stopPointRef?: string;
-                    stopPointName?: {
+                    stopPointRef: string;
+                    stopPointName: {
                         text: string;
                     };
                     nameSuffix?: {
@@ -654,8 +574,8 @@ export interface components {
             };
             onwardCall: {
                 callAtStop: {
-                    stopPointRef?: string;
-                    stopPointName?: {
+                    stopPointRef: string;
+                    stopPointName: {
                         text: string;
                     };
                     nameSuffix?: {
@@ -748,8 +668,8 @@ export interface components {
             stopEvent: {
                 previousCall: {
                     callAtStop: {
-                        stopPointRef?: string;
-                        stopPointName?: {
+                        stopPointRef: string;
+                        stopPointName: {
                             text: string;
                         };
                         nameSuffix?: {
@@ -779,8 +699,8 @@ export interface components {
                 }[];
                 thisCall: {
                     callAtStop: {
-                        stopPointRef?: string;
-                        stopPointName?: {
+                        stopPointRef: string;
+                        stopPointName: {
                             text: string;
                         };
                         nameSuffix?: {
@@ -810,8 +730,8 @@ export interface components {
                 };
                 onwardCall: {
                     callAtStop: {
-                        stopPointRef?: string;
-                        stopPointName?: {
+                        stopPointRef: string;
+                        stopPointName: {
                             text: string;
                         };
                         nameSuffix?: {
@@ -906,7 +826,7 @@ export interface components {
             defaultLanguage?: string;
             calcTime?: string;
             stopEventResponseContext?: {
-                places?: {
+                places: {
                     place: {
                         stopPoint?: {
                             stopPointRef: string;
@@ -990,8 +910,8 @@ export interface components {
                 stopEvent: {
                     previousCall: {
                         callAtStop: {
-                            stopPointRef?: string;
-                            stopPointName?: {
+                            stopPointRef: string;
+                            stopPointName: {
                                 text: string;
                             };
                             nameSuffix?: {
@@ -1021,8 +941,8 @@ export interface components {
                     }[];
                     thisCall: {
                         callAtStop: {
-                            stopPointRef?: string;
-                            stopPointName?: {
+                            stopPointRef: string;
+                            stopPointName: {
                                 text: string;
                             };
                             nameSuffix?: {
@@ -1052,8 +972,8 @@ export interface components {
                     };
                     onwardCall: {
                         callAtStop: {
-                            stopPointRef?: string;
-                            stopPointName?: {
+                            stopPointRef: string;
+                            stopPointName: {
                                 text: string;
                             };
                             nameSuffix?: {
@@ -1154,7 +1074,7 @@ export interface components {
                         defaultLanguage?: string;
                         calcTime?: string;
                         stopEventResponseContext?: {
-                            places?: {
+                            places: {
                                 place: {
                                     stopPoint?: {
                                         stopPointRef: string;
@@ -1238,8 +1158,8 @@ export interface components {
                             stopEvent: {
                                 previousCall: {
                                     callAtStop: {
-                                        stopPointRef?: string;
-                                        stopPointName?: {
+                                        stopPointRef: string;
+                                        stopPointName: {
                                             text: string;
                                         };
                                         nameSuffix?: {
@@ -1269,8 +1189,8 @@ export interface components {
                                 }[];
                                 thisCall: {
                                     callAtStop: {
-                                        stopPointRef?: string;
-                                        stopPointName?: {
+                                        stopPointRef: string;
+                                        stopPointName: {
                                             text: string;
                                         };
                                         nameSuffix?: {
@@ -1300,8 +1220,8 @@ export interface components {
                                 };
                                 onwardCall: {
                                     callAtStop: {
-                                        stopPointRef?: string;
-                                        stopPointName?: {
+                                        stopPointRef: string;
+                                        stopPointName: {
                                             text: string;
                                         };
                                         nameSuffix?: {

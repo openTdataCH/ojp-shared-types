@@ -24,37 +24,42 @@ paths:
 
 components:
   schemas:
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripRefineParamStructure
-    TripRefineParam:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripInfoParamStructure
+    TripInfoParamStructure:
       type: object
       xml:
-        name: TripRefineParam
+        name: TripInfoParam
       properties:
-        numberOfResults:
-          type: number
-          xml:
-            name: NumberOfResults
-        useRealtimeData:
-          $ref: "./ojp-shared.yml#/components/schemas/UseRealtimeDataEnum"
-          xml:
-            name: UseRealtimeData
-        includeAllRestrictedLines:
+        includeCalls:
           type: boolean
           xml:
-            name: IncludeAllRestrictedLines
-        includeIntermediateStops:
+            name: IncludeCalls
+        includeService:
           type: boolean
           xml:
-            name: IncludeIntermediateStops
+            name: IncludeService
+        includeTrackProjection:
+          type: boolean
+          xml:
+            name: IncludeTrackProjection
+        includePlacesContext:
+          type: boolean
+          xml:
+            name: IncludePlacesContext
+        includeSituationsContext:
+          type: boolean
+          xml:
+            name: IncludeSituationsContext
 
-    # https://vdvde.github.io/OJP/release/2.0/documentation-tables/ojp.html#type_ojp__OJPTripRefineRequestStructure
-    OJPTripRefineRequest:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPTripInfoRequestStructure
+    OJPTripInfoRequest:
       type: object
       xml:
-        name: OJPTripRefineRequest
+        name: OJPTripInfoRequest
       required:
         - requestTimestamp
-        - tripResult
+        - journeyRef
+        - operatingDayRef
       properties:
         requestTimestamp:
           type: string
@@ -62,14 +67,16 @@ components:
             name: RequestTimestamp
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
-        refineParams:
-          $ref: '#/components/schemas/TripRefineParam'
+        journeyRef:
+          type: string
           xml:
-            name: RefineParams
-        tripResult:
-          $ref: './ojp-tr-response.yml#/components/schemas/TripResult'
+            name: JourneyRef
+        operatingDayRef:
+          type: string
           xml:
-            name: TripResult
+            name: OperatingDayRef
+        params:
+          $ref: '#/components/schemas/TripInfoParamStructure'
 
     OJP:
       type: object
@@ -94,7 +101,7 @@ components:
               required:
                 - requestTimestamp
                 - requestorRef
-                - OJPTripRefineRequest
+                - OJPTripInfoRequest
               properties:
                 serviceRequestContext:
                   $ref: './ojp-shared.yml#/components/schemas/ServiceRequestContext'
@@ -112,8 +119,8 @@ components:
                     name: RequestorRef
                     namespace: "http://www.siri.org.uk/siri"
                     prefix: siri
-                OJPTripRefineRequest:
-                  $ref: '#/components/schemas/OJPTripRefineRequest'
+                OJPTripInfoRequest:
+                  $ref: '#/components/schemas/OJPTripInfoRequest'
                   xml:
-                    name: OJPTripRefineRequest              
+                    name: OJPTripInfoRequest              
         
