@@ -181,6 +181,17 @@ export interface components {
                     };
                 }[];
             };
+            extension?: {
+                transportTypeName?: {
+                    text: string;
+                };
+                publishedJourneyNumber?: {
+                    text: string;
+                };
+                operatorName?: {
+                    text: string;
+                };
+            };
         };
         TripLeg: {
             legId: string;
@@ -358,6 +369,17 @@ export interface components {
                             }[];
                         };
                     }[];
+                };
+                extension?: {
+                    transportTypeName?: {
+                        text: string;
+                    };
+                    publishedJourneyNumber?: {
+                        text: string;
+                    };
+                    operatorName?: {
+                        text: string;
+                    };
                 };
             };
             transferLeg?: {
@@ -601,6 +623,17 @@ export interface components {
                                 }[];
                             };
                         }[];
+                    };
+                    extension?: {
+                        transportTypeName?: {
+                            text: string;
+                        };
+                        publishedJourneyNumber?: {
+                            text: string;
+                        };
+                        operatorName?: {
+                            text: string;
+                        };
                     };
                 };
                 transferLeg?: {
