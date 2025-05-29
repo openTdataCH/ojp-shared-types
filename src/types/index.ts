@@ -22,7 +22,7 @@ import { components as fareResponseComponents } from './generated/ojp-fare-respo
 
 // TODO - this can be generated
 
-export type OJPv1_TimedLegServiceSchema = ojpV1_SharedComponents['schemas']['DatedJourney'];
+export type OJPv1_DatedJourneySchema = ojpV1_SharedComponents['schemas']['DatedJourney'];
 export type OJPv1_TimedLegSchema = ojpV1_TripComponents['schemas']['TimedLeg']
 export type OJPv1_TripLegSchema = ojpV1_TripComponents['schemas']['TripLeg'];
 export type OJPv1_TripSchema = ojpV1_TripComponents['schemas']['Trip'];
@@ -45,7 +45,7 @@ export type StopPlaceSchema = sharedComponents['schemas']['StopPlace']
 export type TopographicPlaceSchema = sharedComponents['schemas']['TopographicPlace']
 export type PointOfInterestSchema = sharedComponents['schemas']['PointOfInterest']
 export type AddressSchema = sharedComponents['schemas']['Address']
-export type PlaceModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
+export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 
 export type ResponseContextSchema = sharedComponents['schemas']['ResponseContextStructure'];
 
