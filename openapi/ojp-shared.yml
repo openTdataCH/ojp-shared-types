@@ -872,6 +872,28 @@ components:
           xml:
             name: Code
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__SituationFullRefStructure
+    SituationFullRefStructure:
+      type: object
+      xml:
+        name: SituationFullRef
+      required:
+        - participantRef
+        - situationNumber
+      properties:
+        participantRef:
+          type: string
+          xml:
+            name: ParticipantRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        situationNumber:
+          type: string
+          xml:
+            name: SituationNumber
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
     DatedJourney:
       type: object
@@ -955,6 +977,19 @@ components:
           type: boolean
           xml:
             name: Deviation
+        situationFullRefs:
+          type: object
+          xml:
+            name: SituationFullRefs
+          required:
+            - situationFullRef
+          properties:
+            situationFullRef:
+              type: array
+              xml:
+                name: SituationFullRef
+              items:
+                $ref: "#/components/schemas/SituationFullRefStructure"
     # DatedJourney
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
