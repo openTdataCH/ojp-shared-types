@@ -17,6 +17,7 @@ import { components as tripRequestComponents } from './generated/ojp-tr-request'
 import { components as tripReponseComponents } from './generated/ojp-tr-response';
 
 import { components as trrRequestComponents } from './generated/ojp-trr-request';
+import { components as trrResponseComponents } from './generated/ojp-trr-response';
 
 import { components as fareRequestComponents } from './generated/ojp-fare-request';
 import { components as fareResponseComponents } from './generated/ojp-fare-response';
@@ -76,19 +77,26 @@ export type LIR_RequestParamsSchema = locationInformationRequestComponents['sche
 export type LocationInformationRequestOJP = locationInformationRequestComponents['schemas']['OJP']
 export type LocationInformationRequestSchema = locationInformationRequestComponents['schemas']['OJPLocationInformationRequest']
 
-export type PlaceResultSchema = locationInformationResponseComponents['schemas']['PlaceResult']
+export type PlaceResultSchema = locationInformationResponseComponents['schemas']['PlaceResult'];
+export type LocationInformationRequestResponseOJP = locationInformationResponseComponents['schemas']['OJP'];
+export type LocationInformationDeliverySchema = locationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];
 
 export type StopEventRequestSchema = stopEventRequestComponents['schemas']['OJPStopEventRequest']
 export type SER_RequestLocationSchema = stopEventRequestComponents['schemas']['PlaceContext']
 export type SER_RequestParamsSchema = stopEventRequestComponents['schemas']['StopEventParam']
 export type SER_RequestOJP = stopEventRequestComponents['schemas']['OJP'];
 
-export type StopEventResultSchema = stopEventResponseComponents['schemas']['StopEventResult']
-export type StopEventSchema = stopEventResponseComponents['schemas']['StopEvent']
+export type StopEventResultSchema = stopEventResponseComponents['schemas']['StopEventResult'];
+export type StopEventSchema = stopEventResponseComponents['schemas']['StopEvent'];
+export type StopEventRequestResponseOJP = stopEventResponseComponents['schemas']['OJP'];
+export type StopEventDeliverySchema = stopEventResponseComponents['schemas']['OJPStopEventDelivery'];
 
 export type TRR_RequestParamsSchema = trrRequestComponents['schemas']['TripRefineParam']
 export type TRR_RequestSchema = trrRequestComponents["schemas"]['OJPTripRefineRequest'];
 export type TRR_RequestOJP = trrRequestComponents['schemas']['OJP'];
+
+export type TRR_ResponseOJP = trrResponseComponents['schemas']['OJP'];
+export type TRR_DeliverySchema = trrResponseComponents['schemas']['OJPTripRefineDelivery'];
 
 export type FareRequestParamsSchema = fareRequestComponents["schemas"]['FareParamStructure'];
 export type FareRequestSchema = fareRequestComponents['schemas']['OJPFareRequest'];
