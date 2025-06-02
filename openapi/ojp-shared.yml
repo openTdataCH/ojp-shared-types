@@ -404,6 +404,358 @@ components:
           items:
             $ref: '#/components/schemas/ModeStructure'
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__TextualContentStructure
+    TextualContentStructure:
+      type: object
+      xml:
+        name: TextualContent
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+      required:
+        - summaryContent
+        - descriptionContent
+        - consequenceContent
+        - recommendationContent
+        - remarkContent
+        - infoLink
+      properties:
+        summaryContent:
+          type: object
+          xml:
+            name: SummaryContent
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          required:
+            - summaryText
+          properties:
+            summaryText:
+              type: string
+              xml:
+                name: SummaryText
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+        reasonContent:
+          type: object
+          xml:
+            name: ReasonContent
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          required:
+            - reasonText
+          properties:
+            reasonText:
+              type: string
+              xml:
+                name: ReasonText
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+        descriptionContent:
+          type: array
+          items:
+            type: object
+            xml:
+              name: DescriptionContent
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+            required:
+              - descriptionText
+            properties:
+              descriptionText:
+                type: string
+                xml:
+                  name: DescriptionText
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+        consequenceContent:
+          type: array
+          items:
+            type: object
+            xml:
+              name: ConsequenceContent
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+            required:
+              - consequenceText
+            properties:
+              consequenceText:
+                type: string
+                xml:
+                  name: ConsequenceText
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+        recommendationContent:
+          type: array
+          items:
+            type: object
+            xml:
+              name: RecommendationContent
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+            required:
+              - recommendationText
+            properties:
+              recommendationText:
+                type: string
+                xml:
+                  name: RecommendationText
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+        durationContent:
+          type: object
+          xml:
+            name: DurationContent
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          required:
+            - durationText
+          properties:
+            durationText:
+              type: string
+              xml:
+                name: DurationText
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+        remarkContent:
+          type: array
+          items:
+            type: object
+            xml:
+              name: RemarkContent
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+            required:
+              - remark
+            properties:
+              remark:
+                type: string
+                xml:
+                  name: Remark
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+        infoLink:
+          type: array
+          items:
+            # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__InfoLinkStructure
+            type: object
+            xml:
+              name: InfoLink
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+            required:
+              - uri
+            properties:
+              uri:
+                type: string
+                xml:
+                  name: Uri
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+              label:
+                type: array
+                items:
+                  type: string
+                  xml:
+                    name: Label
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__PassengerInformationActionStructure
+    PassengerInformationActionStructure:
+      type: object
+      xml:
+        name: PassengerInformationAction
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+      required:
+        - actionRef
+        - recordedAtTime
+        - perspective
+        - textualContent
+      properties:
+        actionRef:
+          type: string
+          xml:
+            name: ActionRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        recordedAtTime:
+          type: string
+          xml:
+            name: RecordedAtTime
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        perspective:
+          $ref: "#/components/schemas/PerspectiveEnum"
+          xml:
+            name: Perspective
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        textualContent:
+          type: array
+          xml:
+            name: TextualContent
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            $ref: "#/components/schemas/TextualContentStructure"
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__PublishingActionStructure
+    ActionsStructure:
+      type: object
+      xml:
+        name: PublishingAction
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+      required:
+        - publishAtScope
+        - passengerInformationAction
+      properties:
+        publishAtScope:
+          type: object
+          required:
+            - scopeType
+          xml:
+            name: PublishAtScope
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          properties:
+            scopeType:
+              # TODO - make it enum - local-type: typedef-50.4
+              type: string
+              xml:
+                name: ScopeType
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+        passengerInformationAction:
+          type: array
+          xml:
+            name: PassengerInformationAction
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            $ref: "#/components/schemas/PassengerInformationActionStructure"
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__PtSituationElementStructure
+    PtSituationElementStructure:
+      type: object
+      xml:
+        name: PtSituationElement
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+      required:
+        - creationTime
+        - situationNumber
+        - source
+        - validityPeriod
+        - alertCause
+      properties:
+        creationTime:
+          type: string
+          xml:
+            name: CreationTime
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        participantRef:
+          type: string
+          xml:
+            name: ParticipantRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        situationNumber:
+          type: string
+          xml:
+            name: SituationNumber
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        version:
+          type: number
+          xml:
+            name: Version
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        source:
+          type: object
+          xml:
+            name: Source
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          required:
+            - sourceType
+          properties:
+            sourceType:
+              $ref: "#/components/schemas/SituationSourceTypeEnum"
+              xml:
+                name: SourceType
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+        validityPeriod:
+          type: array
+          xml:
+            name: ValidityPeriod
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__HalfOpenTimestampOutputRangeStructure
+            type: object
+            xml:
+              name: HalfOpenTimestampOutputRangeStructure
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+            required:
+              - startTime
+            properties:
+              startTime:
+                type: string
+                xml:
+                  name: StartTime
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+              endTime:
+                type: string
+                xml:
+                  name: EndTime
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+        alertCause:
+          # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__AlertCauseEnumeration
+          # TODO - make it enum
+          type: string
+          xml:
+            name: AlertCause
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        priority:
+          type: string
+          xml:
+            name: Priority
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        scopeType:
+          # TODO - make it enum - local-type: typedef-50.4
+          type: string
+          xml:
+            name: ScopeType
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__ActionsStructure
+        publishingActions:
+          type: object
+          xml:
+            name: PublishingActions
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          required:
+            - publishingAction
+          properties:
+            publishingAction:
+              type: array
+              items:
+                $ref: "#/components/schemas/ActionsStructure"
+              xml:
+                name: PublishingAction
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+    
     SharedServiceArrivalDeparture:
       type: object
       xml:
