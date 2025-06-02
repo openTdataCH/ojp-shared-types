@@ -37,7 +37,7 @@ export interface paths {
                                 serviceDelivery: {
                                     responseTimestamp: string;
                                     producerRef: string;
-                                    OJPTripRefineDelivery?: {
+                                    OJPTripRefineDelivery: {
                                         responseTimestamp: string;
                                         requestMessageRef?: string;
                                         defaultLanguage?: string;
@@ -594,7 +594,7 @@ export interface components {
                 serviceDelivery: {
                     responseTimestamp: string;
                     producerRef: string;
-                    OJPTripRefineDelivery?: {
+                    OJPTripRefineDelivery: {
                         responseTimestamp: string;
                         requestMessageRef?: string;
                         defaultLanguage?: string;
