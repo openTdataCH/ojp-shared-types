@@ -79,8 +79,19 @@ const MapNS_Tags: Record<string, string> = {
 const MapArrayTags: Record<string, boolean> = {
   // Shared
   'places.place': true,
-  'situations.ptSituation': true,
   'linkProjection.position': true,
+
+  'situationFullRefs.situationFullRef': true,
+  'situations.ptSituation': true,
+  'ptSituation.validityPeriod': true,
+  'publishingActions.publishingAction': true,
+  'publishingAction.passengerInformationAction': true,
+  'passengerInformationAction.textualContent': true,
+  'textualContent.descriptionContent': true,
+  'textualContent.consequenceContent': true,
+  'textualContent.recommendationContent': true,
+  'textualContent.remarkContent': true,
+  'textualContent.infoLink': true,
 
   // Service
   'service.attribute': true,

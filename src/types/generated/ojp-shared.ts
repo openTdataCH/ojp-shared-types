@@ -13,6 +13,10 @@ export interface components {
         UseRealtimeDataEnum: "full" | "explanatory" | "none";
         /** @enum {string} */
         PlaceTypeEnum: "stop" | "address" | "poi" | "location" | "topographicPlace";
+        /** @enum {string} */
+        SituationSourceTypeEnum: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+        /** @enum {string} */
+        PerspectiveEnum: "general" | "stopPoint" | "vehicleJourney";
         InternationalText: {
             text: string;
         };
@@ -197,6 +201,161 @@ export interface components {
                 };
             }[];
         };
+        TextualContentStructure: {
+            summaryContent: {
+                summaryText: string;
+            };
+            reasonContent?: {
+                reasonText: string;
+            };
+            descriptionContent: {
+                descriptionText: string;
+            }[];
+            consequenceContent: {
+                consequenceText: string;
+            }[];
+            recommendationContent: {
+                recommendationText: string;
+            }[];
+            durationContent?: {
+                durationText: string;
+            };
+            remarkContent: {
+                remark: string;
+            }[];
+            infoLink: {
+                uri: string;
+                label?: string[];
+            }[];
+        };
+        PassengerInformationActionStructure: {
+            actionRef: string;
+            recordedAtTime: string;
+            /** @enum {string} */
+            perspective: "general" | "stopPoint" | "vehicleJourney";
+            textualContent: {
+                summaryContent: {
+                    summaryText: string;
+                };
+                reasonContent?: {
+                    reasonText: string;
+                };
+                descriptionContent: {
+                    descriptionText: string;
+                }[];
+                consequenceContent: {
+                    consequenceText: string;
+                }[];
+                recommendationContent: {
+                    recommendationText: string;
+                }[];
+                durationContent?: {
+                    durationText: string;
+                };
+                remarkContent: {
+                    remark: string;
+                }[];
+                infoLink: {
+                    uri: string;
+                    label?: string[];
+                }[];
+            }[];
+        };
+        ActionsStructure: {
+            publishAtScope: {
+                scopeType: string;
+            };
+            passengerInformationAction: {
+                actionRef: string;
+                recordedAtTime: string;
+                /** @enum {string} */
+                perspective: "general" | "stopPoint" | "vehicleJourney";
+                textualContent: {
+                    summaryContent: {
+                        summaryText: string;
+                    };
+                    reasonContent?: {
+                        reasonText: string;
+                    };
+                    descriptionContent: {
+                        descriptionText: string;
+                    }[];
+                    consequenceContent: {
+                        consequenceText: string;
+                    }[];
+                    recommendationContent: {
+                        recommendationText: string;
+                    }[];
+                    durationContent?: {
+                        durationText: string;
+                    };
+                    remarkContent: {
+                        remark: string;
+                    }[];
+                    infoLink: {
+                        uri: string;
+                        label?: string[];
+                    }[];
+                }[];
+            }[];
+        };
+        PtSituationElementStructure: {
+            creationTime: string;
+            participantRef?: string;
+            situationNumber: string;
+            version?: number;
+            source: {
+                /** @enum {string} */
+                sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+            };
+            validityPeriod: {
+                startTime: string;
+                endTime?: string;
+            }[];
+            alertCause: string;
+            priority?: string;
+            scopeType?: string;
+            publishingActions?: {
+                publishingAction: {
+                    publishAtScope: {
+                        scopeType: string;
+                    };
+                    passengerInformationAction: {
+                        actionRef: string;
+                        recordedAtTime: string;
+                        /** @enum {string} */
+                        perspective: "general" | "stopPoint" | "vehicleJourney";
+                        textualContent: {
+                            summaryContent: {
+                                summaryText: string;
+                            };
+                            reasonContent?: {
+                                reasonText: string;
+                            };
+                            descriptionContent: {
+                                descriptionText: string;
+                            }[];
+                            consequenceContent: {
+                                consequenceText: string;
+                            }[];
+                            recommendationContent: {
+                                recommendationText: string;
+                            }[];
+                            durationContent?: {
+                                durationText: string;
+                            };
+                            remarkContent: {
+                                remark: string;
+                            }[];
+                            infoLink: {
+                                uri: string;
+                                label?: string[];
+                            }[];
+                        }[];
+                    }[];
+                }[];
+            };
+        };
         SharedServiceArrivalDeparture: {
             timetabledTime: string;
             estimatedTime?: string;
@@ -244,6 +403,10 @@ export interface components {
                 text: string;
             };
             code: string;
+        };
+        SituationFullRefStructure: {
+            participantRef: string;
+            situationNumber: string;
         };
         DatedJourney: {
             conventionalModeOfOperation?: string;
@@ -298,9 +461,15 @@ export interface components {
             unplanned?: boolean;
             cancelled?: boolean;
             deviation?: boolean;
+            situationFullRefs?: {
+                situationFullRef: {
+                    participantRef: string;
+                    situationNumber: string;
+                }[];
+            };
         };
         ResponseContextStructure: {
-            places: {
+            places?: {
                 place: {
                     stopPoint?: {
                         stopPointRef: string;
@@ -376,6 +545,65 @@ export interface components {
                             text: string;
                         };
                     }[];
+                }[];
+            };
+            situations?: {
+                ptSituation: {
+                    creationTime: string;
+                    participantRef?: string;
+                    situationNumber: string;
+                    version?: number;
+                    source: {
+                        /** @enum {string} */
+                        sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                    };
+                    validityPeriod: {
+                        startTime: string;
+                        endTime?: string;
+                    }[];
+                    alertCause: string;
+                    priority?: string;
+                    scopeType?: string;
+                    publishingActions?: {
+                        publishingAction: {
+                            publishAtScope: {
+                                scopeType: string;
+                            };
+                            passengerInformationAction: {
+                                actionRef: string;
+                                recordedAtTime: string;
+                                /** @enum {string} */
+                                perspective: "general" | "stopPoint" | "vehicleJourney";
+                                textualContent: {
+                                    summaryContent: {
+                                        summaryText: string;
+                                    };
+                                    reasonContent?: {
+                                        reasonText: string;
+                                    };
+                                    descriptionContent: {
+                                        descriptionText: string;
+                                    }[];
+                                    consequenceContent: {
+                                        consequenceText: string;
+                                    }[];
+                                    recommendationContent: {
+                                        recommendationText: string;
+                                    }[];
+                                    durationContent?: {
+                                        durationText: string;
+                                    };
+                                    remarkContent: {
+                                        remark: string;
+                                    }[];
+                                    infoLink: {
+                                        uri: string;
+                                        label?: string[];
+                                    }[];
+                                }[];
+                            }[];
+                        }[];
+                    };
                 }[];
             };
         };
