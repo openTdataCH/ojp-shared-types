@@ -1011,6 +1011,19 @@ components:
                 name: Place
               items:
                 $ref: '#/components/schemas/Place'
+        situations:
+          type: object
+          xml:
+            name: Situations
+          required:
+            - ptSituation
+          properties:
+            ptSituation:
+              type: array
+              xml:
+                name: PtSituation
+              items:
+                $ref: '#/components/schemas/PtSituationElementStructure'
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LinearShapeStructure
     LinkProjection:
