@@ -43,7 +43,7 @@ export interface paths {
                                         defaultLanguage?: string;
                                         calcTime?: string;
                                         stopEventResponseContext?: {
-                                            places: {
+                                            places?: {
                                                 place: {
                                                     stopPoint?: {
                                                         stopPointRef: string;
@@ -119,6 +119,65 @@ export interface paths {
                                                             text: string;
                                                         };
                                                     }[];
+                                                }[];
+                                            };
+                                            situations?: {
+                                                ptSituation: {
+                                                    creationTime: string;
+                                                    participantRef?: string;
+                                                    situationNumber: string;
+                                                    version?: number;
+                                                    source: {
+                                                        /** @enum {string} */
+                                                        sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                                                    };
+                                                    validityPeriod: {
+                                                        startTime: string;
+                                                        endTime?: string;
+                                                    }[];
+                                                    alertCause: string;
+                                                    priority?: string;
+                                                    scopeType?: string;
+                                                    publishingActions?: {
+                                                        publishingAction: {
+                                                            publishAtScope: {
+                                                                scopeType: string;
+                                                            };
+                                                            passengerInformationAction: {
+                                                                actionRef: string;
+                                                                recordedAtTime: string;
+                                                                /** @enum {string} */
+                                                                perspective: "general" | "stopPoint" | "vehicleJourney";
+                                                                textualContent: {
+                                                                    summaryContent: {
+                                                                        summaryText: string;
+                                                                    };
+                                                                    reasonContent?: {
+                                                                        reasonText: string;
+                                                                    };
+                                                                    descriptionContent: {
+                                                                        descriptionText: string;
+                                                                    }[];
+                                                                    consequenceContent: {
+                                                                        consequenceText: string;
+                                                                    }[];
+                                                                    recommendationContent: {
+                                                                        recommendationText: string;
+                                                                    }[];
+                                                                    durationContent?: {
+                                                                        durationText: string;
+                                                                    };
+                                                                    remarkContent: {
+                                                                        remark: string;
+                                                                    }[];
+                                                                    infoLink: {
+                                                                        uri: string;
+                                                                        label?: string[];
+                                                                    }[];
+                                                                }[];
+                                                            }[];
+                                                        }[];
+                                                    };
                                                 }[];
                                             };
                                         };
@@ -271,6 +330,12 @@ export interface paths {
                                                     unplanned?: boolean;
                                                     cancelled?: boolean;
                                                     deviation?: boolean;
+                                                    situationFullRefs?: {
+                                                        situationFullRef: {
+                                                            participantRef: string;
+                                                            situationNumber: string;
+                                                        }[];
+                                                    };
                                                 };
                                                 operatingDays?: {
                                                     from: string;
@@ -656,6 +721,12 @@ export interface components {
                 unplanned?: boolean;
                 cancelled?: boolean;
                 deviation?: boolean;
+                situationFullRefs?: {
+                    situationFullRef: {
+                        participantRef: string;
+                        situationNumber: string;
+                    }[];
+                };
             };
             operatingDays?: {
                 from: string;
@@ -812,6 +883,12 @@ export interface components {
                     unplanned?: boolean;
                     cancelled?: boolean;
                     deviation?: boolean;
+                    situationFullRefs?: {
+                        situationFullRef: {
+                            participantRef: string;
+                            situationNumber: string;
+                        }[];
+                    };
                 };
                 operatingDays?: {
                     from: string;
@@ -826,7 +903,7 @@ export interface components {
             defaultLanguage?: string;
             calcTime?: string;
             stopEventResponseContext?: {
-                places: {
+                places?: {
                     place: {
                         stopPoint?: {
                             stopPointRef: string;
@@ -902,6 +979,65 @@ export interface components {
                                 text: string;
                             };
                         }[];
+                    }[];
+                };
+                situations?: {
+                    ptSituation: {
+                        creationTime: string;
+                        participantRef?: string;
+                        situationNumber: string;
+                        version?: number;
+                        source: {
+                            /** @enum {string} */
+                            sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                        };
+                        validityPeriod: {
+                            startTime: string;
+                            endTime?: string;
+                        }[];
+                        alertCause: string;
+                        priority?: string;
+                        scopeType?: string;
+                        publishingActions?: {
+                            publishingAction: {
+                                publishAtScope: {
+                                    scopeType: string;
+                                };
+                                passengerInformationAction: {
+                                    actionRef: string;
+                                    recordedAtTime: string;
+                                    /** @enum {string} */
+                                    perspective: "general" | "stopPoint" | "vehicleJourney";
+                                    textualContent: {
+                                        summaryContent: {
+                                            summaryText: string;
+                                        };
+                                        reasonContent?: {
+                                            reasonText: string;
+                                        };
+                                        descriptionContent: {
+                                            descriptionText: string;
+                                        }[];
+                                        consequenceContent: {
+                                            consequenceText: string;
+                                        }[];
+                                        recommendationContent: {
+                                            recommendationText: string;
+                                        }[];
+                                        durationContent?: {
+                                            durationText: string;
+                                        };
+                                        remarkContent: {
+                                            remark: string;
+                                        }[];
+                                        infoLink: {
+                                            uri: string;
+                                            label?: string[];
+                                        }[];
+                                    }[];
+                                }[];
+                            }[];
+                        };
                     }[];
                 };
             };
@@ -1054,6 +1190,12 @@ export interface components {
                         unplanned?: boolean;
                         cancelled?: boolean;
                         deviation?: boolean;
+                        situationFullRefs?: {
+                            situationFullRef: {
+                                participantRef: string;
+                                situationNumber: string;
+                            }[];
+                        };
                     };
                     operatingDays?: {
                         from: string;
@@ -1074,7 +1216,7 @@ export interface components {
                         defaultLanguage?: string;
                         calcTime?: string;
                         stopEventResponseContext?: {
-                            places: {
+                            places?: {
                                 place: {
                                     stopPoint?: {
                                         stopPointRef: string;
@@ -1150,6 +1292,65 @@ export interface components {
                                             text: string;
                                         };
                                     }[];
+                                }[];
+                            };
+                            situations?: {
+                                ptSituation: {
+                                    creationTime: string;
+                                    participantRef?: string;
+                                    situationNumber: string;
+                                    version?: number;
+                                    source: {
+                                        /** @enum {string} */
+                                        sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                                    };
+                                    validityPeriod: {
+                                        startTime: string;
+                                        endTime?: string;
+                                    }[];
+                                    alertCause: string;
+                                    priority?: string;
+                                    scopeType?: string;
+                                    publishingActions?: {
+                                        publishingAction: {
+                                            publishAtScope: {
+                                                scopeType: string;
+                                            };
+                                            passengerInformationAction: {
+                                                actionRef: string;
+                                                recordedAtTime: string;
+                                                /** @enum {string} */
+                                                perspective: "general" | "stopPoint" | "vehicleJourney";
+                                                textualContent: {
+                                                    summaryContent: {
+                                                        summaryText: string;
+                                                    };
+                                                    reasonContent?: {
+                                                        reasonText: string;
+                                                    };
+                                                    descriptionContent: {
+                                                        descriptionText: string;
+                                                    }[];
+                                                    consequenceContent: {
+                                                        consequenceText: string;
+                                                    }[];
+                                                    recommendationContent: {
+                                                        recommendationText: string;
+                                                    }[];
+                                                    durationContent?: {
+                                                        durationText: string;
+                                                    };
+                                                    remarkContent: {
+                                                        remark: string;
+                                                    }[];
+                                                    infoLink: {
+                                                        uri: string;
+                                                        label?: string[];
+                                                    }[];
+                                                }[];
+                                            }[];
+                                        }[];
+                                    };
                                 }[];
                             };
                         };
@@ -1302,6 +1503,12 @@ export interface components {
                                     unplanned?: boolean;
                                     cancelled?: boolean;
                                     deviation?: boolean;
+                                    situationFullRefs?: {
+                                        situationFullRef: {
+                                            participantRef: string;
+                                            situationNumber: string;
+                                        }[];
+                                    };
                                 };
                                 operatingDays?: {
                                     from: string;
