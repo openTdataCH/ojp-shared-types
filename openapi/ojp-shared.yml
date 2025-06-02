@@ -27,6 +27,22 @@ components:
       type: string
       enum: [stop, address, poi, location, topographicPlace]
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__SituationSourceTypeEnumeration
+    SituationSourceTypeEnum:
+      type: string
+      enum: [
+        directReport, 
+        email, phone, fax, 
+        post, feed, radio, tv, 
+        web, pager, text, 
+        other, 
+      ]
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__PerspectiveEnumeration
+    PerspectiveEnum:
+      type: string
+      enum: [general, stopPoint, vehicleJourney]
+
     InternationalText:
       type: object
       xml:
