@@ -85,7 +85,7 @@ components:
               required:
                 - responseTimestamp
                 - producerRef
-                - OJPTripDelivery
+                - OJPTripRefineDelivery
               properties:
                 responseTimestamp:
                   type: string

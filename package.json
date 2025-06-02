@@ -1,6 +1,6 @@
 {
   "name": "ojp-shared-types",
-  "version": "0.0.6",
+  "version": "0.0.5",
   "description": "Shared types for OJP models based on OpenAPI / XSD Schema",
   "type": "module",
   "main": "./dist/index.cjs",

@@ -2,6 +2,7 @@
 
 ## 0.0.6 - 02.06.2025
 - SIRI-SX Situations model - [PR #9](https://github.com/openTdataCH/ojp-shared-types/pull/9)
+- Harmonise export response (OJP, DeliverySchema) - [PR #10](https://github.com/openTdataCH/ojp-shared-types/pull/10)
 
 ## 0.0.5 - 29.05.2025
 - OJP 1.0: adds `TripInformationRequest` response model - [PR #8](https://github.com/openTdataCH/ojp-shared-types/pull/8)
