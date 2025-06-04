@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.7 - 04.06.2025
+- fix `ViaPoint` - [PR #12](https://github.com/openTdataCH/ojp-shared-types/pull/12)
+- adds `ParentRef` to `StopPoint` - [PR #11](https://github.com/openTdataCH/ojp-shared-types/pull/11)
+
 ## 0.0.6 - 02.06.2025
 - SIRI-SX Situations model - [PR #9](https://github.com/openTdataCH/ojp-shared-types/pull/9)
 - Harmonise export response (OJP, DeliverySchema) - [PR #10](https://github.com/openTdataCH/ojp-shared-types/pull/10)
