@@ -96,7 +96,7 @@ components:
       xml:
         name: ViaPoint
       required:
-        - placeRef
+        - viaPoint
       properties:
         viaPoint:
           $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
