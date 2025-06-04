@@ -172,6 +172,10 @@ components:
           $ref: '#/components/schemas/InternationalText'
           xml:
             name: StopPointName
+        parentRef:
+          type: string
+          xml: 
+            name: ParentRef
         plannedQuay:
           $ref: '#/components/schemas/InternationalText'
           xml:

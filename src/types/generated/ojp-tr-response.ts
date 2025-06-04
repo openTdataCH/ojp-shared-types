@@ -50,6 +50,7 @@ export interface paths {
                                                         stopPointName: {
                                                             text: string;
                                                         };
+                                                        parentRef?: string;
                                                         plannedQuay?: {
                                                             text: string;
                                                         };
@@ -1559,6 +1560,7 @@ export interface components {
                             stopPointName: {
                                 text: string;
                             };
+                            parentRef?: string;
                             plannedQuay?: {
                                 text: string;
                             };
@@ -1967,6 +1969,7 @@ export interface components {
                                         stopPointName: {
                                             text: string;
                                         };
+                                        parentRef?: string;
                                         plannedQuay?: {
                                             text: string;
                                         };
