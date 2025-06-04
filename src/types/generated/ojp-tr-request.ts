@@ -71,7 +71,7 @@ export interface paths {
                                             depArrTime?: string;
                                         };
                                         via: {
-                                            viaPoint?: {
+                                            viaPoint: {
                                                 stopPointRef?: string;
                                                 stopPlaceRef?: string;
                                                 geoPosition?: {
@@ -146,7 +146,7 @@ export interface components {
             includeIntermediateStops?: boolean;
         };
         ViaPoint: {
-            viaPoint?: {
+            viaPoint: {
                 stopPointRef?: string;
                 stopPlaceRef?: string;
                 geoPosition?: {
@@ -190,7 +190,7 @@ export interface components {
                 depArrTime?: string;
             };
             via: {
-                viaPoint?: {
+                viaPoint: {
                     stopPointRef?: string;
                     stopPlaceRef?: string;
                     geoPosition?: {
@@ -259,7 +259,7 @@ export interface components {
                             depArrTime?: string;
                         };
                         via: {
-                            viaPoint?: {
+                            viaPoint: {
                                 stopPointRef?: string;
                                 stopPlaceRef?: string;
                                 geoPosition?: {
