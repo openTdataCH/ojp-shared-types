@@ -98,12 +98,12 @@ components:
       required:
         - placeRef
       properties:
-        placeRef:
+        viaPoint:
           $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
           xml:
             name: PlaceRef
         dwellTime:
-          type: number
+          type: string
           xml:
             name: DwellTime
 
