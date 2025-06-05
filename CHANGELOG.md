@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.0.8 - 05.06.2025
+- exports `OJPFareDelivery` - [PR #14](https://github.com/openTdataCH/ojp-shared-types/pull/14)
+
 ## 0.0.7 - 04.06.2025
 - fix `ViaPoint` - [PR #12](https://github.com/openTdataCH/ojp-shared-types/pull/12)
 - adds `ParentRef` to `StopPoint` - [PR #11](https://github.com/openTdataCH/ojp-shared-types/pull/11)
