@@ -103,6 +103,7 @@ export type FareRequestSchema = fareRequestComponents['schemas']['OJPFareRequest
 export type FareRequestsSchema = fareRequestComponents['schemas']['OJPFareRequests'];
 export type FareRequestOJP = fareRequestComponents['schemas']['OJP'];
 export type FareResponseOJP = fareResponseComponents['schemas']['OJP'];
+export type FareDeliverySchema = fareResponseComponents['schemas']['OJPFareDelivery'];
 export type FareResultSchema = fareResponseComponents['schemas']['FareResult'];
 
 export type TIR_RequestParamsSchema = tripInfoRequestComponents['schemas']['TripInfoParamStructure'];
