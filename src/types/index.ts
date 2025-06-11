@@ -50,6 +50,7 @@ export type AddressSchema = sharedComponents['schemas']['Address']
 export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 export type ProductCategorySchema = sharedComponents['schemas']['ProductCategory'];
 export type GeneralAttributeSchema = sharedComponents['schemas']['GeneralAttribute'];
+export type ModeFilterSchema = sharedComponents["schemas"]['ModeFilterStructure'];
 
 export type ResponseContextSchema = sharedComponents['schemas']['ResponseContextStructure'];
 
@@ -58,7 +59,6 @@ export type TripParamsSchema = tripRequestComponents["schemas"]["TripParam"];
 export type TripRequestSchema = tripRequestComponents["schemas"]["OJPTripRequest"];
 
 export type ViaPointSchema = tripRequestComponents["schemas"]["ViaPoint"];
-export type ModeAndModeOfOperationFilterSchema = tripRequestComponents["schemas"]["ModeAndModeOfOperationFilter"];
 
 export type TripResultSchema = tripReponseComponents['schemas']['TripResult'];
 
