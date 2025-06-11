@@ -111,6 +111,7 @@ const MapArrayTags: Record<string, boolean> = {
   'stopEvent.onwardCall': true,
 
   // Fare Response
+  'OJPFareDelivery.fareResult': true,
   'fareResult.tripFareResult': true, // TODO - this is not in the current schema (v2)
   'tripFareResult.fareProduct': true,
 

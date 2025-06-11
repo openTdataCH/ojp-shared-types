@@ -14,7 +14,7 @@ Notes
 - include the `ojp-shared-types` package in the `./package.json` dependencies of the project 
 ```
   "dependencies": {
-    "ojp-shared-types": "0.0.9"
+    "ojp-shared-types": "0.0.10"
   }
 ```
 
