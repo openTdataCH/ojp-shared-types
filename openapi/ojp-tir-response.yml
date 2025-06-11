@@ -24,14 +24,54 @@ paths:
 
 components:
   schemas:
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPTripRefineDeliveryStructure
-    OJPTripRefineDelivery:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripInfoResultStructure
+    TripInfoResultStructure:
       type: object
       xml:
-        name: OJPTripRefineDelivery
+        name: TripInfoResult
+      required:
+        - previousCall
+        - onwardCall
+      properties:
+        previousCall:
+          type: array
+          xml:
+            name: PreviousCall
+          items:
+            $ref: './ojp-shared.yml#/components/schemas/CallAtStop'
+        onwardCall:
+          type: array
+          xml:
+            name: OnwardCall
+          items:
+            $ref: './ojp-shared.yml#/components/schemas/CallAtStop'
+        service:
+          $ref: './ojp-shared.yml#/components/schemas/DatedJourney'
+          xml:
+            name: Service
+        journeyTrack:
+          type: object
+          xml:
+            name: JourneyTrack
+          required:
+            - trackSection
+          properties:
+            trackSection:
+              type: array
+              xml:
+                name: TrackSection
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
+          
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPTripInfoDeliveryStructure
+    OJPTripInfoDelivery:
+      type: object
+      xml:
+        name: OJPTripDelivery
       required:
         - responseTimestamp
-        - tripResult
+        - tripInfoResult
       properties:
         responseTimestamp:
           type: string
@@ -55,12 +95,16 @@ components:
           type: string
           xml:
             name: CalcTime
-        tripResult:
+        tripInfoResponseContext:
+          $ref: './ojp-shared.yml#/components/schemas/ResponseContextStructure'
+          xml:
+            name: TripInfoResponseContext
+        tripInfoResult:
           type: array
           xml:
-            name: TripResult
+            name: TripInfoResult
           items:
-            $ref: "./ojp-tr-response.yml#/components/schemas/TripResult"
+            $ref: "#/components/schemas/TripInfoResultStructure"
 
     OJP:
       type: object
@@ -85,7 +129,7 @@ components:
               required:
                 - responseTimestamp
                 - producerRef
-                - OJPTripRefineDelivery
+                - OJPTripInfoDelivery
               properties:
                 responseTimestamp:
                   type: string
@@ -99,9 +143,9 @@ components:
                     name: ProducerRef
                     namespace: "http://www.siri.org.uk/siri"
                     prefix: siri
-                OJPTripRefineDelivery:
-                  $ref: '#/components/schemas/OJPTripRefineDelivery'
+                OJPTripInfoDelivery:
+                  $ref: '#/components/schemas/OJPTripInfoDelivery'
                   xml:
-                    name: OJPTripRefineDelivery
+                    name: OJPTripInfoDelivery
     # OJP
         

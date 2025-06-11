@@ -40,7 +40,7 @@ export interface paths {
                                     };
                                     requestTimestamp: string;
                                     requestorRef: string;
-                                    OJPTripRefineRequest?: {
+                                    OJPTripRefineRequest: {
                                         requestTimestamp: string;
                                         refineParams?: {
                                             numberOfResults?: number;
@@ -203,6 +203,12 @@ export interface paths {
                                                             unplanned?: boolean;
                                                             cancelled?: boolean;
                                                             deviation?: boolean;
+                                                            situationFullRefs?: {
+                                                                situationFullRef: {
+                                                                    participantRef: string;
+                                                                    situationNumber: string;
+                                                                }[];
+                                                            };
                                                         };
                                                         legTrack?: {
                                                             trackSection: {
@@ -234,7 +240,7 @@ export interface paths {
                                                                         latitude: number;
                                                                     }[];
                                                                 };
-                                                            };
+                                                            }[];
                                                         };
                                                     };
                                                     transferLeg?: {
@@ -496,6 +502,12 @@ export interface components {
                                 unplanned?: boolean;
                                 cancelled?: boolean;
                                 deviation?: boolean;
+                                situationFullRefs?: {
+                                    situationFullRef: {
+                                        participantRef: string;
+                                        situationNumber: string;
+                                    }[];
+                                };
                             };
                             legTrack?: {
                                 trackSection: {
@@ -527,7 +539,7 @@ export interface components {
                                             latitude: number;
                                         }[];
                                     };
-                                };
+                                }[];
                             };
                         };
                         transferLeg?: {
@@ -603,7 +615,7 @@ export interface components {
                     };
                     requestTimestamp: string;
                     requestorRef: string;
-                    OJPTripRefineRequest?: {
+                    OJPTripRefineRequest: {
                         requestTimestamp: string;
                         refineParams?: {
                             numberOfResults?: number;
@@ -766,6 +778,12 @@ export interface components {
                                             unplanned?: boolean;
                                             cancelled?: boolean;
                                             deviation?: boolean;
+                                            situationFullRefs?: {
+                                                situationFullRef: {
+                                                    participantRef: string;
+                                                    situationNumber: string;
+                                                }[];
+                                            };
                                         };
                                         legTrack?: {
                                             trackSection: {
@@ -797,7 +815,7 @@ export interface components {
                                                         latitude: number;
                                                     }[];
                                                 };
-                                            };
+                                            }[];
                                         };
                                     };
                                     transferLeg?: {

@@ -42,6 +42,146 @@ export interface paths {
                                         requestMessageRef?: string;
                                         defaultLanguage?: string;
                                         calcTime?: string;
+                                        tripResponseContext?: {
+                                            places?: {
+                                                place: {
+                                                    stopPoint?: {
+                                                        stopPointRef: string;
+                                                        stopPointName: {
+                                                            text: string;
+                                                        };
+                                                        parentRef?: string;
+                                                        plannedQuay?: {
+                                                            text: string;
+                                                        };
+                                                        estimatedQuay?: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    stopPlace?: {
+                                                        stopPlaceRef?: string;
+                                                        stopPlaceName?: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    topographicPlace?: {
+                                                        topographicPlaceCode: string;
+                                                        topographicPlaceName: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    pointOfInterest?: {
+                                                        publicCode: string;
+                                                        name: {
+                                                            text: string;
+                                                        };
+                                                        pointOfInterestCategory: {
+                                                            osmTag?: {
+                                                                tag: string;
+                                                                value: string;
+                                                            };
+                                                        }[];
+                                                        topographicPlaceRef?: string;
+                                                    };
+                                                    address?: {
+                                                        publicCode: string;
+                                                        name: {
+                                                            text: string;
+                                                        };
+                                                        postCode?: string;
+                                                        topographicPlaceName?: string;
+                                                        TopographicPlaceRef?: string;
+                                                        Street?: string;
+                                                        HouseNumber?: string;
+                                                    };
+                                                    name: {
+                                                        text: string;
+                                                    };
+                                                    geoPosition: {
+                                                        longitude: number;
+                                                        latitude: number;
+                                                    };
+                                                    mode: {
+                                                        /** @enum {string} */
+                                                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                                                        airSubmode?: string;
+                                                        busSubmode?: string;
+                                                        coachSubmode?: string;
+                                                        funicularSubmode?: string;
+                                                        metroSubmode?: string;
+                                                        tramSubmode?: string;
+                                                        telecabinSubmode?: string;
+                                                        railSubmode?: string;
+                                                        waterSubmode?: string;
+                                                        name?: {
+                                                            text: string;
+                                                        };
+                                                        shortName?: {
+                                                            text: string;
+                                                        };
+                                                    }[];
+                                                }[];
+                                            };
+                                            situations?: {
+                                                ptSituation: {
+                                                    creationTime: string;
+                                                    participantRef?: string;
+                                                    situationNumber: string;
+                                                    version?: number;
+                                                    source: {
+                                                        /** @enum {string} */
+                                                        sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                                                    };
+                                                    validityPeriod: {
+                                                        startTime: string;
+                                                        endTime?: string;
+                                                    }[];
+                                                    alertCause: string;
+                                                    priority?: string;
+                                                    scopeType?: string;
+                                                    publishingActions?: {
+                                                        publishingAction: {
+                                                            publishAtScope: {
+                                                                scopeType: string;
+                                                            };
+                                                            passengerInformationAction: {
+                                                                actionRef: string;
+                                                                recordedAtTime: string;
+                                                                /** @enum {string} */
+                                                                perspective: "general" | "stopPoint" | "vehicleJourney";
+                                                                textualContent: {
+                                                                    summaryContent: {
+                                                                        summaryText: string;
+                                                                    };
+                                                                    reasonContent?: {
+                                                                        reasonText: string;
+                                                                    };
+                                                                    descriptionContent: {
+                                                                        descriptionText: string;
+                                                                    }[];
+                                                                    consequenceContent: {
+                                                                        consequenceText: string;
+                                                                    }[];
+                                                                    recommendationContent: {
+                                                                        recommendationText: string;
+                                                                    }[];
+                                                                    durationContent?: {
+                                                                        durationText: string;
+                                                                    };
+                                                                    remarkContent: {
+                                                                        remark: string;
+                                                                    }[];
+                                                                    infoLink: {
+                                                                        uri: string;
+                                                                        label?: string[];
+                                                                    }[];
+                                                                }[];
+                                                            }[];
+                                                        }[];
+                                                    };
+                                                }[];
+                                            };
+                                        };
                                         tripResult: {
                                             id: string;
                                             trip: {
@@ -196,6 +336,12 @@ export interface paths {
                                                             unplanned?: boolean;
                                                             cancelled?: boolean;
                                                             deviation?: boolean;
+                                                            situationFullRefs?: {
+                                                                situationFullRef: {
+                                                                    participantRef: string;
+                                                                    situationNumber: string;
+                                                                }[];
+                                                            };
                                                         };
                                                         legTrack?: {
                                                             trackSection: {
@@ -227,7 +373,7 @@ export interface paths {
                                                                         latitude: number;
                                                                     }[];
                                                                 };
-                                                            };
+                                                            }[];
                                                         };
                                                     };
                                                     transferLeg?: {
@@ -406,74 +552,6 @@ export interface components {
             noBoardingAtStop?: boolean;
             noAlightingAtStop?: boolean;
         };
-        LinkProjection: {
-            position: {
-                longitude: number;
-                latitude: number;
-            }[];
-        };
-        TrackSection: {
-            trackSectionStart?: {
-                stopPointRef?: string;
-                stopPlaceRef?: string;
-                geoPosition?: {
-                    longitude: number;
-                    latitude: number;
-                };
-                name: {
-                    text: string;
-                };
-            };
-            trackSectionEnd?: {
-                stopPointRef?: string;
-                stopPlaceRef?: string;
-                geoPosition?: {
-                    longitude: number;
-                    latitude: number;
-                };
-                name: {
-                    text: string;
-                };
-            };
-            linkProjection?: {
-                position: {
-                    longitude: number;
-                    latitude: number;
-                }[];
-            };
-        };
-        LegTrack: {
-            trackSection: {
-                trackSectionStart?: {
-                    stopPointRef?: string;
-                    stopPlaceRef?: string;
-                    geoPosition?: {
-                        longitude: number;
-                        latitude: number;
-                    };
-                    name: {
-                        text: string;
-                    };
-                };
-                trackSectionEnd?: {
-                    stopPointRef?: string;
-                    stopPlaceRef?: string;
-                    geoPosition?: {
-                        longitude: number;
-                        latitude: number;
-                    };
-                    name: {
-                        text: string;
-                    };
-                };
-                linkProjection?: {
-                    position: {
-                        longitude: number;
-                        latitude: number;
-                    }[];
-                };
-            };
-        };
         ContinuousService: {
             personalModeOfOperation?: string;
             personalMode?: string;
@@ -619,6 +697,12 @@ export interface components {
                 unplanned?: boolean;
                 cancelled?: boolean;
                 deviation?: boolean;
+                situationFullRefs?: {
+                    situationFullRef: {
+                        participantRef: string;
+                        situationNumber: string;
+                    }[];
+                };
             };
             legTrack?: {
                 trackSection: {
@@ -650,7 +734,7 @@ export interface components {
                             latitude: number;
                         }[];
                     };
-                };
+                }[];
             };
         };
         TransferLeg: {
@@ -853,6 +937,12 @@ export interface components {
                     unplanned?: boolean;
                     cancelled?: boolean;
                     deviation?: boolean;
+                    situationFullRefs?: {
+                        situationFullRef: {
+                            participantRef: string;
+                            situationNumber: string;
+                        }[];
+                    };
                 };
                 legTrack?: {
                     trackSection: {
@@ -884,7 +974,7 @@ export interface components {
                                 latitude: number;
                             }[];
                         };
-                    };
+                    }[];
                 };
             };
             transferLeg?: {
@@ -1096,6 +1186,12 @@ export interface components {
                         unplanned?: boolean;
                         cancelled?: boolean;
                         deviation?: boolean;
+                        situationFullRefs?: {
+                            situationFullRef: {
+                                participantRef: string;
+                                situationNumber: string;
+                            }[];
+                        };
                     };
                     legTrack?: {
                         trackSection: {
@@ -1127,7 +1223,7 @@ export interface components {
                                     latitude: number;
                                 }[];
                             };
-                        };
+                        }[];
                     };
                 };
                 transferLeg?: {
@@ -1347,6 +1443,12 @@ export interface components {
                             unplanned?: boolean;
                             cancelled?: boolean;
                             deviation?: boolean;
+                            situationFullRefs?: {
+                                situationFullRef: {
+                                    participantRef: string;
+                                    situationNumber: string;
+                                }[];
+                            };
                         };
                         legTrack?: {
                             trackSection: {
@@ -1378,7 +1480,7 @@ export interface components {
                                         latitude: number;
                                     }[];
                                 };
-                            };
+                            }[];
                         };
                     };
                     transferLeg?: {
@@ -1450,6 +1552,146 @@ export interface components {
             requestMessageRef?: string;
             defaultLanguage?: string;
             calcTime?: string;
+            tripResponseContext?: {
+                places?: {
+                    place: {
+                        stopPoint?: {
+                            stopPointRef: string;
+                            stopPointName: {
+                                text: string;
+                            };
+                            parentRef?: string;
+                            plannedQuay?: {
+                                text: string;
+                            };
+                            estimatedQuay?: {
+                                text: string;
+                            };
+                        };
+                        stopPlace?: {
+                            stopPlaceRef?: string;
+                            stopPlaceName?: {
+                                text: string;
+                            };
+                        };
+                        topographicPlace?: {
+                            topographicPlaceCode: string;
+                            topographicPlaceName: {
+                                text: string;
+                            };
+                        };
+                        pointOfInterest?: {
+                            publicCode: string;
+                            name: {
+                                text: string;
+                            };
+                            pointOfInterestCategory: {
+                                osmTag?: {
+                                    tag: string;
+                                    value: string;
+                                };
+                            }[];
+                            topographicPlaceRef?: string;
+                        };
+                        address?: {
+                            publicCode: string;
+                            name: {
+                                text: string;
+                            };
+                            postCode?: string;
+                            topographicPlaceName?: string;
+                            TopographicPlaceRef?: string;
+                            Street?: string;
+                            HouseNumber?: string;
+                        };
+                        name: {
+                            text: string;
+                        };
+                        geoPosition: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        mode: {
+                            /** @enum {string} */
+                            ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                            airSubmode?: string;
+                            busSubmode?: string;
+                            coachSubmode?: string;
+                            funicularSubmode?: string;
+                            metroSubmode?: string;
+                            tramSubmode?: string;
+                            telecabinSubmode?: string;
+                            railSubmode?: string;
+                            waterSubmode?: string;
+                            name?: {
+                                text: string;
+                            };
+                            shortName?: {
+                                text: string;
+                            };
+                        }[];
+                    }[];
+                };
+                situations?: {
+                    ptSituation: {
+                        creationTime: string;
+                        participantRef?: string;
+                        situationNumber: string;
+                        version?: number;
+                        source: {
+                            /** @enum {string} */
+                            sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                        };
+                        validityPeriod: {
+                            startTime: string;
+                            endTime?: string;
+                        }[];
+                        alertCause: string;
+                        priority?: string;
+                        scopeType?: string;
+                        publishingActions?: {
+                            publishingAction: {
+                                publishAtScope: {
+                                    scopeType: string;
+                                };
+                                passengerInformationAction: {
+                                    actionRef: string;
+                                    recordedAtTime: string;
+                                    /** @enum {string} */
+                                    perspective: "general" | "stopPoint" | "vehicleJourney";
+                                    textualContent: {
+                                        summaryContent: {
+                                            summaryText: string;
+                                        };
+                                        reasonContent?: {
+                                            reasonText: string;
+                                        };
+                                        descriptionContent: {
+                                            descriptionText: string;
+                                        }[];
+                                        consequenceContent: {
+                                            consequenceText: string;
+                                        }[];
+                                        recommendationContent: {
+                                            recommendationText: string;
+                                        }[];
+                                        durationContent?: {
+                                            durationText: string;
+                                        };
+                                        remarkContent: {
+                                            remark: string;
+                                        }[];
+                                        infoLink: {
+                                            uri: string;
+                                            label?: string[];
+                                        }[];
+                                    }[];
+                                }[];
+                            }[];
+                        };
+                    }[];
+                };
+            };
             tripResult: {
                 id: string;
                 trip: {
@@ -1604,6 +1846,12 @@ export interface components {
                                 unplanned?: boolean;
                                 cancelled?: boolean;
                                 deviation?: boolean;
+                                situationFullRefs?: {
+                                    situationFullRef: {
+                                        participantRef: string;
+                                        situationNumber: string;
+                                    }[];
+                                };
                             };
                             legTrack?: {
                                 trackSection: {
@@ -1635,7 +1883,7 @@ export interface components {
                                             latitude: number;
                                         }[];
                                     };
-                                };
+                                }[];
                             };
                         };
                         transferLeg?: {
@@ -1713,6 +1961,146 @@ export interface components {
                         requestMessageRef?: string;
                         defaultLanguage?: string;
                         calcTime?: string;
+                        tripResponseContext?: {
+                            places?: {
+                                place: {
+                                    stopPoint?: {
+                                        stopPointRef: string;
+                                        stopPointName: {
+                                            text: string;
+                                        };
+                                        parentRef?: string;
+                                        plannedQuay?: {
+                                            text: string;
+                                        };
+                                        estimatedQuay?: {
+                                            text: string;
+                                        };
+                                    };
+                                    stopPlace?: {
+                                        stopPlaceRef?: string;
+                                        stopPlaceName?: {
+                                            text: string;
+                                        };
+                                    };
+                                    topographicPlace?: {
+                                        topographicPlaceCode: string;
+                                        topographicPlaceName: {
+                                            text: string;
+                                        };
+                                    };
+                                    pointOfInterest?: {
+                                        publicCode: string;
+                                        name: {
+                                            text: string;
+                                        };
+                                        pointOfInterestCategory: {
+                                            osmTag?: {
+                                                tag: string;
+                                                value: string;
+                                            };
+                                        }[];
+                                        topographicPlaceRef?: string;
+                                    };
+                                    address?: {
+                                        publicCode: string;
+                                        name: {
+                                            text: string;
+                                        };
+                                        postCode?: string;
+                                        topographicPlaceName?: string;
+                                        TopographicPlaceRef?: string;
+                                        Street?: string;
+                                        HouseNumber?: string;
+                                    };
+                                    name: {
+                                        text: string;
+                                    };
+                                    geoPosition: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    mode: {
+                                        /** @enum {string} */
+                                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                                        airSubmode?: string;
+                                        busSubmode?: string;
+                                        coachSubmode?: string;
+                                        funicularSubmode?: string;
+                                        metroSubmode?: string;
+                                        tramSubmode?: string;
+                                        telecabinSubmode?: string;
+                                        railSubmode?: string;
+                                        waterSubmode?: string;
+                                        name?: {
+                                            text: string;
+                                        };
+                                        shortName?: {
+                                            text: string;
+                                        };
+                                    }[];
+                                }[];
+                            };
+                            situations?: {
+                                ptSituation: {
+                                    creationTime: string;
+                                    participantRef?: string;
+                                    situationNumber: string;
+                                    version?: number;
+                                    source: {
+                                        /** @enum {string} */
+                                        sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                                    };
+                                    validityPeriod: {
+                                        startTime: string;
+                                        endTime?: string;
+                                    }[];
+                                    alertCause: string;
+                                    priority?: string;
+                                    scopeType?: string;
+                                    publishingActions?: {
+                                        publishingAction: {
+                                            publishAtScope: {
+                                                scopeType: string;
+                                            };
+                                            passengerInformationAction: {
+                                                actionRef: string;
+                                                recordedAtTime: string;
+                                                /** @enum {string} */
+                                                perspective: "general" | "stopPoint" | "vehicleJourney";
+                                                textualContent: {
+                                                    summaryContent: {
+                                                        summaryText: string;
+                                                    };
+                                                    reasonContent?: {
+                                                        reasonText: string;
+                                                    };
+                                                    descriptionContent: {
+                                                        descriptionText: string;
+                                                    }[];
+                                                    consequenceContent: {
+                                                        consequenceText: string;
+                                                    }[];
+                                                    recommendationContent: {
+                                                        recommendationText: string;
+                                                    }[];
+                                                    durationContent?: {
+                                                        durationText: string;
+                                                    };
+                                                    remarkContent: {
+                                                        remark: string;
+                                                    }[];
+                                                    infoLink: {
+                                                        uri: string;
+                                                        label?: string[];
+                                                    }[];
+                                                }[];
+                                            }[];
+                                        }[];
+                                    };
+                                }[];
+                            };
+                        };
                         tripResult: {
                             id: string;
                             trip: {
@@ -1867,6 +2255,12 @@ export interface components {
                                             unplanned?: boolean;
                                             cancelled?: boolean;
                                             deviation?: boolean;
+                                            situationFullRefs?: {
+                                                situationFullRef: {
+                                                    participantRef: string;
+                                                    situationNumber: string;
+                                                }[];
+                                            };
                                         };
                                         legTrack?: {
                                             trackSection: {
@@ -1898,7 +2292,7 @@ export interface components {
                                                         latitude: number;
                                                     }[];
                                                 };
-                                            };
+                                            }[];
                                         };
                                     };
                                     transferLeg?: {

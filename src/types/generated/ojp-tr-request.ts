@@ -71,7 +71,7 @@ export interface paths {
                                             depArrTime?: string;
                                         };
                                         via: {
-                                            placeRef: {
+                                            viaPoint: {
                                                 stopPointRef?: string;
                                                 stopPlaceRef?: string;
                                                 geoPosition?: {
@@ -82,13 +82,14 @@ export interface paths {
                                                     text: string;
                                                 };
                                             };
-                                            dwellTime?: number;
+                                            dwellTime?: string;
                                         }[];
                                         params?: {
                                             modeAndModeOfOperationFilter?: {
                                                 exclude?: boolean;
                                                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
                                             }[];
+                                            walkSpeed?: number;
                                             numberOfResults?: number;
                                             numberOfResultsBefore?: number;
                                             numberOfResultsAfter?: number;
@@ -134,6 +135,7 @@ export interface components {
                 exclude?: boolean;
                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
             }[];
+            walkSpeed?: number;
             numberOfResults?: number;
             numberOfResultsBefore?: number;
             numberOfResultsAfter?: number;
@@ -146,7 +148,7 @@ export interface components {
             includeIntermediateStops?: boolean;
         };
         ViaPoint: {
-            placeRef: {
+            viaPoint: {
                 stopPointRef?: string;
                 stopPlaceRef?: string;
                 geoPosition?: {
@@ -157,7 +159,7 @@ export interface components {
                     text: string;
                 };
             };
-            dwellTime?: number;
+            dwellTime?: string;
         };
         OJPTripRequest: {
             requestTimestamp: string;
@@ -190,7 +192,7 @@ export interface components {
                 depArrTime?: string;
             };
             via: {
-                placeRef: {
+                viaPoint: {
                     stopPointRef?: string;
                     stopPlaceRef?: string;
                     geoPosition?: {
@@ -201,13 +203,14 @@ export interface components {
                         text: string;
                     };
                 };
-                dwellTime?: number;
+                dwellTime?: string;
             }[];
             params?: {
                 modeAndModeOfOperationFilter?: {
                     exclude?: boolean;
                     ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
                 }[];
+                walkSpeed?: number;
                 numberOfResults?: number;
                 numberOfResultsBefore?: number;
                 numberOfResultsAfter?: number;
@@ -259,7 +262,7 @@ export interface components {
                             depArrTime?: string;
                         };
                         via: {
-                            placeRef: {
+                            viaPoint: {
                                 stopPointRef?: string;
                                 stopPlaceRef?: string;
                                 geoPosition?: {
@@ -270,13 +273,14 @@ export interface components {
                                     text: string;
                                 };
                             };
-                            dwellTime?: number;
+                            dwellTime?: string;
                         }[];
                         params?: {
                             modeAndModeOfOperationFilter?: {
                                 exclude?: boolean;
                                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
                             }[];
+                            walkSpeed?: number;
                             numberOfResults?: number;
                             numberOfResultsBefore?: number;
                             numberOfResultsAfter?: number;

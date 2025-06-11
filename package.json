@@ -1,6 +1,6 @@
 {
   "name": "ojp-shared-types",
-  "version": "0.0.2",
+  "version": "0.0.10",
   "description": "Shared types for OJP models based on OpenAPI / XSD Schema",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -21,10 +21,8 @@
   "keywords": [],
   "author": "Vasile Cotovanu",
   "license": "MIT",
-  "dependencies": {
-    "openapi-typescript": "7.8.0"
-  },
   "devDependencies": {
+    "openapi-typescript": "7.8.0",
     "tsup": "8.4.0",
     "typescript": "5.8.3"
   }

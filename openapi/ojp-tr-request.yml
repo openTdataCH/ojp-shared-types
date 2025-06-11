@@ -53,6 +53,10 @@ components:
             name: ModeAndModeOfOperationFilter
           items:
             $ref: "#/components/schemas/ModeAndModeOfOperationFilter"
+        walkSpeed:
+          type: number
+          xml:
+            name: WalkSpeed
         numberOfResults:
           type: number
           xml:
@@ -96,14 +100,14 @@ components:
       xml:
         name: ViaPoint
       required:
-        - placeRef
+        - viaPoint
       properties:
-        placeRef:
+        viaPoint:
           $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
           xml:
             name: PlaceRef
         dwellTime:
-          type: number
+          type: string
           xml:
             name: DwellTime
 
