@@ -24,23 +24,6 @@ paths:
 
 components:
   schemas:
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ModeAndModeOfOperationFilterStructure
-    ModeAndModeOfOperationFilter:
-      type: object
-      xml:
-        name: ModeAndModeOfOperationFilter
-      properties:
-        exclude:
-          type: boolean
-          xml:
-            name: Exclude
-        ptMode:
-          type: array
-          xml:
-            name: PtMode
-          items:
-            $ref: './ojp-shared.yml#/components/schemas/VehicleModesOfTransportEnum'
-
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripParamStructure
     TripParam:
       type: object
@@ -52,7 +35,7 @@ components:
           xml:
             name: ModeAndModeOfOperationFilter
           items:
-            $ref: "#/components/schemas/ModeAndModeOfOperationFilter"
+            $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
         walkSpeed:
           type: number
           xml:
