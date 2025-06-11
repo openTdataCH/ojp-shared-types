@@ -89,6 +89,7 @@ export interface paths {
                                                 exclude?: boolean;
                                                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
                                             }[];
+                                            walkSpeed?: number;
                                             numberOfResults?: number;
                                             numberOfResultsBefore?: number;
                                             numberOfResultsAfter?: number;
@@ -134,6 +135,7 @@ export interface components {
                 exclude?: boolean;
                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
             }[];
+            walkSpeed?: number;
             numberOfResults?: number;
             numberOfResultsBefore?: number;
             numberOfResultsAfter?: number;
@@ -208,6 +210,7 @@ export interface components {
                     exclude?: boolean;
                     ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
                 }[];
+                walkSpeed?: number;
                 numberOfResults?: number;
                 numberOfResultsBefore?: number;
                 numberOfResultsAfter?: number;
@@ -277,6 +280,7 @@ export interface components {
                                 exclude?: boolean;
                                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
                             }[];
+                            walkSpeed?: number;
                             numberOfResults?: number;
                             numberOfResultsBefore?: number;
                             numberOfResultsAfter?: number;
