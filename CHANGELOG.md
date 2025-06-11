@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.9 - 05.06.2025
+- adds `walkSpeed` - [PR #16](https://github.com/openTdataCH/ojp-shared-types/pull/16)
+- `openapi-typescript` package is now in `devDependencies` section
+
 ## 0.0.8 - 05.06.2025
 - exports `OJPFareDelivery` - [PR #14](https://github.com/openTdataCH/ojp-shared-types/pull/14)
 
