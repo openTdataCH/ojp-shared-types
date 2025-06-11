@@ -53,6 +53,10 @@ components:
             name: ModeAndModeOfOperationFilter
           items:
             $ref: "#/components/schemas/ModeAndModeOfOperationFilter"
+        walkSpeed:
+          type: number
+          xml:
+            name: WalkSpeed
         numberOfResults:
           type: number
           xml:
