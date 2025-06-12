@@ -646,6 +646,10 @@ export interface components {
                 }[];
             };
         };
+        ModeFilterStructure: {
+            exclude?: boolean;
+            ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+        };
     };
     responses: never;
     parameters: never;

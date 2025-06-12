@@ -126,10 +126,6 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        ModeAndModeOfOperationFilter: {
-            exclude?: boolean;
-            ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
-        };
         TripParam: {
             modeAndModeOfOperationFilter?: {
                 exclude?: boolean;

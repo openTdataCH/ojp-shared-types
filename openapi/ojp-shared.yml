@@ -1062,4 +1062,21 @@ components:
           $ref: '#/components/schemas/LinkProjection'
           xml:
             name: LinkProjection
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ModeFilterStructure
+    ModeFilterStructure:
+      type: object
+      xml:
+        name: ModeFilter
+      properties:
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
+        ptMode:
+          type: array
+          xml:
+            name: PtMode
+          items:
+            $ref: '#/components/schemas/VehicleModesOfTransportEnum'
         

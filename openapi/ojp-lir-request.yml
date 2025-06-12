@@ -42,6 +42,10 @@ components:
           type: number
           xml:
             name: NumberOfResults
+        modes:
+          $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
+          xml:
+            name: Modes
         includePtModes:
           type: boolean
           xml:
@@ -152,5 +156,4 @@ components:
                 OJPLocationInformationRequest:
                   $ref: '#/components/schemas/OJPLocationInformationRequest'
                   xml:
-                    name: OJPLocationInformationRequest              
-        
+                    name: OJPLocationInformationRequest

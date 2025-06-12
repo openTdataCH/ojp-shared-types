@@ -71,6 +71,10 @@ export interface paths {
                                         restrictions?: {
                                             type: ("stop" | "address" | "poi" | "location" | "topographicPlace")[];
                                             numberOfResults?: number;
+                                            modes?: {
+                                                exclude?: boolean;
+                                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                                            };
                                             includePtModes?: boolean;
                                         };
                                     };
@@ -101,6 +105,10 @@ export interface components {
         PlaceParam: {
             type: ("stop" | "address" | "poi" | "location" | "topographicPlace")[];
             numberOfResults?: number;
+            modes?: {
+                exclude?: boolean;
+                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+            };
             includePtModes?: boolean;
         };
         InitialInput: {
@@ -149,6 +157,10 @@ export interface components {
             restrictions?: {
                 type: ("stop" | "address" | "poi" | "location" | "topographicPlace")[];
                 numberOfResults?: number;
+                modes?: {
+                    exclude?: boolean;
+                    ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                };
                 includePtModes?: boolean;
             };
         };
@@ -191,6 +203,10 @@ export interface components {
                         restrictions?: {
                             type: ("stop" | "address" | "poi" | "location" | "topographicPlace")[];
                             numberOfResults?: number;
+                            modes?: {
+                                exclude?: boolean;
+                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                            };
                             includePtModes?: boolean;
                         };
                     };
