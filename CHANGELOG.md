@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.0.11 - 12.06.2025
+- adds `PtMode` filter for LIR requests
+
 ## 0.0.10 - 11.06.2025
 - updates `Fare Response` array mapping - [PR #17](https://github.com/openTdataCH/ojp-shared-types/pull/17)
 
