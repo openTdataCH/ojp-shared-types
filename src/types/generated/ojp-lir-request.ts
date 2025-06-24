@@ -73,7 +73,7 @@ export interface paths {
                                             numberOfResults?: number;
                                             modes?: {
                                                 exclude?: boolean;
-                                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                                             };
                                             includePtModes?: boolean;
                                         };
@@ -107,7 +107,7 @@ export interface components {
             numberOfResults?: number;
             modes?: {
                 exclude?: boolean;
-                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
             };
             includePtModes?: boolean;
         };
@@ -159,7 +159,7 @@ export interface components {
                 numberOfResults?: number;
                 modes?: {
                     exclude?: boolean;
-                    ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                    ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                 };
                 includePtModes?: boolean;
             };
@@ -205,7 +205,7 @@ export interface components {
                             numberOfResults?: number;
                             modes?: {
                                 exclude?: boolean;
-                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                             };
                             includePtModes?: boolean;
                         };

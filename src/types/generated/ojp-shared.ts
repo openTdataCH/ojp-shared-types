@@ -8,7 +8,7 @@ export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
         /** @enum {string} */
-        VehicleModesOfTransportEnum: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+        VehicleModesOfTransportEnum: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
         /** @enum {string} */
         UseRealtimeDataEnum: "full" | "explanatory" | "none";
         /** @enum {string} */
@@ -109,7 +109,7 @@ export interface components {
         };
         ModeStructure: {
             /** @enum {string} */
-            ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+            ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
             airSubmode?: string;
             busSubmode?: string;
             coachSubmode?: string;
@@ -185,7 +185,7 @@ export interface components {
             };
             mode: {
                 /** @enum {string} */
-                ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
                 airSubmode?: string;
                 busSubmode?: string;
                 coachSubmode?: string;
@@ -419,7 +419,7 @@ export interface components {
             directionRef?: string;
             mode: {
                 /** @enum {string} */
-                ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
                 airSubmode?: string;
                 busSubmode?: string;
                 coachSubmode?: string;
@@ -531,7 +531,7 @@ export interface components {
                     };
                     mode: {
                         /** @enum {string} */
-                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown";
+                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
                         airSubmode?: string;
                         busSubmode?: string;
                         coachSubmode?: string;
@@ -648,7 +648,7 @@ export interface components {
         };
         ModeFilterStructure: {
             exclude?: boolean;
-            ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+            ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
         };
     };
     responses: never;

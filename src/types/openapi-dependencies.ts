@@ -138,6 +138,7 @@ const MapModelKeepPropertiesXML: Record<string, string[]> = {
 // - in response (parser) XML
 const MapStringValues: Record<string, boolean> = {
   'stopPlace.stopPlaceRef': true,
+  'publishedServiceName.text': true,
 };
 
 export const OpenAPI_Dependencies = {
