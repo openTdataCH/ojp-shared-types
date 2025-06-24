@@ -13,7 +13,7 @@ components:
         bus, coach, trolleyBus,
         metro, rail, tram,
         water, ferry,
-        cableway, funicular, lift,
+        cableway, funicular, lift, telecabin,
         other, unknown,
       ]
 
