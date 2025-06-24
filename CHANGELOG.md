@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 0.0.12 - 24.06.2025
-- updates `PtMode`, adds `telecabin`
+- updates `PtMode`, adds `telecabin` - [PR #19](https://github.com/openTdataCH/ojp-shared-types/pull/19)
 - enforce `publishedServiceName.text` to be always text
 
 ## 0.0.11 - 12.06.2025
