@@ -87,7 +87,7 @@ export interface paths {
                                         params?: {
                                             modeAndModeOfOperationFilter?: {
                                                 exclude?: boolean;
-                                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                                             }[];
                                             walkSpeed?: number;
                                             numberOfResults?: number;
@@ -129,7 +129,7 @@ export interface components {
         TripParam: {
             modeAndModeOfOperationFilter?: {
                 exclude?: boolean;
-                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
             }[];
             walkSpeed?: number;
             numberOfResults?: number;
@@ -204,7 +204,7 @@ export interface components {
             params?: {
                 modeAndModeOfOperationFilter?: {
                     exclude?: boolean;
-                    ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                    ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                 }[];
                 walkSpeed?: number;
                 numberOfResults?: number;
@@ -274,7 +274,7 @@ export interface components {
                         params?: {
                             modeAndModeOfOperationFilter?: {
                                 exclude?: boolean;
-                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "other" | "unknown")[];
+                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                             }[];
                             walkSpeed?: number;
                             numberOfResults?: number;
