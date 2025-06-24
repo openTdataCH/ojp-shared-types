@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.12 - 24.06.2025
+- updates `PtMode`, adds `telecabin`
+- enforce `publishedServiceName.text` to be always text
+
 ## 0.0.11 - 12.06.2025
 - adds `PtMode` filter for LIR requests
 
