@@ -134,7 +134,7 @@ components:
         # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferTypeEnumeration
         transferType:
           type: string
-          enum: [walk, remainInVehicle]
+          enum: [walk, remainInVehicle, changeWithinVehicle]
           xml:
             name: TransferType
         legStart:

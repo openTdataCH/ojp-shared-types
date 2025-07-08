@@ -238,7 +238,7 @@ export interface paths {
                                                     };
                                                     transferLeg?: {
                                                         /** @enum {string} */
-                                                        transferType: "walk" | "remainInVehicle";
+                                                        transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
                                                         legStart: {
                                                             stopPointRef?: string;
                                                             stopPlaceRef?: string;
@@ -526,7 +526,7 @@ export interface components {
                         };
                         transferLeg?: {
                             /** @enum {string} */
-                            transferType: "walk" | "remainInVehicle";
+                            transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
                             legStart: {
                                 stopPointRef?: string;
                                 stopPlaceRef?: string;
@@ -795,7 +795,7 @@ export interface components {
                                     };
                                     transferLeg?: {
                                         /** @enum {string} */
-                                        transferType: "walk" | "remainInVehicle";
+                                        transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
                                         legStart: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
