@@ -815,6 +815,12 @@ components:
           $ref: '#/components/schemas/SharedServiceArrivalDeparture'
           xml:
             name: ServiceDeparture
+        expectedDepartureOccupancy:
+          type: array
+          xml:
+            name: ExpectedDepartureOccupancy
+          items:
+            $ref: "#/components/schemas/ExpectedDepartureOccupancyStructure"
         order:
           type: number
           xml:
@@ -1079,4 +1085,27 @@ components:
             name: PtMode
           items:
             $ref: '#/components/schemas/VehicleModesOfTransportEnum'
+
+    ExpectedDepartureOccupancyStructure:
+      type: object
+      xml:
+        name: ExpectedDepartureOccupancy
+      required:
+        - fareClass
+        - occupancyLevel
+      properties:
+        fareClass:
+          type: string
+          enum: [unknown, firstClass, secondClass]
+          xml:
+            name: fareClass
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        occupancyLevel:
+          type: string
+          enum: [empty,manySeatsAvailable, fewSeatsAvailable, standingRoomOnly]
+          xml:
+            name: occupancyLevel
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
         

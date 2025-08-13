@@ -205,6 +205,12 @@ export interface paths {
                                                     timetabledTime: string;
                                                     estimatedTime?: string;
                                                 };
+                                                expectedDepartureOccupancy?: {
+                                                    /** @enum {string} */
+                                                    fareClass: "unknown" | "firstClass" | "secondClass";
+                                                    /** @enum {string} */
+                                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                }[];
                                                 order?: number;
                                                 requestStop?: boolean;
                                                 unplannedStop?: boolean;
@@ -234,6 +240,12 @@ export interface paths {
                                                     timetabledTime: string;
                                                     estimatedTime?: string;
                                                 };
+                                                expectedDepartureOccupancy?: {
+                                                    /** @enum {string} */
+                                                    fareClass: "unknown" | "firstClass" | "secondClass";
+                                                    /** @enum {string} */
+                                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                }[];
                                                 order?: number;
                                                 requestStop?: boolean;
                                                 unplannedStop?: boolean;
@@ -382,6 +394,12 @@ export interface components {
                     timetabledTime: string;
                     estimatedTime?: string;
                 };
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
                 order?: number;
                 requestStop?: boolean;
                 unplannedStop?: boolean;
@@ -411,6 +429,12 @@ export interface components {
                     timetabledTime: string;
                     estimatedTime?: string;
                 };
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
                 order?: number;
                 requestStop?: boolean;
                 unplannedStop?: boolean;
@@ -679,6 +703,12 @@ export interface components {
                         timetabledTime: string;
                         estimatedTime?: string;
                     };
+                    expectedDepartureOccupancy?: {
+                        /** @enum {string} */
+                        fareClass: "unknown" | "firstClass" | "secondClass";
+                        /** @enum {string} */
+                        occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    }[];
                     order?: number;
                     requestStop?: boolean;
                     unplannedStop?: boolean;
@@ -708,6 +738,12 @@ export interface components {
                         timetabledTime: string;
                         estimatedTime?: string;
                     };
+                    expectedDepartureOccupancy?: {
+                        /** @enum {string} */
+                        fareClass: "unknown" | "firstClass" | "secondClass";
+                        /** @enum {string} */
+                        occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    }[];
                     order?: number;
                     requestStop?: boolean;
                     unplannedStop?: boolean;
@@ -982,6 +1018,12 @@ export interface components {
                                     timetabledTime: string;
                                     estimatedTime?: string;
                                 };
+                                expectedDepartureOccupancy?: {
+                                    /** @enum {string} */
+                                    fareClass: "unknown" | "firstClass" | "secondClass";
+                                    /** @enum {string} */
+                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                }[];
                                 order?: number;
                                 requestStop?: boolean;
                                 unplannedStop?: boolean;
@@ -1011,6 +1053,12 @@ export interface components {
                                     timetabledTime: string;
                                     estimatedTime?: string;
                                 };
+                                expectedDepartureOccupancy?: {
+                                    /** @enum {string} */
+                                    fareClass: "unknown" | "firstClass" | "secondClass";
+                                    /** @enum {string} */
+                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                }[];
                                 order?: number;
                                 requestStop?: boolean;
                                 unplannedStop?: boolean;
