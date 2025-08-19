@@ -1104,7 +1104,7 @@ components:
             prefix: siri
         occupancyLevel:
           type: string
-          enum: [empty,manySeatsAvailable, fewSeatsAvailable, standingRoomOnly]
+          enum: [empty, manySeatsAvailable, fewSeatsAvailable, standingRoomOnly]
           xml:
             name: occupancyLevel
             namespace: "http://www.siri.org.uk/siri"
