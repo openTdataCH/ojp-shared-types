@@ -57,6 +57,13 @@ const MapNS_Tags: Record<string, string> = {
   'LegStart.StopPointRef': 'siri',
   'LegEnd.StopPointRef': 'siri',
 
+  // ExpectedDepartureOccupancy
+  'LegBoard.ExpectedDepartureOccupancy': 'siri',
+  'LegAlight.ExpectedDepartureOccupancy': 'siri',
+  'LegIntermediate.ExpectedDepartureOccupancy': 'siri',
+  'ExpectedDepartureOccupancy.FareClass': 'siri',
+  'ExpectedDepartureOccupancy.OccupancyLevel': 'siri',
+
   // LIR Request
   'OJPLocationInformationRequest.RequestTimestamp': 'siri',
   'UpperLeft.Longitude': 'siri',
