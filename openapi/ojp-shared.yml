@@ -1086,6 +1086,7 @@ components:
           items:
             $ref: '#/components/schemas/VehicleModesOfTransportEnum'
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__VehicleOccupancyStructure
     ExpectedDepartureOccupancyStructure:
       type: object
       xml:
