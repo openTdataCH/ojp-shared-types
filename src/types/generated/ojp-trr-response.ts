@@ -78,18 +78,18 @@ export interface paths {
                                                                 timetabledTime: string;
                                                                 estimatedTime?: string;
                                                             };
-                                                            expectedDepartureOccupancy?: {
-                                                                /** @enum {string} */
-                                                                fareClass: "unknown" | "firstClass" | "secondClass";
-                                                                /** @enum {string} */
-                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                                            }[];
                                                             order?: number;
                                                             requestStop?: boolean;
                                                             unplannedStop?: boolean;
                                                             notServicedStop?: boolean;
                                                             noBoardingAtStop?: boolean;
                                                             noAlightingAtStop?: boolean;
+                                                            expectedDepartureOccupancy?: {
+                                                                /** @enum {string} */
+                                                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                                                /** @enum {string} */
+                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                            }[];
                                                         };
                                                         legIntermediate: {
                                                             stopPointRef: string;
@@ -113,18 +113,18 @@ export interface paths {
                                                                 timetabledTime: string;
                                                                 estimatedTime?: string;
                                                             };
-                                                            expectedDepartureOccupancy?: {
-                                                                /** @enum {string} */
-                                                                fareClass: "unknown" | "firstClass" | "secondClass";
-                                                                /** @enum {string} */
-                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                                            }[];
                                                             order?: number;
                                                             requestStop?: boolean;
                                                             unplannedStop?: boolean;
                                                             notServicedStop?: boolean;
                                                             noBoardingAtStop?: boolean;
                                                             noAlightingAtStop?: boolean;
+                                                            expectedDepartureOccupancy?: {
+                                                                /** @enum {string} */
+                                                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                                                /** @enum {string} */
+                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                            }[];
                                                         }[];
                                                         legAlight: {
                                                             stopPointRef: string;
@@ -148,18 +148,18 @@ export interface paths {
                                                                 timetabledTime: string;
                                                                 estimatedTime?: string;
                                                             };
-                                                            expectedDepartureOccupancy?: {
-                                                                /** @enum {string} */
-                                                                fareClass: "unknown" | "firstClass" | "secondClass";
-                                                                /** @enum {string} */
-                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                                            }[];
                                                             order?: number;
                                                             requestStop?: boolean;
                                                             unplannedStop?: boolean;
                                                             notServicedStop?: boolean;
                                                             noBoardingAtStop?: boolean;
                                                             noAlightingAtStop?: boolean;
+                                                            expectedDepartureOccupancy?: {
+                                                                /** @enum {string} */
+                                                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                                                /** @enum {string} */
+                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                            }[];
                                                         };
                                                         service: {
                                                             conventionalModeOfOperation?: string;
@@ -384,18 +384,18 @@ export interface components {
                                     timetabledTime: string;
                                     estimatedTime?: string;
                                 };
-                                expectedDepartureOccupancy?: {
-                                    /** @enum {string} */
-                                    fareClass: "unknown" | "firstClass" | "secondClass";
-                                    /** @enum {string} */
-                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                }[];
                                 order?: number;
                                 requestStop?: boolean;
                                 unplannedStop?: boolean;
                                 notServicedStop?: boolean;
                                 noBoardingAtStop?: boolean;
                                 noAlightingAtStop?: boolean;
+                                expectedDepartureOccupancy?: {
+                                    /** @enum {string} */
+                                    fareClass: "unknown" | "firstClass" | "secondClass";
+                                    /** @enum {string} */
+                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                }[];
                             };
                             legIntermediate: {
                                 stopPointRef: string;
@@ -419,18 +419,18 @@ export interface components {
                                     timetabledTime: string;
                                     estimatedTime?: string;
                                 };
-                                expectedDepartureOccupancy?: {
-                                    /** @enum {string} */
-                                    fareClass: "unknown" | "firstClass" | "secondClass";
-                                    /** @enum {string} */
-                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                }[];
                                 order?: number;
                                 requestStop?: boolean;
                                 unplannedStop?: boolean;
                                 notServicedStop?: boolean;
                                 noBoardingAtStop?: boolean;
                                 noAlightingAtStop?: boolean;
+                                expectedDepartureOccupancy?: {
+                                    /** @enum {string} */
+                                    fareClass: "unknown" | "firstClass" | "secondClass";
+                                    /** @enum {string} */
+                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                }[];
                             }[];
                             legAlight: {
                                 stopPointRef: string;
@@ -454,18 +454,18 @@ export interface components {
                                     timetabledTime: string;
                                     estimatedTime?: string;
                                 };
-                                expectedDepartureOccupancy?: {
-                                    /** @enum {string} */
-                                    fareClass: "unknown" | "firstClass" | "secondClass";
-                                    /** @enum {string} */
-                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                }[];
                                 order?: number;
                                 requestStop?: boolean;
                                 unplannedStop?: boolean;
                                 notServicedStop?: boolean;
                                 noBoardingAtStop?: boolean;
                                 noAlightingAtStop?: boolean;
+                                expectedDepartureOccupancy?: {
+                                    /** @enum {string} */
+                                    fareClass: "unknown" | "firstClass" | "secondClass";
+                                    /** @enum {string} */
+                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                }[];
                             };
                             service: {
                                 conventionalModeOfOperation?: string;
@@ -671,18 +671,18 @@ export interface components {
                                                 timetabledTime: string;
                                                 estimatedTime?: string;
                                             };
-                                            expectedDepartureOccupancy?: {
-                                                /** @enum {string} */
-                                                fareClass: "unknown" | "firstClass" | "secondClass";
-                                                /** @enum {string} */
-                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                            }[];
                                             order?: number;
                                             requestStop?: boolean;
                                             unplannedStop?: boolean;
                                             notServicedStop?: boolean;
                                             noBoardingAtStop?: boolean;
                                             noAlightingAtStop?: boolean;
+                                            expectedDepartureOccupancy?: {
+                                                /** @enum {string} */
+                                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                                /** @enum {string} */
+                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                            }[];
                                         };
                                         legIntermediate: {
                                             stopPointRef: string;
@@ -706,18 +706,18 @@ export interface components {
                                                 timetabledTime: string;
                                                 estimatedTime?: string;
                                             };
-                                            expectedDepartureOccupancy?: {
-                                                /** @enum {string} */
-                                                fareClass: "unknown" | "firstClass" | "secondClass";
-                                                /** @enum {string} */
-                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                            }[];
                                             order?: number;
                                             requestStop?: boolean;
                                             unplannedStop?: boolean;
                                             notServicedStop?: boolean;
                                             noBoardingAtStop?: boolean;
                                             noAlightingAtStop?: boolean;
+                                            expectedDepartureOccupancy?: {
+                                                /** @enum {string} */
+                                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                                /** @enum {string} */
+                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                            }[];
                                         }[];
                                         legAlight: {
                                             stopPointRef: string;
@@ -741,18 +741,18 @@ export interface components {
                                                 timetabledTime: string;
                                                 estimatedTime?: string;
                                             };
-                                            expectedDepartureOccupancy?: {
-                                                /** @enum {string} */
-                                                fareClass: "unknown" | "firstClass" | "secondClass";
-                                                /** @enum {string} */
-                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                            }[];
                                             order?: number;
                                             requestStop?: boolean;
                                             unplannedStop?: boolean;
                                             notServicedStop?: boolean;
                                             noBoardingAtStop?: boolean;
                                             noAlightingAtStop?: boolean;
+                                            expectedDepartureOccupancy?: {
+                                                /** @enum {string} */
+                                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                                /** @enum {string} */
+                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                            }[];
                                         };
                                         service: {
                                             conventionalModeOfOperation?: string;
