@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.0.14 - 20.08.2025
+- adds `ExpectedDepartureOccupancy` to TR response - [TR - add occupancy model #20](https://github.com/openTdataCH/ojp-shared-types/issues/20) - [PR #23](https://github.com/openTdataCH/ojp-shared-types/pull/23)
+
 ## 0.0.13 - 08.07.2025
 - adds `changeWithinVehicle` flag for TransferTypeEnumeration - [PR #21](https://github.com/openTdataCH/ojp-shared-types/pull/21)
 
