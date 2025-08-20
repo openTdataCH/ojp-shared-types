@@ -839,6 +839,12 @@ components:
           type: boolean
           xml:
             name: NoAlightingAtStop
+        expectedDepartureOccupancy:
+          type: array
+          xml:
+            name: ExpectedDepartureOccupancy
+          items:
+            $ref: "#/components/schemas/ExpectedDepartureOccupancyStructure"
     # SharedLegSection
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ProductCategoryStructure
@@ -1079,4 +1085,28 @@ components:
             name: PtMode
           items:
             $ref: '#/components/schemas/VehicleModesOfTransportEnum'
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__VehicleOccupancyStructure
+    ExpectedDepartureOccupancyStructure:
+      type: object
+      xml:
+        name: ExpectedDepartureOccupancy
+      required:
+        - fareClass
+        - occupancyLevel
+      properties:
+        fareClass:
+          type: string
+          enum: [unknown, firstClass, secondClass]
+          xml:
+            name: fareClass
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        occupancyLevel:
+          type: string
+          enum: [empty, manySeatsAvailable, fewSeatsAvailable, standingRoomOnly]
+          xml:
+            name: occupancyLevel
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
         

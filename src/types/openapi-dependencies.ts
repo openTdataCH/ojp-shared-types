@@ -57,6 +57,13 @@ const MapNS_Tags: Record<string, string> = {
   'LegStart.StopPointRef': 'siri',
   'LegEnd.StopPointRef': 'siri',
 
+  // ExpectedDepartureOccupancy
+  'LegBoard.ExpectedDepartureOccupancy': 'siri',
+  'LegAlight.ExpectedDepartureOccupancy': 'siri',
+  'LegIntermediate.ExpectedDepartureOccupancy': 'siri',
+  'ExpectedDepartureOccupancy.FareClass': 'siri',
+  'ExpectedDepartureOccupancy.OccupancyLevel': 'siri',
+
   // LIR Request
   'OJPLocationInformationRequest.RequestTimestamp': 'siri',
   'UpperLeft.Longitude': 'siri',
@@ -100,6 +107,11 @@ const MapArrayTags: Record<string, boolean> = {
   'trip.leg': true,
   'timedLeg.legIntermediate': true,
   'legTrack.trackSection': true,
+  
+  // TR Response, ExpectedDepartureOccupancy
+  'legBoard.expectedDepartureOccupancy': true,
+  'legIntermediate.expectedDepartureOccupancy': true,
+  'legAlight.expectedDepartureOccupancy': true,
 
   // LIR Response
   'pointOfInterest.pointOfInterestCategory': true,

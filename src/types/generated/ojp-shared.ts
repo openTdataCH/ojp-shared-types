@@ -384,6 +384,12 @@ export interface components {
                 timetabledTime: string;
                 estimatedTime?: string;
             };
+            expectedDepartureOccupancy?: {
+                /** @enum {string} */
+                fareClass: "unknown" | "firstClass" | "secondClass";
+                /** @enum {string} */
+                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+            }[];
             order?: number;
             requestStop?: boolean;
             unplannedStop?: boolean;
@@ -649,6 +655,12 @@ export interface components {
         ModeFilterStructure: {
             exclude?: boolean;
             ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+        };
+        ExpectedDepartureOccupancyStructure: {
+            /** @enum {string} */
+            fareClass: "unknown" | "firstClass" | "secondClass";
+            /** @enum {string} */
+            occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
         };
     };
     responses: never;
