@@ -132,6 +132,9 @@ const MapArrayTags: Record<string, boolean> = {
   'tripInfoResult.previousCall': true,
   'tripInfoResult.onwardCall': true,
   'journeyTrack.trackSection': true,
+
+  // TripRefineResult
+  'OJPTripRefineDelivery.tripResult': true,
 };
 
 // TODO - this should be generated
