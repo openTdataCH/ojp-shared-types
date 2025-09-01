@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.0.xx - xx.xx.2025
+## 0.0.15 - 01.09.2025
 - enforce arrays for `OJPTripRefineDelivery.TripResult` nodes
 
 ## 0.0.14 - 20.08.2025
