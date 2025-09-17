@@ -74,6 +74,15 @@ export interface paths {
                                             modes?: {
                                                 exclude?: boolean;
                                                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                                                airSubmode?: string;
+                                                busSubmode?: string;
+                                                coachSubmode?: string;
+                                                funicularSubmode?: string;
+                                                metroSubmode?: string;
+                                                tramSubmode?: string;
+                                                telecabinSubmode?: string;
+                                                railSubmode?: string;
+                                                waterSubmode?: string;
                                             };
                                             includePtModes?: boolean;
                                         };
@@ -108,6 +117,15 @@ export interface components {
             modes?: {
                 exclude?: boolean;
                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                airSubmode?: string;
+                busSubmode?: string;
+                coachSubmode?: string;
+                funicularSubmode?: string;
+                metroSubmode?: string;
+                tramSubmode?: string;
+                telecabinSubmode?: string;
+                railSubmode?: string;
+                waterSubmode?: string;
             };
             includePtModes?: boolean;
         };
@@ -160,6 +178,15 @@ export interface components {
                 modes?: {
                     exclude?: boolean;
                     ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                    airSubmode?: string;
+                    busSubmode?: string;
+                    coachSubmode?: string;
+                    funicularSubmode?: string;
+                    metroSubmode?: string;
+                    tramSubmode?: string;
+                    telecabinSubmode?: string;
+                    railSubmode?: string;
+                    waterSubmode?: string;
                 };
                 includePtModes?: boolean;
             };
@@ -206,6 +233,15 @@ export interface components {
                             modes?: {
                                 exclude?: boolean;
                                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                                airSubmode?: string;
+                                busSubmode?: string;
+                                coachSubmode?: string;
+                                funicularSubmode?: string;
+                                metroSubmode?: string;
+                                tramSubmode?: string;
+                                telecabinSubmode?: string;
+                                railSubmode?: string;
+                                waterSubmode?: string;
                             };
                             includePtModes?: boolean;
                         };

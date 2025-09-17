@@ -88,6 +88,15 @@ export interface paths {
                                             modeAndModeOfOperationFilter?: {
                                                 exclude?: boolean;
                                                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                                                airSubmode?: string;
+                                                busSubmode?: string;
+                                                coachSubmode?: string;
+                                                funicularSubmode?: string;
+                                                metroSubmode?: string;
+                                                tramSubmode?: string;
+                                                telecabinSubmode?: string;
+                                                railSubmode?: string;
+                                                waterSubmode?: string;
                                             }[];
                                             walkSpeed?: number;
                                             numberOfResults?: number;
@@ -130,6 +139,15 @@ export interface components {
             modeAndModeOfOperationFilter?: {
                 exclude?: boolean;
                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                airSubmode?: string;
+                busSubmode?: string;
+                coachSubmode?: string;
+                funicularSubmode?: string;
+                metroSubmode?: string;
+                tramSubmode?: string;
+                telecabinSubmode?: string;
+                railSubmode?: string;
+                waterSubmode?: string;
             }[];
             walkSpeed?: number;
             numberOfResults?: number;
@@ -205,6 +223,15 @@ export interface components {
                 modeAndModeOfOperationFilter?: {
                     exclude?: boolean;
                     ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                    airSubmode?: string;
+                    busSubmode?: string;
+                    coachSubmode?: string;
+                    funicularSubmode?: string;
+                    metroSubmode?: string;
+                    tramSubmode?: string;
+                    telecabinSubmode?: string;
+                    railSubmode?: string;
+                    waterSubmode?: string;
                 }[];
                 walkSpeed?: number;
                 numberOfResults?: number;
@@ -275,6 +302,15 @@ export interface components {
                             modeAndModeOfOperationFilter?: {
                                 exclude?: boolean;
                                 ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                                airSubmode?: string;
+                                busSubmode?: string;
+                                coachSubmode?: string;
+                                funicularSubmode?: string;
+                                metroSubmode?: string;
+                                tramSubmode?: string;
+                                telecabinSubmode?: string;
+                                railSubmode?: string;
+                                waterSubmode?: string;
                             }[];
                             walkSpeed?: number;
                             numberOfResults?: number;
