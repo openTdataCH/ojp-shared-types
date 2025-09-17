@@ -1,7 +1,10 @@
 # CHANGELOG
 
+## 0.0.16 - 07.09.2025
+- extend TR mode filter - [PR #27](https://github.com/openTdataCH/ojp-shared-types/pull/27)
+
 ## 0.0.15 - 01.09.2025
-- enforce arrays for `OJPTripRefineDelivery.TripResult` nodes
+- enforce arrays for `OJPTripRefineDelivery.TripResult` nodes - [PR #25](https://github.com/openTdataCH/ojp-shared-types/pull/25)
 
 ## 0.0.14 - 20.08.2025
 - adds `ExpectedDepartureOccupancy` to TR response - [TR - add occupancy model #20](https://github.com/openTdataCH/ojp-shared-types/issues/20) - [PR #23](https://github.com/openTdataCH/ojp-shared-types/pull/23)
