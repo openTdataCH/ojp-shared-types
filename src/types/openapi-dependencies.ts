@@ -45,6 +45,16 @@ const MapNS_Tags: Record<string, string> = {
   'Mode.RailSubmode': 'siri',
   'Mode.WaterSubmode': 'siri',
 
+  'ModeAndModeOfOperationFilter.AirSubmode': 'siri',
+  'ModeAndModeOfOperationFilter.BusSubmode': 'siri',
+  'ModeAndModeOfOperationFilter.CoachSubmode': 'siri',
+  'ModeAndModeOfOperationFilter.FunicularSubmode': 'siri',
+  'ModeAndModeOfOperationFilter.MetroSubmode': 'siri',
+  'ModeAndModeOfOperationFilter.TramSubmode': 'siri',
+  'ModeAndModeOfOperationFilter.TelecabinSubmode': 'siri',
+  'ModeAndModeOfOperationFilter.RailSubmode': 'siri',
+  'ModeAndModeOfOperationFilter.WaterSubmode': 'siri',
+
   'Service.LineRef': 'siri',
   'Service.OperatorRef': 'siri',
   'Service.DirectionRef': 'siri',
