@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.0.16 - 07.09.2025
+- extend TR mode filter - [PR #27](https://github.com/openTdataCH/ojp-shared-types/pull/27)
+
 ## 0.0.15 - 01.09.2025
 - enforce arrays for `OJPTripRefineDelivery.TripResult` nodes - [PR #25](https://github.com/openTdataCH/ojp-shared-types/pull/25)
 
