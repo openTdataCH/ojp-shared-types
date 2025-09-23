@@ -98,6 +98,13 @@ export interface paths {
                                                 railSubmode?: string;
                                                 waterSubmode?: string;
                                             }[];
+                                            lineFilter?: {
+                                                exclude?: boolean;
+                                                line?: {
+                                                    lineRef: string;
+                                                    directionRef?: string;
+                                                }[];
+                                            }[];
                                             walkSpeed?: number;
                                             numberOfResults?: number;
                                             numberOfResultsBefore?: number;
@@ -148,6 +155,13 @@ export interface components {
                 telecabinSubmode?: string;
                 railSubmode?: string;
                 waterSubmode?: string;
+            }[];
+            lineFilter?: {
+                exclude?: boolean;
+                line?: {
+                    lineRef: string;
+                    directionRef?: string;
+                }[];
             }[];
             walkSpeed?: number;
             numberOfResults?: number;
@@ -233,6 +247,13 @@ export interface components {
                     railSubmode?: string;
                     waterSubmode?: string;
                 }[];
+                lineFilter?: {
+                    exclude?: boolean;
+                    line?: {
+                        lineRef: string;
+                        directionRef?: string;
+                    }[];
+                }[];
                 walkSpeed?: number;
                 numberOfResults?: number;
                 numberOfResultsBefore?: number;
@@ -311,6 +332,13 @@ export interface components {
                                 telecabinSubmode?: string;
                                 railSubmode?: string;
                                 waterSubmode?: string;
+                            }[];
+                            lineFilter?: {
+                                exclude?: boolean;
+                                line?: {
+                                    lineRef: string;
+                                    directionRef?: string;
+                                }[];
                             }[];
                             walkSpeed?: number;
                             numberOfResults?: number;

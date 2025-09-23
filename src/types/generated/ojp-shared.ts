@@ -671,6 +671,17 @@ export interface components {
             /** @enum {string} */
             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
         };
+        LineDirectionFilterStructure: {
+            exclude?: boolean;
+            line?: {
+                lineRef: string;
+                directionRef?: string;
+            }[];
+        };
+        LineDirectionStructure: {
+            lineRef: string;
+            directionRef?: string;
+        };
     };
     responses: never;
     parameters: never;
