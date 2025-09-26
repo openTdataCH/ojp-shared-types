@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.17 - 26.09.2025
+- extend TR params - [PR #29](https://github.com/openTdataCH/ojp-shared-types/pull/29)
+    - adds `LineFilter`, `OperatorFilter`, `VehicleFilter`
+
 ## 0.0.16 - 07.09.2025
 - extend TR mode filter - [PR #27](https://github.com/openTdataCH/ojp-shared-types/pull/27)
 
