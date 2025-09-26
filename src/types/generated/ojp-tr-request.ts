@@ -98,6 +98,22 @@ export interface paths {
                                                 railSubmode?: string;
                                                 waterSubmode?: string;
                                             }[];
+                                            lineFilter?: {
+                                                line: {
+                                                    lineRef: string;
+                                                    directionRef?: string;
+                                                }[];
+                                                exclude?: boolean;
+                                            };
+                                            operatorFilter?: {
+                                                exclude?: boolean;
+                                                operatorRef: string[];
+                                            };
+                                            vehicleFilter?: {
+                                                exclude?: boolean;
+                                                vehicleRef: string[];
+                                                trainNumber: string[];
+                                            };
                                             walkSpeed?: number;
                                             numberOfResults?: number;
                                             numberOfResultsBefore?: number;
@@ -149,6 +165,22 @@ export interface components {
                 railSubmode?: string;
                 waterSubmode?: string;
             }[];
+            lineFilter?: {
+                line: {
+                    lineRef: string;
+                    directionRef?: string;
+                }[];
+                exclude?: boolean;
+            };
+            operatorFilter?: {
+                exclude?: boolean;
+                operatorRef: string[];
+            };
+            vehicleFilter?: {
+                exclude?: boolean;
+                vehicleRef: string[];
+                trainNumber: string[];
+            };
             walkSpeed?: number;
             numberOfResults?: number;
             numberOfResultsBefore?: number;
@@ -233,6 +265,22 @@ export interface components {
                     railSubmode?: string;
                     waterSubmode?: string;
                 }[];
+                lineFilter?: {
+                    line: {
+                        lineRef: string;
+                        directionRef?: string;
+                    }[];
+                    exclude?: boolean;
+                };
+                operatorFilter?: {
+                    exclude?: boolean;
+                    operatorRef: string[];
+                };
+                vehicleFilter?: {
+                    exclude?: boolean;
+                    vehicleRef: string[];
+                    trainNumber: string[];
+                };
                 walkSpeed?: number;
                 numberOfResults?: number;
                 numberOfResultsBefore?: number;
@@ -312,6 +360,22 @@ export interface components {
                                 railSubmode?: string;
                                 waterSubmode?: string;
                             }[];
+                            lineFilter?: {
+                                line: {
+                                    lineRef: string;
+                                    directionRef?: string;
+                                }[];
+                                exclude?: boolean;
+                            };
+                            operatorFilter?: {
+                                exclude?: boolean;
+                                operatorRef: string[];
+                            };
+                            vehicleFilter?: {
+                                exclude?: boolean;
+                                vehicleRef: string[];
+                                trainNumber: string[];
+                            };
                             walkSpeed?: number;
                             numberOfResults?: number;
                             numberOfResultsBefore?: number;

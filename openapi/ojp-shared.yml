@@ -1163,4 +1163,92 @@ components:
             name: occupancyLevel
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
-        
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__LineDirectionStructure
+    LineDirectionStructure:
+      type: object
+      xml:
+        name: Line
+      required:
+        - lineRef
+      properties:
+        lineRef:
+          type: string
+          xml:
+            name: LineRef
+            prefix: siri
+        directionRef:
+          type: string
+          xml:
+            name: DirectionRef
+            prefix: siri
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LineDirectionFilterStructure
+    LineDirectionFilterStructure:
+      type: object
+      xml:
+        name: LineFilter
+      required:
+        - line
+      properties:
+        line:
+          type: array
+          xml:
+            name: Line
+          items:
+            $ref: '#/components/schemas/LineDirectionStructure'
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OperatorFilterStructure
+    OperatorFilterStructure:
+      type: object
+      xml:
+        name: OperatorFilter
+      required:
+        - operatorRef
+      properties:
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
+        operatorRef:
+          type: array
+          xml:
+            name: OperatorRef
+          items:
+            type: string
+            xml:
+              name: OperatorRef
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__VehicleFilterStructure
+    VehicleFilterStructure:
+      type: object
+      xml:
+        name: VehicleFilter
+      required:
+        - vehicleRef
+        - trainNumber
+      properties:
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
+        vehicleRef:
+          type: array
+          xml:
+            name: VehicleRef
+          items:
+            type: string
+            xml:
+              name: VehicleRef
+        trainNumber:
+          type: array
+          xml:
+            name: TrainNumber
+          items:
+            type: string
+            xml:
+              name: TrainNumber

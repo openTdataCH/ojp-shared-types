@@ -671,6 +671,26 @@ export interface components {
             /** @enum {string} */
             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
         };
+        LineDirectionStructure: {
+            lineRef: string;
+            directionRef?: string;
+        };
+        LineDirectionFilterStructure: {
+            line: {
+                lineRef: string;
+                directionRef?: string;
+            }[];
+            exclude?: boolean;
+        };
+        OperatorFilterStructure: {
+            exclude?: boolean;
+            operatorRef: string[];
+        };
+        VehicleFilterStructure: {
+            exclude?: boolean;
+            vehicleRef: string[];
+            trainNumber: string[];
+        };
     };
     responses: never;
     parameters: never;

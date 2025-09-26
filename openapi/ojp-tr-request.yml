@@ -36,6 +36,18 @@ components:
             name: ModeAndModeOfOperationFilter
           items:
             $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
+        lineFilter:
+          $ref: "./ojp-shared.yml#/components/schemas/LineDirectionFilterStructure"
+          xml:
+            name: LineFilter
+        operatorFilter:
+          $ref: "./ojp-shared.yml#/components/schemas/OperatorFilterStructure"
+          xml:
+            name: OperatorFilter
+        vehicleFilter:
+          $ref: "./ojp-shared.yml#/components/schemas/VehicleFilterStructure"
+          xml:
+            name: VehicleFilter
         walkSpeed:
           type: number
           xml:

@@ -84,6 +84,7 @@ const MapNS_Tags: Record<string, string> = {
   // TR Request
   'GeoPosition.Longitude': 'siri',
   'GeoPosition.Latitude': 'siri',
+  'Line.LineRef': 'siri',
 
   // SER Request
   'OJPStopEventRequest.RequestTimestamp': 'siri',
