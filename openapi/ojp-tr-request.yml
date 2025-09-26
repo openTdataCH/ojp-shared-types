@@ -37,11 +37,9 @@ components:
           items:
             $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
         lineFilter:
-          type: array
+          $ref: "./ojp-shared.yml#/components/schemas/LineDirectionFilterStructure"
           xml:
-            name: LineFilter  
-          items:
-            $ref: "./ojp-shared.yml#/components/schemas/LineDirectionFilterStructure" 
+            name: LineFilter
         walkSpeed:
           type: number
           xml:
