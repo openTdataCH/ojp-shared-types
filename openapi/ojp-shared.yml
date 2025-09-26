@@ -1222,3 +1222,33 @@ components:
             type: string
             xml:
               name: OperatorRef
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__VehicleFilterStructure
+    VehicleFilterStructure:
+      type: object
+      xml:
+        name: VehicleFilter
+      required:
+        - vehicleRef
+        - trainNumber
+      properties:
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
+        vehicleRef:
+          type: array
+          xml:
+            name: VehicleRef
+          items:
+            type: string
+            xml:
+              name: VehicleRef
+        trainNumber:
+          type: array
+          xml:
+            name: TrainNumber
+          items:
+            type: string
+            xml:
+              name: TrainNumber
