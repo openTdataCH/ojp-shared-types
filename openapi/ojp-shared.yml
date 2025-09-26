@@ -1201,3 +1201,24 @@ components:
           type: boolean
           xml:
             name: Exclude
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OperatorFilterStructure
+    OperatorFilterStructure:
+      type: object
+      xml:
+        name: OperatorFilter
+      required:
+        - operatorRef
+      properties:
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
+        operatorRef:
+          type: array
+          xml:
+            name: OperatorRef
+          items:
+            type: string
+            xml:
+              name: OperatorRef

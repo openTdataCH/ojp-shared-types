@@ -40,6 +40,10 @@ components:
           $ref: "./ojp-shared.yml#/components/schemas/LineDirectionFilterStructure"
           xml:
             name: LineFilter
+        operatorFilter:
+          $ref: "./ojp-shared.yml#/components/schemas/OperatorFilterStructure"
+          xml:
+            name: OperatorFilter
         walkSpeed:
           type: number
           xml:
