@@ -99,12 +99,21 @@ export interface paths {
                                                 waterSubmode?: string;
                                             }[];
                                             lineFilter?: {
-                                                exclude?: boolean;
-                                                line?: {
+                                                line: {
                                                     lineRef: string;
                                                     directionRef?: string;
                                                 }[];
-                                            }[];
+                                                exclude?: boolean;
+                                            };
+                                            operatorFilter?: {
+                                                exclude?: boolean;
+                                                operatorRef: string[];
+                                            };
+                                            vehicleFilter?: {
+                                                exclude?: boolean;
+                                                vehicleRef: string[];
+                                                trainNumber: string[];
+                                            };
                                             walkSpeed?: number;
                                             numberOfResults?: number;
                                             numberOfResultsBefore?: number;
@@ -157,12 +166,21 @@ export interface components {
                 waterSubmode?: string;
             }[];
             lineFilter?: {
-                exclude?: boolean;
-                line?: {
+                line: {
                     lineRef: string;
                     directionRef?: string;
                 }[];
-            }[];
+                exclude?: boolean;
+            };
+            operatorFilter?: {
+                exclude?: boolean;
+                operatorRef: string[];
+            };
+            vehicleFilter?: {
+                exclude?: boolean;
+                vehicleRef: string[];
+                trainNumber: string[];
+            };
             walkSpeed?: number;
             numberOfResults?: number;
             numberOfResultsBefore?: number;
@@ -248,12 +266,21 @@ export interface components {
                     waterSubmode?: string;
                 }[];
                 lineFilter?: {
-                    exclude?: boolean;
-                    line?: {
+                    line: {
                         lineRef: string;
                         directionRef?: string;
                     }[];
-                }[];
+                    exclude?: boolean;
+                };
+                operatorFilter?: {
+                    exclude?: boolean;
+                    operatorRef: string[];
+                };
+                vehicleFilter?: {
+                    exclude?: boolean;
+                    vehicleRef: string[];
+                    trainNumber: string[];
+                };
                 walkSpeed?: number;
                 numberOfResults?: number;
                 numberOfResultsBefore?: number;
@@ -334,12 +361,21 @@ export interface components {
                                 waterSubmode?: string;
                             }[];
                             lineFilter?: {
-                                exclude?: boolean;
-                                line?: {
+                                line: {
                                     lineRef: string;
                                     directionRef?: string;
                                 }[];
-                            }[];
+                                exclude?: boolean;
+                            };
+                            operatorFilter?: {
+                                exclude?: boolean;
+                                operatorRef: string[];
+                            };
+                            vehicleFilter?: {
+                                exclude?: boolean;
+                                vehicleRef: string[];
+                                trainNumber: string[];
+                            };
                             walkSpeed?: number;
                             numberOfResults?: number;
                             numberOfResultsBefore?: number;
