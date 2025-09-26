@@ -1163,23 +1163,6 @@ components:
             name: occupancyLevel
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
-    
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LineDirectionFilterStructure
-    LineDirectionFilterStructure:
-      type: object
-      xml:
-        name: LineFilter
-      properties:
-        exclude:
-          type: boolean
-          xml:
-            name: Exclude
-        line:
-          type: array
-          xml:
-            name: Line
-          items:
-            $ref: '#/components/schemas/LineDirectionStructure'
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__LineDirectionStructure
     LineDirectionStructure:
@@ -1199,3 +1182,22 @@ components:
           xml:
             name: DirectionRef
             prefix: siri
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LineDirectionFilterStructure
+    LineDirectionFilterStructure:
+      type: object
+      xml:
+        name: LineFilter
+      required:
+        - line
+      properties:
+        line:
+          type: array
+          xml:
+            name: Line
+          items:
+            $ref: '#/components/schemas/LineDirectionStructure'
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
