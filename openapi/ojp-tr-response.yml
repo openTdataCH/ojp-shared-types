@@ -58,6 +58,53 @@ components:
         - stopPointRef
         - stopPointName
         - serviceArrival
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PathGuidanceSectionStructure
+    PathGuidanceSectionStructure:
+      type: object
+      xml:
+        name: PathGuidanceSection
+      properties:
+        trackSection:
+          $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
+          xml:
+            name: TrackSection
+        turnDescription:
+          $ref: './ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: TurnDescription
+        guidanceAdvice:
+          # TODO - make it enum
+          # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__GuidanceAdviceEnumeration
+          type: string
+          xml:
+            name: GuidanceAdvice
+        turnAction:
+          # TODO - make it enum
+          # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TurnActionEnumeration
+          type: string
+          xml:
+            name: TurnAction
+        roadName:
+          $ref: './ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: TurnDescription
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PathGuidanceStructure
+    PathGuidanceStructure:
+      type: object
+      xml:
+        name: PathGuidance
+      required:
+        - pathGuidanceSection
+      properties:
+        pathGuidanceSection:
+          type: array
+          xml:
+            name: PathGuidanceSection
+          items:
+            $ref: '#/components/schemas/PathGuidanceSectionStructure'
+          
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
     ContinuousService:
@@ -144,6 +191,10 @@ components:
           type: number
           xml:
             name: Length
+        pathGuidance:
+          $ref: '#/components/schemas/PathGuidanceStructure'
+          xml:
+            name: PathGuidance
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousLegStructure
     ContinuousLeg:
@@ -180,6 +231,10 @@ components:
           $ref: './ojp-shared.yml#/components/schemas/LegTrackStructure'
           xml:
             name: LegTrack
+        pathGuidance:
+          $ref: '#/components/schemas/PathGuidanceStructure'
+          xml:
+            name: PathGuidance
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegStructure
     Leg:
