@@ -343,6 +343,9 @@ export interface paths {
                                                             latitude: number;
                                                         }[];
                                                     };
+                                                    roadName?: string;
+                                                    duration?: string;
+                                                    length?: number;
                                                 }[];
                                             };
                                         }[];
@@ -532,6 +535,9 @@ export interface components {
                             latitude: number;
                         }[];
                     };
+                    roadName?: string;
+                    duration?: string;
+                    length?: number;
                 }[];
             };
         };
@@ -841,6 +847,9 @@ export interface components {
                                 latitude: number;
                             }[];
                         };
+                        roadName?: string;
+                        duration?: string;
+                        length?: number;
                     }[];
                 };
             }[];
@@ -1156,6 +1165,9 @@ export interface components {
                                             latitude: number;
                                         }[];
                                     };
+                                    roadName?: string;
+                                    duration?: string;
+                                    length?: number;
                                 }[];
                             };
                         }[];

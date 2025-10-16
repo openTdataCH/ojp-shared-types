@@ -651,6 +651,44 @@ export interface components {
                     latitude: number;
                 }[];
             };
+            roadName?: string;
+            duration?: string;
+            length?: number;
+        };
+        LegTrackStructure: {
+            trackSection: {
+                trackSectionStart?: {
+                    stopPointRef?: string;
+                    stopPlaceRef?: string;
+                    geoPosition?: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    name: {
+                        text: string;
+                    };
+                };
+                trackSectionEnd?: {
+                    stopPointRef?: string;
+                    stopPlaceRef?: string;
+                    geoPosition?: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    name: {
+                        text: string;
+                    };
+                };
+                linkProjection?: {
+                    position: {
+                        longitude: number;
+                        latitude: number;
+                    }[];
+                };
+                roadName?: string;
+                duration?: string;
+                length?: number;
+            }[];
         };
         ModeFilterStructure: {
             exclude?: boolean;
