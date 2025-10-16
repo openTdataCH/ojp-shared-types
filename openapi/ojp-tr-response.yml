@@ -140,6 +140,10 @@ components:
           type: string
           xml:
             name: Duration
+        length:
+          type: number
+          xml:
+            name: Length
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousLegStructure
     ContinuousLeg:
@@ -168,6 +172,10 @@ components:
           type: string
           xml:
             name: Duration
+        length:
+          type: number
+          xml:
+            name: Length
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegStructure
     Leg:
@@ -234,6 +242,10 @@ components:
           type: number
           xml:
             name: Transfers
+        distance:
+          type: number
+          xml:
+            name: Distance
         leg:
           type: array
           xml:
