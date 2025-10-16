@@ -51,6 +51,7 @@ export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 export type ProductCategorySchema = sharedComponents['schemas']['ProductCategory'];
 export type GeneralAttributeSchema = sharedComponents['schemas']['GeneralAttribute'];
 export type ModeFilterSchema = sharedComponents["schemas"]['ModeFilterStructure'];
+export type TrackSectionSchema = sharedComponents['schemas']['TrackSectionStructure'];
 
 export type ResponseContextSchema = sharedComponents['schemas']['ResponseContextStructure'];
 

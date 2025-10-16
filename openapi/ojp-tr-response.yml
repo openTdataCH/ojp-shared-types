@@ -58,6 +58,53 @@ components:
         - stopPointRef
         - stopPointName
         - serviceArrival
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PathGuidanceSectionStructure
+    PathGuidanceSectionStructure:
+      type: object
+      xml:
+        name: PathGuidanceSection
+      properties:
+        trackSection:
+          $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
+          xml:
+            name: TrackSection
+        turnDescription:
+          $ref: './ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: TurnDescription
+        guidanceAdvice:
+          # TODO - make it enum
+          # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__GuidanceAdviceEnumeration
+          type: string
+          xml:
+            name: GuidanceAdvice
+        turnAction:
+          # TODO - make it enum
+          # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TurnActionEnumeration
+          type: string
+          xml:
+            name: TurnAction
+        roadName:
+          $ref: './ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: TurnDescription
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PathGuidanceStructure
+    PathGuidanceStructure:
+      type: object
+      xml:
+        name: PathGuidance
+      required:
+        - pathGuidanceSection
+      properties:
+        pathGuidanceSection:
+          type: array
+          xml:
+            name: PathGuidanceSection
+          items:
+            $ref: '#/components/schemas/PathGuidanceSectionStructure'
+          
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
     ContinuousService:
@@ -106,18 +153,9 @@ components:
           xml:
             name: Service
         legTrack:
-          type: object
+          $ref: './ojp-shared.yml#/components/schemas/LegTrackStructure'
           xml:
             name: LegTrack
-          required:
-            - trackSection
-          properties:
-            trackSection:
-              type: array
-              xml:
-                name: TrackSection
-              items:
-                $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
     # TimedLeg
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferLegStructure
@@ -149,6 +187,14 @@ components:
           type: string
           xml:
             name: Duration
+        length:
+          type: number
+          xml:
+            name: Length
+        pathGuidance:
+          $ref: '#/components/schemas/PathGuidanceStructure'
+          xml:
+            name: PathGuidance
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousLegStructure
     ContinuousLeg:
@@ -177,6 +223,18 @@ components:
           type: string
           xml:
             name: Duration
+        length:
+          type: number
+          xml:
+            name: Length
+        legTrack:
+          $ref: './ojp-shared.yml#/components/schemas/LegTrackStructure'
+          xml:
+            name: LegTrack
+        pathGuidance:
+          $ref: '#/components/schemas/PathGuidanceStructure'
+          xml:
+            name: PathGuidance
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegStructure
     Leg:
@@ -208,6 +266,7 @@ components:
           xml:
             name: ContinuousLeg
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripStructure
     Trip:
       type: object
       xml:
@@ -242,6 +301,10 @@ components:
           type: number
           xml:
             name: Transfers
+        distance:
+          type: number
+          xml:
+            name: Distance
         leg:
           type: array
           xml:

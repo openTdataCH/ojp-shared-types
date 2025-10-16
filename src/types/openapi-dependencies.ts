@@ -115,9 +115,11 @@ const MapArrayTags: Record<string, boolean> = {
   'service.attribute': true,
 
   // TR Response
+  'OJPTripDelivery.tripResult': true,
   'trip.leg': true,
   'timedLeg.legIntermediate': true,
   'legTrack.trackSection': true,
+  'pathGuidance.pathGuidanceSection': true,
   
   // TR Response, ExpectedDepartureOccupancy
   'legBoard.expectedDepartureOccupancy': true,

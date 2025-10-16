@@ -244,6 +244,9 @@ export interface paths {
                                                                         latitude: number;
                                                                     }[];
                                                                 };
+                                                                roadName?: string;
+                                                                duration?: string;
+                                                                length?: number;
                                                             }[];
                                                         };
                                                         extension?: {
@@ -284,6 +287,52 @@ export interface paths {
                                                             };
                                                         };
                                                         duration: string;
+                                                        length?: number;
+                                                        pathGuidance?: {
+                                                            pathGuidanceSection: {
+                                                                trackSection?: {
+                                                                    trackSectionStart?: {
+                                                                        stopPointRef?: string;
+                                                                        stopPlaceRef?: string;
+                                                                        geoPosition?: {
+                                                                            longitude: number;
+                                                                            latitude: number;
+                                                                        };
+                                                                        name: {
+                                                                            text: string;
+                                                                        };
+                                                                    };
+                                                                    trackSectionEnd?: {
+                                                                        stopPointRef?: string;
+                                                                        stopPlaceRef?: string;
+                                                                        geoPosition?: {
+                                                                            longitude: number;
+                                                                            latitude: number;
+                                                                        };
+                                                                        name: {
+                                                                            text: string;
+                                                                        };
+                                                                    };
+                                                                    linkProjection?: {
+                                                                        position: {
+                                                                            longitude: number;
+                                                                            latitude: number;
+                                                                        }[];
+                                                                    };
+                                                                    roadName?: string;
+                                                                    duration?: string;
+                                                                    length?: number;
+                                                                };
+                                                                turnDescription?: {
+                                                                    text: string;
+                                                                };
+                                                                guidanceAdvice?: string;
+                                                                turnAction?: string;
+                                                                roadName?: {
+                                                                    text: string;
+                                                                };
+                                                            }[];
+                                                        };
                                                     };
                                                     continuousLeg?: {
                                                         legStart: {
@@ -313,6 +362,87 @@ export interface paths {
                                                             personalMode?: string;
                                                         };
                                                         duration: string;
+                                                        length?: number;
+                                                        legTrack?: {
+                                                            trackSection: {
+                                                                trackSectionStart?: {
+                                                                    stopPointRef?: string;
+                                                                    stopPlaceRef?: string;
+                                                                    geoPosition?: {
+                                                                        longitude: number;
+                                                                        latitude: number;
+                                                                    };
+                                                                    name: {
+                                                                        text: string;
+                                                                    };
+                                                                };
+                                                                trackSectionEnd?: {
+                                                                    stopPointRef?: string;
+                                                                    stopPlaceRef?: string;
+                                                                    geoPosition?: {
+                                                                        longitude: number;
+                                                                        latitude: number;
+                                                                    };
+                                                                    name: {
+                                                                        text: string;
+                                                                    };
+                                                                };
+                                                                linkProjection?: {
+                                                                    position: {
+                                                                        longitude: number;
+                                                                        latitude: number;
+                                                                    }[];
+                                                                };
+                                                                roadName?: string;
+                                                                duration?: string;
+                                                                length?: number;
+                                                            }[];
+                                                        };
+                                                        pathGuidance?: {
+                                                            pathGuidanceSection: {
+                                                                trackSection?: {
+                                                                    trackSectionStart?: {
+                                                                        stopPointRef?: string;
+                                                                        stopPlaceRef?: string;
+                                                                        geoPosition?: {
+                                                                            longitude: number;
+                                                                            latitude: number;
+                                                                        };
+                                                                        name: {
+                                                                            text: string;
+                                                                        };
+                                                                    };
+                                                                    trackSectionEnd?: {
+                                                                        stopPointRef?: string;
+                                                                        stopPlaceRef?: string;
+                                                                        geoPosition?: {
+                                                                            longitude: number;
+                                                                            latitude: number;
+                                                                        };
+                                                                        name: {
+                                                                            text: string;
+                                                                        };
+                                                                    };
+                                                                    linkProjection?: {
+                                                                        position: {
+                                                                            longitude: number;
+                                                                            latitude: number;
+                                                                        }[];
+                                                                    };
+                                                                    roadName?: string;
+                                                                    duration?: string;
+                                                                    length?: number;
+                                                                };
+                                                                turnDescription?: {
+                                                                    text: string;
+                                                                };
+                                                                guidanceAdvice?: string;
+                                                                turnAction?: string;
+                                                                roadName?: {
+                                                                    text: string;
+                                                                };
+                                                            }[];
+                                                        };
                                                     };
                                                 }[];
                                             };
@@ -561,6 +691,9 @@ export interface components {
                                         latitude: number;
                                     }[];
                                 };
+                                roadName?: string;
+                                duration?: string;
+                                length?: number;
                             }[];
                         };
                         extension?: {
@@ -601,6 +734,52 @@ export interface components {
                             };
                         };
                         duration: string;
+                        length?: number;
+                        pathGuidance?: {
+                            pathGuidanceSection: {
+                                trackSection?: {
+                                    trackSectionStart?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        name: {
+                                            text: string;
+                                        };
+                                    };
+                                    trackSectionEnd?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        name: {
+                                            text: string;
+                                        };
+                                    };
+                                    linkProjection?: {
+                                        position: {
+                                            longitude: number;
+                                            latitude: number;
+                                        }[];
+                                    };
+                                    roadName?: string;
+                                    duration?: string;
+                                    length?: number;
+                                };
+                                turnDescription?: {
+                                    text: string;
+                                };
+                                guidanceAdvice?: string;
+                                turnAction?: string;
+                                roadName?: {
+                                    text: string;
+                                };
+                            }[];
+                        };
                     };
                     continuousLeg?: {
                         legStart: {
@@ -630,6 +809,87 @@ export interface components {
                             personalMode?: string;
                         };
                         duration: string;
+                        length?: number;
+                        legTrack?: {
+                            trackSection: {
+                                trackSectionStart?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    name: {
+                                        text: string;
+                                    };
+                                };
+                                trackSectionEnd?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    name: {
+                                        text: string;
+                                    };
+                                };
+                                linkProjection?: {
+                                    position: {
+                                        longitude: number;
+                                        latitude: number;
+                                    }[];
+                                };
+                                roadName?: string;
+                                duration?: string;
+                                length?: number;
+                            }[];
+                        };
+                        pathGuidance?: {
+                            pathGuidanceSection: {
+                                trackSection?: {
+                                    trackSectionStart?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        name: {
+                                            text: string;
+                                        };
+                                    };
+                                    trackSectionEnd?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        name: {
+                                            text: string;
+                                        };
+                                    };
+                                    linkProjection?: {
+                                        position: {
+                                            longitude: number;
+                                            latitude: number;
+                                        }[];
+                                    };
+                                    roadName?: string;
+                                    duration?: string;
+                                    length?: number;
+                                };
+                                turnDescription?: {
+                                    text: string;
+                                };
+                                guidanceAdvice?: string;
+                                turnAction?: string;
+                                roadName?: {
+                                    text: string;
+                                };
+                            }[];
+                        };
                     };
                 }[];
             };
@@ -874,6 +1134,9 @@ export interface components {
                                             latitude: number;
                                         }[];
                                     };
+                                    roadName?: string;
+                                    duration?: string;
+                                    length?: number;
                                 }[];
                             };
                             extension?: {
@@ -914,6 +1177,52 @@ export interface components {
                                 };
                             };
                             duration: string;
+                            length?: number;
+                            pathGuidance?: {
+                                pathGuidanceSection: {
+                                    trackSection?: {
+                                        trackSectionStart?: {
+                                            stopPointRef?: string;
+                                            stopPlaceRef?: string;
+                                            geoPosition?: {
+                                                longitude: number;
+                                                latitude: number;
+                                            };
+                                            name: {
+                                                text: string;
+                                            };
+                                        };
+                                        trackSectionEnd?: {
+                                            stopPointRef?: string;
+                                            stopPlaceRef?: string;
+                                            geoPosition?: {
+                                                longitude: number;
+                                                latitude: number;
+                                            };
+                                            name: {
+                                                text: string;
+                                            };
+                                        };
+                                        linkProjection?: {
+                                            position: {
+                                                longitude: number;
+                                                latitude: number;
+                                            }[];
+                                        };
+                                        roadName?: string;
+                                        duration?: string;
+                                        length?: number;
+                                    };
+                                    turnDescription?: {
+                                        text: string;
+                                    };
+                                    guidanceAdvice?: string;
+                                    turnAction?: string;
+                                    roadName?: {
+                                        text: string;
+                                    };
+                                }[];
+                            };
                         };
                         continuousLeg?: {
                             legStart: {
@@ -943,6 +1252,87 @@ export interface components {
                                 personalMode?: string;
                             };
                             duration: string;
+                            length?: number;
+                            legTrack?: {
+                                trackSection: {
+                                    trackSectionStart?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        name: {
+                                            text: string;
+                                        };
+                                    };
+                                    trackSectionEnd?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        name: {
+                                            text: string;
+                                        };
+                                    };
+                                    linkProjection?: {
+                                        position: {
+                                            longitude: number;
+                                            latitude: number;
+                                        }[];
+                                    };
+                                    roadName?: string;
+                                    duration?: string;
+                                    length?: number;
+                                }[];
+                            };
+                            pathGuidance?: {
+                                pathGuidanceSection: {
+                                    trackSection?: {
+                                        trackSectionStart?: {
+                                            stopPointRef?: string;
+                                            stopPlaceRef?: string;
+                                            geoPosition?: {
+                                                longitude: number;
+                                                latitude: number;
+                                            };
+                                            name: {
+                                                text: string;
+                                            };
+                                        };
+                                        trackSectionEnd?: {
+                                            stopPointRef?: string;
+                                            stopPlaceRef?: string;
+                                            geoPosition?: {
+                                                longitude: number;
+                                                latitude: number;
+                                            };
+                                            name: {
+                                                text: string;
+                                            };
+                                        };
+                                        linkProjection?: {
+                                            position: {
+                                                longitude: number;
+                                                latitude: number;
+                                            }[];
+                                        };
+                                        roadName?: string;
+                                        duration?: string;
+                                        length?: number;
+                                    };
+                                    turnDescription?: {
+                                        text: string;
+                                    };
+                                    guidanceAdvice?: string;
+                                    turnAction?: string;
+                                    roadName?: {
+                                        text: string;
+                                    };
+                                }[];
+                            };
                         };
                     }[];
                 };
@@ -1170,6 +1560,9 @@ export interface components {
                                                 latitude: number;
                                             }[];
                                         };
+                                        roadName?: string;
+                                        duration?: string;
+                                        length?: number;
                                     }[];
                                 };
                                 extension?: {
@@ -1210,6 +1603,52 @@ export interface components {
                                     };
                                 };
                                 duration: string;
+                                length?: number;
+                                pathGuidance?: {
+                                    pathGuidanceSection: {
+                                        trackSection?: {
+                                            trackSectionStart?: {
+                                                stopPointRef?: string;
+                                                stopPlaceRef?: string;
+                                                geoPosition?: {
+                                                    longitude: number;
+                                                    latitude: number;
+                                                };
+                                                name: {
+                                                    text: string;
+                                                };
+                                            };
+                                            trackSectionEnd?: {
+                                                stopPointRef?: string;
+                                                stopPlaceRef?: string;
+                                                geoPosition?: {
+                                                    longitude: number;
+                                                    latitude: number;
+                                                };
+                                                name: {
+                                                    text: string;
+                                                };
+                                            };
+                                            linkProjection?: {
+                                                position: {
+                                                    longitude: number;
+                                                    latitude: number;
+                                                }[];
+                                            };
+                                            roadName?: string;
+                                            duration?: string;
+                                            length?: number;
+                                        };
+                                        turnDescription?: {
+                                            text: string;
+                                        };
+                                        guidanceAdvice?: string;
+                                        turnAction?: string;
+                                        roadName?: {
+                                            text: string;
+                                        };
+                                    }[];
+                                };
                             };
                             continuousLeg?: {
                                 legStart: {
@@ -1239,6 +1678,87 @@ export interface components {
                                     personalMode?: string;
                                 };
                                 duration: string;
+                                length?: number;
+                                legTrack?: {
+                                    trackSection: {
+                                        trackSectionStart?: {
+                                            stopPointRef?: string;
+                                            stopPlaceRef?: string;
+                                            geoPosition?: {
+                                                longitude: number;
+                                                latitude: number;
+                                            };
+                                            name: {
+                                                text: string;
+                                            };
+                                        };
+                                        trackSectionEnd?: {
+                                            stopPointRef?: string;
+                                            stopPlaceRef?: string;
+                                            geoPosition?: {
+                                                longitude: number;
+                                                latitude: number;
+                                            };
+                                            name: {
+                                                text: string;
+                                            };
+                                        };
+                                        linkProjection?: {
+                                            position: {
+                                                longitude: number;
+                                                latitude: number;
+                                            }[];
+                                        };
+                                        roadName?: string;
+                                        duration?: string;
+                                        length?: number;
+                                    }[];
+                                };
+                                pathGuidance?: {
+                                    pathGuidanceSection: {
+                                        trackSection?: {
+                                            trackSectionStart?: {
+                                                stopPointRef?: string;
+                                                stopPlaceRef?: string;
+                                                geoPosition?: {
+                                                    longitude: number;
+                                                    latitude: number;
+                                                };
+                                                name: {
+                                                    text: string;
+                                                };
+                                            };
+                                            trackSectionEnd?: {
+                                                stopPointRef?: string;
+                                                stopPlaceRef?: string;
+                                                geoPosition?: {
+                                                    longitude: number;
+                                                    latitude: number;
+                                                };
+                                                name: {
+                                                    text: string;
+                                                };
+                                            };
+                                            linkProjection?: {
+                                                position: {
+                                                    longitude: number;
+                                                    latitude: number;
+                                                }[];
+                                            };
+                                            roadName?: string;
+                                            duration?: string;
+                                            length?: number;
+                                        };
+                                        turnDescription?: {
+                                            text: string;
+                                        };
+                                        guidanceAdvice?: string;
+                                        turnAction?: string;
+                                        roadName?: {
+                                            text: string;
+                                        };
+                                    }[];
+                                };
                             };
                         }[];
                     };
@@ -1474,6 +1994,9 @@ export interface components {
                                                         latitude: number;
                                                     }[];
                                                 };
+                                                roadName?: string;
+                                                duration?: string;
+                                                length?: number;
                                             }[];
                                         };
                                         extension?: {
@@ -1514,6 +2037,52 @@ export interface components {
                                             };
                                         };
                                         duration: string;
+                                        length?: number;
+                                        pathGuidance?: {
+                                            pathGuidanceSection: {
+                                                trackSection?: {
+                                                    trackSectionStart?: {
+                                                        stopPointRef?: string;
+                                                        stopPlaceRef?: string;
+                                                        geoPosition?: {
+                                                            longitude: number;
+                                                            latitude: number;
+                                                        };
+                                                        name: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    trackSectionEnd?: {
+                                                        stopPointRef?: string;
+                                                        stopPlaceRef?: string;
+                                                        geoPosition?: {
+                                                            longitude: number;
+                                                            latitude: number;
+                                                        };
+                                                        name: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    linkProjection?: {
+                                                        position: {
+                                                            longitude: number;
+                                                            latitude: number;
+                                                        }[];
+                                                    };
+                                                    roadName?: string;
+                                                    duration?: string;
+                                                    length?: number;
+                                                };
+                                                turnDescription?: {
+                                                    text: string;
+                                                };
+                                                guidanceAdvice?: string;
+                                                turnAction?: string;
+                                                roadName?: {
+                                                    text: string;
+                                                };
+                                            }[];
+                                        };
                                     };
                                     continuousLeg?: {
                                         legStart: {
@@ -1543,6 +2112,87 @@ export interface components {
                                             personalMode?: string;
                                         };
                                         duration: string;
+                                        length?: number;
+                                        legTrack?: {
+                                            trackSection: {
+                                                trackSectionStart?: {
+                                                    stopPointRef?: string;
+                                                    stopPlaceRef?: string;
+                                                    geoPosition?: {
+                                                        longitude: number;
+                                                        latitude: number;
+                                                    };
+                                                    name: {
+                                                        text: string;
+                                                    };
+                                                };
+                                                trackSectionEnd?: {
+                                                    stopPointRef?: string;
+                                                    stopPlaceRef?: string;
+                                                    geoPosition?: {
+                                                        longitude: number;
+                                                        latitude: number;
+                                                    };
+                                                    name: {
+                                                        text: string;
+                                                    };
+                                                };
+                                                linkProjection?: {
+                                                    position: {
+                                                        longitude: number;
+                                                        latitude: number;
+                                                    }[];
+                                                };
+                                                roadName?: string;
+                                                duration?: string;
+                                                length?: number;
+                                            }[];
+                                        };
+                                        pathGuidance?: {
+                                            pathGuidanceSection: {
+                                                trackSection?: {
+                                                    trackSectionStart?: {
+                                                        stopPointRef?: string;
+                                                        stopPlaceRef?: string;
+                                                        geoPosition?: {
+                                                            longitude: number;
+                                                            latitude: number;
+                                                        };
+                                                        name: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    trackSectionEnd?: {
+                                                        stopPointRef?: string;
+                                                        stopPlaceRef?: string;
+                                                        geoPosition?: {
+                                                            longitude: number;
+                                                            latitude: number;
+                                                        };
+                                                        name: {
+                                                            text: string;
+                                                        };
+                                                    };
+                                                    linkProjection?: {
+                                                        position: {
+                                                            longitude: number;
+                                                            latitude: number;
+                                                        }[];
+                                                    };
+                                                    roadName?: string;
+                                                    duration?: string;
+                                                    length?: number;
+                                                };
+                                                turnDescription?: {
+                                                    text: string;
+                                                };
+                                                guidanceAdvice?: string;
+                                                turnAction?: string;
+                                                roadName?: {
+                                                    text: string;
+                                                };
+                                            }[];
+                                        };
                                     };
                                 }[];
                             };
