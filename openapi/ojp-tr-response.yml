@@ -199,6 +199,7 @@ components:
           xml:
             name: ContinuousLeg
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripStructure
     Trip:
       type: object
       xml:
