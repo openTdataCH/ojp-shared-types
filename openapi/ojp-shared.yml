@@ -1081,6 +1081,21 @@ components:
           xml:
             name: Length
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegTrackStructure
+    LegTrackStructure:
+      type: object
+      xml:
+        name: LegTrack
+      required:
+        - trackSection
+      properties:
+        trackSection:
+          type: array
+          xml:
+            name: TrackSection
+          items:
+            $ref: '#/components/schemas/TrackSectionStructure'
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ModeFilterStructure
     ModeFilterStructure:
       type: object

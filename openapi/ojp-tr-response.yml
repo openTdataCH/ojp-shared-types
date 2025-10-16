@@ -106,18 +106,9 @@ components:
           xml:
             name: Service
         legTrack:
-          type: object
+          $ref: './ojp-shared.yml#/components/schemas/LegTrackStructure'
           xml:
             name: LegTrack
-          required:
-            - trackSection
-          properties:
-            trackSection:
-              type: array
-              xml:
-                name: TrackSection
-              items:
-                $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
     # TimedLeg
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferLegStructure
