@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.0.18 - 16.10.2025
+- improves Geo/Distance nodes - [PR #31](https://github.com/openTdataCH/ojp-shared-types/pull/31)
+    - adds PathGuidance/LinkProkection/Distance/Length to trip legs
+    - enforce `OJPTripDelivery.TripResult` array
+
 ## 0.0.17 - 26.09.2025
 - extend TR params - [PR #29](https://github.com/openTdataCH/ojp-shared-types/pull/29)
     - adds `LineFilter`, `OperatorFilter`, `VehicleFilter`
