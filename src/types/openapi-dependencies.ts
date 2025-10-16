@@ -119,6 +119,7 @@ const MapArrayTags: Record<string, boolean> = {
   'trip.leg': true,
   'timedLeg.legIntermediate': true,
   'legTrack.trackSection': true,
+  'pathGuidance.pathGuidanceSection': true,
   
   // TR Response, ExpectedDepartureOccupancy
   'legBoard.expectedDepartureOccupancy': true,
