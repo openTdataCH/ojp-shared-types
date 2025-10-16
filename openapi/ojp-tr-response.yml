@@ -176,6 +176,10 @@ components:
           type: number
           xml:
             name: Length
+        legTrack:
+          $ref: './ojp-shared.yml#/components/schemas/LegTrackStructure'
+          xml:
+            name: LegTrack
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegStructure
     Leg:
