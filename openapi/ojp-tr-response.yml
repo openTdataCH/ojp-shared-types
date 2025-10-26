@@ -109,6 +109,9 @@ components:
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
     ContinuousService:
       type: object
+      required:
+        - personalModeOfOperation
+        - personalMode
       xml:
         name: ContinuousService
       properties:
