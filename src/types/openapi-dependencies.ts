@@ -111,8 +111,14 @@ const MapArrayTags: Record<string, boolean> = {
   'textualContent.remarkContent': true,
   'textualContent.infoLink': true,
 
+  'itModeAndModeOfOperation.personalModeOfOperation': true,
+
   // Service
   'service.attribute': true,
+
+  // TR Request
+  'origin.individualTransportOption': true,
+  'destination.individualTransportOption': true,
 
   // TR Response
   'OJPTripDelivery.tripResult': true,
