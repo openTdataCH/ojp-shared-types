@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.0.19 - 26.10.2025
+- adds `ItModesStructure`, `IndividualTransportOptionStructure`
+    - adds individualTransportOption to origin / destination
+    - adds Github workflow for npm publish automation 
+
 ## 0.0.18 - 16.10.2025
 - improves Geo/Distance nodes - [PR #31](https://github.com/openTdataCH/ojp-shared-types/pull/31)
     - adds PathGuidance/LinkProkection/Distance/Length to trip legs
