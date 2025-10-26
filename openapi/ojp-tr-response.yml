@@ -113,13 +113,11 @@ components:
         name: ContinuousService
       properties:
         personalModeOfOperation:
-          # TODO - add enum?
-          type: string
+          $ref: './ojp-shared.yml#/components/schemas/PersonalModesOfOperationEnumeration'
           xml:
             name: PersonalModeOfOperation
         personalMode:
-          # TODO - add enum?
-          type: string
+          $ref: './ojp-shared.yml#/components/schemas/PersonalModesEnumeration'
           xml:
             name: PersonalMode
 
