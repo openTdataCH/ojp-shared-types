@@ -175,6 +175,7 @@ components:
         name: PlaceContext
       required:
         - placeRef
+        - individualTransportOption
       properties:
         placeRef:
           $ref: '#/components/schemas/PlaceRef'
@@ -184,6 +185,12 @@ components:
           type: string
           xml:
             name: DepArrTime
+        individualTransportOption:
+          type: array
+          xml:
+            name: IndividualTransportOption
+          items:
+            $ref: "#/components/schemas/IndividualTransportOptionStructure"
 
     ServiceRequestContext:
       type: object
