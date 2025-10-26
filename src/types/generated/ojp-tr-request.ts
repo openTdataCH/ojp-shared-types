@@ -55,6 +55,18 @@ export interface paths {
                                                 };
                                             };
                                             depArrTime?: string;
+                                            individualTransportOption: {
+                                                itModeAndModeOfOperation: {
+                                                    /** @enum {string} */
+                                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                                                };
+                                                maxDistance?: number;
+                                                maxDuration?: string;
+                                                minDistance?: number;
+                                                minDuration?: string;
+                                                speed?: number;
+                                            }[];
                                         };
                                         destination: {
                                             placeRef: {
@@ -69,6 +81,18 @@ export interface paths {
                                                 };
                                             };
                                             depArrTime?: string;
+                                            individualTransportOption: {
+                                                itModeAndModeOfOperation: {
+                                                    /** @enum {string} */
+                                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                                                };
+                                                maxDistance?: number;
+                                                maxDuration?: string;
+                                                minDistance?: number;
+                                                minDuration?: string;
+                                                speed?: number;
+                                            }[];
                                         };
                                         via: {
                                             viaPoint: {
@@ -222,6 +246,18 @@ export interface components {
                     };
                 };
                 depArrTime?: string;
+                individualTransportOption: {
+                    itModeAndModeOfOperation: {
+                        /** @enum {string} */
+                        personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                        personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                    };
+                    maxDistance?: number;
+                    maxDuration?: string;
+                    minDistance?: number;
+                    minDuration?: string;
+                    speed?: number;
+                }[];
             };
             destination: {
                 placeRef: {
@@ -236,6 +272,18 @@ export interface components {
                     };
                 };
                 depArrTime?: string;
+                individualTransportOption: {
+                    itModeAndModeOfOperation: {
+                        /** @enum {string} */
+                        personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                        personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                    };
+                    maxDistance?: number;
+                    maxDuration?: string;
+                    minDistance?: number;
+                    minDuration?: string;
+                    speed?: number;
+                }[];
             };
             via: {
                 viaPoint: {
@@ -317,6 +365,18 @@ export interface components {
                                 };
                             };
                             depArrTime?: string;
+                            individualTransportOption: {
+                                itModeAndModeOfOperation: {
+                                    /** @enum {string} */
+                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                                };
+                                maxDistance?: number;
+                                maxDuration?: string;
+                                minDistance?: number;
+                                minDuration?: string;
+                                speed?: number;
+                            }[];
                         };
                         destination: {
                             placeRef: {
@@ -331,6 +391,18 @@ export interface components {
                                 };
                             };
                             depArrTime?: string;
+                            individualTransportOption: {
+                                itModeAndModeOfOperation: {
+                                    /** @enum {string} */
+                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                                };
+                                maxDistance?: number;
+                                maxDuration?: string;
+                                minDistance?: number;
+                                minDuration?: string;
+                                speed?: number;
+                            }[];
                         };
                         via: {
                             viaPoint: {

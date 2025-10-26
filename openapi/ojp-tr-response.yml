@@ -109,17 +109,18 @@ components:
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
     ContinuousService:
       type: object
+      required:
+        - personalModeOfOperation
+        - personalMode
       xml:
         name: ContinuousService
       properties:
         personalModeOfOperation:
-          # TODO - add enum?
-          type: string
+          $ref: './ojp-shared.yml#/components/schemas/PersonalModesOfOperationEnumeration'
           xml:
             name: PersonalModeOfOperation
         personalMode:
-          # TODO - add enum?
-          type: string
+          $ref: './ojp-shared.yml#/components/schemas/PersonalModesEnumeration'
           xml:
             name: PersonalMode
 

@@ -5,6 +5,20 @@ info:
 paths: {}
 components:
   schemas:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PersonalModesEnumeration
+    PersonalModesEnumeration:
+      type: string
+      enum: [ foot, bicycle, car, motorcycle, truck, scooter, other ]
+      xml:
+        name: PersonalModes
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PersonalModesOfOperationEnumeration
+    PersonalModesOfOperationEnumeration:
+      type: string
+      enum: [ self, own, otherOwned, privateLift, lease ]
+      xml:
+        name: PersonalModesOfOperation
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__VehicleModesOfTransportEnumeration
     VehicleModesOfTransportEnum:
       type: string
@@ -100,6 +114,59 @@ components:
           $ref: '#/components/schemas/InternationalText'
           xml:
             name: Name
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ItModesStructure
+    ItModesStructure:
+      type: object
+      required:
+        - personalMode
+        - personalModeOfOperation
+      xml:
+        name: ItModes
+      properties:
+        personalMode:
+          $ref: '#/components/schemas/PersonalModesEnumeration'
+          xml:
+            name: PersonalMode
+        personalModeOfOperation:
+          type: array
+          xml:
+            name: PersonalModeOfOperation
+          items:
+            $ref: '#/components/schemas/PersonalModesOfOperationEnumeration'
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__IndividualTransportOptionStructure
+    IndividualTransportOptionStructure:
+      type: object
+      required:
+        - itModeAndModeOfOperation
+      xml:
+        name: IndividualTransportOption
+      properties:
+        itModeAndModeOfOperation:
+          $ref: '#/components/schemas/ItModesStructure'
+          xml:
+            name: ItModeAndModeOfOperation
+        maxDistance:
+          type: number
+          xml:
+            name: MaxDistance
+        maxDuration:
+          type: string
+          xml:
+            name: MaxDuration
+        minDistance:
+          type: number
+          xml:
+            name: MinDistance
+        minDuration:
+          type: string
+          xml:
+            name: MinDuration
+        speed:
+          type: number
+          xml:
+            name: Speed
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PlaceContextStructure
     PlaceContext:
@@ -108,6 +175,7 @@ components:
         name: PlaceContext
       required:
         - placeRef
+        - individualTransportOption
       properties:
         placeRef:
           $ref: '#/components/schemas/PlaceRef'
@@ -117,6 +185,12 @@ components:
           type: string
           xml:
             name: DepArrTime
+        individualTransportOption:
+          type: array
+          xml:
+            name: IndividualTransportOption
+          items:
+            $ref: "#/components/schemas/IndividualTransportOptionStructure"
 
     ServiceRequestContext:
       type: object

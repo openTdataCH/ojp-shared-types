@@ -358,8 +358,10 @@ export interface paths {
                                                             };
                                                         };
                                                         service: {
-                                                            personalModeOfOperation?: string;
-                                                            personalMode?: string;
+                                                            /** @enum {string} */
+                                                            personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                                                            /** @enum {string} */
+                                                            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
                                                         };
                                                         duration: string;
                                                         length?: number;
@@ -805,8 +807,10 @@ export interface components {
                             };
                         };
                         service: {
-                            personalModeOfOperation?: string;
-                            personalMode?: string;
+                            /** @enum {string} */
+                            personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                            /** @enum {string} */
+                            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
                         };
                         duration: string;
                         length?: number;
@@ -1248,8 +1252,10 @@ export interface components {
                                 };
                             };
                             service: {
-                                personalModeOfOperation?: string;
-                                personalMode?: string;
+                                /** @enum {string} */
+                                personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                                /** @enum {string} */
+                                personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
                             };
                             duration: string;
                             length?: number;
@@ -1674,8 +1680,10 @@ export interface components {
                                     };
                                 };
                                 service: {
-                                    personalModeOfOperation?: string;
-                                    personalMode?: string;
+                                    /** @enum {string} */
+                                    personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                                    /** @enum {string} */
+                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
                                 };
                                 duration: string;
                                 length?: number;
@@ -2108,8 +2116,10 @@ export interface components {
                                             };
                                         };
                                         service: {
-                                            personalModeOfOperation?: string;
-                                            personalMode?: string;
+                                            /** @enum {string} */
+                                            personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                                            /** @enum {string} */
+                                            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
                                         };
                                         duration: string;
                                         length?: number;
