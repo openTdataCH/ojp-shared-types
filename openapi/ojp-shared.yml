@@ -5,6 +5,20 @@ info:
 paths: {}
 components:
   schemas:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PersonalModesEnumeration
+    PersonalModesEnumeration:
+      type: string
+      enum: [ foot, bicycle, car, motorcycle, truck, scooter, other ]
+      xml:
+        name: PersonalModes
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PersonalModesOfOperationEnumeration
+    PersonalModesOfOperationEnumeration:
+      type: string
+      enum: [ self, own, otherOwned, privateLift, lease ]
+      xml:
+        name: PersonalModesOfOperation
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__VehicleModesOfTransportEnumeration
     VehicleModesOfTransportEnum:
       type: string
