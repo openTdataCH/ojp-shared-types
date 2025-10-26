@@ -8,6 +8,10 @@ export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
         /** @enum {string} */
+        PersonalModesEnumeration: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+        /** @enum {string} */
+        PersonalModesOfOperationEnumeration: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+        /** @enum {string} */
         VehicleModesOfTransportEnum: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
         /** @enum {string} */
         UseRealtimeDataEnum: "full" | "explanatory" | "none";
@@ -35,6 +39,23 @@ export interface components {
                 text: string;
             };
         };
+        ItModesStructure: {
+            /** @enum {string} */
+            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+            personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+        };
+        IndividualTransportOptionStructure: {
+            itModeAndModeOfOperation: {
+                /** @enum {string} */
+                personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+            };
+            maxDistance?: number;
+            maxDuration?: string;
+            minDistance?: number;
+            minDuration?: string;
+            speed?: number;
+        };
         PlaceContext: {
             placeRef: {
                 stopPointRef?: string;
@@ -48,6 +69,18 @@ export interface components {
                 };
             };
             depArrTime?: string;
+            individualTransportOption: {
+                itModeAndModeOfOperation: {
+                    /** @enum {string} */
+                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                };
+                maxDistance?: number;
+                maxDuration?: string;
+                minDistance?: number;
+                minDuration?: string;
+                speed?: number;
+            }[];
         };
         ServiceRequestContext: {
             language?: string;
