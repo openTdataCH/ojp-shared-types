@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 0.0.20 - 31.10.2025
-- adds `IndividualTransportOptionSchema` to Public API
+- adds `IndividualTransportOptionSchema` to Public API - [PR #34](https://github.com/openTdataCH/ojp-shared-types/pull/34)
 
 ## 0.0.19 - 26.10.2025
 - adds `ItModesStructure`, `IndividualTransportOptionStructure` - [PR #33](https://github.com/openTdataCH/ojp-shared-types/pull/33)
