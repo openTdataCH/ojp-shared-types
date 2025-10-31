@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 0.0.19 - 26.10.2025
-- adds `ItModesStructure`, `IndividualTransportOptionStructure`
+- adds `ItModesStructure`, `IndividualTransportOptionStructure` - [PR #33](https://github.com/openTdataCH/ojp-shared-types/pull/33)
     - adds individualTransportOption to origin / destination
     - adds Github workflow for npm publish automation 
 
