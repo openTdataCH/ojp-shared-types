@@ -55,6 +55,8 @@ export type TrackSectionSchema = sharedComponents['schemas']['TrackSectionStruct
 
 export type ResponseContextSchema = sharedComponents['schemas']['ResponseContextStructure'];
 
+export type IndividualTransportOptionSchema = sharedComponents['schemas']['IndividualTransportOptionStructure'];
+
 export type TripRequestOJP = tripRequestComponents["schemas"]["OJP"];
 export type TripParamsSchema = tripRequestComponents["schemas"]["TripParam"];
 export type TripRequestSchema = tripRequestComponents["schemas"]["OJPTripRequest"];
