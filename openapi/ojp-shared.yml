@@ -1245,6 +1245,7 @@ components:
         name: ModeFilter
       required:
         - ptMode
+        - personalMode
       properties:
         exclude:
           type: boolean
@@ -1256,6 +1257,12 @@ components:
             name: PtMode
           items:
             $ref: '#/components/schemas/VehicleModesOfTransportEnum'
+        personalMode:
+          type: array
+          xml:
+            name: PersonalMode
+          items:
+            $ref: './ojp-shared.yml#/components/schemas/PersonalModesEnumeration'
         airSubmode:
           type: string
           xml:
