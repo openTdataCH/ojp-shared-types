@@ -314,6 +314,24 @@ components:
           xml:
             name: TopographicPlaceName
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CategoryKeyValueType
+    CategoryKeyValueType:
+      type: object
+      required:
+        - key
+        - value
+      xml:
+        name: CategoryKeyValue
+      properties:
+        key:
+          type: string
+          xml:
+            name: Key
+        value:
+          type: string
+          xml:
+            name: Value
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestStructure
     PointOfInterest:
       type: object
