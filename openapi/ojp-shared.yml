@@ -386,18 +386,18 @@ components:
           type: string
           xml:
             name: TopographicPlaceName
-        TopographicPlaceRef:
+        topographicPlaceRef:
           type: string
           xml:
-            name: topographicPlaceRef
-        Street:
+            name: TopographicPlaceRef
+        street:
           type: string
           xml:
-            name: street
-        HouseNumber:
+            name: Street
+        houseNumber:
           type: string
           xml:
-            name: houseNumber
+            name: HouseNumber
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ModeStructure
     ModeStructure:
