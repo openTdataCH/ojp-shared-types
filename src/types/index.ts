@@ -30,6 +30,7 @@ export type OJPv1_TripLegSchema = ojpV1_TripComponents['schemas']['TripLeg'];
 export type OJPv1_TripSchema = ojpV1_TripComponents['schemas']['Trip'];
 
 export type UseRealtimeDataEnum = sharedComponents["schemas"]["UseRealtimeDataEnum"];
+export type PersonalModesEnum = sharedComponents["schemas"]['PersonalModesEnumeration'];
 export type VehicleModesOfTransportEnum = sharedComponents["schemas"]["VehicleModesOfTransportEnum"];
 export type PlaceTypeEnum = sharedComponents["schemas"]["PlaceTypeEnum"];
 
