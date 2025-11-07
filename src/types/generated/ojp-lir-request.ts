@@ -73,7 +73,8 @@ export interface paths {
                                             numberOfResults?: number;
                                             modes?: {
                                                 exclude?: boolean;
-                                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                                                ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                                                personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
                                                 airSubmode?: string;
                                                 busSubmode?: string;
                                                 coachSubmode?: string;
@@ -116,7 +117,8 @@ export interface components {
             numberOfResults?: number;
             modes?: {
                 exclude?: boolean;
-                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
                 airSubmode?: string;
                 busSubmode?: string;
                 coachSubmode?: string;
@@ -177,7 +179,8 @@ export interface components {
                 numberOfResults?: number;
                 modes?: {
                     exclude?: boolean;
-                    ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                    ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                    personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
                     airSubmode?: string;
                     busSubmode?: string;
                     coachSubmode?: string;
@@ -232,7 +235,8 @@ export interface components {
                             numberOfResults?: number;
                             modes?: {
                                 exclude?: boolean;
-                                ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                                ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                                personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
                                 airSubmode?: string;
                                 busSubmode?: string;
                                 coachSubmode?: string;
