@@ -1214,6 +1214,8 @@ components:
       type: object
       xml:
         name: ModeFilter
+      required:
+        - ptMode
       properties:
         exclude:
           type: boolean
