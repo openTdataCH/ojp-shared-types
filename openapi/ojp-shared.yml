@@ -228,9 +228,10 @@ components:
     PointOfInterestCategory:
       type: object
       xml:
-        name: PointOfInterestCategory  
+        name: PointOfInterestCategory
       required:
         - osmTag
+        - pointOfInterestClassification
       properties:
         osmTag:
           type: array
@@ -238,6 +239,14 @@ components:
             name: OsmTag
           items:
             $ref: "#/components/schemas/OsmTagStructure"
+        pointOfInterestClassification:
+          type: array
+          xml:
+            name: PointOfInterestClassification
+          items:
+            type: string
+            xml:
+              name: PointOfInterestClassification
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__StopPointStructure
     StopPoint:
