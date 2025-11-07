@@ -356,6 +356,22 @@ components:
             name: PointOfInterestCategory
           items:
             $ref: "#/components/schemas/PointOfInterestCategoryStructure"
+        privateCode:
+          type: object
+          required:
+            - system
+            - value
+          xml:
+            name: PrivateCode
+          properties:
+            system:
+              type: string
+              xml:
+                name: System
+            value:
+              type: string
+              xml:
+                name: Value
         topographicPlaceRef:
           type: string
           xml:
