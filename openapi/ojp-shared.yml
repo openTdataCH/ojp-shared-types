@@ -225,7 +225,7 @@ components:
         name: OsmTag
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestCategoryStructure
-    PointOfInterestCategory:
+    PointOfInterestCategoryStructure:
       type: object
       xml:
         name: PointOfInterestCategory
@@ -337,7 +337,7 @@ components:
           xml:
             name: PointOfInterestCategory
           items:
-            $ref: "#/components/schemas/PointOfInterestCategory"
+            $ref: "#/components/schemas/PointOfInterestCategoryStructure"
         topographicPlaceRef:
           type: string
           xml:
