@@ -206,28 +206,38 @@ components:
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OsmTagStructure
+    OsmTagStructure:
+      type: object
+      required:
+        - tag
+        - value
+      properties:
+        tag:
+          type: string
+          xml:
+            name: Tag
+        value:
+          type: string
+          xml:
+            name: Value
+      xml:
+        name: OsmTag
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestCategoryStructure
     PointOfInterestCategory:
       type: object
       xml:
         name: PointOfInterestCategory  
+      required:
+        - osmTag
       properties:
         osmTag:
-          type: object
-          required:
-            - tag
-            - value
-          properties:
-            tag:
-              type: string
-              xml:
-                name: Tag
-            value:
-              type: string
-              xml:
-                name: Value
+          type: array
           xml:
             name: OsmTag
+          items:
+            $ref: "#/components/schemas/OsmTagStructure"
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__StopPointStructure
     StopPoint:
