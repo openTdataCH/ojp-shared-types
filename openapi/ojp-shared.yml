@@ -667,6 +667,8 @@ components:
                   prefix: siri
               label:
                 type: array
+                xml:
+                  name: Label
                 items:
                   type: string
                   xml:
