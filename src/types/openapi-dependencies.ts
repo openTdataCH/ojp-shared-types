@@ -133,9 +133,14 @@ const MapArrayTags: Record<string, boolean> = {
   'legAlight.expectedDepartureOccupancy': true,
 
   // LIR Response
-  'pointOfInterest.pointOfInterestCategory': true,
   'place.mode': true,
   'OJPLocationInformationDelivery.placeResult': true,
+  
+  // LIR Response POI
+  'pointOfInterest.pointOfInterestCategory': true,
+  'pointOfInterestCategory.osmTag': true,
+  'pointOfInterestCategory.pointOfInterestClassification': true,
+  'pOIAdditionalInformation.pOIAdditionalInformation': true,
 
   // SER Response
   'stopEvent.previousCall': true,
