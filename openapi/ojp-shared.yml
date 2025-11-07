@@ -372,6 +372,19 @@ components:
               type: string
               xml:
                 name: Value
+        pOIAdditionalInformation:
+          type: object
+          required:
+            - pOIAdditionalInformation
+          xml:
+            name: POIAdditionalInformation
+          properties:
+            pOIAdditionalInformation:
+              type: array
+              xml:
+                name: POIAdditionalInformation
+              items:
+                $ref: '#/components/schemas/CategoryKeyValueType'
         topographicPlaceRef:
           type: string
           xml:
