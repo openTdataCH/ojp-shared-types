@@ -48,6 +48,7 @@ export type StopPlaceSchema = sharedComponents['schemas']['StopPlace']
 export type TopographicPlaceSchema = sharedComponents['schemas']['TopographicPlace']
 export type PointOfInterestSchema = sharedComponents['schemas']['PointOfInterest']
 export type AddressSchema = sharedComponents['schemas']['Address']
+export type GeoRestrictionsSchema = sharedComponents['schemas']['GeoRestrictionsStructure'];
 
 export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 export type ProductCategorySchema = sharedComponents['schemas']['ProductCategory'];
