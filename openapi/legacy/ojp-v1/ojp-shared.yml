@@ -94,3 +94,49 @@ components:
           xml:
             name: Deviation
     # DatedJourney
+
+    # Variation of Place
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PlaceStructure
+    Location:
+      type: object
+      xml:
+        name: Location
+      required:
+        - locationName
+        - geoPosition
+        - mode
+      properties:
+        stopPoint:
+          $ref: '../../ojp-shared.yml#/components/schemas/StopPoint'
+          xml:
+            name: StopPoint
+        stopPlace:
+          $ref: '../../ojp-shared.yml#/components/schemas/StopPlace'
+          xml:
+            name: StopPlace
+        topographicPlace:
+          $ref: '../../ojp-shared.yml#/components/schemas/TopographicPlace'
+          xml:
+            name: TopographicPlace
+        pointOfInterest:
+          $ref: '../../ojp-shared.yml#/components/schemas/PointOfInterest'
+          xml:
+            name: PointOfInterest
+        address:
+          $ref: '../../ojp-shared.yml#/components/schemas/Address'
+          xml:
+            name: Address
+        locationName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: LocationName
+        geoPosition:
+          $ref: '../../ojp-shared.yml#/components/schemas/GeoPosition'
+          xml:
+            name: GeoPosition
+        mode:
+          type: array
+          xml:
+            name: Mode
+          items:
+            $ref: '../../ojp-shared.yml#/components/schemas/ModeStructure'
