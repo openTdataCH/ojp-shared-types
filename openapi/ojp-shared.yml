@@ -206,28 +206,47 @@ components:
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OsmTagStructure
+    OsmTagStructure:
+      type: object
+      required:
+        - tag
+        - value
+      properties:
+        tag:
+          type: string
+          xml:
+            name: Tag
+        value:
+          type: string
+          xml:
+            name: Value
+      xml:
+        name: OsmTag
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestCategoryStructure
-    PointOfInterestCategory:
+    PointOfInterestCategoryStructure:
       type: object
       xml:
-        name: PointOfInterestCategory  
+        name: PointOfInterestCategory
+      required:
+        - osmTag
+        - pointOfInterestClassification
       properties:
         osmTag:
-          type: object
-          required:
-            - tag
-            - value
-          properties:
-            tag:
-              type: string
-              xml:
-                name: Tag
-            value:
-              type: string
-              xml:
-                name: Value
+          type: array
           xml:
             name: OsmTag
+          items:
+            $ref: "#/components/schemas/OsmTagStructure"
+        pointOfInterestClassification:
+          type: array
+          xml:
+            name: PointOfInterestClassification
+          items:
+            type: string
+            xml:
+              name: PointOfInterestClassification
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__StopPointStructure
     StopPoint:
@@ -295,6 +314,24 @@ components:
           xml:
             name: TopographicPlaceName
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CategoryKeyValueType
+    CategoryKeyValueType:
+      type: object
+      required:
+        - key
+        - value
+      xml:
+        name: CategoryKeyValue
+      properties:
+        key:
+          type: string
+          xml:
+            name: Key
+        value:
+          type: string
+          xml:
+            name: Value
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestStructure
     PointOfInterest:
       type: object
@@ -318,7 +355,36 @@ components:
           xml:
             name: PointOfInterestCategory
           items:
-            $ref: "#/components/schemas/PointOfInterestCategory"
+            $ref: "#/components/schemas/PointOfInterestCategoryStructure"
+        privateCode:
+          type: object
+          required:
+            - system
+            - value
+          xml:
+            name: PrivateCode
+          properties:
+            system:
+              type: string
+              xml:
+                name: System
+            value:
+              type: string
+              xml:
+                name: Value
+        pOIAdditionalInformation:
+          type: object
+          required:
+            - pOIAdditionalInformation
+          xml:
+            name: POIAdditionalInformation
+          properties:
+            pOIAdditionalInformation:
+              type: array
+              xml:
+                name: POIAdditionalInformation
+              items:
+                $ref: '#/components/schemas/CategoryKeyValueType'
         topographicPlaceRef:
           type: string
           xml:
@@ -349,18 +415,18 @@ components:
           type: string
           xml:
             name: TopographicPlaceName
-        TopographicPlaceRef:
+        topographicPlaceRef:
           type: string
           xml:
-            name: topographicPlaceRef
-        Street:
+            name: TopographicPlaceRef
+        street:
           type: string
           xml:
-            name: street
-        HouseNumber:
+            name: Street
+        houseNumber:
           type: string
           xml:
-            name: houseNumber
+            name: HouseNumber
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ModeStructure
     ModeStructure:
@@ -630,6 +696,8 @@ components:
                   prefix: siri
               label:
                 type: array
+                xml:
+                  name: Label
                 items:
                   type: string
                   xml:
@@ -1175,6 +1243,9 @@ components:
       type: object
       xml:
         name: ModeFilter
+      required:
+        - ptMode
+        - personalMode
       properties:
         exclude:
           type: boolean
@@ -1186,6 +1257,12 @@ components:
             name: PtMode
           items:
             $ref: '#/components/schemas/VehicleModesOfTransportEnum'
+        personalMode:
+          type: array
+          xml:
+            name: PersonalMode
+          items:
+            $ref: './ojp-shared.yml#/components/schemas/PersonalModesEnumeration'
         airSubmode:
           type: string
           xml:
@@ -1353,3 +1430,28 @@ components:
             type: string
             xml:
               name: TrainNumber
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__GeoRestrictionsStructure
+    GeoRestrictionsStructure:
+      type: object
+      xml:
+        name: GeoRestrictions
+      required:
+        - rectangle
+      properties:
+        rectangle:
+          type: object
+          xml:
+            name: Rectangle
+          required:
+            - upperLeft
+            - lowerRight
+          properties:
+            upperLeft:
+              $ref: '#/components/schemas/GeoPosition'
+              xml:
+                name: UpperLeft
+            lowerRight:
+              $ref: '#/components/schemas/GeoPosition'
+              xml:
+                name: LowerRight

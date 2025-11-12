@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: XML OJP 2.0 API
+  title: XML OJP 1.0 API
   description: API that returns trip data in XML format.
   version: 0.0.1
 
@@ -24,6 +24,39 @@ paths:
 
 components:
   schemas:
+    # OJP1 variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
+    ResponseContextStructure:
+      type: object
+      xml:
+        name: ResponseContext
+      properties:
+        places:
+          type: object
+          xml:
+            name: Places
+          required:
+            - location
+          properties:
+            location:
+              type: array
+              xml:
+                name: Location
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/Location'
+        situations:
+          type: object
+          xml:
+            name: Situations
+          required:
+            - ptSituation
+          properties:
+            ptSituation:
+              type: array
+              xml:
+                name: PtSituation
+              items:
+                $ref: '../../ojp-shared.yml#/components/schemas/PtSituationElementStructure'
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripInfoResultStructure
     TripInfoResultStructure:
       type: object
@@ -112,7 +145,7 @@ components:
           xml:
             name: CalcTime
         tripInfoResponseContext:
-          $ref: '../../ojp-shared.yml#/components/schemas/ResponseContextStructure'
+          $ref: '#/components/schemas/ResponseContextStructure'
           xml:
             name: TripInfoResponseContext
         tripInfoResult:

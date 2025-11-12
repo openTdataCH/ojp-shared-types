@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 0.0.21 - 12.11.2025
+- updates models LIR - [PR #35](https://github.com/openTdataCH/ojp-shared-types/pull/35)
+    - patch OJP v1
+    - adds OJP `LocationInformationRequest` models
+    - use `Location`
+    - patch `TripInformationRequest` to use v1 ResponseContextStructure
+    - updates Place POI OJP v2
+
 ## 0.0.20 - 31.10.2025
 - adds `IndividualTransportOptionSchema` to Public API - [PR #34](https://github.com/openTdataCH/ojp-shared-types/pull/34)
 

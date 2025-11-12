@@ -61,6 +61,94 @@ export interface components {
             cancelled?: boolean;
             deviation?: boolean;
         };
+        Location: {
+            stopPoint?: {
+                stopPointRef: string;
+                stopPointName: {
+                    text: string;
+                };
+                parentRef?: string;
+                plannedQuay?: {
+                    text: string;
+                };
+                estimatedQuay?: {
+                    text: string;
+                };
+            };
+            stopPlace?: {
+                stopPlaceRef?: string;
+                stopPlaceName?: {
+                    text: string;
+                };
+            };
+            topographicPlace?: {
+                topographicPlaceCode: string;
+                topographicPlaceName: {
+                    text: string;
+                };
+            };
+            pointOfInterest?: {
+                publicCode: string;
+                name: {
+                    text: string;
+                };
+                pointOfInterestCategory: {
+                    osmTag: {
+                        tag: string;
+                        value: string;
+                    }[];
+                    pointOfInterestClassification: string[];
+                }[];
+                privateCode?: {
+                    system: string;
+                    value: string;
+                };
+                pOIAdditionalInformation?: {
+                    pOIAdditionalInformation: {
+                        key: string;
+                        value: string;
+                    }[];
+                };
+                topographicPlaceRef?: string;
+            };
+            address?: {
+                publicCode: string;
+                name: {
+                    text: string;
+                };
+                postCode?: string;
+                topographicPlaceName?: string;
+                topographicPlaceRef?: string;
+                street?: string;
+                houseNumber?: string;
+            };
+            locationName: {
+                text: string;
+            };
+            geoPosition: {
+                longitude: number;
+                latitude: number;
+            };
+            mode: {
+                /** @enum {string} */
+                ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
+                airSubmode?: string;
+                busSubmode?: string;
+                coachSubmode?: string;
+                funicularSubmode?: string;
+                metroSubmode?: string;
+                tramSubmode?: string;
+                telecabinSubmode?: string;
+                railSubmode?: string;
+                waterSubmode?: string;
+                name?: {
+                    text: string;
+                };
+                shortName?: {
+                    text: string;
+                };
+            }[];
+        };
     };
     responses: never;
     parameters: never;

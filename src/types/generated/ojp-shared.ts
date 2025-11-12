@@ -85,11 +85,16 @@ export interface components {
         ServiceRequestContext: {
             language?: string;
         };
-        PointOfInterestCategory: {
-            osmTag?: {
+        OsmTagStructure: {
+            tag: string;
+            value: string;
+        };
+        PointOfInterestCategoryStructure: {
+            osmTag: {
                 tag: string;
                 value: string;
-            };
+            }[];
+            pointOfInterestClassification: string[];
         };
         StopPoint: {
             stopPointRef: string;
@@ -116,17 +121,32 @@ export interface components {
                 text: string;
             };
         };
+        CategoryKeyValueType: {
+            key: string;
+            value: string;
+        };
         PointOfInterest: {
             publicCode: string;
             name: {
                 text: string;
             };
             pointOfInterestCategory: {
-                osmTag?: {
+                osmTag: {
                     tag: string;
                     value: string;
-                };
+                }[];
+                pointOfInterestClassification: string[];
             }[];
+            privateCode?: {
+                system: string;
+                value: string;
+            };
+            pOIAdditionalInformation?: {
+                pOIAdditionalInformation: {
+                    key: string;
+                    value: string;
+                }[];
+            };
             topographicPlaceRef?: string;
         };
         Address: {
@@ -136,9 +156,9 @@ export interface components {
             };
             postCode?: string;
             topographicPlaceName?: string;
-            TopographicPlaceRef?: string;
-            Street?: string;
-            HouseNumber?: string;
+            topographicPlaceRef?: string;
+            street?: string;
+            houseNumber?: string;
         };
         ModeStructure: {
             /** @enum {string} */
@@ -191,11 +211,22 @@ export interface components {
                     text: string;
                 };
                 pointOfInterestCategory: {
-                    osmTag?: {
+                    osmTag: {
                         tag: string;
                         value: string;
-                    };
+                    }[];
+                    pointOfInterestClassification: string[];
                 }[];
+                privateCode?: {
+                    system: string;
+                    value: string;
+                };
+                pOIAdditionalInformation?: {
+                    pOIAdditionalInformation: {
+                        key: string;
+                        value: string;
+                    }[];
+                };
                 topographicPlaceRef?: string;
             };
             address?: {
@@ -205,9 +236,9 @@ export interface components {
                 };
                 postCode?: string;
                 topographicPlaceName?: string;
-                TopographicPlaceRef?: string;
-                Street?: string;
-                HouseNumber?: string;
+                topographicPlaceRef?: string;
+                street?: string;
+                houseNumber?: string;
             };
             name: {
                 text: string;
@@ -543,11 +574,22 @@ export interface components {
                             text: string;
                         };
                         pointOfInterestCategory: {
-                            osmTag?: {
+                            osmTag: {
                                 tag: string;
                                 value: string;
-                            };
+                            }[];
+                            pointOfInterestClassification: string[];
                         }[];
+                        privateCode?: {
+                            system: string;
+                            value: string;
+                        };
+                        pOIAdditionalInformation?: {
+                            pOIAdditionalInformation: {
+                                key: string;
+                                value: string;
+                            }[];
+                        };
                         topographicPlaceRef?: string;
                     };
                     address?: {
@@ -557,9 +599,9 @@ export interface components {
                         };
                         postCode?: string;
                         topographicPlaceName?: string;
-                        TopographicPlaceRef?: string;
-                        Street?: string;
-                        HouseNumber?: string;
+                        topographicPlaceRef?: string;
+                        street?: string;
+                        houseNumber?: string;
                     };
                     name: {
                         text: string;
@@ -725,7 +767,8 @@ export interface components {
         };
         ModeFilterStructure: {
             exclude?: boolean;
-            ptMode?: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+            ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+            personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
             airSubmode?: string;
             busSubmode?: string;
             coachSubmode?: string;
@@ -761,6 +804,18 @@ export interface components {
             exclude?: boolean;
             vehicleRef: string[];
             trainNumber: string[];
+        };
+        GeoRestrictionsStructure: {
+            rectangle: {
+                upperLeft: {
+                    longitude: number;
+                    latitude: number;
+                };
+                lowerRight: {
+                    longitude: number;
+                    latitude: number;
+                };
+            };
         };
     };
     responses: never;

@@ -42,8 +42,8 @@ export interface paths {
                                         requestMessageRef?: string;
                                         defaultLanguage?: string;
                                         calcTime?: string;
-                                        placeResult: {
-                                            place: {
+                                        location: {
+                                            location: {
                                                 stopPoint?: {
                                                     stopPointRef: string;
                                                     stopPointName: {
@@ -104,7 +104,7 @@ export interface paths {
                                                     street?: string;
                                                     houseNumber?: string;
                                                 };
-                                                name: {
+                                                locationName: {
                                                     text: string;
                                                 };
                                                 geoPosition: {
@@ -159,8 +159,8 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        PlaceResult: {
-            place: {
+        LocationResult: {
+            location: {
                 stopPoint?: {
                     stopPointRef: string;
                     stopPointName: {
@@ -221,7 +221,7 @@ export interface components {
                     street?: string;
                     houseNumber?: string;
                 };
-                name: {
+                locationName: {
                     text: string;
                 };
                 geoPosition: {
@@ -256,8 +256,8 @@ export interface components {
             requestMessageRef?: string;
             defaultLanguage?: string;
             calcTime?: string;
-            placeResult: {
-                place: {
+            location: {
+                location: {
                     stopPoint?: {
                         stopPointRef: string;
                         stopPointName: {
@@ -318,7 +318,7 @@ export interface components {
                         street?: string;
                         houseNumber?: string;
                     };
-                    name: {
+                    locationName: {
                         text: string;
                     };
                     geoPosition: {
@@ -359,8 +359,8 @@ export interface components {
                         requestMessageRef?: string;
                         defaultLanguage?: string;
                         calcTime?: string;
-                        placeResult: {
-                            place: {
+                        location: {
+                            location: {
                                 stopPoint?: {
                                     stopPointRef: string;
                                     stopPointName: {
@@ -421,7 +421,7 @@ export interface components {
                                     street?: string;
                                     houseNumber?: string;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                                 geoPosition: {

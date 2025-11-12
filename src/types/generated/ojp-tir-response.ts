@@ -76,11 +76,22 @@ export interface paths {
                                                             text: string;
                                                         };
                                                         pointOfInterestCategory: {
-                                                            osmTag?: {
+                                                            osmTag: {
                                                                 tag: string;
                                                                 value: string;
-                                                            };
+                                                            }[];
+                                                            pointOfInterestClassification: string[];
                                                         }[];
+                                                        privateCode?: {
+                                                            system: string;
+                                                            value: string;
+                                                        };
+                                                        pOIAdditionalInformation?: {
+                                                            pOIAdditionalInformation: {
+                                                                key: string;
+                                                                value: string;
+                                                            }[];
+                                                        };
                                                         topographicPlaceRef?: string;
                                                     };
                                                     address?: {
@@ -90,9 +101,9 @@ export interface paths {
                                                         };
                                                         postCode?: string;
                                                         topographicPlaceName?: string;
-                                                        TopographicPlaceRef?: string;
-                                                        Street?: string;
-                                                        HouseNumber?: string;
+                                                        topographicPlaceRef?: string;
+                                                        street?: string;
+                                                        houseNumber?: string;
                                                     };
                                                     name: {
                                                         text: string;
@@ -580,11 +591,22 @@ export interface components {
                                 text: string;
                             };
                             pointOfInterestCategory: {
-                                osmTag?: {
+                                osmTag: {
                                     tag: string;
                                     value: string;
-                                };
+                                }[];
+                                pointOfInterestClassification: string[];
                             }[];
+                            privateCode?: {
+                                system: string;
+                                value: string;
+                            };
+                            pOIAdditionalInformation?: {
+                                pOIAdditionalInformation: {
+                                    key: string;
+                                    value: string;
+                                }[];
+                            };
                             topographicPlaceRef?: string;
                         };
                         address?: {
@@ -594,9 +616,9 @@ export interface components {
                             };
                             postCode?: string;
                             topographicPlaceName?: string;
-                            TopographicPlaceRef?: string;
-                            Street?: string;
-                            HouseNumber?: string;
+                            topographicPlaceRef?: string;
+                            street?: string;
+                            houseNumber?: string;
                         };
                         name: {
                             text: string;
@@ -898,11 +920,22 @@ export interface components {
                                             text: string;
                                         };
                                         pointOfInterestCategory: {
-                                            osmTag?: {
+                                            osmTag: {
                                                 tag: string;
                                                 value: string;
-                                            };
+                                            }[];
+                                            pointOfInterestClassification: string[];
                                         }[];
+                                        privateCode?: {
+                                            system: string;
+                                            value: string;
+                                        };
+                                        pOIAdditionalInformation?: {
+                                            pOIAdditionalInformation: {
+                                                key: string;
+                                                value: string;
+                                            }[];
+                                        };
                                         topographicPlaceRef?: string;
                                     };
                                     address?: {
@@ -912,9 +945,9 @@ export interface components {
                                         };
                                         postCode?: string;
                                         topographicPlaceName?: string;
-                                        TopographicPlaceRef?: string;
-                                        Street?: string;
-                                        HouseNumber?: string;
+                                        topographicPlaceRef?: string;
+                                        street?: string;
+                                        houseNumber?: string;
                                     };
                                     name: {
                                         text: string;

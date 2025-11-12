@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: XML OJP 2.0 API
+  title: XML OJP 1.0 API
   description: API that returns trip data in XML format.
   version: 0.0.1
 
@@ -35,7 +35,7 @@ components:
         type:
           type: array
           items:
-            $ref: "./ojp-shared.yml#/components/schemas/PlaceTypeEnum"
+            $ref: "../../ojp-shared.yml#/components/schemas/PlaceTypeEnum"
           xml:
             name: Type
         numberOfResults:
@@ -43,7 +43,7 @@ components:
           xml:
             name: NumberOfResults
         modes:
-          $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
+          $ref: "../../ojp-shared.yml#/components/schemas/ModeFilterStructure"
           xml:
             name: Modes
         includePtModes:
@@ -57,12 +57,12 @@ components:
       xml:
         name: InitialInput
       properties:
-        name:
+        locationName:
           type: string
           xml:
-            name: Name
+            name: LocationName
         geoRestriction:
-          $ref: './ojp-shared.yml#/components/schemas/GeoRestrictionsStructure'
+          $ref: '../../ojp-shared.yml#/components/schemas/GeoRestrictionsStructure'
           xml:
             name: GeoRestriction
 
@@ -85,7 +85,7 @@ components:
           xml:
             name: InitialInput
         placeRef:
-          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
+          $ref: '../../ojp-shared.yml#/components/schemas/PlaceRef'
           xml:
             name: PlaceRef
         restrictions:
@@ -119,7 +119,7 @@ components:
                 - OJPLocationInformationRequest
               properties:
                 serviceRequestContext:
-                  $ref: './ojp-shared.yml#/components/schemas/ServiceRequestContext'
+                  $ref: '../../ojp-shared.yml#/components/schemas/ServiceRequestContext'
                   xml:
                     name: ServiceRequestContext
                 requestTimestamp:

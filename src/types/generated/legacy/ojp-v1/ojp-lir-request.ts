@@ -43,7 +43,7 @@ export interface paths {
                                     OJPLocationInformationRequest: {
                                         requestTimestamp: string;
                                         initialInput?: {
-                                            name?: string;
+                                            locationName?: string;
                                             geoRestriction?: {
                                                 rectangle: {
                                                     upperLeft: {
@@ -132,7 +132,7 @@ export interface components {
             includePtModes?: boolean;
         };
         InitialInput: {
-            name?: string;
+            locationName?: string;
             geoRestriction?: {
                 rectangle: {
                     upperLeft: {
@@ -149,7 +149,7 @@ export interface components {
         OJPLocationInformationRequest: {
             requestTimestamp: string;
             initialInput?: {
-                name?: string;
+                locationName?: string;
                 geoRestriction?: {
                     rectangle: {
                         upperLeft: {
@@ -205,7 +205,7 @@ export interface components {
                     OJPLocationInformationRequest: {
                         requestTimestamp: string;
                         initialInput?: {
-                            name?: string;
+                            locationName?: string;
                             geoRestriction?: {
                                 rectangle: {
                                     upperLeft: {
