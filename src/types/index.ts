@@ -5,6 +5,8 @@ import { components as ojpV1_TripComponents } from './generated/legacy/ojp-v1/oj
 
 import { components as locationInformationRequestComponents } from './generated/ojp-lir-request';
 import { components as locationInformationResponseComponents } from './generated/ojp-lir-response';
+import { components as ojpV1_locationInformationRequestComponents } from './generated/legacy/ojp-v1/ojp-lir-request';
+import { components as ojpV1_locationInformationResponseComponents } from './generated/legacy/ojp-v1/ojp-lir-response';
 
 import { components as stopEventRequestComponents } from './generated/ojp-ser-request'
 import { components as stopEventResponseComponents } from './generated/ojp-ser-response'
@@ -124,3 +126,8 @@ export type OJPv1_TripInfoResponseOJP = ojpV1_tripInfoResponseComponents['schema
 export type OJPv1_TripInfoDeliverySchema = ojpV1_tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type OJPv1_TripInfoResultStructureSchema = ojpV1_tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
 
+export type OJPv1_LocationInformationRequestOJP = ojpV1_locationInformationRequestComponents['schemas']['OJP'];
+export type OJPv1_LocationInformationRequestSchema = ojpV1_locationInformationRequestComponents['schemas']['OJPLocationInformationRequest'];
+export type OJPv1_InitialInputSchema = ojpV1_locationInformationRequestComponents['schemas']['InitialInput'];
+export type OJPv1_LocationInformationRequestResponseOJP = ojpV1_locationInformationResponseComponents['schemas']['OJP'];
+export type OJPv1_LocationInformationDeliverySchema = ojpV1_locationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];
