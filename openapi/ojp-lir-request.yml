@@ -62,28 +62,9 @@ components:
           xml:
             name: Name
         geoRestriction:
-          type: object
+          $ref: './ojp-shared.yml#/components/schemas/GeoRestrictionsStructure'
           xml:
             name: GeoRestriction
-          required:
-            - rectangle
-          properties:
-            rectangle:
-              type: object
-              xml:
-                name: Rectangle
-              required:
-                - upperLeft
-                - lowerRight
-              properties:
-                upperLeft:
-                  $ref: './ojp-shared.yml#/components/schemas/GeoPosition'
-                  xml:
-                    name: UpperLeft
-                lowerRight:
-                  $ref: './ojp-shared.yml#/components/schemas/GeoPosition'
-                  xml:
-                    name: LowerRight
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPLocationInformationRequestStructure
     OJPLocationInformationRequest:
