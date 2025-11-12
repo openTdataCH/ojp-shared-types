@@ -805,6 +805,18 @@ export interface components {
             vehicleRef: string[];
             trainNumber: string[];
         };
+        GeoRestrictionsStructure: {
+            rectangle: {
+                upperLeft: {
+                    longitude: number;
+                    latitude: number;
+                };
+                lowerRight: {
+                    longitude: number;
+                    latitude: number;
+                };
+            };
+        };
     };
     responses: never;
     parameters: never;
