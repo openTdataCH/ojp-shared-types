@@ -1430,3 +1430,28 @@ components:
             type: string
             xml:
               name: TrainNumber
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__GeoRestrictionsStructure
+    GeoRestrictionsStructure:
+      type: object
+      xml:
+        name: GeoRestrictions
+      required:
+        - rectangle
+      properties:
+        rectangle:
+          type: object
+          xml:
+            name: Rectangle
+          required:
+            - upperLeft
+            - lowerRight
+          properties:
+            upperLeft:
+              $ref: '#/components/schemas/GeoPosition'
+              xml:
+                name: UpperLeft
+            lowerRight:
+              $ref: '#/components/schemas/GeoPosition'
+              xml:
+                name: LowerRight
