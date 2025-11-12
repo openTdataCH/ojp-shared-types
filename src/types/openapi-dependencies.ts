@@ -135,6 +135,8 @@ const MapArrayTags: Record<string, boolean> = {
   // LIR Response
   'place.mode': true,
   'OJPLocationInformationDelivery.placeResult': true,
+  // OJP 1.0
+  'OJPLocationInformationDelivery.location': true,
   
   // LIR Response POI
   'pointOfInterest.pointOfInterestCategory': true,

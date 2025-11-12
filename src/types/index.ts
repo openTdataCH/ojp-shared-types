@@ -48,6 +48,7 @@ export type StopPlaceSchema = sharedComponents['schemas']['StopPlace']
 export type TopographicPlaceSchema = sharedComponents['schemas']['TopographicPlace']
 export type PointOfInterestSchema = sharedComponents['schemas']['PointOfInterest']
 export type AddressSchema = sharedComponents['schemas']['Address']
+
 export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 export type ProductCategorySchema = sharedComponents['schemas']['ProductCategory'];
 export type GeneralAttributeSchema = sharedComponents['schemas']['GeneralAttribute'];
@@ -76,10 +77,10 @@ export type ContinuousLegSchema = tripReponseComponents["schemas"]["ContinuousLe
 export type TripRequestResponseOJP = tripReponseComponents['schemas']['OJP'];
 export type TripDeliverySchema = tripReponseComponents['schemas']['OJPTripDelivery'];
 
-export type InitialInputSchema = locationInformationRequestComponents['schemas']['InitialInput']
-export type LIR_RequestParamsSchema = locationInformationRequestComponents['schemas']['PlaceParam']
-export type LocationInformationRequestOJP = locationInformationRequestComponents['schemas']['OJP']
-export type LocationInformationRequestSchema = locationInformationRequestComponents['schemas']['OJPLocationInformationRequest']
+export type InitialInputSchema = locationInformationRequestComponents['schemas']['InitialInput'];
+export type LIR_RequestParamsSchema = locationInformationRequestComponents['schemas']['PlaceParam'];
+export type LocationInformationRequestOJP = locationInformationRequestComponents['schemas']['OJP'];
+export type LocationInformationRequestSchema = locationInformationRequestComponents['schemas']['OJPLocationInformationRequest'];
 
 export type PlaceResultSchema = locationInformationResponseComponents['schemas']['PlaceResult'];
 export type LocationInformationRequestResponseOJP = locationInformationResponseComponents['schemas']['OJP'];
@@ -121,3 +122,4 @@ export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas'
 export type OJPv1_TripInfoResponseOJP = ojpV1_tripInfoResponseComponents['schemas']['OJP'];
 export type OJPv1_TripInfoDeliverySchema = ojpV1_tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type OJPv1_TripInfoResultStructureSchema = ojpV1_tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
+
