@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.23 - 13.11.2025
+- Fix OJPv1 GeneralAttribute - [PR #37](https://github.com/openTdataCH/ojp-shared-types/pull/37)
+  - differentiate between OJPv1 / OJPv2 
+
 ## 0.0.22 - 13.11.2025
 - updates API - [PR #36](https://github.com/openTdataCH/ojp-shared-types/pull/36)
   - expose `OJPv1_LocationSchema`
