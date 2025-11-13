@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.0.22 - 13.11.2025
+- updates API
+
 ## 0.0.21 - 12.11.2025
 - updates models LIR - [PR #35](https://github.com/openTdataCH/ojp-shared-types/pull/35)
     - patch OJP v1
