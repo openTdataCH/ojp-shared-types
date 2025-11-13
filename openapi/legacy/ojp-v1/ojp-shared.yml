@@ -5,6 +5,29 @@ info:
 paths: {}
 components:
   schemas:
+    # Variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__GeneralAttributeStructure
+    # OJP1.0 Text - OJP2.0 UserText
+    GeneralAttribute:
+      type: object
+      xml:
+        name: Attribute
+      required:
+        - text
+        - code
+      properties:
+        text:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: Text
+        code:
+          type: string
+          xml:
+            name: Code
+        importance:
+          type: number
+          xml:
+            name: Importance
+
     # modified from 'openapi/ojp-shared.yml#/components/schemas/DatedJourney'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
     DatedJourney:
@@ -68,7 +91,7 @@ components:
           xml:
             name: Attribute
           items:
-            $ref: '../../ojp-shared.yml#/components/schemas/GeneralAttribute'
+            $ref: '#/components/schemas/GeneralAttribute'
         operatorRef:
           type: string
           xml:

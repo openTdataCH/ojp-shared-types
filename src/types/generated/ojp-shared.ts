@@ -475,6 +475,7 @@ export interface components {
                 text: string;
             };
             code: string;
+            importance?: number;
         };
         SituationFullRefStructure: {
             participantRef: string;
@@ -524,6 +525,7 @@ export interface components {
                     text: string;
                 };
                 code: string;
+                importance?: number;
             }[];
             operatorRef?: string;
             destinationStopPointRef?: string;
