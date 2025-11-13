@@ -5,28 +5,28 @@
 
 ## 0.0.21 - 12.11.2025
 - updates models LIR - [PR #35](https://github.com/openTdataCH/ojp-shared-types/pull/35)
-    - patch OJP v1
-    - adds OJP `LocationInformationRequest` models
-    - use `Location`
-    - patch `TripInformationRequest` to use v1 ResponseContextStructure
-    - updates Place POI OJP v2
+  - patch OJP v1
+  - adds OJP `LocationInformationRequest` models
+  - use `Location`
+  - patch `TripInformationRequest` to use v1 ResponseContextStructure
+  - updates Place POI OJP v2
 
 ## 0.0.20 - 31.10.2025
 - adds `IndividualTransportOptionSchema` to Public API - [PR #34](https://github.com/openTdataCH/ojp-shared-types/pull/34)
 
 ## 0.0.19 - 26.10.2025
 - adds `ItModesStructure`, `IndividualTransportOptionStructure` - [PR #33](https://github.com/openTdataCH/ojp-shared-types/pull/33)
-    - adds individualTransportOption to origin / destination
-    - adds Github workflow for npm publish automation 
+  - adds individualTransportOption to origin / destination
+  - adds Github workflow for npm publish automation 
 
 ## 0.0.18 - 16.10.2025
 - improves Geo/Distance nodes - [PR #31](https://github.com/openTdataCH/ojp-shared-types/pull/31)
-    - adds PathGuidance/LinkProkection/Distance/Length to trip legs
-    - enforce `OJPTripDelivery.TripResult` array
+  - adds PathGuidance/LinkProkection/Distance/Length to trip legs
+  - enforce `OJPTripDelivery.TripResult` array
 
 ## 0.0.17 - 26.09.2025
 - extend TR params - [PR #29](https://github.com/openTdataCH/ojp-shared-types/pull/29)
-    - adds `LineFilter`, `OperatorFilter`, `VehicleFilter`
+  - adds `LineFilter`, `OperatorFilter`, `VehicleFilter`
 
 ## 0.0.16 - 07.09.2025
 - extend TR mode filter - [PR #27](https://github.com/openTdataCH/ojp-shared-types/pull/27)
