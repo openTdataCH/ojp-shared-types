@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 0.0.22 - 13.11.2025
-- updates API
+- updates API - [PR #36](https://github.com/openTdataCH/ojp-shared-types/pull/36)
 
 ## 0.0.21 - 12.11.2025
 - updates models LIR - [PR #35](https://github.com/openTdataCH/ojp-shared-types/pull/35)
