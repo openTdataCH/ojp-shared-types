@@ -7,6 +7,13 @@ export type paths = Record<string, never>;
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        GeneralAttribute: {
+            text: {
+                text: string;
+            };
+            code: string;
+            importance?: number;
+        };
         DatedJourney: {
             conventionalModeOfOperation?: string;
             operatingDayRef: string;
@@ -47,10 +54,11 @@ export interface components {
             };
             trainNumber?: string;
             attribute: {
-                userText: {
+                text: {
                     text: string;
                 };
                 code: string;
+                importance?: number;
             }[];
             operatorRef?: string;
             destinationStopPointRef?: string;

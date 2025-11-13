@@ -153,10 +153,11 @@ export interface components {
                 };
                 trainNumber?: string;
                 attribute: {
-                    userText: {
+                    text: {
                         text: string;
                     };
                     code: string;
+                    importance?: number;
                 }[];
                 operatorRef?: string;
                 destinationStopPointRef?: string;
@@ -363,10 +364,11 @@ export interface components {
                     };
                     trainNumber?: string;
                     attribute: {
-                        userText: {
+                        text: {
                             text: string;
                         };
                         code: string;
+                        importance?: number;
                     }[];
                     operatorRef?: string;
                     destinationStopPointRef?: string;
@@ -767,10 +769,11 @@ export interface components {
                         };
                         trainNumber?: string;
                         attribute: {
-                            userText: {
+                            text: {
                                 text: string;
                             };
                             code: string;
+                            importance?: number;
                         }[];
                         operatorRef?: string;
                         destinationStopPointRef?: string;

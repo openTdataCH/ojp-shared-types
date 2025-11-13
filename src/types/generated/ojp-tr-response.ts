@@ -357,6 +357,7 @@ export interface paths {
                                                                     text: string;
                                                                 };
                                                                 code: string;
+                                                                importance?: number;
                                                             }[];
                                                             operatorRef?: string;
                                                             destinationStopPointRef?: string;
@@ -976,6 +977,7 @@ export interface components {
                         text: string;
                     };
                     code: string;
+                    importance?: number;
                 }[];
                 operatorRef?: string;
                 destinationStopPointRef?: string;
@@ -1366,6 +1368,7 @@ export interface components {
                             text: string;
                         };
                         code: string;
+                        importance?: number;
                     }[];
                     operatorRef?: string;
                     destinationStopPointRef?: string;
@@ -1766,6 +1769,7 @@ export interface components {
                                 text: string;
                             };
                             code: string;
+                            importance?: number;
                         }[];
                         operatorRef?: string;
                         destinationStopPointRef?: string;
@@ -2174,6 +2178,7 @@ export interface components {
                                     text: string;
                                 };
                                 code: string;
+                                importance?: number;
                             }[];
                             operatorRef?: string;
                             destinationStopPointRef?: string;
@@ -2739,6 +2744,7 @@ export interface components {
                                         text: string;
                                     };
                                     code: string;
+                                    importance?: number;
                                 }[];
                                 operatorRef?: string;
                                 destinationStopPointRef?: string;
@@ -3310,6 +3316,7 @@ export interface components {
                                                     text: string;
                                                 };
                                                 code: string;
+                                                importance?: number;
                                             }[];
                                             operatorRef?: string;
                                             destinationStopPointRef?: string;
