@@ -1023,6 +1023,10 @@ components:
           type: string
           xml:
             name: Code
+        importance:
+          type: number
+          xml:
+            name: Importance
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__SituationFullRefStructure
     SituationFullRefStructure:
