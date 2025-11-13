@@ -23,7 +23,7 @@ Notes
 ```
 import * as OJP_Types from 'ojp-shared-types';
 
-export class MyOJPReques implements OJP_Types.TripRequestSchema {
+export class MyOJPRequest implements OJP_Types.TripRequestSchema {
     ....
 }
 ```
