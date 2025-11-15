@@ -131,5 +131,7 @@ export type OJPv1_TripInfoResultStructureSchema = ojpV1_tripInfoResponseComponen
 export type OJPv1_LocationInformationRequestOJP = ojpV1_locationInformationRequestComponents['schemas']['OJP'];
 export type OJPv1_LocationInformationRequestSchema = ojpV1_locationInformationRequestComponents['schemas']['OJPLocationInformationRequest'];
 export type OJPv1_InitialInputSchema = ojpV1_locationInformationRequestComponents['schemas']['InitialInput'];
+
+export type OJPv1_LocationResultSchema = ojpV1_locationInformationResponseComponents['schemas']['LocationResult'];
 export type OJPv1_LocationInformationRequestResponseOJP = ojpV1_locationInformationResponseComponents['schemas']['OJP'];
 export type OJPv1_LocationInformationDeliverySchema = ojpV1_locationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];
