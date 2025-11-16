@@ -134,6 +134,7 @@ components:
         - locationName
         - geoPosition
         - mode
+        - attribute
       properties:
         stopPoint:
           $ref: '../../ojp-shared.yml#/components/schemas/StopPoint'
@@ -169,3 +170,20 @@ components:
             name: Mode
           items:
             $ref: '../../ojp-shared.yml#/components/schemas/ModeStructure'
+        attribute:
+          type: array
+          xml:
+            name: Attribute
+          items:
+            $ref: '#/components/schemas/GeneralAttribute'
+        extension:
+          type: object
+          xml:
+            name: Extension
+          properties:
+            locationExtensionStructure:
+              type: object
+              xml:
+                name: LocationExtensionStructure
+              additionalProperties:
+                type: string
