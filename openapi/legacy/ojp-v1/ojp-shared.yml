@@ -34,6 +34,54 @@ components:
           xml:
             name: Importance
 
+    # Variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestStructure
+    # In OJPv1  - PointOfInterestCode, PointOfInterestName, via Extension in Location
+    #    OJPv2  - PublicCode, Name, POIAdditionalInformation
+    PointOfInterest:
+      type: object
+      xml:
+        name: PointOfInterest
+      required:
+        - pointOfInterestCode
+        - pointOfInterestName
+        - pointOfInterestCategory
+      properties:
+        pointOfInterestCode:
+          type: string
+          xml:
+            name: PointOfInterestCode
+        pointOfInterestName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: PointOfInterestName
+        pointOfInterestCategory:
+          type: array
+          xml:
+            name: PointOfInterestCategory
+          items:
+            $ref: "../../ojp-shared.yml#/components/schemas/PointOfInterestCategoryStructure"
+        privateCode:
+          type: object
+          required:
+            - system
+            - value
+          xml:
+            name: PrivateCode
+          properties:
+            system:
+              type: string
+              xml:
+                name: System
+            value:
+              type: string
+              xml:
+                name: Value
+        topographicPlaceRef:
+          type: string
+          xml:
+            name: TopographicPlaceRef
+
+
     # modified from 'openapi/ojp-shared.yml#/components/schemas/DatedJourney'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
     DatedJourney:
@@ -149,7 +197,7 @@ components:
           xml:
             name: TopographicPlace
         pointOfInterest:
-          $ref: '../../ojp-shared.yml#/components/schemas/PointOfInterest'
+          $ref: '#/components/schemas/PointOfInterest'
           xml:
             name: PointOfInterest
         address:
