@@ -1248,6 +1248,25 @@ components:
           items:
             $ref: '#/components/schemas/TrackSectionStructure'
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestFilterStructure
+    PointOfInterestFilterStructure:
+      type: object
+      required:
+        - pointOfInterestCategory
+      xml:
+        name: PointOfInterestFilter
+      properties:
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
+        pointOfInterestCategory:
+          type: array
+          xml:
+            name: PointOfInterestCategory
+          items:
+            $ref: "#/components/schemas/PointOfInterestCategoryStructure"
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ModeFilterStructure
     ModeFilterStructure:
       type: object
