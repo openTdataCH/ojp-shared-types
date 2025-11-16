@@ -1023,6 +1023,12 @@ components:
           type: string
           xml:
             name: Code
+        hireFacility:
+          type: string
+          xml:
+            name: HireFacility
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
         importance:
           type: number
           xml:
