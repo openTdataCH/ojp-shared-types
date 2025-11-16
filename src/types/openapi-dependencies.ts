@@ -133,8 +133,8 @@ const MapArrayTags: Record<string, boolean> = {
   'legAlight.expectedDepartureOccupancy': true,
 
   // LIR Response
-  'place.mode': true,
   'OJPLocationInformationDelivery.placeResult': true,
+  'place.mode': true,
   // OJP 1.0
   'OJPLocationInformationDelivery.location': true,
   
