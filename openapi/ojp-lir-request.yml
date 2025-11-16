@@ -42,6 +42,10 @@ components:
           $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
           xml:
             name: Modes
+        pointOfInterestFilter:
+          $ref: "./ojp-shared.yml#/components/schemas/PointOfInterestFilterStructure"
+          xml:
+            name: PointOfInterestFilter
         numberOfResults:
           type: number
           xml:
