@@ -38,14 +38,14 @@ components:
             $ref: "./ojp-shared.yml#/components/schemas/PlaceTypeEnum"
           xml:
             name: Type
-        numberOfResults:
-          type: number
-          xml:
-            name: NumberOfResults
         modes:
           $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
           xml:
             name: Modes
+        numberOfResults:
+          type: number
+          xml:
+            name: NumberOfResults
         includePtModes:
           type: boolean
           xml:
