@@ -512,6 +512,7 @@ components:
         - name
         - geoPosition
         - mode
+        - attribute
       properties:
         stopPoint:
           $ref: '#/components/schemas/StopPoint'
@@ -547,6 +548,12 @@ components:
             name: Mode
           items:
             $ref: '#/components/schemas/ModeStructure'
+        attribute:
+          type: array
+          xml:
+            name: Attribute
+          items:
+            $ref: '#/components/schemas/GeneralAttribute'
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__TextualContentStructure
     TextualContentStructure:
