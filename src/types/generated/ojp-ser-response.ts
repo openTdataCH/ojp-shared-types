@@ -131,6 +131,14 @@ export interface paths {
                                                             text: string;
                                                         };
                                                     }[];
+                                                    attribute: {
+                                                        userText: {
+                                                            text: string;
+                                                        };
+                                                        code: string;
+                                                        hireFacility?: string;
+                                                        importance?: number;
+                                                    }[];
                                                 }[];
                                             };
                                             situations?: {
@@ -351,6 +359,7 @@ export interface paths {
                                                             text: string;
                                                         };
                                                         code: string;
+                                                        hireFacility?: string;
                                                         importance?: number;
                                                     }[];
                                                     operatorRef?: string;
@@ -767,6 +776,7 @@ export interface components {
                         text: string;
                     };
                     code: string;
+                    hireFacility?: string;
                     importance?: number;
                 }[];
                 operatorRef?: string;
@@ -948,6 +958,7 @@ export interface components {
                             text: string;
                         };
                         code: string;
+                        hireFacility?: string;
                         importance?: number;
                     }[];
                     operatorRef?: string;
@@ -1065,6 +1076,14 @@ export interface components {
                             shortName?: {
                                 text: string;
                             };
+                        }[];
+                        attribute: {
+                            userText: {
+                                text: string;
+                            };
+                            code: string;
+                            hireFacility?: string;
+                            importance?: number;
                         }[];
                     }[];
                 };
@@ -1286,6 +1305,7 @@ export interface components {
                                 text: string;
                             };
                             code: string;
+                            hireFacility?: string;
                             importance?: number;
                         }[];
                         operatorRef?: string;
@@ -1409,6 +1429,14 @@ export interface components {
                                         shortName?: {
                                             text: string;
                                         };
+                                    }[];
+                                    attribute: {
+                                        userText: {
+                                            text: string;
+                                        };
+                                        code: string;
+                                        hireFacility?: string;
+                                        importance?: number;
                                     }[];
                                 }[];
                             };
@@ -1630,6 +1658,7 @@ export interface components {
                                             text: string;
                                         };
                                         code: string;
+                                        hireFacility?: string;
                                         importance?: number;
                                     }[];
                                     operatorRef?: string;

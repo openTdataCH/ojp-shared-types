@@ -266,6 +266,14 @@ export interface components {
                     text: string;
                 };
             }[];
+            attribute: {
+                userText: {
+                    text: string;
+                };
+                code: string;
+                hireFacility?: string;
+                importance?: number;
+            }[];
         };
         TextualContentStructure: {
             summaryContent: {
@@ -475,6 +483,7 @@ export interface components {
                 text: string;
             };
             code: string;
+            hireFacility?: string;
             importance?: number;
         };
         SituationFullRefStructure: {
@@ -525,6 +534,7 @@ export interface components {
                     text: string;
                 };
                 code: string;
+                hireFacility?: string;
                 importance?: number;
             }[];
             operatorRef?: string;
@@ -630,6 +640,14 @@ export interface components {
                         shortName?: {
                             text: string;
                         };
+                    }[];
+                    attribute: {
+                        userText: {
+                            text: string;
+                        };
+                        code: string;
+                        hireFacility?: string;
+                        importance?: number;
                     }[];
                 }[];
             };
@@ -765,6 +783,16 @@ export interface components {
                 roadName?: string;
                 duration?: string;
                 length?: number;
+            }[];
+        };
+        PointOfInterestFilterStructure: {
+            exclude?: boolean;
+            pointOfInterestCategory: {
+                osmTag: {
+                    tag: string;
+                    value: string;
+                }[];
+                pointOfInterestClassification: string[];
             }[];
         };
         ModeFilterStructure: {

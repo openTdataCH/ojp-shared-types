@@ -70,7 +70,6 @@ export interface paths {
                                         };
                                         restrictions?: {
                                             type: ("stop" | "address" | "poi" | "location" | "topographicPlace")[];
-                                            numberOfResults?: number;
                                             modes?: {
                                                 exclude?: boolean;
                                                 ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
@@ -85,6 +84,17 @@ export interface paths {
                                                 railSubmode?: string;
                                                 waterSubmode?: string;
                                             };
+                                            pointOfInterestFilter?: {
+                                                exclude?: boolean;
+                                                pointOfInterestCategory: {
+                                                    osmTag: {
+                                                        tag: string;
+                                                        value: string;
+                                                    }[];
+                                                    pointOfInterestClassification: string[];
+                                                }[];
+                                            };
+                                            numberOfResults?: number;
                                             includePtModes?: boolean;
                                         };
                                     };
@@ -114,7 +124,6 @@ export interface components {
     schemas: {
         PlaceParam: {
             type: ("stop" | "address" | "poi" | "location" | "topographicPlace")[];
-            numberOfResults?: number;
             modes?: {
                 exclude?: boolean;
                 ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
@@ -129,6 +138,17 @@ export interface components {
                 railSubmode?: string;
                 waterSubmode?: string;
             };
+            pointOfInterestFilter?: {
+                exclude?: boolean;
+                pointOfInterestCategory: {
+                    osmTag: {
+                        tag: string;
+                        value: string;
+                    }[];
+                    pointOfInterestClassification: string[];
+                }[];
+            };
+            numberOfResults?: number;
             includePtModes?: boolean;
         };
         InitialInput: {
@@ -176,7 +196,6 @@ export interface components {
             };
             restrictions?: {
                 type: ("stop" | "address" | "poi" | "location" | "topographicPlace")[];
-                numberOfResults?: number;
                 modes?: {
                     exclude?: boolean;
                     ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
@@ -191,6 +210,17 @@ export interface components {
                     railSubmode?: string;
                     waterSubmode?: string;
                 };
+                pointOfInterestFilter?: {
+                    exclude?: boolean;
+                    pointOfInterestCategory: {
+                        osmTag: {
+                            tag: string;
+                            value: string;
+                        }[];
+                        pointOfInterestClassification: string[];
+                    }[];
+                };
+                numberOfResults?: number;
                 includePtModes?: boolean;
             };
         };
@@ -232,7 +262,6 @@ export interface components {
                         };
                         restrictions?: {
                             type: ("stop" | "address" | "poi" | "location" | "topographicPlace")[];
-                            numberOfResults?: number;
                             modes?: {
                                 exclude?: boolean;
                                 ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
@@ -247,6 +276,17 @@ export interface components {
                                 railSubmode?: string;
                                 waterSubmode?: string;
                             };
+                            pointOfInterestFilter?: {
+                                exclude?: boolean;
+                                pointOfInterestCategory: {
+                                    osmTag: {
+                                        tag: string;
+                                        value: string;
+                                    }[];
+                                    pointOfInterestClassification: string[];
+                                }[];
+                            };
+                            numberOfResults?: number;
                             includePtModes?: boolean;
                         };
                     };

@@ -213,6 +213,7 @@ export interface paths {
                                                                     text: string;
                                                                 };
                                                                 code: string;
+                                                                hireFacility?: string;
                                                                 importance?: number;
                                                             }[];
                                                             operatorRef?: string;
@@ -664,6 +665,7 @@ export interface components {
                                         text: string;
                                     };
                                     code: string;
+                                    hireFacility?: string;
                                     importance?: number;
                                 }[];
                                 operatorRef?: string;
@@ -1092,6 +1094,7 @@ export interface components {
                                                     text: string;
                                                 };
                                                 code: string;
+                                                hireFacility?: string;
                                                 importance?: number;
                                             }[];
                                             operatorRef?: string;

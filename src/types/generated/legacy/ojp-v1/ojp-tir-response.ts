@@ -71,8 +71,8 @@ export interface paths {
                                                         };
                                                     };
                                                     pointOfInterest?: {
-                                                        publicCode: string;
-                                                        name: {
+                                                        pointOfInterestCode: string;
+                                                        pointOfInterestName: {
                                                             text: string;
                                                         };
                                                         pointOfInterestCategory: {
@@ -85,12 +85,6 @@ export interface paths {
                                                         privateCode?: {
                                                             system: string;
                                                             value: string;
-                                                        };
-                                                        pOIAdditionalInformation?: {
-                                                            pOIAdditionalInformation: {
-                                                                key: string;
-                                                                value: string;
-                                                            }[];
                                                         };
                                                         topographicPlaceRef?: string;
                                                     };
@@ -131,6 +125,19 @@ export interface paths {
                                                             text: string;
                                                         };
                                                     }[];
+                                                    attribute: {
+                                                        text: {
+                                                            text: string;
+                                                        };
+                                                        code: string;
+                                                        hireFacility?: string;
+                                                        importance?: number;
+                                                    }[];
+                                                    extension?: {
+                                                        locationExtensionStructure?: {
+                                                            [key: string]: string;
+                                                        };
+                                                    };
                                                 }[];
                                             };
                                             situations?: {
@@ -308,6 +315,7 @@ export interface paths {
                                                         text: string;
                                                     };
                                                     code: string;
+                                                    hireFacility?: string;
                                                     importance?: number;
                                                 }[];
                                                 operatorRef?: string;
@@ -420,8 +428,8 @@ export interface components {
                         };
                     };
                     pointOfInterest?: {
-                        publicCode: string;
-                        name: {
+                        pointOfInterestCode: string;
+                        pointOfInterestName: {
                             text: string;
                         };
                         pointOfInterestCategory: {
@@ -434,12 +442,6 @@ export interface components {
                         privateCode?: {
                             system: string;
                             value: string;
-                        };
-                        pOIAdditionalInformation?: {
-                            pOIAdditionalInformation: {
-                                key: string;
-                                value: string;
-                            }[];
                         };
                         topographicPlaceRef?: string;
                     };
@@ -480,6 +482,19 @@ export interface components {
                             text: string;
                         };
                     }[];
+                    attribute: {
+                        text: {
+                            text: string;
+                        };
+                        code: string;
+                        hireFacility?: string;
+                        importance?: number;
+                    }[];
+                    extension?: {
+                        locationExtensionStructure?: {
+                            [key: string]: string;
+                        };
+                    };
                 }[];
             };
             situations?: {
@@ -657,6 +672,7 @@ export interface components {
                         text: string;
                     };
                     code: string;
+                    hireFacility?: string;
                     importance?: number;
                 }[];
                 operatorRef?: string;
@@ -749,8 +765,8 @@ export interface components {
                             };
                         };
                         pointOfInterest?: {
-                            publicCode: string;
-                            name: {
+                            pointOfInterestCode: string;
+                            pointOfInterestName: {
                                 text: string;
                             };
                             pointOfInterestCategory: {
@@ -763,12 +779,6 @@ export interface components {
                             privateCode?: {
                                 system: string;
                                 value: string;
-                            };
-                            pOIAdditionalInformation?: {
-                                pOIAdditionalInformation: {
-                                    key: string;
-                                    value: string;
-                                }[];
                             };
                             topographicPlaceRef?: string;
                         };
@@ -809,6 +819,19 @@ export interface components {
                                 text: string;
                             };
                         }[];
+                        attribute: {
+                            text: {
+                                text: string;
+                            };
+                            code: string;
+                            hireFacility?: string;
+                            importance?: number;
+                        }[];
+                        extension?: {
+                            locationExtensionStructure?: {
+                                [key: string]: string;
+                            };
+                        };
                     }[];
                 };
                 situations?: {
@@ -986,6 +1009,7 @@ export interface components {
                             text: string;
                         };
                         code: string;
+                        hireFacility?: string;
                         importance?: number;
                     }[];
                     operatorRef?: string;
@@ -1084,8 +1108,8 @@ export interface components {
                                         };
                                     };
                                     pointOfInterest?: {
-                                        publicCode: string;
-                                        name: {
+                                        pointOfInterestCode: string;
+                                        pointOfInterestName: {
                                             text: string;
                                         };
                                         pointOfInterestCategory: {
@@ -1098,12 +1122,6 @@ export interface components {
                                         privateCode?: {
                                             system: string;
                                             value: string;
-                                        };
-                                        pOIAdditionalInformation?: {
-                                            pOIAdditionalInformation: {
-                                                key: string;
-                                                value: string;
-                                            }[];
                                         };
                                         topographicPlaceRef?: string;
                                     };
@@ -1144,6 +1162,19 @@ export interface components {
                                             text: string;
                                         };
                                     }[];
+                                    attribute: {
+                                        text: {
+                                            text: string;
+                                        };
+                                        code: string;
+                                        hireFacility?: string;
+                                        importance?: number;
+                                    }[];
+                                    extension?: {
+                                        locationExtensionStructure?: {
+                                            [key: string]: string;
+                                        };
+                                    };
                                 }[];
                             };
                             situations?: {
@@ -1321,6 +1352,7 @@ export interface components {
                                         text: string;
                                     };
                                     code: string;
+                                    hireFacility?: string;
                                     importance?: number;
                                 }[];
                                 operatorRef?: string;

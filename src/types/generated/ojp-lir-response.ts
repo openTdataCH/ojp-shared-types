@@ -130,6 +130,14 @@ export interface paths {
                                                         text: string;
                                                     };
                                                 }[];
+                                                attribute: {
+                                                    userText: {
+                                                        text: string;
+                                                    };
+                                                    code: string;
+                                                    hireFacility?: string;
+                                                    importance?: number;
+                                                }[];
                                             };
                                             complete: boolean;
                                             probability?: number;
@@ -247,6 +255,14 @@ export interface components {
                         text: string;
                     };
                 }[];
+                attribute: {
+                    userText: {
+                        text: string;
+                    };
+                    code: string;
+                    hireFacility?: string;
+                    importance?: number;
+                }[];
             };
             complete: boolean;
             probability?: number;
@@ -343,6 +359,14 @@ export interface components {
                         shortName?: {
                             text: string;
                         };
+                    }[];
+                    attribute: {
+                        userText: {
+                            text: string;
+                        };
+                        code: string;
+                        hireFacility?: string;
+                        importance?: number;
                     }[];
                 };
                 complete: boolean;
@@ -446,6 +470,14 @@ export interface components {
                                     shortName?: {
                                         text: string;
                                     };
+                                }[];
+                                attribute: {
+                                    userText: {
+                                        text: string;
+                                    };
+                                    code: string;
+                                    hireFacility?: string;
+                                    importance?: number;
                                 }[];
                             };
                             complete: boolean;
