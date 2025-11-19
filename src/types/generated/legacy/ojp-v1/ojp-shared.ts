@@ -15,6 +15,17 @@ export interface components {
             hireFacility?: string;
             importance?: number;
         };
+        PlaceRef: {
+            stopPointRef?: string;
+            stopPlaceRef?: string;
+            geoPosition?: {
+                longitude: number;
+                latitude: number;
+            };
+            locationName?: {
+                text: string;
+            };
+        };
         PointOfInterest: {
             pointOfInterestCode: string;
             pointOfInterestName: {
