@@ -81,7 +81,6 @@ components:
           xml:
             name: TopographicPlaceRef
 
-
     # modified from 'openapi/ojp-shared.yml#/components/schemas/DatedJourney'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
     DatedJourney:
