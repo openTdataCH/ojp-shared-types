@@ -34,6 +34,32 @@ components:
           xml:
             name: Importance
 
+    # Variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PlaceRefStructure
+    # LocationName in OJPv1 , Name in OJPv2
+    PlaceRef:
+      type: object
+      required:
+        - name
+      properties:
+        stopPointRef:
+          type: string
+          xml:
+            name: StopPointRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        stopPlaceRef:
+          type: string
+          xml:
+            name: StopPlaceRef
+        geoPosition:
+          $ref: '../../ojp-shared.yml#/components/schemas/GeoPosition'
+          xml:
+            name: GeoPosition
+        locationName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: LocationName
+
     # Variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestStructure
     # In OJPv1  - PointOfInterestCode, PointOfInterestName, via Extension in Location
     #    OJPv2  - PublicCode, Name, POIAdditionalInformation
