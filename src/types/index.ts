@@ -30,6 +30,8 @@ export type OJPv1_DatedJourneySchema = ojpV1_SharedComponents['schemas']['DatedJ
 export type OJPv1_LocationSchema = ojpV1_SharedComponents['schemas']['Location']
 export type OJPv1_GeneralAttributeSchema = ojpV1_SharedComponents['schemas']['GeneralAttribute'];
 export type OJPv1_PointOfInterestSchema = ojpV1_SharedComponents['schemas']['PointOfInterest'];
+export type OJPv1_PlaceRefSchema = ojpV1_SharedComponents['schemas']['PlaceRef'];
+
 export type OJPv1_TimedLegSchema = ojpV1_TripComponents['schemas']['TimedLeg']
 export type OJPv1_TripLegSchema = ojpV1_TripComponents['schemas']['TripLeg'];
 export type OJPv1_TripSchema = ojpV1_TripComponents['schemas']['Trip'];
