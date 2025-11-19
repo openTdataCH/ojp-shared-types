@@ -89,7 +89,7 @@ components:
           xml:
             name: InitialInput
         placeRef:
-          $ref: '../../ojp-shared.yml#/components/schemas/PlaceRef'
+          $ref: 'ojp-shared.yml#/components/schemas/PlaceRef'
           xml:
             name: PlaceRef
         restrictions:
