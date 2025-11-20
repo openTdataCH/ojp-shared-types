@@ -309,7 +309,7 @@ components:
               xml:
                 name: PtSituation
               items:
-                $ref: '../../ojp-shared.yml#/components/schemas/PtSituationElementStructure'
+                $ref: '#/components/schemas/PtSituationElementStructure'
 
     # this doesnt exist in XSD, is created to be re-used accross the other models
     SharedServiceExtension:
