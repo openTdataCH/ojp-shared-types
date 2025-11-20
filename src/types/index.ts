@@ -10,6 +10,8 @@ import { components as ojpV1_locationInformationResponseComponents } from './gen
 
 import { components as stopEventRequestComponents } from './generated/ojp-ser-request';
 import { components as stopEventResponseComponents } from './generated/ojp-ser-response';
+import { components as ojpV1_stopEventRequestComponents } from './generated/legacy/ojp-v1/ojp-ser-request';
+import { components as ojpV1_stopEventResponseComponents } from './generated/legacy/ojp-v1/ojp-ser-response';
 
 import { components as tripInfoRequestComponents } from './generated/ojp-tir-request';
 import { components as tripInfoResponseComponents } from './generated/ojp-tir-response';
@@ -126,6 +128,14 @@ export type TIR_RequestOJP = tripInfoRequestComponents['schemas']['OJP'];
 export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
 export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
+
+export type OJPv1_StopEventRequestOJP = ojpV1_stopEventRequestComponents['schemas']['OJP'];
+export type OJPv1_StopEventRequestSchema = ojpV1_stopEventRequestComponents['schemas']['OJPStopEventRequest'];
+export type OJPv1_SER_RequestLocationSchema = ojpV1_stopEventRequestComponents['schemas']['PlaceContext'];
+
+export type OJPv1_StopEventResponseOJP = ojpV1_stopEventResponseComponents['schemas']['OJP'];
+export type OJPv1_StopEventDeliverySchema = ojpV1_stopEventResponseComponents['schemas']['OJPStopEventDelivery'];
+export type OJPv1_StopEventResultSchema = ojpV1_stopEventResponseComponents['schemas']['StopEventResult'];
 
 export type OJPv1_TripInfoResponseOJP = ojpV1_tripInfoResponseComponents['schemas']['OJP'];
 export type OJPv1_TripInfoDeliverySchema = ojpV1_tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
