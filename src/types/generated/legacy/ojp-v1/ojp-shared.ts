@@ -22,7 +22,7 @@ export interface components {
                 longitude: number;
                 latitude: number;
             };
-            locationName?: {
+            locationName: {
                 text: string;
             };
         };
@@ -43,6 +43,175 @@ export interface components {
                 value: string;
             };
             topographicPlaceRef?: string;
+        };
+        ResponseContextStructure: {
+            places?: {
+                location: {
+                    stopPoint?: {
+                        stopPointRef: string;
+                        stopPointName: {
+                            text: string;
+                        };
+                        parentRef?: string;
+                        plannedQuay?: {
+                            text: string;
+                        };
+                        estimatedQuay?: {
+                            text: string;
+                        };
+                    };
+                    stopPlace?: {
+                        stopPlaceRef?: string;
+                        stopPlaceName?: {
+                            text: string;
+                        };
+                    };
+                    topographicPlace?: {
+                        topographicPlaceCode: string;
+                        topographicPlaceName: {
+                            text: string;
+                        };
+                    };
+                    pointOfInterest?: {
+                        pointOfInterestCode: string;
+                        pointOfInterestName: {
+                            text: string;
+                        };
+                        pointOfInterestCategory: {
+                            osmTag: {
+                                tag: string;
+                                value: string;
+                            }[];
+                            pointOfInterestClassification: string[];
+                        }[];
+                        privateCode?: {
+                            system: string;
+                            value: string;
+                        };
+                        topographicPlaceRef?: string;
+                    };
+                    address?: {
+                        publicCode: string;
+                        name: {
+                            text: string;
+                        };
+                        postCode?: string;
+                        topographicPlaceName?: string;
+                        topographicPlaceRef?: string;
+                        street?: string;
+                        houseNumber?: string;
+                    };
+                    locationName: {
+                        text: string;
+                    };
+                    geoPosition: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    mode: {
+                        /** @enum {string} */
+                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
+                        airSubmode?: string;
+                        busSubmode?: string;
+                        coachSubmode?: string;
+                        funicularSubmode?: string;
+                        metroSubmode?: string;
+                        tramSubmode?: string;
+                        telecabinSubmode?: string;
+                        railSubmode?: string;
+                        waterSubmode?: string;
+                        name?: {
+                            text: string;
+                        };
+                        shortName?: {
+                            text: string;
+                        };
+                    }[];
+                    attribute: {
+                        text: {
+                            text: string;
+                        };
+                        code: string;
+                        hireFacility?: string;
+                        importance?: number;
+                    }[];
+                    extension?: {
+                        locationExtensionStructure?: {
+                            [key: string]: string;
+                        };
+                    };
+                }[];
+            };
+            situations?: {
+                ptSituation: {
+                    creationTime: string;
+                    participantRef?: string;
+                    situationNumber: string;
+                    version?: number;
+                    source: {
+                        /** @enum {string} */
+                        sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                    };
+                    validityPeriod: {
+                        startTime: string;
+                        endTime?: string;
+                    }[];
+                    alertCause: string;
+                    priority?: string;
+                    scopeType?: string;
+                    publishingActions?: {
+                        publishingAction: {
+                            publishAtScope: {
+                                scopeType: string;
+                            };
+                            passengerInformationAction: {
+                                actionRef: string;
+                                recordedAtTime: string;
+                                /** @enum {string} */
+                                perspective: "general" | "stopPoint" | "vehicleJourney";
+                                textualContent: {
+                                    summaryContent: {
+                                        summaryText: string;
+                                    };
+                                    reasonContent?: {
+                                        reasonText: string;
+                                    };
+                                    descriptionContent: {
+                                        descriptionText: string;
+                                    }[];
+                                    consequenceContent: {
+                                        consequenceText: string;
+                                    }[];
+                                    recommendationContent: {
+                                        recommendationText: string;
+                                    }[];
+                                    durationContent?: {
+                                        durationText: string;
+                                    };
+                                    remarkContent: {
+                                        remark: string;
+                                    }[];
+                                    infoLink: {
+                                        uri: string;
+                                        label?: string[];
+                                    }[];
+                                }[];
+                            }[];
+                        }[];
+                    };
+                }[];
+            };
+        };
+        SharedServiceExtension: {
+            transportTypeName?: {
+                text: string;
+            };
+            publishedJourneyNumber?: {
+                text: string;
+            };
+            operatorName?: {
+                text: string;
+            };
         };
         DatedJourney: {
             conventionalModeOfOperation?: string;

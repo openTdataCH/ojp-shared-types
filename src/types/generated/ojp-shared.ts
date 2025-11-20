@@ -469,6 +469,43 @@ export interface components {
                 occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
             }[];
         };
+        CallAtNearStop: {
+            callAtStop: {
+                stopPointRef: string;
+                stopPointName: {
+                    text: string;
+                };
+                nameSuffix?: {
+                    text: string;
+                };
+                plannedQuay?: {
+                    text: string;
+                };
+                estimatedQuay?: {
+                    text: string;
+                };
+                serviceArrival?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                serviceDeparture?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                order?: number;
+                requestStop?: boolean;
+                unplannedStop?: boolean;
+                notServicedStop?: boolean;
+                noBoardingAtStop?: boolean;
+                noAlightingAtStop?: boolean;
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
+            };
+        };
         ProductCategory: {
             name?: {
                 text: string;

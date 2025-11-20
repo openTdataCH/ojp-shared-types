@@ -64,7 +64,7 @@ export interface paths {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            locationName?: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -190,7 +190,7 @@ export interface components {
                     longitude: number;
                     latitude: number;
                 };
-                locationName?: {
+                locationName: {
                     text: string;
                 };
             };
@@ -256,7 +256,7 @@ export interface components {
                                 longitude: number;
                                 latitude: number;
                             };
-                            locationName?: {
+                            locationName: {
                                 text: string;
                             };
                         };

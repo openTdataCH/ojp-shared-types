@@ -44,7 +44,7 @@ export interface paths {
                                         calcTime?: string;
                                         stopEventResponseContext?: {
                                             places?: {
-                                                place: {
+                                                location: {
                                                     stopPoint?: {
                                                         stopPointRef: string;
                                                         stopPointName: {
@@ -71,8 +71,8 @@ export interface paths {
                                                         };
                                                     };
                                                     pointOfInterest?: {
-                                                        publicCode: string;
-                                                        name: {
+                                                        pointOfInterestCode: string;
+                                                        pointOfInterestName: {
                                                             text: string;
                                                         };
                                                         pointOfInterestCategory: {
@@ -85,12 +85,6 @@ export interface paths {
                                                         privateCode?: {
                                                             system: string;
                                                             value: string;
-                                                        };
-                                                        pOIAdditionalInformation?: {
-                                                            pOIAdditionalInformation: {
-                                                                key: string;
-                                                                value: string;
-                                                            }[];
                                                         };
                                                         topographicPlaceRef?: string;
                                                     };
@@ -105,7 +99,7 @@ export interface paths {
                                                         street?: string;
                                                         houseNumber?: string;
                                                     };
-                                                    name: {
+                                                    locationName: {
                                                         text: string;
                                                     };
                                                     geoPosition: {
@@ -132,13 +126,18 @@ export interface paths {
                                                         };
                                                     }[];
                                                     attribute: {
-                                                        userText: {
+                                                        text: {
                                                             text: string;
                                                         };
                                                         code: string;
                                                         hireFacility?: string;
                                                         importance?: number;
                                                     }[];
+                                                    extension?: {
+                                                        locationExtensionStructure?: {
+                                                            [key: string]: string;
+                                                        };
+                                                    };
                                                 }[];
                                             };
                                             situations?: {
@@ -350,12 +349,12 @@ export interface paths {
                                                         };
                                                         productCategoryRef?: string;
                                                     };
-                                                    publishedServiceName: {
+                                                    publishedLineName: {
                                                         text: string;
                                                     };
                                                     trainNumber?: string;
                                                     attribute: {
-                                                        userText: {
+                                                        text: {
                                                             text: string;
                                                         };
                                                         code: string;
@@ -370,17 +369,22 @@ export interface paths {
                                                     unplanned?: boolean;
                                                     cancelled?: boolean;
                                                     deviation?: boolean;
-                                                    situationFullRefs?: {
-                                                        situationFullRef: {
-                                                            participantRef: string;
-                                                            situationNumber: string;
-                                                        }[];
-                                                    };
                                                 };
                                                 operatingDays?: {
                                                     from: string;
                                                     to: string;
                                                     pattern: string;
+                                                };
+                                                extension?: {
+                                                    transportTypeName?: {
+                                                        text: string;
+                                                    };
+                                                    publishedJourneyNumber?: {
+                                                        text: string;
+                                                    };
+                                                    operatorName?: {
+                                                        text: string;
+                                                    };
                                                 };
                                             };
                                         }[];
@@ -556,12 +560,12 @@ export interface components {
                     };
                     productCategoryRef?: string;
                 };
-                publishedServiceName: {
+                publishedLineName: {
                     text: string;
                 };
                 trainNumber?: string;
                 attribute: {
-                    userText: {
+                    text: {
                         text: string;
                     };
                     code: string;
@@ -576,17 +580,22 @@ export interface components {
                 unplanned?: boolean;
                 cancelled?: boolean;
                 deviation?: boolean;
-                situationFullRefs?: {
-                    situationFullRef: {
-                        participantRef: string;
-                        situationNumber: string;
-                    }[];
-                };
             };
             operatingDays?: {
                 from: string;
                 to: string;
                 pattern: string;
+            };
+            extension?: {
+                transportTypeName?: {
+                    text: string;
+                };
+                publishedJourneyNumber?: {
+                    text: string;
+                };
+                operatorName?: {
+                    text: string;
+                };
             };
         };
         StopEventResult: {
@@ -738,12 +747,12 @@ export interface components {
                         };
                         productCategoryRef?: string;
                     };
-                    publishedServiceName: {
+                    publishedLineName: {
                         text: string;
                     };
                     trainNumber?: string;
                     attribute: {
-                        userText: {
+                        text: {
                             text: string;
                         };
                         code: string;
@@ -758,17 +767,22 @@ export interface components {
                     unplanned?: boolean;
                     cancelled?: boolean;
                     deviation?: boolean;
-                    situationFullRefs?: {
-                        situationFullRef: {
-                            participantRef: string;
-                            situationNumber: string;
-                        }[];
-                    };
                 };
                 operatingDays?: {
                     from: string;
                     to: string;
                     pattern: string;
+                };
+                extension?: {
+                    transportTypeName?: {
+                        text: string;
+                    };
+                    publishedJourneyNumber?: {
+                        text: string;
+                    };
+                    operatorName?: {
+                        text: string;
+                    };
                 };
             };
         };
@@ -779,7 +793,7 @@ export interface components {
             calcTime?: string;
             stopEventResponseContext?: {
                 places?: {
-                    place: {
+                    location: {
                         stopPoint?: {
                             stopPointRef: string;
                             stopPointName: {
@@ -806,8 +820,8 @@ export interface components {
                             };
                         };
                         pointOfInterest?: {
-                            publicCode: string;
-                            name: {
+                            pointOfInterestCode: string;
+                            pointOfInterestName: {
                                 text: string;
                             };
                             pointOfInterestCategory: {
@@ -820,12 +834,6 @@ export interface components {
                             privateCode?: {
                                 system: string;
                                 value: string;
-                            };
-                            pOIAdditionalInformation?: {
-                                pOIAdditionalInformation: {
-                                    key: string;
-                                    value: string;
-                                }[];
                             };
                             topographicPlaceRef?: string;
                         };
@@ -840,7 +848,7 @@ export interface components {
                             street?: string;
                             houseNumber?: string;
                         };
-                        name: {
+                        locationName: {
                             text: string;
                         };
                         geoPosition: {
@@ -867,13 +875,18 @@ export interface components {
                             };
                         }[];
                         attribute: {
-                            userText: {
+                            text: {
                                 text: string;
                             };
                             code: string;
                             hireFacility?: string;
                             importance?: number;
                         }[];
+                        extension?: {
+                            locationExtensionStructure?: {
+                                [key: string]: string;
+                            };
+                        };
                     }[];
                 };
                 situations?: {
@@ -1085,12 +1098,12 @@ export interface components {
                             };
                             productCategoryRef?: string;
                         };
-                        publishedServiceName: {
+                        publishedLineName: {
                             text: string;
                         };
                         trainNumber?: string;
                         attribute: {
-                            userText: {
+                            text: {
                                 text: string;
                             };
                             code: string;
@@ -1105,17 +1118,22 @@ export interface components {
                         unplanned?: boolean;
                         cancelled?: boolean;
                         deviation?: boolean;
-                        situationFullRefs?: {
-                            situationFullRef: {
-                                participantRef: string;
-                                situationNumber: string;
-                            }[];
-                        };
                     };
                     operatingDays?: {
                         from: string;
                         to: string;
                         pattern: string;
+                    };
+                    extension?: {
+                        transportTypeName?: {
+                            text: string;
+                        };
+                        publishedJourneyNumber?: {
+                            text: string;
+                        };
+                        operatorName?: {
+                            text: string;
+                        };
                     };
                 };
             }[];
@@ -1132,7 +1150,7 @@ export interface components {
                         calcTime?: string;
                         stopEventResponseContext?: {
                             places?: {
-                                place: {
+                                location: {
                                     stopPoint?: {
                                         stopPointRef: string;
                                         stopPointName: {
@@ -1159,8 +1177,8 @@ export interface components {
                                         };
                                     };
                                     pointOfInterest?: {
-                                        publicCode: string;
-                                        name: {
+                                        pointOfInterestCode: string;
+                                        pointOfInterestName: {
                                             text: string;
                                         };
                                         pointOfInterestCategory: {
@@ -1173,12 +1191,6 @@ export interface components {
                                         privateCode?: {
                                             system: string;
                                             value: string;
-                                        };
-                                        pOIAdditionalInformation?: {
-                                            pOIAdditionalInformation: {
-                                                key: string;
-                                                value: string;
-                                            }[];
                                         };
                                         topographicPlaceRef?: string;
                                     };
@@ -1193,7 +1205,7 @@ export interface components {
                                         street?: string;
                                         houseNumber?: string;
                                     };
-                                    name: {
+                                    locationName: {
                                         text: string;
                                     };
                                     geoPosition: {
@@ -1220,13 +1232,18 @@ export interface components {
                                         };
                                     }[];
                                     attribute: {
-                                        userText: {
+                                        text: {
                                             text: string;
                                         };
                                         code: string;
                                         hireFacility?: string;
                                         importance?: number;
                                     }[];
+                                    extension?: {
+                                        locationExtensionStructure?: {
+                                            [key: string]: string;
+                                        };
+                                    };
                                 }[];
                             };
                             situations?: {
@@ -1438,12 +1455,12 @@ export interface components {
                                         };
                                         productCategoryRef?: string;
                                     };
-                                    publishedServiceName: {
+                                    publishedLineName: {
                                         text: string;
                                     };
                                     trainNumber?: string;
                                     attribute: {
-                                        userText: {
+                                        text: {
                                             text: string;
                                         };
                                         code: string;
@@ -1458,17 +1475,22 @@ export interface components {
                                     unplanned?: boolean;
                                     cancelled?: boolean;
                                     deviation?: boolean;
-                                    situationFullRefs?: {
-                                        situationFullRef: {
-                                            participantRef: string;
-                                            situationNumber: string;
-                                        }[];
-                                    };
                                 };
                                 operatingDays?: {
                                     from: string;
                                     to: string;
                                     pattern: string;
+                                };
+                                extension?: {
+                                    transportTypeName?: {
+                                        text: string;
+                                    };
+                                    publishedJourneyNumber?: {
+                                        text: string;
+                                    };
+                                    operatorName?: {
+                                        text: string;
+                                    };
                                 };
                             };
                         }[];
