@@ -996,6 +996,19 @@ components:
             $ref: "#/components/schemas/ExpectedDepartureOccupancyStructure"
     # SharedLegSection
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtNearStopStructure
+    CallAtNearStop:
+      type: object
+      xml:
+        name: CallAtNearStop
+      required:
+        - callAtStop
+      properties:
+        callAtStop:
+          $ref: '#/components/schemas/CallAtStop'
+          xml:
+            name: CallAtStop
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ProductCategoryStructure
     ProductCategory:
       type: object
