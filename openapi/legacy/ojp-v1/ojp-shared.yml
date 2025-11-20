@@ -39,7 +39,7 @@ components:
     PlaceRef:
       type: object
       required:
-        - name
+        - locationName
       properties:
         stopPointRef:
           type: string
