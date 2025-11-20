@@ -1,0 +1,184 @@
+openapi: 3.0.3
+info:
+  title: XML OJP 2.0 API
+  description: API that returns trip data in XML format.
+  version: 0.0.1
+
+servers:
+  - url: https://api.example.com
+
+paths:
+  /ojp:
+    post:
+      summary: Main /ojp endpoint
+      description: Main /ojp endpoint
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OJP"
+        "500":
+          description: Server error
+
+components:
+  schemas:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__StopEventStructure
+    StopEvent:
+      type: object
+      xml:
+        name: StopEvent
+      required:
+        - previousCall
+        - thisCall
+        - onwardCall
+        - service
+      properties:
+        previousCall:
+          type: array
+          xml:
+            name: PreviousCall
+          items:
+            $ref: '../../ojp-shared.yml#/components/schemas/CallAtNearStop'
+        thisCall:
+          $ref: '../../ojp-shared.yml#/components/schemas/CallAtNearStop'
+          xml:
+            name: ThisCall
+        onwardCall:
+          type: array
+          xml:
+            name: OnwardCall
+          items:
+            $ref: '../../ojp-shared.yml#/components/schemas/CallAtNearStop'
+        service:
+          $ref: './ojp-shared.yml#/components/schemas/DatedJourney'
+          xml:
+            name: Service
+        operatingDays:
+          type: object
+          xml:
+            name: OperatingDays
+          required:
+            - from
+            - to
+            - pattern
+          properties:
+            from:
+              type: string
+              xml:
+                name: From
+            to:
+              type: string
+              xml:
+                name: To
+            pattern:
+              type: string
+              xml:
+                name: Pattern
+        extension:
+          $ref: './ojp-shared.yml#/components/schemas/SharedServiceExtension'
+          xml:
+            name: Extension
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__StopEventResultStructure
+    StopEventResult:
+      type: object
+      xml:
+        name: StopEventResult
+      required:
+        - id
+        - stopEvent
+      properties:
+        id:
+          type: string
+        stopEvent:
+          $ref: '#/components/schemas/StopEvent'
+          xml:
+            name: StopEvent
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPStopEventDeliveryStructure
+    OJPStopEventDelivery:
+      type: object
+      xml:
+        name: OJPLocationInformationDelivery
+      required:
+        - responseTimestamp
+        - stopEventResult
+      properties:
+        responseTimestamp:
+          type: string
+          xml:
+            name: ResponseTimestamp
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        requestMessageRef:
+          type: string
+          xml:
+            name: RequestMessageRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        defaultLanguage:
+          type: string
+          xml:
+            name: DefaultLanguage
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        calcTime:
+          type: string
+          xml:
+            name: CalcTime
+        stopEventResponseContext:
+          $ref: './ojp-shared.yml#/components/schemas/ResponseContextStructure'
+          xml:
+            name: StopEventResponseContext
+        stopEventResult:
+          type: array
+          xml:
+            name: StopEventResult
+          items:
+            $ref: '#/components/schemas/StopEventResult'
+        
+    OJP:
+      type: object
+      xml:
+        name: OJP
+      required:
+        - OJPResponse
+      properties:
+        OJPResponse:
+          type: object
+          xml:
+            name: OJPResponse
+          required:
+            - serviceDelivery
+          properties:
+            serviceDelivery:
+              type: object
+              xml:
+                name: ServiceDelivery
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              required:
+                - responseTimestamp
+                - producerRef
+                - OJPStopEventDelivery
+              properties:
+                responseTimestamp:
+                  type: string
+                  xml:
+                    name: ResponseTimestamp
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                producerRef:
+                  type: string
+                  xml:
+                    name: ProducerRef
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                OJPStopEventDelivery:
+                  $ref: '#/components/schemas/OJPStopEventDelivery'
+                  xml:
+                    name: OJPStopEventDelivery
+    # OJP
+        
