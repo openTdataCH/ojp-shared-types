@@ -107,6 +107,177 @@ components:
           xml:
             name: TopographicPlaceRef
 
+    # Variation of OJP2.0 PtSituationElementStructure
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__PtSituationElementStructure
+    PtSituationElementStructure:
+      type: object
+      xml:
+        name: PtSituationElement
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+      required:
+        - creationTime
+        - situationNumber
+        - source
+        - validityPeriod
+        - language
+        - summary
+        - consequence
+        - recommendation
+      properties:
+        creationTime:
+          type: string
+          xml:
+            name: CreationTime
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        participantRef:
+          type: string
+          xml:
+            name: ParticipantRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        situationNumber:
+          type: string
+          xml:
+            name: SituationNumber
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        version:
+          type: number
+          xml:
+            name: Version
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        source:
+          type: object
+          xml:
+            name: Source
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          required:
+            - sourceType
+          properties:
+            sourceType:
+              $ref: "../../ojp-shared.yml#/components/schemas/SituationSourceTypeEnum"
+              xml:
+                name: SourceType
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+        validityPeriod:
+          type: array
+          xml:
+            name: ValidityPeriod
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__HalfOpenTimestampOutputRangeStructure
+            type: object
+            xml:
+              name: HalfOpenTimestampOutputRangeStructure
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+            required:
+              - startTime
+            properties:
+              startTime:
+                type: string
+                xml:
+                  name: StartTime
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+              endTime:
+                type: string
+                xml:
+                  name: EndTime
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+        priority:
+          type: string
+          xml:
+            name: Priority
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        scopeType:
+          # TODO - make it enum - local-type: typedef-50.4
+          type: string
+          xml:
+            name: ScopeType
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__ActionsStructure
+        language:
+          type: string
+          xml:
+            name: Language
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        summary:
+          type: string
+          xml:
+            name: Summary
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        description:
+          type: array
+          xml:
+            name: Description
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            type: string
+            xml:
+              name: Description
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+        detail:
+          type: array
+          xml:
+            name: Detail
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            type: string
+            xml:
+              name: Detail
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+        affects:
+          type: object
+          xml:
+            name: Affects
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          properties:
+            stopPoints:
+              type: object
+              xml:
+                name: StopPoints
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              properties:
+                affectedStopPoint:
+                  type: array
+                  xml:
+                    name: AffectedStopPoint
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                  items:
+                    type: object
+                    required:
+                      - stopPointRef
+                    xml:
+                      name: AffectedStopPoint
+                      namespace: "http://www.siri.org.uk/siri"
+                      prefix: siri
+                    properties:
+                      stopPointRef:
+                        type: string
+                        xml:
+                          name: StopPointRef
+                          namespace: "http://www.siri.org.uk/siri"
+                          prefix: siri
+
     # OJP1 variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
     ResponseContextStructure:
       type: object
