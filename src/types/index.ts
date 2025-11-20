@@ -8,8 +8,8 @@ import { components as locationInformationResponseComponents } from './generated
 import { components as ojpV1_locationInformationRequestComponents } from './generated/legacy/ojp-v1/ojp-lir-request';
 import { components as ojpV1_locationInformationResponseComponents } from './generated/legacy/ojp-v1/ojp-lir-response';
 
-import { components as stopEventRequestComponents } from './generated/ojp-ser-request'
-import { components as stopEventResponseComponents } from './generated/ojp-ser-response'
+import { components as stopEventRequestComponents } from './generated/ojp-ser-request';
+import { components as stopEventResponseComponents } from './generated/ojp-ser-response';
 
 import { components as tripInfoRequestComponents } from './generated/ojp-tir-request';
 import { components as tripInfoResponseComponents } from './generated/ojp-tir-response';
@@ -94,9 +94,9 @@ export type PlaceResultSchema = locationInformationResponseComponents['schemas']
 export type LocationInformationRequestResponseOJP = locationInformationResponseComponents['schemas']['OJP'];
 export type LocationInformationDeliverySchema = locationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];
 
-export type StopEventRequestSchema = stopEventRequestComponents['schemas']['OJPStopEventRequest']
-export type SER_RequestLocationSchema = stopEventRequestComponents['schemas']['PlaceContext']
-export type SER_RequestParamsSchema = stopEventRequestComponents['schemas']['StopEventParam']
+export type StopEventRequestSchema = stopEventRequestComponents['schemas']['OJPStopEventRequest'];
+export type SER_RequestLocationSchema = stopEventRequestComponents['schemas']['PlaceContext'];
+export type SER_RequestParamsSchema = stopEventRequestComponents['schemas']['StopEventParam'];
 export type SER_RequestOJP = stopEventRequestComponents['schemas']['OJP'];
 
 export type StopEventResultSchema = stopEventResponseComponents['schemas']['StopEventResult'];
