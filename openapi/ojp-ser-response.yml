@@ -24,19 +24,6 @@ paths:
 
 components:
   schemas:
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtNearStopStructure
-    CallAtNearStop:
-      type: object
-      xml:
-        name: CallAtNearStop
-      required:
-        - callAtStop
-      properties:
-        callAtStop:
-          $ref: './ojp-shared.yml#/components/schemas/CallAtStop'
-          xml:
-            name: CallAtStop
-    
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__StopEventStructure
     StopEvent:
       type: object
@@ -53,9 +40,9 @@ components:
           xml:
             name: PreviousCall
           items:
-            $ref: '#/components/schemas/CallAtNearStop'
+            $ref: './ojp-shared.yml#/components/schemas/CallAtNearStop'
         thisCall:
-          $ref: '#/components/schemas/CallAtNearStop'
+          $ref: './ojp-shared.yml#/components/schemas/CallAtNearStop'
           xml:
             name: ThisCall
         onwardCall:
@@ -63,7 +50,7 @@ components:
           xml:
             name: OnwardCall
           items:
-            $ref: '#/components/schemas/CallAtNearStop'
+            $ref: './ojp-shared.yml#/components/schemas/CallAtNearStop'
         service:
           $ref: './ojp-shared.yml#/components/schemas/DatedJourney'
           xml:
