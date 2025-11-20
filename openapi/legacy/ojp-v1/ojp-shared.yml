@@ -107,6 +107,39 @@ components:
           xml:
             name: TopographicPlaceRef
 
+    # OJP1 variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
+    ResponseContextStructure:
+      type: object
+      xml:
+        name: ResponseContext
+      properties:
+        places:
+          type: object
+          xml:
+            name: Places
+          required:
+            - location
+          properties:
+            location:
+              type: array
+              xml:
+                name: Location
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/Location'
+        situations:
+          type: object
+          xml:
+            name: Situations
+          required:
+            - ptSituation
+          properties:
+            ptSituation:
+              type: array
+              xml:
+                name: PtSituation
+              items:
+                $ref: '../../ojp-shared.yml#/components/schemas/PtSituationElementStructure'
+
     # this doesnt exist in XSD, is created to be re-used accross the other models
     SharedServiceExtension:
       type: object
