@@ -107,6 +107,25 @@ components:
           xml:
             name: TopographicPlaceRef
 
+    # this doesnt exist in XSD, is created to be re-used accross the other models
+    SharedServiceExtension:
+      type: object
+      xml:
+        name: Extension
+      properties:
+        transportTypeName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: TransportTypeName
+        publishedJourneyNumber:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: PublishedJourneyNumber
+        operatorName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: OperatorName
+
     # modified from 'openapi/ojp-shared.yml#/components/schemas/DatedJourney'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
     DatedJourney:
