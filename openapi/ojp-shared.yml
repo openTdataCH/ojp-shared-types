@@ -1062,6 +1062,7 @@ components:
         - mode
         - attribute
         - publishedServiceName
+        - originText
       properties:
         conventionalModeOfOperation:
           type: string
@@ -1121,6 +1122,10 @@ components:
           $ref: '#/components/schemas/InternationalText'
           xml:
             name: DestinationText
+        originText:
+          $ref: '#/components/schemas/InternationalText'
+          xml:
+            name: OriginText
         unplanned:
           type: boolean
           xml:
