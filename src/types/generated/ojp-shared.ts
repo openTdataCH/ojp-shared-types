@@ -532,6 +532,9 @@ export interface components {
             destinationText?: {
                 text: string;
             };
+            originText: {
+                text: string;
+            };
             unplanned?: boolean;
             cancelled?: boolean;
             deviation?: boolean;

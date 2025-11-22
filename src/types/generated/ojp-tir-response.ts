@@ -315,6 +315,9 @@ export interface paths {
                                                 destinationText?: {
                                                     text: string;
                                                 };
+                                                originText: {
+                                                    text: string;
+                                                };
                                                 unplanned?: boolean;
                                                 cancelled?: boolean;
                                                 deviation?: boolean;
@@ -506,6 +509,9 @@ export interface components {
                 operatorRef?: string;
                 destinationStopPointRef?: string;
                 destinationText?: {
+                    text: string;
+                };
+                originText: {
                     text: string;
                 };
                 unplanned?: boolean;
@@ -830,6 +836,9 @@ export interface components {
                     operatorRef?: string;
                     destinationStopPointRef?: string;
                     destinationText?: {
+                        text: string;
+                    };
+                    originText: {
                         text: string;
                     };
                     unplanned?: boolean;
@@ -1160,6 +1169,9 @@ export interface components {
                                 operatorRef?: string;
                                 destinationStopPointRef?: string;
                                 destinationText?: {
+                                    text: string;
+                                };
+                                originText: {
                                     text: string;
                                 };
                                 unplanned?: boolean;
