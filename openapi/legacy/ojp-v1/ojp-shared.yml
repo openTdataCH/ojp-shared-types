@@ -484,3 +484,94 @@ components:
               additionalProperties:
                 type: string
     # Location
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegBoardStructure
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtStopStructure
+    # Variation fpr OJPv1 - contains SiriSituationFullRef (in OJP v2 is under Service)
+    CallAtStop:
+      type: object
+      xml:
+        name: CallAtStop
+      required:
+        - stopPointRef
+        - stopPointName
+      properties:
+        stopPointRef:
+          type: string
+          xml:
+            name: StopPointRef
+        stopPointName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: StopPointName
+        nameSuffix:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: NameSuffix
+        plannedQuay:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: PlannedQuay
+        estimatedQuay:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: EstimatedQuay
+        serviceArrival:
+          $ref: '../../ojp-shared.yml#/components/schemas/SharedServiceArrivalDeparture'
+          xml:
+            name: ServiceArrival
+        serviceDeparture:
+          $ref: '../../ojp-shared.yml#/components/schemas/SharedServiceArrivalDeparture'
+          xml:
+            name: ServiceDeparture
+        order:
+          type: number
+          xml:
+            name: Order
+        requestStop:
+          type: boolean
+          xml:
+            name: RequestStop
+        unplannedStop:
+          type: boolean
+          xml:
+            name: UnplannedStop
+        notServicedStop:
+          type: boolean
+          xml:
+            name: NotServicedStop
+        noBoardingAtStop:
+          type: boolean
+          xml:
+            name: NoBoardingAtStop
+        noAlightingAtStop:
+          type: boolean
+          xml:
+            name: NoAlightingAtStop
+        expectedDepartureOccupancy:
+          type: array
+          xml:
+            name: ExpectedDepartureOccupancy
+          items:
+            $ref: "../../ojp-shared.yml#/components/schemas/ExpectedDepartureOccupancyStructure"
+        situationFullRef:
+          type: array
+          xml:
+            name: SituationFullRef
+          items:
+            $ref: "../../ojp-shared.yml#/components/schemas/SituationFullRefStructure"
+
+    # SharedLegSection
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtNearStopStructure
+    CallAtNearStop:
+      type: object
+      xml:
+        name: CallAtNearStop
+      required:
+        - callAtStop
+      properties:
+        callAtStop:
+          $ref: '#/components/schemas/CallAtStop'
+          xml:
+            name: CallAtStop

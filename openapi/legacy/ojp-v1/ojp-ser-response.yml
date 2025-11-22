@@ -40,9 +40,9 @@ components:
           xml:
             name: PreviousCall
           items:
-            $ref: '../../ojp-shared.yml#/components/schemas/CallAtNearStop'
+            $ref: './ojp-shared.yml#/components/schemas/CallAtNearStop'
         thisCall:
-          $ref: '../../ojp-shared.yml#/components/schemas/CallAtNearStop'
+          $ref: './ojp-shared.yml#/components/schemas/CallAtNearStop'
           xml:
             name: ThisCall
         onwardCall:
@@ -50,7 +50,7 @@ components:
           xml:
             name: OnwardCall
           items:
-            $ref: '../../ojp-shared.yml#/components/schemas/CallAtNearStop'
+            $ref: './ojp-shared.yml#/components/schemas/CallAtNearStop'
         service:
           $ref: './ojp-shared.yml#/components/schemas/DatedJourney'
           xml:
