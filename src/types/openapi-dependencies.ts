@@ -147,14 +147,14 @@ const MapArrayTags: Record<string, boolean> = {
   'pointOfInterestCategory.pointOfInterestClassification': true,
   'pOIAdditionalInformation.pOIAdditionalInformation': true,
 
-  // SER Response
-  'stopEvent.previousCall': true,
-  'stopEvent.onwardCall': true,
-
   // Fare Response
   'OJPFareDelivery.fareResult': true,
   'fareResult.tripFareResult': true, // TODO - this is not in the current schema (v2)
   'tripFareResult.fareProduct': true,
+
+  // StopEvent Response
+  'stopEvent.previousCall': true,
+  'stopEvent.onwardCall': true,
 
   // TripInfoResult
   'OJPTripInfoDelivery.tripInfoResult': true,
