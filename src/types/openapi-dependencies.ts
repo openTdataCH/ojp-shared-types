@@ -99,8 +99,14 @@ const MapArrayTags: Record<string, boolean> = {
   'places.place': true,
   'linkProjection.position': true,
 
+  // OJP v1
+  'places.location': true,
+
+  // PSituation Refs
   'situationFullRefs.situationFullRef': true,
   'situations.ptSituation': true,
+
+  // PtSituation OJP v2
   'ptSituation.validityPeriod': true,
   'publishingActions.publishingAction': true,
   'publishingAction.passengerInformationAction': true,
@@ -110,6 +116,18 @@ const MapArrayTags: Record<string, boolean> = {
   'textualContent.recommendationContent': true,
   'textualContent.remarkContent': true,
   'textualContent.infoLink': true,
+  // technically these are also arrays - they never are modeled as such
+  // 'descriptionContent.descriptionText': true,
+  // 'consequenceContent.consequenceText': true,
+  // 'recommendationContent.recommendationText': true,
+  // 'remarkContent.remark': true,
+  
+  // PtSituation OJP v1
+  'callAtStop.situationFullRef': true,
+  'ptSituation.description': true,
+  'ptSituation.detail': true,
+  'stopPoints.affectedStopPoint': true,
+  'vehicleJourneys.affectedVehicleJourney': true,
 
   'itModeAndModeOfOperation.personalModeOfOperation': true,
 
@@ -153,6 +171,7 @@ const MapArrayTags: Record<string, boolean> = {
   'tripFareResult.fareProduct': true,
 
   // StopEvent Response
+  'OJPStopEventDelivery.stopEventResult': true,
   'stopEvent.previousCall': true,
   'stopEvent.onwardCall': true,
 
@@ -165,6 +184,8 @@ const MapArrayTags: Record<string, boolean> = {
   // TripRefineResult
   'OJPTripRefineDelivery.tripResult': true,
 };
+
+// This will be deleted in the new update
 
 // TODO - this should be generated
 // Declare object properties that are / should be serialised to XML
