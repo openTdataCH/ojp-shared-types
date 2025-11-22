@@ -1088,6 +1088,7 @@ components:
         - mode
         - attribute
         - publishedServiceName
+        - originText
       properties:
         conventionalModeOfOperation:
           type: string
@@ -1135,6 +1136,10 @@ components:
             name: Attribute
           items:
             $ref: "#/components/schemas/GeneralAttribute"
+        originText:
+          $ref: '#/components/schemas/InternationalText'
+          xml:
+            name: OriginText
         operatorRef:
           type: string
           xml:

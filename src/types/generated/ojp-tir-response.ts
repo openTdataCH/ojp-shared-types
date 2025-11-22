@@ -319,6 +319,9 @@ export interface paths {
                                                     hireFacility?: string;
                                                     importance?: number;
                                                 }[];
+                                                originText: {
+                                                    text: string;
+                                                };
                                                 operatorRef?: string;
                                                 destinationStopPointRef?: string;
                                                 destinationText?: {
@@ -513,6 +516,9 @@ export interface components {
                     hireFacility?: string;
                     importance?: number;
                 }[];
+                originText: {
+                    text: string;
+                };
                 operatorRef?: string;
                 destinationStopPointRef?: string;
                 destinationText?: {
@@ -846,6 +852,9 @@ export interface components {
                         hireFacility?: string;
                         importance?: number;
                     }[];
+                    originText: {
+                        text: string;
+                    };
                     operatorRef?: string;
                     destinationStopPointRef?: string;
                     destinationText?: {
@@ -1185,6 +1194,9 @@ export interface components {
                                     hireFacility?: string;
                                     importance?: number;
                                 }[];
+                                originText: {
+                                    text: string;
+                                };
                                 operatorRef?: string;
                                 destinationStopPointRef?: string;
                                 destinationText?: {
