@@ -277,6 +277,34 @@ components:
                           name: StopPointRef
                           namespace: "http://www.siri.org.uk/siri"
                           prefix: siri
+            vehicleJourneys:
+              type: object
+              xml:
+                name: VehicleJourneys
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              properties:
+                affectedVehicleJourney:
+                  type: array
+                  xml:
+                    name: AffectedVehicleJourney
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                  items:
+                    type: object
+                    required:
+                      - LineRef
+                    xml:
+                      name: AffectedVehicleJourney
+                      namespace: "http://www.siri.org.uk/siri"
+                      prefix: siri
+                    properties:
+                      stopPointRef:
+                        type: string
+                        xml:
+                          name: LineRef
+                          namespace: "http://www.siri.org.uk/siri"
+                          prefix: siri
 
     # OJP1 variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
     ResponseContextStructure:
