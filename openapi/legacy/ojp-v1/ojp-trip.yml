@@ -49,23 +49,9 @@ components:
               items:
                 $ref: '../../ojp-shared.yml#/components/schemas/TrackSectionStructure'
         extension:
-          type: object
+          $ref: './ojp-shared.yml#/components/schemas/SharedServiceExtension'
           xml:
             name: Extension
-          properties:
-            transportTypeName:
-              $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
-              xml:
-                name: TransportTypeName
-            publishedJourneyNumber:
-              $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
-              xml:
-                name: PublishedJourneyNumber
-            operatorName:
-              $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
-              xml:
-                name: OperatorName
-        
     # TimedLeg
 
     # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/Leg'

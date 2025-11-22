@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: XML OJP 1.0 API
+  title: XML OJP 2.0 API
   description: API that returns trip data in XML format.
   version: 0.0.1
 
@@ -24,59 +24,31 @@ paths:
 
 components:
   schemas:
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PlaceParamStructure
-    PlaceParam:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PlaceContextStructure
+    PlaceContext:
       type: object
       xml:
-        name: PlaceParam
+        name: OJPStopEventRequest
       required:
-        - type
+        - placeRef
       properties:
-        type:
-          type: array
-          items:
-            $ref: "../../ojp-shared.yml#/components/schemas/PlaceTypeEnum"
+        placeRef:
+          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
           xml:
-            name: Type
-        modes:
-          $ref: "../../ojp-shared.yml#/components/schemas/ModeFilterStructure"
-          xml:
-            name: Modes
-        pointOfInterestFilter:
-          $ref: "../../ojp-shared.yml#/components/schemas/PointOfInterestFilterStructure"
-          xml:
-            name: PointOfInterestFilter
-        numberOfResults:
-          type: number
-          xml:
-            name: NumberOfResults
-        includePtModes:
-          type: boolean
-          xml:
-            name: IncludePtModes
-
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__InitialLocationInputStructure
-    InitialInput:
-      type: object
-      xml:
-        name: InitialInput
-      properties:
-        locationName:
+            name: PlaceRef
+        depArrTime:
           type: string
           xml:
-            name: LocationName
-        geoRestriction:
-          $ref: '../../ojp-shared.yml#/components/schemas/GeoRestrictionsStructure'
-          xml:
-            name: GeoRestriction
+            name: DepArrTime
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPLocationInformationRequestStructure
-    OJPLocationInformationRequest:
+    OJPStopEventRequest:
       type: object
       xml:
-        name: OJPLocationInformationRequest
+        name: OJPStopEventRequest
       required:
         - requestTimestamp
+        - location
       properties:
         requestTimestamp:
           type: string
@@ -84,18 +56,14 @@ components:
             name: RequestTimestamp
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
-        initialInput:
-          $ref: '#/components/schemas/InitialInput'
+        location:
+          $ref: '#/components/schemas/PlaceContext'
           xml:
-            name: InitialInput
-        placeRef:
-          $ref: 'ojp-shared.yml#/components/schemas/PlaceRef'
+            name: Location
+        params:
+          $ref: '../../ojp-ser-request.yml#/components/schemas/StopEventParam'
           xml:
-            name: PlaceRef
-        restrictions:
-          $ref: '#/components/schemas/PlaceParam'
-          xml:
-            name: Restrictions
+            name: Params
 
     OJP:
       type: object
@@ -120,7 +88,7 @@ components:
               required:
                 - requestTimestamp
                 - requestorRef
-                - OJPLocationInformationRequest
+                - OJPStopEventRequest
               properties:
                 serviceRequestContext:
                   $ref: '../../ojp-shared.yml#/components/schemas/ServiceRequestContext'
@@ -138,7 +106,8 @@ components:
                     name: RequestorRef
                     namespace: "http://www.siri.org.uk/siri"
                     prefix: siri
-                OJPLocationInformationRequest:
-                  $ref: '#/components/schemas/OJPLocationInformationRequest'
+                OJPStopEventRequest:
+                  $ref: '#/components/schemas/OJPStopEventRequest'
                   xml:
-                    name: OJPLocationInformationRequest
+                    name: OJPStopEventRequest              
+        

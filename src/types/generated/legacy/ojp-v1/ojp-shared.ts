@@ -12,7 +12,213 @@ export interface components {
                 text: string;
             };
             code: string;
+            hireFacility?: string;
             importance?: number;
+        };
+        PlaceRef: {
+            stopPointRef?: string;
+            stopPlaceRef?: string;
+            geoPosition?: {
+                longitude: number;
+                latitude: number;
+            };
+            locationName: {
+                text: string;
+            };
+        };
+        PointOfInterest: {
+            pointOfInterestCode: string;
+            pointOfInterestName: {
+                text: string;
+            };
+            pointOfInterestCategory: {
+                osmTag: {
+                    tag: string;
+                    value: string;
+                }[];
+                pointOfInterestClassification: string[];
+            }[];
+            privateCode?: {
+                system: string;
+                value: string;
+            };
+            topographicPlaceRef?: string;
+        };
+        PtSituationElementStructure: {
+            creationTime: string;
+            participantRef?: string;
+            situationNumber: string;
+            version?: number;
+            source: {
+                /** @enum {string} */
+                sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+            };
+            validityPeriod: {
+                startTime: string;
+                endTime?: string;
+            }[];
+            priority?: string;
+            scopeType?: string;
+            language: string;
+            summary: string;
+            description?: string[];
+            detail?: string[];
+            affects?: {
+                stopPoints?: {
+                    affectedStopPoint?: {
+                        stopPointRef: string;
+                    }[];
+                };
+                vehicleJourneys?: {
+                    affectedVehicleJourney?: {
+                        stopPointRef?: string;
+                    }[];
+                };
+            };
+        };
+        ResponseContextStructure: {
+            places?: {
+                location: {
+                    stopPoint?: {
+                        stopPointRef: string;
+                        stopPointName: {
+                            text: string;
+                        };
+                        parentRef?: string;
+                        plannedQuay?: {
+                            text: string;
+                        };
+                        estimatedQuay?: {
+                            text: string;
+                        };
+                    };
+                    stopPlace?: {
+                        stopPlaceRef?: string;
+                        stopPlaceName?: {
+                            text: string;
+                        };
+                    };
+                    topographicPlace?: {
+                        topographicPlaceCode: string;
+                        topographicPlaceName: {
+                            text: string;
+                        };
+                    };
+                    pointOfInterest?: {
+                        pointOfInterestCode: string;
+                        pointOfInterestName: {
+                            text: string;
+                        };
+                        pointOfInterestCategory: {
+                            osmTag: {
+                                tag: string;
+                                value: string;
+                            }[];
+                            pointOfInterestClassification: string[];
+                        }[];
+                        privateCode?: {
+                            system: string;
+                            value: string;
+                        };
+                        topographicPlaceRef?: string;
+                    };
+                    address?: {
+                        publicCode: string;
+                        name: {
+                            text: string;
+                        };
+                        postCode?: string;
+                        topographicPlaceName?: string;
+                        topographicPlaceRef?: string;
+                        street?: string;
+                        houseNumber?: string;
+                    };
+                    locationName: {
+                        text: string;
+                    };
+                    geoPosition: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    mode: {
+                        /** @enum {string} */
+                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
+                        airSubmode?: string;
+                        busSubmode?: string;
+                        coachSubmode?: string;
+                        funicularSubmode?: string;
+                        metroSubmode?: string;
+                        tramSubmode?: string;
+                        telecabinSubmode?: string;
+                        railSubmode?: string;
+                        waterSubmode?: string;
+                        name?: {
+                            text: string;
+                        };
+                        shortName?: {
+                            text: string;
+                        };
+                    }[];
+                    attribute: {
+                        text: {
+                            text: string;
+                        };
+                        code: string;
+                        hireFacility?: string;
+                        importance?: number;
+                    }[];
+                    extension?: {
+                        locationExtensionStructure?: {
+                            [key: string]: string;
+                        };
+                    };
+                }[];
+            };
+            situations?: {
+                ptSituation: {
+                    creationTime: string;
+                    participantRef?: string;
+                    situationNumber: string;
+                    version?: number;
+                    source: {
+                        /** @enum {string} */
+                        sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+                    };
+                    validityPeriod: {
+                        startTime: string;
+                        endTime?: string;
+                    }[];
+                    priority?: string;
+                    scopeType?: string;
+                    language: string;
+                    summary: string;
+                    description?: string[];
+                    detail?: string[];
+                    affects?: {
+                        stopPoints?: {
+                            affectedStopPoint?: {
+                                stopPointRef: string;
+                            }[];
+                        };
+                        vehicleJourneys?: {
+                            affectedVehicleJourney?: {
+                                stopPointRef?: string;
+                            }[];
+                        };
+                    };
+                }[];
+            };
+        };
+        SharedServiceExtension: {
+            transportTypeName?: {
+                text: string;
+            };
+            publishedJourneyNumber?: {
+                text: string;
+            };
+            operatorName?: {
+                text: string;
+            };
         };
         DatedJourney: {
             conventionalModeOfOperation?: string;
@@ -58,6 +264,7 @@ export interface components {
                     text: string;
                 };
                 code: string;
+                hireFacility?: string;
                 importance?: number;
             }[];
             operatorRef?: string;
@@ -96,8 +303,8 @@ export interface components {
                 };
             };
             pointOfInterest?: {
-                publicCode: string;
-                name: {
+                pointOfInterestCode: string;
+                pointOfInterestName: {
                     text: string;
                 };
                 pointOfInterestCategory: {
@@ -110,12 +317,6 @@ export interface components {
                 privateCode?: {
                     system: string;
                     value: string;
-                };
-                pOIAdditionalInformation?: {
-                    pOIAdditionalInformation: {
-                        key: string;
-                        value: string;
-                    }[];
                 };
                 topographicPlaceRef?: string;
             };
@@ -156,6 +357,99 @@ export interface components {
                     text: string;
                 };
             }[];
+            attribute: {
+                text: {
+                    text: string;
+                };
+                code: string;
+                hireFacility?: string;
+                importance?: number;
+            }[];
+            extension?: {
+                locationExtensionStructure?: {
+                    [key: string]: string;
+                };
+            };
+        };
+        CallAtStop: {
+            stopPointRef: string;
+            stopPointName: {
+                text: string;
+            };
+            nameSuffix?: {
+                text: string;
+            };
+            plannedQuay?: {
+                text: string;
+            };
+            estimatedQuay?: {
+                text: string;
+            };
+            serviceArrival?: {
+                timetabledTime: string;
+                estimatedTime?: string;
+            };
+            serviceDeparture?: {
+                timetabledTime: string;
+                estimatedTime?: string;
+            };
+            order?: number;
+            requestStop?: boolean;
+            unplannedStop?: boolean;
+            notServicedStop?: boolean;
+            noBoardingAtStop?: boolean;
+            noAlightingAtStop?: boolean;
+            expectedDepartureOccupancy?: {
+                /** @enum {string} */
+                fareClass: "unknown" | "firstClass" | "secondClass";
+                /** @enum {string} */
+                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+            }[];
+            situationFullRef?: {
+                participantRef: string;
+                situationNumber: string;
+            }[];
+        };
+        CallAtNearStop: {
+            callAtStop: {
+                stopPointRef: string;
+                stopPointName: {
+                    text: string;
+                };
+                nameSuffix?: {
+                    text: string;
+                };
+                plannedQuay?: {
+                    text: string;
+                };
+                estimatedQuay?: {
+                    text: string;
+                };
+                serviceArrival?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                serviceDeparture?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                order?: number;
+                requestStop?: boolean;
+                unplannedStop?: boolean;
+                notServicedStop?: boolean;
+                noBoardingAtStop?: boolean;
+                noAlightingAtStop?: boolean;
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
+                situationFullRef?: {
+                    participantRef: string;
+                    situationNumber: string;
+                }[];
+            };
         };
     };
     responses: never;

@@ -23,10 +23,340 @@ components:
           type: string
           xml:
             name: Code
+        hireFacility:
+          type: string
+          xml:
+            name: HireFacility
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
         importance:
           type: number
           xml:
             name: Importance
+
+    # Variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PlaceRefStructure
+    # LocationName in OJPv1 , Name in OJPv2
+    PlaceRef:
+      type: object
+      required:
+        - locationName
+      properties:
+        stopPointRef:
+          type: string
+          xml:
+            name: StopPointRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        stopPlaceRef:
+          type: string
+          xml:
+            name: StopPlaceRef
+        geoPosition:
+          $ref: '../../ojp-shared.yml#/components/schemas/GeoPosition'
+          xml:
+            name: GeoPosition
+        locationName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: LocationName
+
+    # Variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestStructure
+    # In OJPv1  - PointOfInterestCode, PointOfInterestName, via Extension in Location
+    #    OJPv2  - PublicCode, Name, POIAdditionalInformation
+    PointOfInterest:
+      type: object
+      xml:
+        name: PointOfInterest
+      required:
+        - pointOfInterestCode
+        - pointOfInterestName
+        - pointOfInterestCategory
+      properties:
+        pointOfInterestCode:
+          type: string
+          xml:
+            name: PointOfInterestCode
+        pointOfInterestName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: PointOfInterestName
+        pointOfInterestCategory:
+          type: array
+          xml:
+            name: PointOfInterestCategory
+          items:
+            $ref: "../../ojp-shared.yml#/components/schemas/PointOfInterestCategoryStructure"
+        privateCode:
+          type: object
+          required:
+            - system
+            - value
+          xml:
+            name: PrivateCode
+          properties:
+            system:
+              type: string
+              xml:
+                name: System
+            value:
+              type: string
+              xml:
+                name: Value
+        topographicPlaceRef:
+          type: string
+          xml:
+            name: TopographicPlaceRef
+
+    # Variation of OJP2.0 PtSituationElementStructure
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__PtSituationElementStructure
+    PtSituationElementStructure:
+      type: object
+      xml:
+        name: PtSituationElement
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+      required:
+        - creationTime
+        - situationNumber
+        - source
+        - validityPeriod
+        - language
+        - summary
+        - consequence
+        - recommendation
+      properties:
+        creationTime:
+          type: string
+          xml:
+            name: CreationTime
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        participantRef:
+          type: string
+          xml:
+            name: ParticipantRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        situationNumber:
+          type: string
+          xml:
+            name: SituationNumber
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        version:
+          type: number
+          xml:
+            name: Version
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        source:
+          type: object
+          xml:
+            name: Source
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          required:
+            - sourceType
+          properties:
+            sourceType:
+              $ref: "../../ojp-shared.yml#/components/schemas/SituationSourceTypeEnum"
+              xml:
+                name: SourceType
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+        validityPeriod:
+          type: array
+          xml:
+            name: ValidityPeriod
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__HalfOpenTimestampOutputRangeStructure
+            type: object
+            xml:
+              name: HalfOpenTimestampOutputRangeStructure
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+            required:
+              - startTime
+            properties:
+              startTime:
+                type: string
+                xml:
+                  name: StartTime
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+              endTime:
+                type: string
+                xml:
+                  name: EndTime
+                  namespace: "http://www.siri.org.uk/siri"
+                  prefix: siri
+        priority:
+          type: string
+          xml:
+            name: Priority
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        scopeType:
+          # TODO - make it enum - local-type: typedef-50.4
+          type: string
+          xml:
+            name: ScopeType
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__ActionsStructure
+        language:
+          type: string
+          xml:
+            name: Language
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        summary:
+          type: string
+          xml:
+            name: Summary
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        description:
+          type: array
+          xml:
+            name: Description
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            type: string
+            xml:
+              name: Description
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+        detail:
+          type: array
+          xml:
+            name: Detail
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          items:
+            type: string
+            xml:
+              name: Detail
+              namespace: "http://www.siri.org.uk/siri"
+              prefix: siri
+        affects:
+          type: object
+          xml:
+            name: Affects
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+          properties:
+            stopPoints:
+              type: object
+              xml:
+                name: StopPoints
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              properties:
+                affectedStopPoint:
+                  type: array
+                  xml:
+                    name: AffectedStopPoint
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                  items:
+                    type: object
+                    required:
+                      - stopPointRef
+                    xml:
+                      name: AffectedStopPoint
+                      namespace: "http://www.siri.org.uk/siri"
+                      prefix: siri
+                    properties:
+                      stopPointRef:
+                        type: string
+                        xml:
+                          name: StopPointRef
+                          namespace: "http://www.siri.org.uk/siri"
+                          prefix: siri
+            vehicleJourneys:
+              type: object
+              xml:
+                name: VehicleJourneys
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              properties:
+                affectedVehicleJourney:
+                  type: array
+                  xml:
+                    name: AffectedVehicleJourney
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                  items:
+                    type: object
+                    required:
+                      - LineRef
+                    xml:
+                      name: AffectedVehicleJourney
+                      namespace: "http://www.siri.org.uk/siri"
+                      prefix: siri
+                    properties:
+                      stopPointRef:
+                        type: string
+                        xml:
+                          name: LineRef
+                          namespace: "http://www.siri.org.uk/siri"
+                          prefix: siri
+
+    # OJP1 variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
+    ResponseContextStructure:
+      type: object
+      xml:
+        name: ResponseContext
+      properties:
+        places:
+          type: object
+          xml:
+            name: Places
+          required:
+            - location
+          properties:
+            location:
+              type: array
+              xml:
+                name: Location
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/Location'
+        situations:
+          type: object
+          xml:
+            name: Situations
+          required:
+            - ptSituation
+          properties:
+            ptSituation:
+              type: array
+              xml:
+                name: PtSituation
+              items:
+                $ref: '#/components/schemas/PtSituationElementStructure'
+
+    # this doesnt exist in XSD, is created to be re-used accross the other models
+    SharedServiceExtension:
+      type: object
+      xml:
+        name: Extension
+      properties:
+        transportTypeName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: TransportTypeName
+        publishedJourneyNumber:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: PublishedJourneyNumber
+        operatorName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: OperatorName
 
     # modified from 'openapi/ojp-shared.yml#/components/schemas/DatedJourney'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
@@ -128,6 +458,7 @@ components:
         - locationName
         - geoPosition
         - mode
+        - attribute
       properties:
         stopPoint:
           $ref: '../../ojp-shared.yml#/components/schemas/StopPoint'
@@ -142,7 +473,7 @@ components:
           xml:
             name: TopographicPlace
         pointOfInterest:
-          $ref: '../../ojp-shared.yml#/components/schemas/PointOfInterest'
+          $ref: '#/components/schemas/PointOfInterest'
           xml:
             name: PointOfInterest
         address:
@@ -163,3 +494,112 @@ components:
             name: Mode
           items:
             $ref: '../../ojp-shared.yml#/components/schemas/ModeStructure'
+        attribute:
+          type: array
+          xml:
+            name: Attribute
+          items:
+            $ref: '#/components/schemas/GeneralAttribute'
+        extension:
+          type: object
+          xml:
+            name: Extension
+          properties:
+            locationExtensionStructure:
+              type: object
+              xml:
+                name: LocationExtensionStructure
+              additionalProperties:
+                type: string
+    # Location
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegBoardStructure
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtStopStructure
+    # Variation fpr OJPv1 - contains SiriSituationFullRef (in OJP v2 is under Service)
+    CallAtStop:
+      type: object
+      xml:
+        name: CallAtStop
+      required:
+        - stopPointRef
+        - stopPointName
+      properties:
+        stopPointRef:
+          type: string
+          xml:
+            name: StopPointRef
+        stopPointName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: StopPointName
+        nameSuffix:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: NameSuffix
+        plannedQuay:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: PlannedQuay
+        estimatedQuay:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: EstimatedQuay
+        serviceArrival:
+          $ref: '../../ojp-shared.yml#/components/schemas/SharedServiceArrivalDeparture'
+          xml:
+            name: ServiceArrival
+        serviceDeparture:
+          $ref: '../../ojp-shared.yml#/components/schemas/SharedServiceArrivalDeparture'
+          xml:
+            name: ServiceDeparture
+        order:
+          type: number
+          xml:
+            name: Order
+        requestStop:
+          type: boolean
+          xml:
+            name: RequestStop
+        unplannedStop:
+          type: boolean
+          xml:
+            name: UnplannedStop
+        notServicedStop:
+          type: boolean
+          xml:
+            name: NotServicedStop
+        noBoardingAtStop:
+          type: boolean
+          xml:
+            name: NoBoardingAtStop
+        noAlightingAtStop:
+          type: boolean
+          xml:
+            name: NoAlightingAtStop
+        expectedDepartureOccupancy:
+          type: array
+          xml:
+            name: ExpectedDepartureOccupancy
+          items:
+            $ref: "../../ojp-shared.yml#/components/schemas/ExpectedDepartureOccupancyStructure"
+        situationFullRef:
+          type: array
+          xml:
+            name: SituationFullRef
+          items:
+            $ref: "../../ojp-shared.yml#/components/schemas/SituationFullRefStructure"
+
+    # SharedLegSection
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtNearStopStructure
+    CallAtNearStop:
+      type: object
+      xml:
+        name: CallAtNearStop
+      required:
+        - callAtStop
+      properties:
+        callAtStop:
+          $ref: '#/components/schemas/CallAtStop'
+          xml:
+            name: CallAtStop

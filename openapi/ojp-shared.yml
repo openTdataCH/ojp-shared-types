@@ -512,6 +512,7 @@ components:
         - name
         - geoPosition
         - mode
+        - attribute
       properties:
         stopPoint:
           $ref: '#/components/schemas/StopPoint'
@@ -547,6 +548,12 @@ components:
             name: Mode
           items:
             $ref: '#/components/schemas/ModeStructure'
+        attribute:
+          type: array
+          xml:
+            name: Attribute
+          items:
+            $ref: '#/components/schemas/GeneralAttribute'
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__TextualContentStructure
     TextualContentStructure:
@@ -989,6 +996,19 @@ components:
             $ref: "#/components/schemas/ExpectedDepartureOccupancyStructure"
     # SharedLegSection
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtNearStopStructure
+    CallAtNearStop:
+      type: object
+      xml:
+        name: CallAtNearStop
+      required:
+        - callAtStop
+      properties:
+        callAtStop:
+          $ref: '#/components/schemas/CallAtStop'
+          xml:
+            name: CallAtStop
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ProductCategoryStructure
     ProductCategory:
       type: object
@@ -1023,6 +1043,12 @@ components:
           type: string
           xml:
             name: Code
+        hireFacility:
+          type: string
+          xml:
+            name: HireFacility
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
         importance:
           type: number
           xml:
@@ -1246,6 +1272,25 @@ components:
             name: TrackSection
           items:
             $ref: '#/components/schemas/TrackSectionStructure'
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PointOfInterestFilterStructure
+    PointOfInterestFilterStructure:
+      type: object
+      required:
+        - pointOfInterestCategory
+      xml:
+        name: PointOfInterestFilter
+      properties:
+        exclude:
+          type: boolean
+          xml:
+            name: Exclude
+        pointOfInterestCategory:
+          type: array
+          xml:
+            name: PointOfInterestCategory
+          items:
+            $ref: "#/components/schemas/PointOfInterestCategoryStructure"
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ModeFilterStructure
     ModeFilterStructure:

@@ -24,39 +24,6 @@ paths:
 
 components:
   schemas:
-    # OJP1 variation of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ResponseContextStructure
-    ResponseContextStructure:
-      type: object
-      xml:
-        name: ResponseContext
-      properties:
-        places:
-          type: object
-          xml:
-            name: Places
-          required:
-            - location
-          properties:
-            location:
-              type: array
-              xml:
-                name: Location
-              items:
-                $ref: './ojp-shared.yml#/components/schemas/Location'
-        situations:
-          type: object
-          xml:
-            name: Situations
-          required:
-            - ptSituation
-          properties:
-            ptSituation:
-              type: array
-              xml:
-                name: PtSituation
-              items:
-                $ref: '../../ojp-shared.yml#/components/schemas/PtSituationElementStructure'
-
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripInfoResultStructure
     TripInfoResultStructure:
       type: object
@@ -96,22 +63,9 @@ components:
               items:
                 $ref: '../../ojp-shared.yml#/components/schemas/TrackSectionStructure'
         extension:
-          type: object
+          $ref: './ojp-shared.yml#/components/schemas/SharedServiceExtension'
           xml:
             name: Extension
-          properties:
-            transportTypeName:
-              $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
-              xml:
-                name: TransportTypeName
-            publishedJourneyNumber:
-              $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
-              xml:
-                name: PublishedJourneyNumber
-            operatorName:
-              $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
-              xml:
-                name: OperatorName
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPTripInfoDeliveryStructure
     OJPTripInfoDelivery:
@@ -145,7 +99,7 @@ components:
           xml:
             name: CalcTime
         tripInfoResponseContext:
-          $ref: '#/components/schemas/ResponseContextStructure'
+          $ref: 'ojp-shared.yml#/components/schemas/ResponseContextStructure'
           xml:
             name: TripInfoResponseContext
         tripInfoResult:
