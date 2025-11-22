@@ -1110,6 +1110,10 @@ components:
             name: Attribute
           items:
             $ref: "#/components/schemas/GeneralAttribute"
+        originText:
+          $ref: '#/components/schemas/InternationalText'
+          xml:
+            name: OriginText
         operatorRef:
           type: string
           xml:
@@ -1122,10 +1126,6 @@ components:
           $ref: '#/components/schemas/InternationalText'
           xml:
             name: DestinationText
-        originText:
-          $ref: '#/components/schemas/InternationalText'
-          xml:
-            name: OriginText
         unplanned:
           type: boolean
           xml:
