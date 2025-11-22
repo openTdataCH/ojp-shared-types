@@ -69,6 +69,9 @@ export type ResponseContextSchema = sharedComponents['schemas']['ResponseContext
 
 export type IndividualTransportOptionSchema = sharedComponents['schemas']['IndividualTransportOptionStructure'];
 
+export type PtSituationElement = sharedComponents['schemas']['PtSituationElementStructure']
+export type OJPv1_PtSituationElement = ojpV1_SharedComponents['schemas']['PtSituationElementStructure']
+
 export type TripRequestOJP = tripRequestComponents["schemas"]["OJP"];
 export type TripParamsSchema = tripRequestComponents["schemas"]["TripParam"];
 export type TripRequestSchema = tripRequestComponents["schemas"]["OJPTripRequest"];
