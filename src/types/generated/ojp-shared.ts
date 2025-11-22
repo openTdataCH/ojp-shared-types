@@ -527,6 +527,9 @@ export interface components {
                 code: string;
                 importance?: number;
             }[];
+            originText: {
+                text: string;
+            };
             operatorRef?: string;
             destinationStopPointRef?: string;
             destinationText?: {

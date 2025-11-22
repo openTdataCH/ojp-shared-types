@@ -310,6 +310,9 @@ export interface paths {
                                                     code: string;
                                                     importance?: number;
                                                 }[];
+                                                originText: {
+                                                    text: string;
+                                                };
                                                 operatorRef?: string;
                                                 destinationStopPointRef?: string;
                                                 destinationText?: {
@@ -503,6 +506,9 @@ export interface components {
                     code: string;
                     importance?: number;
                 }[];
+                originText: {
+                    text: string;
+                };
                 operatorRef?: string;
                 destinationStopPointRef?: string;
                 destinationText?: {
@@ -827,6 +833,9 @@ export interface components {
                         code: string;
                         importance?: number;
                     }[];
+                    originText: {
+                        text: string;
+                    };
                     operatorRef?: string;
                     destinationStopPointRef?: string;
                     destinationText?: {
@@ -1157,6 +1166,9 @@ export interface components {
                                     code: string;
                                     importance?: number;
                                 }[];
+                                originText: {
+                                    text: string;
+                                };
                                 operatorRef?: string;
                                 destinationStopPointRef?: string;
                                 destinationText?: {
