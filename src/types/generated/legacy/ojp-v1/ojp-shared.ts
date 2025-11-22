@@ -44,6 +44,38 @@ export interface components {
             };
             topographicPlaceRef?: string;
         };
+        PtSituationElementStructure: {
+            creationTime: string;
+            participantRef?: string;
+            situationNumber: string;
+            version?: number;
+            source: {
+                /** @enum {string} */
+                sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
+            };
+            validityPeriod: {
+                startTime: string;
+                endTime?: string;
+            }[];
+            priority?: string;
+            scopeType?: string;
+            language: string;
+            summary: string;
+            description?: string[];
+            detail?: string[];
+            affects?: {
+                stopPoints?: {
+                    affectedStopPoint?: {
+                        stopPointRef: string;
+                    }[];
+                };
+                vehicleJourneys?: {
+                    affectedVehicleJourney?: {
+                        stopPointRef?: string;
+                    }[];
+                };
+            };
+        };
         ResponseContextStructure: {
             places?: {
                 location: {
@@ -156,48 +188,23 @@ export interface components {
                         startTime: string;
                         endTime?: string;
                     }[];
-                    alertCause: string;
                     priority?: string;
                     scopeType?: string;
-                    publishingActions?: {
-                        publishingAction: {
-                            publishAtScope: {
-                                scopeType: string;
-                            };
-                            passengerInformationAction: {
-                                actionRef: string;
-                                recordedAtTime: string;
-                                /** @enum {string} */
-                                perspective: "general" | "stopPoint" | "vehicleJourney";
-                                textualContent: {
-                                    summaryContent: {
-                                        summaryText: string;
-                                    };
-                                    reasonContent?: {
-                                        reasonText: string;
-                                    };
-                                    descriptionContent: {
-                                        descriptionText: string;
-                                    }[];
-                                    consequenceContent: {
-                                        consequenceText: string;
-                                    }[];
-                                    recommendationContent: {
-                                        recommendationText: string;
-                                    }[];
-                                    durationContent?: {
-                                        durationText: string;
-                                    };
-                                    remarkContent: {
-                                        remark: string;
-                                    }[];
-                                    infoLink: {
-                                        uri: string;
-                                        label?: string[];
-                                    }[];
-                                }[];
+                    language: string;
+                    summary: string;
+                    description?: string[];
+                    detail?: string[];
+                    affects?: {
+                        stopPoints?: {
+                            affectedStopPoint?: {
+                                stopPointRef: string;
                             }[];
-                        }[];
+                        };
+                        vehicleJourneys?: {
+                            affectedVehicleJourney?: {
+                                stopPointRef?: string;
+                            }[];
+                        };
                     };
                 }[];
             };
@@ -362,6 +369,86 @@ export interface components {
                 locationExtensionStructure?: {
                     [key: string]: string;
                 };
+            };
+        };
+        CallAtStop: {
+            stopPointRef: string;
+            stopPointName: {
+                text: string;
+            };
+            nameSuffix?: {
+                text: string;
+            };
+            plannedQuay?: {
+                text: string;
+            };
+            estimatedQuay?: {
+                text: string;
+            };
+            serviceArrival?: {
+                timetabledTime: string;
+                estimatedTime?: string;
+            };
+            serviceDeparture?: {
+                timetabledTime: string;
+                estimatedTime?: string;
+            };
+            order?: number;
+            requestStop?: boolean;
+            unplannedStop?: boolean;
+            notServicedStop?: boolean;
+            noBoardingAtStop?: boolean;
+            noAlightingAtStop?: boolean;
+            expectedDepartureOccupancy?: {
+                /** @enum {string} */
+                fareClass: "unknown" | "firstClass" | "secondClass";
+                /** @enum {string} */
+                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+            }[];
+            situationFullRef?: {
+                participantRef: string;
+                situationNumber: string;
+            }[];
+        };
+        CallAtNearStop: {
+            callAtStop: {
+                stopPointRef: string;
+                stopPointName: {
+                    text: string;
+                };
+                nameSuffix?: {
+                    text: string;
+                };
+                plannedQuay?: {
+                    text: string;
+                };
+                estimatedQuay?: {
+                    text: string;
+                };
+                serviceArrival?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                serviceDeparture?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                order?: number;
+                requestStop?: boolean;
+                unplannedStop?: boolean;
+                notServicedStop?: boolean;
+                noBoardingAtStop?: boolean;
+                noAlightingAtStop?: boolean;
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
+                situationFullRef?: {
+                    participantRef: string;
+                    situationNumber: string;
+                }[];
             };
         };
     };

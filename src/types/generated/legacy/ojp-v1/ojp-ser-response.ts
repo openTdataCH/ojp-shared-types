@@ -154,48 +154,23 @@ export interface paths {
                                                         startTime: string;
                                                         endTime?: string;
                                                     }[];
-                                                    alertCause: string;
                                                     priority?: string;
                                                     scopeType?: string;
-                                                    publishingActions?: {
-                                                        publishingAction: {
-                                                            publishAtScope: {
-                                                                scopeType: string;
-                                                            };
-                                                            passengerInformationAction: {
-                                                                actionRef: string;
-                                                                recordedAtTime: string;
-                                                                /** @enum {string} */
-                                                                perspective: "general" | "stopPoint" | "vehicleJourney";
-                                                                textualContent: {
-                                                                    summaryContent: {
-                                                                        summaryText: string;
-                                                                    };
-                                                                    reasonContent?: {
-                                                                        reasonText: string;
-                                                                    };
-                                                                    descriptionContent: {
-                                                                        descriptionText: string;
-                                                                    }[];
-                                                                    consequenceContent: {
-                                                                        consequenceText: string;
-                                                                    }[];
-                                                                    recommendationContent: {
-                                                                        recommendationText: string;
-                                                                    }[];
-                                                                    durationContent?: {
-                                                                        durationText: string;
-                                                                    };
-                                                                    remarkContent: {
-                                                                        remark: string;
-                                                                    }[];
-                                                                    infoLink: {
-                                                                        uri: string;
-                                                                        label?: string[];
-                                                                    }[];
-                                                                }[];
+                                                    language: string;
+                                                    summary: string;
+                                                    description?: string[];
+                                                    detail?: string[];
+                                                    affects?: {
+                                                        stopPoints?: {
+                                                            affectedStopPoint?: {
+                                                                stopPointRef: string;
                                                             }[];
-                                                        }[];
+                                                        };
+                                                        vehicleJourneys?: {
+                                                            affectedVehicleJourney?: {
+                                                                stopPointRef?: string;
+                                                            }[];
+                                                        };
                                                     };
                                                 }[];
                                             };
@@ -238,6 +213,10 @@ export interface paths {
                                                             /** @enum {string} */
                                                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                         }[];
+                                                        situationFullRef?: {
+                                                            participantRef: string;
+                                                            situationNumber: string;
+                                                        }[];
                                                     };
                                                 }[];
                                                 thisCall: {
@@ -275,6 +254,10 @@ export interface paths {
                                                             /** @enum {string} */
                                                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                         }[];
+                                                        situationFullRef?: {
+                                                            participantRef: string;
+                                                            situationNumber: string;
+                                                        }[];
                                                     };
                                                 };
                                                 onwardCall: {
@@ -311,6 +294,10 @@ export interface paths {
                                                             fareClass: "unknown" | "firstClass" | "secondClass";
                                                             /** @enum {string} */
                                                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                        }[];
+                                                        situationFullRef?: {
+                                                            participantRef: string;
+                                                            situationNumber: string;
                                                         }[];
                                                     };
                                                 }[];
@@ -449,6 +436,10 @@ export interface components {
                         /** @enum {string} */
                         occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                     }[];
+                    situationFullRef?: {
+                        participantRef: string;
+                        situationNumber: string;
+                    }[];
                 };
             }[];
             thisCall: {
@@ -486,6 +477,10 @@ export interface components {
                         /** @enum {string} */
                         occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                     }[];
+                    situationFullRef?: {
+                        participantRef: string;
+                        situationNumber: string;
+                    }[];
                 };
             };
             onwardCall: {
@@ -522,6 +517,10 @@ export interface components {
                         fareClass: "unknown" | "firstClass" | "secondClass";
                         /** @enum {string} */
                         occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    }[];
+                    situationFullRef?: {
+                        participantRef: string;
+                        situationNumber: string;
                     }[];
                 };
             }[];
@@ -636,6 +635,10 @@ export interface components {
                             /** @enum {string} */
                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                         }[];
+                        situationFullRef?: {
+                            participantRef: string;
+                            situationNumber: string;
+                        }[];
                     };
                 }[];
                 thisCall: {
@@ -673,6 +676,10 @@ export interface components {
                             /** @enum {string} */
                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                         }[];
+                        situationFullRef?: {
+                            participantRef: string;
+                            situationNumber: string;
+                        }[];
                     };
                 };
                 onwardCall: {
@@ -709,6 +716,10 @@ export interface components {
                             fareClass: "unknown" | "firstClass" | "secondClass";
                             /** @enum {string} */
                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                        }[];
+                        situationFullRef?: {
+                            participantRef: string;
+                            situationNumber: string;
                         }[];
                     };
                 }[];
@@ -903,48 +914,23 @@ export interface components {
                             startTime: string;
                             endTime?: string;
                         }[];
-                        alertCause: string;
                         priority?: string;
                         scopeType?: string;
-                        publishingActions?: {
-                            publishingAction: {
-                                publishAtScope: {
-                                    scopeType: string;
-                                };
-                                passengerInformationAction: {
-                                    actionRef: string;
-                                    recordedAtTime: string;
-                                    /** @enum {string} */
-                                    perspective: "general" | "stopPoint" | "vehicleJourney";
-                                    textualContent: {
-                                        summaryContent: {
-                                            summaryText: string;
-                                        };
-                                        reasonContent?: {
-                                            reasonText: string;
-                                        };
-                                        descriptionContent: {
-                                            descriptionText: string;
-                                        }[];
-                                        consequenceContent: {
-                                            consequenceText: string;
-                                        }[];
-                                        recommendationContent: {
-                                            recommendationText: string;
-                                        }[];
-                                        durationContent?: {
-                                            durationText: string;
-                                        };
-                                        remarkContent: {
-                                            remark: string;
-                                        }[];
-                                        infoLink: {
-                                            uri: string;
-                                            label?: string[];
-                                        }[];
-                                    }[];
+                        language: string;
+                        summary: string;
+                        description?: string[];
+                        detail?: string[];
+                        affects?: {
+                            stopPoints?: {
+                                affectedStopPoint?: {
+                                    stopPointRef: string;
                                 }[];
-                            }[];
+                            };
+                            vehicleJourneys?: {
+                                affectedVehicleJourney?: {
+                                    stopPointRef?: string;
+                                }[];
+                            };
                         };
                     }[];
                 };
@@ -987,6 +973,10 @@ export interface components {
                                 /** @enum {string} */
                                 occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                             }[];
+                            situationFullRef?: {
+                                participantRef: string;
+                                situationNumber: string;
+                            }[];
                         };
                     }[];
                     thisCall: {
@@ -1024,6 +1014,10 @@ export interface components {
                                 /** @enum {string} */
                                 occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                             }[];
+                            situationFullRef?: {
+                                participantRef: string;
+                                situationNumber: string;
+                            }[];
                         };
                     };
                     onwardCall: {
@@ -1060,6 +1054,10 @@ export interface components {
                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                 /** @enum {string} */
                                 occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                            }[];
+                            situationFullRef?: {
+                                participantRef: string;
+                                situationNumber: string;
                             }[];
                         };
                     }[];
@@ -1260,48 +1258,23 @@ export interface components {
                                         startTime: string;
                                         endTime?: string;
                                     }[];
-                                    alertCause: string;
                                     priority?: string;
                                     scopeType?: string;
-                                    publishingActions?: {
-                                        publishingAction: {
-                                            publishAtScope: {
-                                                scopeType: string;
-                                            };
-                                            passengerInformationAction: {
-                                                actionRef: string;
-                                                recordedAtTime: string;
-                                                /** @enum {string} */
-                                                perspective: "general" | "stopPoint" | "vehicleJourney";
-                                                textualContent: {
-                                                    summaryContent: {
-                                                        summaryText: string;
-                                                    };
-                                                    reasonContent?: {
-                                                        reasonText: string;
-                                                    };
-                                                    descriptionContent: {
-                                                        descriptionText: string;
-                                                    }[];
-                                                    consequenceContent: {
-                                                        consequenceText: string;
-                                                    }[];
-                                                    recommendationContent: {
-                                                        recommendationText: string;
-                                                    }[];
-                                                    durationContent?: {
-                                                        durationText: string;
-                                                    };
-                                                    remarkContent: {
-                                                        remark: string;
-                                                    }[];
-                                                    infoLink: {
-                                                        uri: string;
-                                                        label?: string[];
-                                                    }[];
-                                                }[];
+                                    language: string;
+                                    summary: string;
+                                    description?: string[];
+                                    detail?: string[];
+                                    affects?: {
+                                        stopPoints?: {
+                                            affectedStopPoint?: {
+                                                stopPointRef: string;
                                             }[];
-                                        }[];
+                                        };
+                                        vehicleJourneys?: {
+                                            affectedVehicleJourney?: {
+                                                stopPointRef?: string;
+                                            }[];
+                                        };
                                     };
                                 }[];
                             };
@@ -1344,6 +1317,10 @@ export interface components {
                                             /** @enum {string} */
                                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                         }[];
+                                        situationFullRef?: {
+                                            participantRef: string;
+                                            situationNumber: string;
+                                        }[];
                                     };
                                 }[];
                                 thisCall: {
@@ -1381,6 +1358,10 @@ export interface components {
                                             /** @enum {string} */
                                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                         }[];
+                                        situationFullRef?: {
+                                            participantRef: string;
+                                            situationNumber: string;
+                                        }[];
                                     };
                                 };
                                 onwardCall: {
@@ -1417,6 +1398,10 @@ export interface components {
                                             fareClass: "unknown" | "firstClass" | "secondClass";
                                             /** @enum {string} */
                                             occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                        }[];
+                                        situationFullRef?: {
+                                            participantRef: string;
+                                            situationNumber: string;
                                         }[];
                                     };
                                 }[];
