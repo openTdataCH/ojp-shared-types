@@ -116,7 +116,7 @@ const MapArrayTags: Record<string, boolean> = {
   'textualContent.recommendationContent': true,
   'textualContent.remarkContent': true,
   'textualContent.infoLink': true,
-  // technically these are also arrays - they never are modeled as such
+  // technically these are also arrays - but the OJP repsonse never returned it as such
   // 'descriptionContent.descriptionText': true,
   // 'consequenceContent.consequenceText': true,
   // 'recommendationContent.recommendationText': true,
