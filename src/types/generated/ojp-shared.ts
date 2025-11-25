@@ -266,6 +266,14 @@ export interface components {
                     text: string;
                 };
             }[];
+            attribute: {
+                userText: {
+                    text: string;
+                };
+                code: string;
+                hireFacility?: string;
+                importance?: number;
+            }[];
         };
         TextualContentStructure: {
             summaryContent: {
@@ -461,6 +469,43 @@ export interface components {
                 occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
             }[];
         };
+        CallAtNearStop: {
+            callAtStop: {
+                stopPointRef: string;
+                stopPointName: {
+                    text: string;
+                };
+                nameSuffix?: {
+                    text: string;
+                };
+                plannedQuay?: {
+                    text: string;
+                };
+                estimatedQuay?: {
+                    text: string;
+                };
+                serviceArrival?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                serviceDeparture?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                order?: number;
+                requestStop?: boolean;
+                unplannedStop?: boolean;
+                notServicedStop?: boolean;
+                noBoardingAtStop?: boolean;
+                noAlightingAtStop?: boolean;
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
+            };
+        };
         ProductCategory: {
             name?: {
                 text: string;
@@ -475,6 +520,7 @@ export interface components {
                 text: string;
             };
             code: string;
+            hireFacility?: string;
             importance?: number;
         };
         SituationFullRefStructure: {
@@ -525,6 +571,7 @@ export interface components {
                     text: string;
                 };
                 code: string;
+                hireFacility?: string;
                 importance?: number;
             }[];
             originText: {
@@ -633,6 +680,14 @@ export interface components {
                         shortName?: {
                             text: string;
                         };
+                    }[];
+                    attribute: {
+                        userText: {
+                            text: string;
+                        };
+                        code: string;
+                        hireFacility?: string;
+                        importance?: number;
                     }[];
                 }[];
             };
@@ -768,6 +823,16 @@ export interface components {
                 roadName?: string;
                 duration?: string;
                 length?: number;
+            }[];
+        };
+        PointOfInterestFilterStructure: {
+            exclude?: boolean;
+            pointOfInterestCategory: {
+                osmTag: {
+                    tag: string;
+                    value: string;
+                }[];
+                pointOfInterestClassification: string[];
             }[];
         };
         ModeFilterStructure: {

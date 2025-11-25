@@ -206,6 +206,7 @@ export interface paths {
                                                                     text: string;
                                                                 };
                                                                 code: string;
+                                                                hireFacility?: string;
                                                                 importance?: number;
                                                             }[];
                                                             originText: {
@@ -649,6 +650,7 @@ export interface components {
                                         text: string;
                                     };
                                     code: string;
+                                    hireFacility?: string;
                                     importance?: number;
                                 }[];
                                 originText: {
@@ -1073,6 +1075,7 @@ export interface components {
                                                     text: string;
                                                 };
                                                 code: string;
+                                                hireFacility?: string;
                                                 importance?: number;
                                             }[];
                                             originText: {

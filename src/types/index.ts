@@ -8,8 +8,10 @@ import { components as locationInformationResponseComponents } from './generated
 import { components as ojpV1_locationInformationRequestComponents } from './generated/legacy/ojp-v1/ojp-lir-request';
 import { components as ojpV1_locationInformationResponseComponents } from './generated/legacy/ojp-v1/ojp-lir-response';
 
-import { components as stopEventRequestComponents } from './generated/ojp-ser-request'
-import { components as stopEventResponseComponents } from './generated/ojp-ser-response'
+import { components as stopEventRequestComponents } from './generated/ojp-ser-request';
+import { components as stopEventResponseComponents } from './generated/ojp-ser-response';
+import { components as ojpV1_stopEventRequestComponents } from './generated/legacy/ojp-v1/ojp-ser-request';
+import { components as ojpV1_stopEventResponseComponents } from './generated/legacy/ojp-v1/ojp-ser-response';
 
 import { components as tripInfoRequestComponents } from './generated/ojp-tir-request';
 import { components as tripInfoResponseComponents } from './generated/ojp-tir-response';
@@ -29,6 +31,9 @@ import { components as fareResponseComponents } from './generated/ojp-fare-respo
 export type OJPv1_DatedJourneySchema = ojpV1_SharedComponents['schemas']['DatedJourney'];
 export type OJPv1_LocationSchema = ojpV1_SharedComponents['schemas']['Location']
 export type OJPv1_GeneralAttributeSchema = ojpV1_SharedComponents['schemas']['GeneralAttribute'];
+export type OJPv1_PointOfInterestSchema = ojpV1_SharedComponents['schemas']['PointOfInterest'];
+export type OJPv1_PlaceRefSchema = ojpV1_SharedComponents['schemas']['PlaceRef'];
+
 export type OJPv1_TimedLegSchema = ojpV1_TripComponents['schemas']['TimedLeg']
 export type OJPv1_TripLegSchema = ojpV1_TripComponents['schemas']['TripLeg'];
 export type OJPv1_TripSchema = ojpV1_TripComponents['schemas']['Trip'];
@@ -64,6 +69,9 @@ export type ResponseContextSchema = sharedComponents['schemas']['ResponseContext
 
 export type IndividualTransportOptionSchema = sharedComponents['schemas']['IndividualTransportOptionStructure'];
 
+export type PtSituationElement = sharedComponents['schemas']['PtSituationElementStructure']
+export type OJPv1_PtSituationElement = ojpV1_SharedComponents['schemas']['PtSituationElementStructure']
+
 export type TripRequestOJP = tripRequestComponents["schemas"]["OJP"];
 export type TripParamsSchema = tripRequestComponents["schemas"]["TripParam"];
 export type TripRequestSchema = tripRequestComponents["schemas"]["OJPTripRequest"];
@@ -91,9 +99,9 @@ export type PlaceResultSchema = locationInformationResponseComponents['schemas']
 export type LocationInformationRequestResponseOJP = locationInformationResponseComponents['schemas']['OJP'];
 export type LocationInformationDeliverySchema = locationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];
 
-export type StopEventRequestSchema = stopEventRequestComponents['schemas']['OJPStopEventRequest']
-export type SER_RequestLocationSchema = stopEventRequestComponents['schemas']['PlaceContext']
-export type SER_RequestParamsSchema = stopEventRequestComponents['schemas']['StopEventParam']
+export type StopEventRequestSchema = stopEventRequestComponents['schemas']['OJPStopEventRequest'];
+export type SER_RequestLocationSchema = stopEventRequestComponents['schemas']['PlaceContext'];
+export type SER_RequestParamsSchema = stopEventRequestComponents['schemas']['StopEventParam'];
 export type SER_RequestOJP = stopEventRequestComponents['schemas']['OJP'];
 
 export type StopEventResultSchema = stopEventResponseComponents['schemas']['StopEventResult'];
@@ -124,6 +132,14 @@ export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
 export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
 
+export type OJPv1_StopEventRequestOJP = ojpV1_stopEventRequestComponents['schemas']['OJP'];
+export type OJPv1_StopEventRequestSchema = ojpV1_stopEventRequestComponents['schemas']['OJPStopEventRequest'];
+export type OJPv1_SER_RequestLocationSchema = ojpV1_stopEventRequestComponents['schemas']['PlaceContext'];
+
+export type OJPv1_StopEventResponseOJP = ojpV1_stopEventResponseComponents['schemas']['OJP'];
+export type OJPv1_StopEventDeliverySchema = ojpV1_stopEventResponseComponents['schemas']['OJPStopEventDelivery'];
+export type OJPv1_StopEventResultSchema = ojpV1_stopEventResponseComponents['schemas']['StopEventResult'];
+
 export type OJPv1_TripInfoResponseOJP = ojpV1_tripInfoResponseComponents['schemas']['OJP'];
 export type OJPv1_TripInfoDeliverySchema = ojpV1_tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type OJPv1_TripInfoResultStructureSchema = ojpV1_tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
@@ -131,5 +147,7 @@ export type OJPv1_TripInfoResultStructureSchema = ojpV1_tripInfoResponseComponen
 export type OJPv1_LocationInformationRequestOJP = ojpV1_locationInformationRequestComponents['schemas']['OJP'];
 export type OJPv1_LocationInformationRequestSchema = ojpV1_locationInformationRequestComponents['schemas']['OJPLocationInformationRequest'];
 export type OJPv1_InitialInputSchema = ojpV1_locationInformationRequestComponents['schemas']['InitialInput'];
+
+export type OJPv1_LocationResultSchema = ojpV1_locationInformationResponseComponents['schemas']['LocationResult'];
 export type OJPv1_LocationInformationRequestResponseOJP = ojpV1_locationInformationResponseComponents['schemas']['OJP'];
 export type OJPv1_LocationInformationDeliverySchema = ojpV1_locationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];

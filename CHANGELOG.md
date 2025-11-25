@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## 0.1.1 - 25.11.2025
+- Updates API - [PR #38](https://github.com/openTdataCH/ojp-shared-types/pull/38)
+  - OJPv2
+    - adds `GeneralAttribute`
+    - expose `PtSituationElementStructure`
+  - LIR 
+    - adds `pointOfInterestFilter` + types (OJP v1, OJPv2)
+  - SER
+    - adds specs for request / response (OJP v1, OJPv2)
+  - OJPv1
+    - use OJPv1 `PlaceRef` schema
+    - expose `PtSituationElementStructure`, `LocationResult`
+  - enforce arrays in `MapArrayTags` 
+
 ## 0.0.24 - 22.11.2025
 - Adds Service.originText - [PR #39](https://github.com/openTdataCH/ojp-shared-types/pull/39)
 

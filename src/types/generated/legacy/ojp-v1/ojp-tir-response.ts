@@ -71,8 +71,8 @@ export interface paths {
                                                         };
                                                     };
                                                     pointOfInterest?: {
-                                                        publicCode: string;
-                                                        name: {
+                                                        pointOfInterestCode: string;
+                                                        pointOfInterestName: {
                                                             text: string;
                                                         };
                                                         pointOfInterestCategory: {
@@ -85,12 +85,6 @@ export interface paths {
                                                         privateCode?: {
                                                             system: string;
                                                             value: string;
-                                                        };
-                                                        pOIAdditionalInformation?: {
-                                                            pOIAdditionalInformation: {
-                                                                key: string;
-                                                                value: string;
-                                                            }[];
                                                         };
                                                         topographicPlaceRef?: string;
                                                     };
@@ -131,6 +125,19 @@ export interface paths {
                                                             text: string;
                                                         };
                                                     }[];
+                                                    attribute: {
+                                                        text: {
+                                                            text: string;
+                                                        };
+                                                        code: string;
+                                                        hireFacility?: string;
+                                                        importance?: number;
+                                                    }[];
+                                                    extension?: {
+                                                        locationExtensionStructure?: {
+                                                            [key: string]: string;
+                                                        };
+                                                    };
                                                 }[];
                                             };
                                             situations?: {
@@ -147,48 +154,23 @@ export interface paths {
                                                         startTime: string;
                                                         endTime?: string;
                                                     }[];
-                                                    alertCause: string;
                                                     priority?: string;
                                                     scopeType?: string;
-                                                    publishingActions?: {
-                                                        publishingAction: {
-                                                            publishAtScope: {
-                                                                scopeType: string;
-                                                            };
-                                                            passengerInformationAction: {
-                                                                actionRef: string;
-                                                                recordedAtTime: string;
-                                                                /** @enum {string} */
-                                                                perspective: "general" | "stopPoint" | "vehicleJourney";
-                                                                textualContent: {
-                                                                    summaryContent: {
-                                                                        summaryText: string;
-                                                                    };
-                                                                    reasonContent?: {
-                                                                        reasonText: string;
-                                                                    };
-                                                                    descriptionContent: {
-                                                                        descriptionText: string;
-                                                                    }[];
-                                                                    consequenceContent: {
-                                                                        consequenceText: string;
-                                                                    }[];
-                                                                    recommendationContent: {
-                                                                        recommendationText: string;
-                                                                    }[];
-                                                                    durationContent?: {
-                                                                        durationText: string;
-                                                                    };
-                                                                    remarkContent: {
-                                                                        remark: string;
-                                                                    }[];
-                                                                    infoLink: {
-                                                                        uri: string;
-                                                                        label?: string[];
-                                                                    }[];
-                                                                }[];
+                                                    language: string;
+                                                    summary: string;
+                                                    description?: string[];
+                                                    detail?: string[];
+                                                    affects?: {
+                                                        stopPoints?: {
+                                                            affectedStopPoint?: {
+                                                                stopPointRef: string;
                                                             }[];
-                                                        }[];
+                                                        };
+                                                        vehicleJourneys?: {
+                                                            affectedVehicleJourney?: {
+                                                                stopPointRef?: string;
+                                                            }[];
+                                                        };
                                                     };
                                                 }[];
                                             };
@@ -308,6 +290,7 @@ export interface paths {
                                                         text: string;
                                                     };
                                                     code: string;
+                                                    hireFacility?: string;
                                                     importance?: number;
                                                 }[];
                                                 operatorRef?: string;
@@ -391,157 +374,6 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        ResponseContextStructure: {
-            places?: {
-                location: {
-                    stopPoint?: {
-                        stopPointRef: string;
-                        stopPointName: {
-                            text: string;
-                        };
-                        parentRef?: string;
-                        plannedQuay?: {
-                            text: string;
-                        };
-                        estimatedQuay?: {
-                            text: string;
-                        };
-                    };
-                    stopPlace?: {
-                        stopPlaceRef?: string;
-                        stopPlaceName?: {
-                            text: string;
-                        };
-                    };
-                    topographicPlace?: {
-                        topographicPlaceCode: string;
-                        topographicPlaceName: {
-                            text: string;
-                        };
-                    };
-                    pointOfInterest?: {
-                        publicCode: string;
-                        name: {
-                            text: string;
-                        };
-                        pointOfInterestCategory: {
-                            osmTag: {
-                                tag: string;
-                                value: string;
-                            }[];
-                            pointOfInterestClassification: string[];
-                        }[];
-                        privateCode?: {
-                            system: string;
-                            value: string;
-                        };
-                        pOIAdditionalInformation?: {
-                            pOIAdditionalInformation: {
-                                key: string;
-                                value: string;
-                            }[];
-                        };
-                        topographicPlaceRef?: string;
-                    };
-                    address?: {
-                        publicCode: string;
-                        name: {
-                            text: string;
-                        };
-                        postCode?: string;
-                        topographicPlaceName?: string;
-                        topographicPlaceRef?: string;
-                        street?: string;
-                        houseNumber?: string;
-                    };
-                    locationName: {
-                        text: string;
-                    };
-                    geoPosition: {
-                        longitude: number;
-                        latitude: number;
-                    };
-                    mode: {
-                        /** @enum {string} */
-                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
-                        airSubmode?: string;
-                        busSubmode?: string;
-                        coachSubmode?: string;
-                        funicularSubmode?: string;
-                        metroSubmode?: string;
-                        tramSubmode?: string;
-                        telecabinSubmode?: string;
-                        railSubmode?: string;
-                        waterSubmode?: string;
-                        name?: {
-                            text: string;
-                        };
-                        shortName?: {
-                            text: string;
-                        };
-                    }[];
-                }[];
-            };
-            situations?: {
-                ptSituation: {
-                    creationTime: string;
-                    participantRef?: string;
-                    situationNumber: string;
-                    version?: number;
-                    source: {
-                        /** @enum {string} */
-                        sourceType: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
-                    };
-                    validityPeriod: {
-                        startTime: string;
-                        endTime?: string;
-                    }[];
-                    alertCause: string;
-                    priority?: string;
-                    scopeType?: string;
-                    publishingActions?: {
-                        publishingAction: {
-                            publishAtScope: {
-                                scopeType: string;
-                            };
-                            passengerInformationAction: {
-                                actionRef: string;
-                                recordedAtTime: string;
-                                /** @enum {string} */
-                                perspective: "general" | "stopPoint" | "vehicleJourney";
-                                textualContent: {
-                                    summaryContent: {
-                                        summaryText: string;
-                                    };
-                                    reasonContent?: {
-                                        reasonText: string;
-                                    };
-                                    descriptionContent: {
-                                        descriptionText: string;
-                                    }[];
-                                    consequenceContent: {
-                                        consequenceText: string;
-                                    }[];
-                                    recommendationContent: {
-                                        recommendationText: string;
-                                    }[];
-                                    durationContent?: {
-                                        durationText: string;
-                                    };
-                                    remarkContent: {
-                                        remark: string;
-                                    }[];
-                                    infoLink: {
-                                        uri: string;
-                                        label?: string[];
-                                    }[];
-                                }[];
-                            }[];
-                        }[];
-                    };
-                }[];
-            };
-        };
         TripInfoResultStructure: {
             previousCall: {
                 stopPointRef: string;
@@ -657,6 +489,7 @@ export interface components {
                         text: string;
                     };
                     code: string;
+                    hireFacility?: string;
                     importance?: number;
                 }[];
                 operatorRef?: string;
@@ -749,8 +582,8 @@ export interface components {
                             };
                         };
                         pointOfInterest?: {
-                            publicCode: string;
-                            name: {
+                            pointOfInterestCode: string;
+                            pointOfInterestName: {
                                 text: string;
                             };
                             pointOfInterestCategory: {
@@ -763,12 +596,6 @@ export interface components {
                             privateCode?: {
                                 system: string;
                                 value: string;
-                            };
-                            pOIAdditionalInformation?: {
-                                pOIAdditionalInformation: {
-                                    key: string;
-                                    value: string;
-                                }[];
                             };
                             topographicPlaceRef?: string;
                         };
@@ -809,6 +636,19 @@ export interface components {
                                 text: string;
                             };
                         }[];
+                        attribute: {
+                            text: {
+                                text: string;
+                            };
+                            code: string;
+                            hireFacility?: string;
+                            importance?: number;
+                        }[];
+                        extension?: {
+                            locationExtensionStructure?: {
+                                [key: string]: string;
+                            };
+                        };
                     }[];
                 };
                 situations?: {
@@ -825,48 +665,23 @@ export interface components {
                             startTime: string;
                             endTime?: string;
                         }[];
-                        alertCause: string;
                         priority?: string;
                         scopeType?: string;
-                        publishingActions?: {
-                            publishingAction: {
-                                publishAtScope: {
-                                    scopeType: string;
-                                };
-                                passengerInformationAction: {
-                                    actionRef: string;
-                                    recordedAtTime: string;
-                                    /** @enum {string} */
-                                    perspective: "general" | "stopPoint" | "vehicleJourney";
-                                    textualContent: {
-                                        summaryContent: {
-                                            summaryText: string;
-                                        };
-                                        reasonContent?: {
-                                            reasonText: string;
-                                        };
-                                        descriptionContent: {
-                                            descriptionText: string;
-                                        }[];
-                                        consequenceContent: {
-                                            consequenceText: string;
-                                        }[];
-                                        recommendationContent: {
-                                            recommendationText: string;
-                                        }[];
-                                        durationContent?: {
-                                            durationText: string;
-                                        };
-                                        remarkContent: {
-                                            remark: string;
-                                        }[];
-                                        infoLink: {
-                                            uri: string;
-                                            label?: string[];
-                                        }[];
-                                    }[];
+                        language: string;
+                        summary: string;
+                        description?: string[];
+                        detail?: string[];
+                        affects?: {
+                            stopPoints?: {
+                                affectedStopPoint?: {
+                                    stopPointRef: string;
                                 }[];
-                            }[];
+                            };
+                            vehicleJourneys?: {
+                                affectedVehicleJourney?: {
+                                    stopPointRef?: string;
+                                }[];
+                            };
                         };
                     }[];
                 };
@@ -986,6 +801,7 @@ export interface components {
                             text: string;
                         };
                         code: string;
+                        hireFacility?: string;
                         importance?: number;
                     }[];
                     operatorRef?: string;
@@ -1084,8 +900,8 @@ export interface components {
                                         };
                                     };
                                     pointOfInterest?: {
-                                        publicCode: string;
-                                        name: {
+                                        pointOfInterestCode: string;
+                                        pointOfInterestName: {
                                             text: string;
                                         };
                                         pointOfInterestCategory: {
@@ -1098,12 +914,6 @@ export interface components {
                                         privateCode?: {
                                             system: string;
                                             value: string;
-                                        };
-                                        pOIAdditionalInformation?: {
-                                            pOIAdditionalInformation: {
-                                                key: string;
-                                                value: string;
-                                            }[];
                                         };
                                         topographicPlaceRef?: string;
                                     };
@@ -1144,6 +954,19 @@ export interface components {
                                             text: string;
                                         };
                                     }[];
+                                    attribute: {
+                                        text: {
+                                            text: string;
+                                        };
+                                        code: string;
+                                        hireFacility?: string;
+                                        importance?: number;
+                                    }[];
+                                    extension?: {
+                                        locationExtensionStructure?: {
+                                            [key: string]: string;
+                                        };
+                                    };
                                 }[];
                             };
                             situations?: {
@@ -1160,48 +983,23 @@ export interface components {
                                         startTime: string;
                                         endTime?: string;
                                     }[];
-                                    alertCause: string;
                                     priority?: string;
                                     scopeType?: string;
-                                    publishingActions?: {
-                                        publishingAction: {
-                                            publishAtScope: {
-                                                scopeType: string;
-                                            };
-                                            passengerInformationAction: {
-                                                actionRef: string;
-                                                recordedAtTime: string;
-                                                /** @enum {string} */
-                                                perspective: "general" | "stopPoint" | "vehicleJourney";
-                                                textualContent: {
-                                                    summaryContent: {
-                                                        summaryText: string;
-                                                    };
-                                                    reasonContent?: {
-                                                        reasonText: string;
-                                                    };
-                                                    descriptionContent: {
-                                                        descriptionText: string;
-                                                    }[];
-                                                    consequenceContent: {
-                                                        consequenceText: string;
-                                                    }[];
-                                                    recommendationContent: {
-                                                        recommendationText: string;
-                                                    }[];
-                                                    durationContent?: {
-                                                        durationText: string;
-                                                    };
-                                                    remarkContent: {
-                                                        remark: string;
-                                                    }[];
-                                                    infoLink: {
-                                                        uri: string;
-                                                        label?: string[];
-                                                    }[];
-                                                }[];
+                                    language: string;
+                                    summary: string;
+                                    description?: string[];
+                                    detail?: string[];
+                                    affects?: {
+                                        stopPoints?: {
+                                            affectedStopPoint?: {
+                                                stopPointRef: string;
                                             }[];
-                                        }[];
+                                        };
+                                        vehicleJourneys?: {
+                                            affectedVehicleJourney?: {
+                                                stopPointRef?: string;
+                                            }[];
+                                        };
                                     };
                                 }[];
                             };
@@ -1321,6 +1119,7 @@ export interface components {
                                         text: string;
                                     };
                                     code: string;
+                                    hireFacility?: string;
                                     importance?: number;
                                 }[];
                                 operatorRef?: string;
