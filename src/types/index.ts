@@ -42,6 +42,7 @@ export type UseRealtimeDataEnum = sharedComponents["schemas"]["UseRealtimeDataEn
 export type PersonalModesEnum = sharedComponents["schemas"]['PersonalModesEnumeration'];
 export type VehicleModesOfTransportEnum = sharedComponents["schemas"]["VehicleModesOfTransportEnum"];
 export type PlaceTypeEnum = sharedComponents["schemas"]["PlaceTypeEnum"];
+export type OptimisationMethodEnum = sharedComponents["schemas"]["OptimisationMethodEnum"];
 
 export type GeoPositionSchema = sharedComponents["schemas"]["GeoPosition"];
 export type PlaceRefSchema = sharedComponents["schemas"]["PlaceRef"];
