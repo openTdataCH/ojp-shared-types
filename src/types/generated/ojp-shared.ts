@@ -21,6 +21,8 @@ export interface components {
         SituationSourceTypeEnum: "directReport" | "email" | "phone" | "fax" | "post" | "feed" | "radio" | "tv" | "web" | "pager" | "text" | "other";
         /** @enum {string} */
         PerspectiveEnum: "general" | "stopPoint" | "vehicleJourney";
+        /** @enum {string} */
+        OptimisationMethodEnum: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
         InternationalText: {
             text: string;
         };

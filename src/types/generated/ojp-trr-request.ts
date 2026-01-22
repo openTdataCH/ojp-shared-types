@@ -47,6 +47,8 @@ export interface paths {
                                             /** @enum {string} */
                                             useRealtimeData?: "full" | "explanatory" | "none";
                                             includeAllRestrictedLines?: boolean;
+                                            includeLegProjection?: boolean;
+                                            includeTurnDescription?: boolean;
                                             includeIntermediateStops?: boolean;
                                         };
                                         tripResult: {
@@ -493,6 +495,8 @@ export interface components {
             /** @enum {string} */
             useRealtimeData?: "full" | "explanatory" | "none";
             includeAllRestrictedLines?: boolean;
+            includeLegProjection?: boolean;
+            includeTurnDescription?: boolean;
             includeIntermediateStops?: boolean;
         };
         OJPTripRefineRequest: {
@@ -502,6 +506,8 @@ export interface components {
                 /** @enum {string} */
                 useRealtimeData?: "full" | "explanatory" | "none";
                 includeAllRestrictedLines?: boolean;
+                includeLegProjection?: boolean;
+                includeTurnDescription?: boolean;
                 includeIntermediateStops?: boolean;
             };
             tripResult: {
@@ -934,6 +940,8 @@ export interface components {
                             /** @enum {string} */
                             useRealtimeData?: "full" | "explanatory" | "none";
                             includeAllRestrictedLines?: boolean;
+                            includeLegProjection?: boolean;
+                            includeTurnDescription?: boolean;
                             includeIntermediateStops?: boolean;
                         };
                         tripResult: {
