@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.2 - 22.01.2026
+- Updates API - [PR #40](https://github.com/openTdataCH/ojp-shared-types/pull/40)
+  - updates TRR `TripRefineParam`
+  - updates TR `TripParam`, adds [OptimisationMethodEnum](https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OptimisationMethodEnumeration)
+
 ## 0.1.1 - 25.11.2025
 - Updates API - [PR #38](https://github.com/openTdataCH/ojp-shared-types/pull/38)
   - OJPv2
