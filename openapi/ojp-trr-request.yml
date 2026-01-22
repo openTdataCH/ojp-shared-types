@@ -42,6 +42,14 @@ components:
           type: boolean
           xml:
             name: IncludeAllRestrictedLines
+        includeLegProjection:
+          type: boolean
+          xml:
+            name: IncludeLegProjection
+        includeTurnDescription:
+          type: boolean
+          xml:
+            name: IncludeTurnDescription
         includeIntermediateStops:
           type: boolean
           xml:
