@@ -57,6 +57,11 @@ components:
       type: string
       enum: [general, stopPoint, vehicleJourney]
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OptimisationMethodEnumeration
+    OptimisationMethodEnum:
+      type: string
+      enum: [fastest, minChanges, leastWalking, leastCost, leastDistance, earliestArrival, latestDeparture, earliestArrivalAndLatestDeparture, minNonLevelEntrances, minStairs, bestForVisualImpairment, bestForAuditoryImpairment, environmentalSafety, extraSafe, extraReliable, scenic, quietTravel]
+
     InternationalText:
       type: object
       xml:
