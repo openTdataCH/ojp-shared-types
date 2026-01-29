@@ -24,7 +24,7 @@ import { components as ojpV1_TripRequestResponseComponents } from './generated/l
 import { components as trrRequestComponents } from './generated/ojp-trr-request';
 import { components as trrResponseComponents } from './generated/ojp-trr-response';
 
-import { components as fareRequestComponents } from './generated/ojp-fare-request';
+import { components as ojpV1_FareRequestComponents } from './generated/legacy/ojp-v1/ojp-fare-request';
 import { components as fareResponseComponents } from './generated/ojp-fare-response';
 
 // TODO - this can be generated
@@ -135,10 +135,11 @@ export type TRR_RequestOJP = trrRequestComponents['schemas']['OJP'];
 export type TRR_ResponseOJP = trrResponseComponents['schemas']['OJP'];
 export type TRR_DeliverySchema = trrResponseComponents['schemas']['OJPTripRefineDelivery'];
 
-export type FareRequestParamsSchema = fareRequestComponents["schemas"]['FareParamStructure'];
-export type FareRequestSchema = fareRequestComponents['schemas']['OJPFareRequest'];
-export type FareRequestsSchema = fareRequestComponents['schemas']['OJPFareRequests'];
-export type FareRequestOJP = fareRequestComponents['schemas']['OJP'];
+export type FareRequestParamsSchema = ojpV1_FareRequestComponents["schemas"]['FareParamStructure'];
+export type FareRequestSchema = ojpV1_FareRequestComponents['schemas']['OJPFareRequest'];
+export type FareRequestsSchema = ojpV1_FareRequestComponents['schemas']['OJPFareRequests'];
+export type FareRequestOJP = ojpV1_FareRequestComponents['schemas']['OJP'];
+
 export type FareResponseOJP = fareResponseComponents['schemas']['OJP'];
 export type FareDeliverySchema = fareResponseComponents['schemas']['OJPFareDelivery'];
 export type FareResultSchema = fareResponseComponents['schemas']['FareResult'];
