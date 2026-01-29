@@ -68,6 +68,10 @@ components:
           $ref: "./ojp-shared.yml#/components/schemas/UseRealtimeDataEnum"
           xml:
             name: UseRealtimeData
+        optimisationMethod:
+          $ref: "./ojp-shared.yml#/components/schemas/OptimisationMethodEnum"
+          xml:
+            name: OptimisationMethod
         includeAllRestrictedLines:
           type: boolean
           xml:

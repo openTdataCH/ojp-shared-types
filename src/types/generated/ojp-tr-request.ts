@@ -146,6 +146,8 @@ export interface paths {
                                             numberOfResultsAfter?: number;
                                             /** @enum {string} */
                                             useRealtimeData?: "full" | "explanatory" | "none";
+                                            /** @enum {string} */
+                                            optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                                             includeAllRestrictedLines?: boolean;
                                             includeTrackSections?: boolean;
                                             includeLegProjection?: boolean;
@@ -215,6 +217,8 @@ export interface components {
             numberOfResultsAfter?: number;
             /** @enum {string} */
             useRealtimeData?: "full" | "explanatory" | "none";
+            /** @enum {string} */
+            optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
             includeAllRestrictedLines?: boolean;
             includeTrackSections?: boolean;
             includeLegProjection?: boolean;
@@ -341,6 +345,8 @@ export interface components {
                 numberOfResultsAfter?: number;
                 /** @enum {string} */
                 useRealtimeData?: "full" | "explanatory" | "none";
+                /** @enum {string} */
+                optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                 includeAllRestrictedLines?: boolean;
                 includeTrackSections?: boolean;
                 includeLegProjection?: boolean;
@@ -462,6 +468,8 @@ export interface components {
                             numberOfResultsAfter?: number;
                             /** @enum {string} */
                             useRealtimeData?: "full" | "explanatory" | "none";
+                            /** @enum {string} */
+                            optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                             includeAllRestrictedLines?: boolean;
                             includeTrackSections?: boolean;
                             includeLegProjection?: boolean;

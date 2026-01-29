@@ -29,6 +29,8 @@ export interface components {
         OccupancyLevelEnum: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
         /** @enum {string} */
         RailSubmodeEnum: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+        /** @enum {string} */
+        OptimisationMethodEnum: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
         InternationalText: {
             text: string;
         };

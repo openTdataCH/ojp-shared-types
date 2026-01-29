@@ -48,6 +48,7 @@ export type TransferTypeEnum = sharedComponents["schemas"]["TransferTypeEnum"];
 export type FareClassEnum = sharedComponents["schemas"]["FareClassEnum"];
 export type OccupancyLevelEnum = sharedComponents["schemas"]["OccupancyLevelEnum"];
 export type RailSubmodeEnum = sharedComponents["schemas"]["RailSubmodeEnum"];
+export type OptimisationMethodEnum = sharedComponents["schemas"]["OptimisationMethodEnum"];
 
 export type GeoPositionSchema = sharedComponents["schemas"]["GeoPosition"];
 export type PlaceRefSchema = sharedComponents["schemas"]["PlaceRef"];
