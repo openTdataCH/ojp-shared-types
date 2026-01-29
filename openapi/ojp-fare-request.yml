@@ -33,7 +33,7 @@ components:
         - trip
       properties:
         trip:
-          $ref: './legacy/ojp-v1/ojp-trip.yml#/components/schemas/Trip'
+          $ref: './legacy/ojp-v1/ojp-tr-response.yml#/components/schemas/Trip'
           xml:
             name: Trip
 
