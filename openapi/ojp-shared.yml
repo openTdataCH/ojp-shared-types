@@ -57,6 +57,27 @@ components:
       type: string
       enum: [general, stopPoint, vehicleJourney]
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferTypeEnumeration
+    TransferTypeEnum:
+      type: string
+      enum: [walk, remainInVehicle, changeWithinVehicle]
+      xml:
+        name: TransferType
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__FareClassEnumeration
+    FareClassEnum:
+      type: string
+      enum: [unknown, firstClass, secondClass]
+      xml:
+        name: FareClass
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__OccupancyEnumeration
+    OccupancyLevelEnum:
+      type: string
+      enum: [unknown, empty, manySeatsAvailable, fewSeatsAvailable, standingRoomOnly]
+      xml:
+        name: FareClass
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__RailSubmodesOfTransportEnumeration
     #     highSpeedRail                       - IC
     #     international                       - ICE, TGV, EC, RJX, NJ, EN
