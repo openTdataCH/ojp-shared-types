@@ -188,16 +188,6 @@ const MapArrayTags: Record<string, boolean> = {
 
 // This will be deleted in the new update
 
-// TODO - this should be generated
-// Declare object properties that are / should be serialised to XML
-// - in request (builder) XML
-const MapModelKeepPropertiesXML: Record<string, string[]> = {
-  'OJPLocationInformationRequest': ['requestTimestamp', 'initialInput', 'placeRef', 'restrictions'],
-  'OJPTripRequest': ['requestTimestamp', 'origin', 'destination', 'via', 'params'],
-  'OJPStopEventRequest': ['requestTimestamp', 'location', 'params'],
-  'OJPTripRefineRequest': ['requestTimestamp', 'refineParams', 'tripResult'],
-  'OJPTripInfoRequest': ['requestTimestamp', 'journeyRef', 'operatingDayRef', 'params'],
-  'geoPosition': ['longitude', 'latitude'],
 };
 
 // TODO - this should be generated
