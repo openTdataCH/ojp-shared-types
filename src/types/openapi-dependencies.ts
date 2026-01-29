@@ -198,6 +198,7 @@ const MapLegacyArrayTags: Record<string, boolean> = {
 const MapStringValues: Record<string, boolean> = {
   'stopPlace.stopPlaceRef': true,
   'publishedServiceName.text': true,
+  'service.operatorRef': true,
 };
 
 export const OpenAPI_Dependencies = {
