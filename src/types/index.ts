@@ -133,9 +133,10 @@ export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
 export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
 
-export type OJPv1_StopEventRequestOJP = ojpV1_stopEventRequestComponents['schemas']['OJP'];
-export type OJPv1_StopEventRequestSchema = ojpV1_stopEventRequestComponents['schemas']['OJPStopEventRequest'];
 export type OJPv1_SER_RequestLocationSchema = ojpV1_stopEventRequestComponents['schemas']['PlaceContext'];
+export type OJPv1_StopEventRequestOJP = ojpV1_StopEventRequestComponents['schemas']['OJP'];
+export type OJPv1_StopEventRequestSchema = ojpV1_StopEventRequestComponents['schemas']['OJPStopEventRequest'];
+
 export type OJPv1_StopEventResponseOJP = ojpV1_StopEventResponseComponents['schemas']['OJP'];
 export type OJPv1_StopEventDeliverySchema = ojpV1_StopEventResponseComponents['schemas']['OJPStopEventDelivery'];
 export type OJPv1_StopEventResultSchema = ojpV1_StopEventResponseComponents['schemas']['StopEventResult'];
