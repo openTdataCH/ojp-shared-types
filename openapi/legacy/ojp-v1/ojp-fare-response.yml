@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: XML OJP 2.0 API
+  title: XML OJP 1.0 API
   description: API that returns trip data in XML format.
   version: 0.0.1
 
