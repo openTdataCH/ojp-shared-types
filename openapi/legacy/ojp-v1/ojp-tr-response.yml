@@ -1,0 +1,374 @@
+openapi: 3.0.3
+info:
+  title: XML OJP 1.0 API
+  description: API that returns trip data in XML format.
+  version: 0.0.1
+
+servers:
+  - url: https://api.example.com
+
+paths:
+  /ojp:
+    post:
+      summary: Main /ojp endpoint
+      description: Main /ojp endpoint
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/OJP"
+        "500":
+          description: Server error
+
+components:
+  schemas:
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PathGuidanceSectionStructure
+    PathGuidanceSectionStructure:
+      type: object
+      xml:
+        name: PathGuidanceSection
+      properties:
+        trackSection:
+          $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
+          xml:
+            name: TrackSection
+        turnDescription:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: TurnDescription
+        guidanceAdvice:
+          # TODO - make it enum
+          # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__GuidanceAdviceEnumeration
+          type: string
+          xml:
+            name: GuidanceAdvice
+        turnAction:
+          # TODO - make it enum
+          # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TurnActionEnumeration
+          type: string
+          xml:
+            name: TurnAction
+        roadName:
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
+          xml:
+            name: TurnDescription
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PathGuidanceStructure
+    PathGuidanceStructure:
+      type: object
+      xml:
+        name: PathGuidance
+      required:
+        - pathGuidanceSection
+      properties:
+        pathGuidanceSection:
+          type: array
+          xml:
+            name: PathGuidanceSection
+          items:
+            $ref: '#/components/schemas/PathGuidanceSectionStructure'
+
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/TimedLeg'
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TimedLegStructure
+    TimedLeg:
+      type: object
+      xml:
+        name: TimedLeg
+      required:
+        - legBoard
+        - legIntermediates
+        - legAlight
+        - service
+      properties:
+        legBoard:
+          $ref: '../../ojp-tr-response.yml#/components/schemas/LegBoard'
+          xml:
+            name: LegBoard
+        legIntermediates: # in v2 is legIntermediate
+          type: array
+          xml:
+            name: LegIntermediates # in v2 is LegIntermediate
+          items:
+            $ref: '../../ojp-tr-response.yml#/components/schemas/LegIntermediate'
+        legAlight:
+          $ref: '../../ojp-tr-response.yml#/components/schemas/LegAlight'
+          xml:
+            name: LegAlight
+        service:
+          $ref: './ojp-shared.yml#/components/schemas/DatedJourney'
+          xml:
+            name: Service
+        legTrack:
+          type: object
+          xml:
+            name: LegTrack
+          required:
+            - trackSection
+          properties:
+            trackSection:
+              type: array
+              xml:
+                name: TrackSection
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
+        extension:
+          $ref: './ojp-shared.yml#/components/schemas/SharedServiceExtension'
+          xml:
+            name: Extension
+    # TimedLeg
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferLegStructure
+    TransferLeg:
+      type: object
+      xml:
+        name: TransferLeg
+      required:
+        - transferType
+        - legStart
+        - legEnd
+        - duration
+      properties:
+        transferType:
+          $ref: "../../ojp-shared.yml#/components/schemas/TransferTypeEnum"
+          xml:
+            name: TransferType
+        legStart:
+          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
+          xml:
+            name: LegStart
+        legEnd:
+          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
+          xml:
+            name: LegEnd
+        duration:
+          type: string
+          xml:
+            name: Duration
+        length:
+          type: number
+          xml:
+            name: Length
+        pathGuidance:
+          $ref: '#/components/schemas/PathGuidanceStructure'
+          xml:
+            name: PathGuidance
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousLegStructure
+    ContinuousLeg:
+      type: object
+      xml:
+        name: ContinuousLeg
+      required:
+        - legStart
+        - legEnd
+        - service
+        - duration
+      properties:
+        legStart:
+          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
+          xml:
+            name: LegStart
+        legEnd:
+          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
+          xml:
+            name: LegEnd
+        service:
+          $ref: '../../ojp-shared.yml#/components/schemas/ContinuousServiceStructure'
+          xml:
+            name: Service
+        duration:
+          type: string
+          xml:
+            name: Duration
+        length:
+          type: number
+          xml:
+            name: Length
+        legTrack:
+          $ref: '../../ojp-shared.yml#/components/schemas/LegTrackStructure'
+          xml:
+            name: LegTrack
+        pathGuidance:
+          $ref: '#/components/schemas/PathGuidanceStructure'
+          xml:
+            name: PathGuidance
+
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/Leg'
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegStructure
+    TripLeg:
+      type: object
+      xml:
+        name: TripLeg
+      required:
+        - legId
+      properties:
+        legId:
+          type: string
+          xml:
+            name: LegId
+        duration:
+          type: string
+          xml:
+            name: Duration
+        # Using oneOf requires additional boilerplate code, use optionals instead
+        timedLeg:
+          $ref: '#/components/schemas/TimedLeg'
+          xml:
+            name: TimedLeg
+        transferLeg:
+          $ref: '#/components/schemas/TransferLeg'
+          xml:
+            name: TransferLeg
+        continuousLeg:
+          $ref: '#/components/schemas/ContinuousLeg'
+          xml:
+            name: ContinuousLeg
+
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/Trip'
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripStructure
+    Trip:
+      type: object
+      xml:
+        name: Trip
+      required:
+        - tripId
+        - duration
+        - startTime
+        - endTime
+        - transfers
+        - tripLeg
+      properties:
+        tripId:
+          type: string
+          xml:
+            name: TripId
+        duration:
+          type: string
+          xml:
+            name: Duration
+        startTime:
+          type: string
+          format: date-time
+          xml:
+            name: StartTime
+        endTime:
+          type: string
+          format: date-time
+          xml:
+            name: EndTime
+        transfers:
+          type: number
+          xml:
+            name: Transfers
+        tripLeg:
+          type: array
+          xml:
+            name: TripLeg
+          items:
+            $ref: '#/components/schemas/TripLeg'
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripResultStructure
+    TripResult:
+      type: object
+      xml:
+        name: TripResult
+      required:
+        - id
+        - trip
+      properties:
+        id:
+          type: string
+          xml:
+            name: Id
+        trip:
+          $ref: '#/components/schemas/Trip'
+          xml:
+            name: Trip
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OJPTripDeliveryStructure
+    OJPTripDelivery:
+      type: object
+      xml:
+        name: OJPTripDelivery
+      required:
+        - responseTimestamp
+        - tripResult
+      properties:
+        responseTimestamp:
+          type: string
+          xml:
+            name: ResponseTimestamp
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        requestMessageRef:
+          type: string
+          xml:
+            name: RequestMessageRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        defaultLanguage:
+          type: string
+          xml:
+            name: DefaultLanguage
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        calcTime:
+          type: string
+          xml:
+            name: CalcTime
+        tripResponseContext:
+          $ref: './ojp-shared.yml#/components/schemas/ResponseContextStructure'
+          xml:
+            name: TripResponseContext
+        tripResult:
+          type: array
+          xml:
+            name: TripResult
+          items:
+            $ref: "#/components/schemas/TripResult"
+
+    OJP:
+      type: object
+      xml:
+        name: OJP
+      required:
+        - OJPResponse
+      properties:
+        OJPResponse:
+          type: object
+          xml:
+            name: OJPResponse
+          required:
+            - serviceDelivery
+          properties:
+            serviceDelivery:
+              type: object
+              xml:
+                name: ServiceDelivery
+                namespace: "http://www.siri.org.uk/siri"
+                prefix: siri
+              required:
+                - responseTimestamp
+                - producerRef
+                - OJPTripDelivery
+              properties:
+                responseTimestamp:
+                  type: string
+                  xml:
+                    name: ResponseTimestamp
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                producerRef:
+                  type: string
+                  xml:
+                    name: ProducerRef
+                    namespace: "http://www.siri.org.uk/siri"
+                    prefix: siri
+                OJPTripDelivery:
+                  $ref: '#/components/schemas/OJPTripDelivery'
+                  xml:
+                    name: OJPTripDelivery
+    # OJP
+        
