@@ -962,6 +962,28 @@ components:
           xml:
             name: EstimatedTime
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__VehicleOccupancyStructure
+    ExpectedDepartureOccupancyStructure:
+      type: object
+      xml:
+        name: ExpectedDepartureOccupancy
+      required:
+        - fareClass
+        - occupancyLevel
+      properties:
+        fareClass:
+          $ref: "#/components/schemas/FareClassEnum"
+          xml:
+            name: FareClass
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        occupancyLevel:
+          $ref: "#/components/schemas/OccupancyLevelEnum"
+          xml:
+            name: OccupancyLevel
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegBoardStructure
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtStopStructure
     CallAtStop:
@@ -1405,30 +1427,6 @@ components:
           type: string
           xml:
             name: WaterSubmode
-            namespace: "http://www.siri.org.uk/siri"
-            prefix: siri
-
-    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__VehicleOccupancyStructure
-    ExpectedDepartureOccupancyStructure:
-      type: object
-      xml:
-        name: ExpectedDepartureOccupancy
-      required:
-        - fareClass
-        - occupancyLevel
-      properties:
-        fareClass:
-          type: string
-          enum: [unknown, firstClass, secondClass]
-          xml:
-            name: fareClass
-            namespace: "http://www.siri.org.uk/siri"
-            prefix: siri
-        occupancyLevel:
-          type: string
-          enum: [empty, manySeatsAvailable, fewSeatsAvailable, standingRoomOnly]
-          xml:
-            name: occupancyLevel
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
 
