@@ -603,3 +603,20 @@ components:
           $ref: '#/components/schemas/CallAtStop'
           xml:
             name: CallAtStop
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PlaceContextStructure
+    PlaceContext:
+      type: object
+      xml:
+        name: OJPStopEventRequest
+      required:
+        - placeRef
+      properties:
+        placeRef:
+          $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
+          xml:
+            name: PlaceRef
+        depArrTime:
+          type: string
+          xml:
+            name: DepArrTime
