@@ -245,6 +245,17 @@ components:
           $ref: '#/components/schemas/ContinuousLeg'
           xml:
             name: ContinuousLeg
+        emissionCO2:
+          type: object
+          xml:
+            name: EmissionCO2
+          required:
+            - kilogramPerPersonKm
+          properties:
+            kilogramPerPersonKm:
+              type: number
+              xml:
+                name: KilogramPerPersonKm
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripStructure
     Trip:
