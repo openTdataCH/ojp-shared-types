@@ -12,8 +12,11 @@ SRC_FILES=(
     "legacy/ojp-v1/ojp-ser-response.yml"
     
     "legacy/ojp-v1/ojp-shared.yml"
+    
     "legacy/ojp-v1/ojp-tir-response.yml"
-    "legacy/ojp-v1/ojp-trip.yml"
+    
+    "legacy/ojp-v1/ojp-tr-request.yml"
+    "legacy/ojp-v1/ojp-tr-response.yml"
 
     "ojp-shared.yml"
 
