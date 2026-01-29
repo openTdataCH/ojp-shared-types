@@ -57,6 +57,21 @@ components:
       type: string
       enum: [general, stopPoint, vehicleJourney]
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__RailSubmodesOfTransportEnumeration
+    #     highSpeedRail                       - IC
+    #     international                       - ICE, TGV, EC, RJX, NJ, EN
+    #     interregionalRail                   - IR, IRN, IRE
+    #     railShuttle                         - ATZ
+    #     local                               - S, SN, RB, RE, PE
+    #     vehicleTunnelTransportRailService   - used by ATZ
+    RailSubmodeEnum:
+      type: string 
+      enum: [international, highSpeedRail, interregionalRail, railShuttle, local, vehicleTunnelTransportRailService]
+      xml:
+        name: RailSubmode
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+
     InternationalText:
       type: object
       xml:
@@ -483,7 +498,7 @@ components:
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
         railSubmode:
-          type: string
+          $ref: "#/components/schemas/RailSubmodeEnum"
           xml:
             name: RailSubmode
             namespace: "http://www.siri.org.uk/siri"
@@ -1360,7 +1375,7 @@ components:
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
         railSubmode:
-          type: string
+          $ref: "#/components/schemas/RailSubmodeEnum"
           xml:
             name: RailSubmode
             namespace: "http://www.siri.org.uk/siri"
