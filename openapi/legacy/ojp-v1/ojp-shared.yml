@@ -620,3 +620,35 @@ components:
           type: string
           xml:
             name: DepArrTime
+
+    # OJP v1
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TrackSectionStructure
+    TrackSectionStructure:
+      type: object
+      xml:
+        name: TrackSection
+      properties:
+        trackStart:
+          $ref: '#/components/schemas/PlaceRef'
+          xml:
+            name: TrackStart
+        trackEnd:
+          $ref: '#/components/schemas/PlaceRef'
+          xml:
+            name: TrackEnd
+        linkProjection:
+          $ref: '../../ojp-shared.yml#/components/schemas/LinkProjection'
+          xml:
+            name: LinkProjection
+        roadName:
+          type: string
+          xml:
+            name: RoadName
+        duration:
+          type: string
+          xml:
+            name: Duration
+        length:
+          type: number
+          xml:
+            name: Length
