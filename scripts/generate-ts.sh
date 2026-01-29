@@ -5,6 +5,8 @@ OPENAPI_YAML_PATH=$APP_PATH/openapi
 OPENAPI_GENERATED_TS_PATH=$APP_PATH/src/types/generated
 
 SRC_FILES=(
+    "legacy/ojp-v1/ojp-fare-request.yml"
+
     "legacy/ojp-v1/ojp-lir-request.yml"
     "legacy/ojp-v1/ojp-lir-response.yml"
     
@@ -20,9 +22,8 @@ SRC_FILES=(
 
     "ojp-shared.yml"
 
-    "ojp-fare-request.yml"
     "ojp-fare-response.yml"
-    
+
     "ojp-lir-request.yml"
     "ojp-lir-response.yml"
     
