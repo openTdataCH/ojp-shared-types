@@ -172,3 +172,10 @@ export type OJPv1_LocationResultSchema = ojpV1_LocationInformationResponseCompon
 export type OJPv1_LocationInformationRequestResponseOJP = ojpV1_LocationInformationResponseComponents['schemas']['OJP'];
 export type OJPv1_LocationInformationDeliverySchema = ojpV1_LocationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];
 
+export type OJPv1_TripRequestOJP = ojpV1_TripRequestComponents["schemas"]["OJP"];
+export type OJPv1_TripParamsSchema = ojpV1_TripRequestComponents["schemas"]["TripParam"];
+export type OJPv1_TripRequestSchema = ojpV1_TripRequestComponents["schemas"]["OJPTripRequest"];
+
+export type OJPv1_TripRequestResponseOJP = ojpV1_TripRequestResponseComponents['schemas']['OJP'];
+export type OJPv1_TripDeliverySchema = ojpV1_TripRequestResponseComponents['schemas']['OJPTripDelivery'];
+export type OJPv1_TripResultSchema = ojpV1_TripRequestResponseComponents['schemas']['TripResult'];
