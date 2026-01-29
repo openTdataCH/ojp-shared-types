@@ -1543,3 +1543,21 @@ components:
               $ref: '#/components/schemas/GeoPosition'
               xml:
                 name: LowerRight
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
+    ContinuousServiceStructure:
+      type: object
+      required:
+        - personalModeOfOperation
+        - personalMode
+      xml:
+        name: ContinuousService
+      properties:
+        personalModeOfOperation:
+          $ref: './ojp-shared.yml#/components/schemas/PersonalModesOfOperationEnumeration'
+          xml:
+            name: PersonalModeOfOperation
+        personalMode:
+          $ref: './ojp-shared.yml#/components/schemas/PersonalModesEnumeration'
+          xml:
+            name: PersonalMode
