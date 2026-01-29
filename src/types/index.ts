@@ -1,7 +1,6 @@
 import { components as sharedComponents } from './generated/ojp-shared';
 
 import { components as ojpV1_SharedComponents } from './generated/legacy/ojp-v1/ojp-shared';
-import { components as ojpV1_TripComponents } from './generated/legacy/ojp-v1/ojp-trip';
 
 import { components as locationInformationRequestComponents } from './generated/ojp-lir-request';
 import { components as locationInformationResponseComponents } from './generated/ojp-lir-response';
@@ -19,6 +18,8 @@ import { components as ojpV1_tripInfoResponseComponents } from './generated/lega
 
 import { components as tripRequestComponents } from './generated/ojp-tr-request';
 import { components as tripReponseComponents } from './generated/ojp-tr-response';
+import { components as ojpV1_TripRequestComponents } from './generated/legacy/ojp-v1/ojp-tr-request';
+import { components as ojpV1_TripRequestResponseComponents } from './generated/legacy/ojp-v1/ojp-tr-response';
 
 import { components as trrRequestComponents } from './generated/ojp-trr-request';
 import { components as trrResponseComponents } from './generated/ojp-trr-response';
@@ -34,9 +35,9 @@ export type OJPv1_GeneralAttributeSchema = ojpV1_SharedComponents['schemas']['Ge
 export type OJPv1_PointOfInterestSchema = ojpV1_SharedComponents['schemas']['PointOfInterest'];
 export type OJPv1_PlaceRefSchema = ojpV1_SharedComponents['schemas']['PlaceRef'];
 
-export type OJPv1_TimedLegSchema = ojpV1_TripComponents['schemas']['TimedLeg']
-export type OJPv1_TripLegSchema = ojpV1_TripComponents['schemas']['TripLeg'];
-export type OJPv1_TripSchema = ojpV1_TripComponents['schemas']['Trip'];
+export type OJPv1_TimedLegSchema = ojpV1_TripRequestResponseComponents['schemas']['TimedLeg']
+export type OJPv1_TripLegSchema = ojpV1_TripRequestResponseComponents['schemas']['TripLeg'];
+export type OJPv1_TripSchema = ojpV1_TripRequestResponseComponents['schemas']['Trip'];
 
 export type UseRealtimeDataEnum = sharedComponents["schemas"]["UseRealtimeDataEnum"];
 export type PersonalModesEnum = sharedComponents["schemas"]['PersonalModesEnumeration'];
