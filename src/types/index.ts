@@ -133,7 +133,6 @@ export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
 export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
 
-export type OJPv1_SER_RequestLocationSchema = ojpV1_stopEventRequestComponents['schemas']['PlaceContext'];
 export type OJPv1_StopEventRequestOJP = ojpV1_StopEventRequestComponents['schemas']['OJP'];
 export type OJPv1_StopEventRequestSchema = ojpV1_StopEventRequestComponents['schemas']['OJPStopEventRequest'];
 
@@ -141,15 +140,15 @@ export type OJPv1_StopEventResponseOJP = ojpV1_StopEventResponseComponents['sche
 export type OJPv1_StopEventDeliverySchema = ojpV1_StopEventResponseComponents['schemas']['OJPStopEventDelivery'];
 export type OJPv1_StopEventResultSchema = ojpV1_StopEventResponseComponents['schemas']['StopEventResult'];
 
+export type OJPv1_TripInfoResponseOJP = ojpV1_TripInfoResponseComponents['schemas']['OJP'];
+export type OJPv1_TripInfoDeliverySchema = ojpV1_TripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
+export type OJPv1_TripInfoResultStructureSchema = ojpV1_TripInfoResponseComponents['schemas']['TripInfoResultStructure'];
 
-export type OJPv1_TripInfoResponseOJP = ojpV1_tripInfoResponseComponents['schemas']['OJP'];
-export type OJPv1_TripInfoDeliverySchema = ojpV1_tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
-export type OJPv1_TripInfoResultStructureSchema = ojpV1_tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
+export type OJPv1_LocationInformationRequestOJP = ojpV1_LocationInformationRequestComponents['schemas']['OJP'];
+export type OJPv1_LocationInformationRequestSchema = ojpV1_LocationInformationRequestComponents['schemas']['OJPLocationInformationRequest'];
+export type OJPv1_InitialInputSchema = ojpV1_LocationInformationRequestComponents['schemas']['InitialInput'];
 
-export type OJPv1_LocationInformationRequestOJP = ojpV1_locationInformationRequestComponents['schemas']['OJP'];
-export type OJPv1_LocationInformationRequestSchema = ojpV1_locationInformationRequestComponents['schemas']['OJPLocationInformationRequest'];
-export type OJPv1_InitialInputSchema = ojpV1_locationInformationRequestComponents['schemas']['InitialInput'];
+export type OJPv1_LocationResultSchema = ojpV1_LocationInformationResponseComponents['schemas']['LocationResult'];
+export type OJPv1_LocationInformationRequestResponseOJP = ojpV1_LocationInformationResponseComponents['schemas']['OJP'];
+export type OJPv1_LocationInformationDeliverySchema = ojpV1_LocationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];
 
-export type OJPv1_LocationResultSchema = ojpV1_locationInformationResponseComponents['schemas']['LocationResult'];
-export type OJPv1_LocationInformationRequestResponseOJP = ojpV1_locationInformationResponseComponents['schemas']['OJP'];
-export type OJPv1_LocationInformationDeliverySchema = ojpV1_locationInformationResponseComponents['schemas']['OJPLocationInformationDelivery'];
