@@ -81,7 +81,8 @@ export interface paths {
                                                 metroSubmode?: string;
                                                 tramSubmode?: string;
                                                 telecabinSubmode?: string;
-                                                railSubmode?: string;
+                                                /** @enum {string} */
+                                                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                                 waterSubmode?: string;
                                             };
                                             pointOfInterestFilter?: {
@@ -135,7 +136,8 @@ export interface components {
                 metroSubmode?: string;
                 tramSubmode?: string;
                 telecabinSubmode?: string;
-                railSubmode?: string;
+                /** @enum {string} */
+                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                 waterSubmode?: string;
             };
             pointOfInterestFilter?: {
@@ -207,7 +209,8 @@ export interface components {
                     metroSubmode?: string;
                     tramSubmode?: string;
                     telecabinSubmode?: string;
-                    railSubmode?: string;
+                    /** @enum {string} */
+                    railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                     waterSubmode?: string;
                 };
                 pointOfInterestFilter?: {
@@ -273,7 +276,8 @@ export interface components {
                                 metroSubmode?: string;
                                 tramSubmode?: string;
                                 telecabinSubmode?: string;
-                                railSubmode?: string;
+                                /** @enum {string} */
+                                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                 waterSubmode?: string;
                             };
                             pointOfInterestFilter?: {

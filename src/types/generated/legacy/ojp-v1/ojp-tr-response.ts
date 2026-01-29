@@ -37,14 +37,14 @@ export interface paths {
                                 serviceDelivery: {
                                     responseTimestamp: string;
                                     producerRef: string;
-                                    OJPTripRefineDelivery: {
+                                    OJPTripDelivery: {
                                         responseTimestamp: string;
                                         requestMessageRef?: string;
                                         defaultLanguage?: string;
                                         calcTime?: string;
                                         tripResponseContext?: {
                                             places?: {
-                                                place: {
+                                                location: {
                                                     stopPoint?: {
                                                         stopPointRef: string;
                                                         stopPointName: {
@@ -71,8 +71,8 @@ export interface paths {
                                                         };
                                                     };
                                                     pointOfInterest?: {
-                                                        publicCode: string;
-                                                        name: {
+                                                        pointOfInterestCode: string;
+                                                        pointOfInterestName: {
                                                             text: string;
                                                         };
                                                         pointOfInterestCategory: {
@@ -85,12 +85,6 @@ export interface paths {
                                                         privateCode?: {
                                                             system: string;
                                                             value: string;
-                                                        };
-                                                        pOIAdditionalInformation?: {
-                                                            pOIAdditionalInformation: {
-                                                                key: string;
-                                                                value: string;
-                                                            }[];
                                                         };
                                                         topographicPlaceRef?: string;
                                                     };
@@ -105,7 +99,7 @@ export interface paths {
                                                         street?: string;
                                                         houseNumber?: string;
                                                     };
-                                                    name: {
+                                                    locationName: {
                                                         text: string;
                                                     };
                                                     geoPosition: {
@@ -133,13 +127,18 @@ export interface paths {
                                                         };
                                                     }[];
                                                     attribute: {
-                                                        userText: {
+                                                        text: {
                                                             text: string;
                                                         };
                                                         code: string;
                                                         hireFacility?: string;
                                                         importance?: number;
                                                     }[];
+                                                    extension?: {
+                                                        locationExtensionStructure?: {
+                                                            [key: string]: string;
+                                                        };
+                                                    };
                                                 }[];
                                             };
                                             situations?: {
@@ -156,48 +155,23 @@ export interface paths {
                                                         startTime: string;
                                                         endTime?: string;
                                                     }[];
-                                                    alertCause: string;
                                                     priority?: string;
                                                     scopeType?: string;
-                                                    publishingActions?: {
-                                                        publishingAction: {
-                                                            publishAtScope: {
-                                                                scopeType: string;
-                                                            };
-                                                            passengerInformationAction: {
-                                                                actionRef: string;
-                                                                recordedAtTime: string;
-                                                                /** @enum {string} */
-                                                                perspective: "general" | "stopPoint" | "vehicleJourney";
-                                                                textualContent: {
-                                                                    summaryContent: {
-                                                                        summaryText: string;
-                                                                    };
-                                                                    reasonContent?: {
-                                                                        reasonText: string;
-                                                                    };
-                                                                    descriptionContent: {
-                                                                        descriptionText: string;
-                                                                    }[];
-                                                                    consequenceContent: {
-                                                                        consequenceText: string;
-                                                                    }[];
-                                                                    recommendationContent: {
-                                                                        recommendationText: string;
-                                                                    }[];
-                                                                    durationContent?: {
-                                                                        durationText: string;
-                                                                    };
-                                                                    remarkContent: {
-                                                                        remark: string;
-                                                                    }[];
-                                                                    infoLink: {
-                                                                        uri: string;
-                                                                        label?: string[];
-                                                                    }[];
-                                                                }[];
+                                                    language: string;
+                                                    summary: string;
+                                                    description?: string[];
+                                                    detail?: string[];
+                                                    affects?: {
+                                                        stopPoints?: {
+                                                            affectedStopPoint?: {
+                                                                stopPointRef: string;
                                                             }[];
-                                                        }[];
+                                                        };
+                                                        vehicleJourneys?: {
+                                                            affectedVehicleJourney?: {
+                                                                stopPointRef?: string;
+                                                            }[];
+                                                        };
                                                     };
                                                 }[];
                                             };
@@ -205,16 +179,15 @@ export interface paths {
                                         tripResult: {
                                             id: string;
                                             trip: {
-                                                id: string;
+                                                tripId: string;
                                                 duration: string;
                                                 /** Format: date-time */
                                                 startTime: string;
                                                 /** Format: date-time */
                                                 endTime: string;
                                                 transfers: number;
-                                                distance?: number;
-                                                leg: {
-                                                    id: string;
+                                                tripLeg: {
+                                                    legId: string;
                                                     duration?: string;
                                                     timedLeg?: {
                                                         legBoard: {
@@ -252,7 +225,7 @@ export interface paths {
                                                                 occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                             }[];
                                                         };
-                                                        legIntermediate: {
+                                                        legIntermediates: {
                                                             stopPointRef: string;
                                                             stopPointName: {
                                                                 text: string;
@@ -358,21 +331,18 @@ export interface paths {
                                                                 };
                                                                 productCategoryRef?: string;
                                                             };
-                                                            publishedServiceName: {
+                                                            publishedLineName: {
                                                                 text: string;
                                                             };
                                                             trainNumber?: string;
                                                             attribute: {
-                                                                userText: {
+                                                                text: {
                                                                     text: string;
                                                                 };
                                                                 code: string;
                                                                 hireFacility?: string;
                                                                 importance?: number;
                                                             }[];
-                                                            originText: {
-                                                                text: string;
-                                                            };
                                                             operatorRef?: string;
                                                             destinationStopPointRef?: string;
                                                             destinationText?: {
@@ -381,34 +351,28 @@ export interface paths {
                                                             unplanned?: boolean;
                                                             cancelled?: boolean;
                                                             deviation?: boolean;
-                                                            situationFullRefs?: {
-                                                                situationFullRef: {
-                                                                    participantRef: string;
-                                                                    situationNumber: string;
-                                                                }[];
-                                                            };
                                                         };
                                                         legTrack?: {
                                                             trackSection: {
-                                                                trackSectionStart?: {
+                                                                trackStart?: {
                                                                     stopPointRef?: string;
                                                                     stopPlaceRef?: string;
                                                                     geoPosition?: {
                                                                         longitude: number;
                                                                         latitude: number;
                                                                     };
-                                                                    name: {
+                                                                    locationName: {
                                                                         text: string;
                                                                     };
                                                                 };
-                                                                trackSectionEnd?: {
+                                                                trackEnd?: {
                                                                     stopPointRef?: string;
                                                                     stopPlaceRef?: string;
                                                                     geoPosition?: {
                                                                         longitude: number;
                                                                         latitude: number;
                                                                     };
-                                                                    name: {
+                                                                    locationName: {
                                                                         text: string;
                                                                     };
                                                                 };
@@ -423,6 +387,17 @@ export interface paths {
                                                                 length?: number;
                                                             }[];
                                                         };
+                                                        extension?: {
+                                                            transportTypeName?: {
+                                                                text: string;
+                                                            };
+                                                            publishedJourneyNumber?: {
+                                                                text: string;
+                                                            };
+                                                            operatorName?: {
+                                                                text: string;
+                                                            };
+                                                        };
                                                     };
                                                     transferLeg?: {
                                                         /** @enum {string} */
@@ -434,7 +409,7 @@ export interface paths {
                                                                 longitude: number;
                                                                 latitude: number;
                                                             };
-                                                            name: {
+                                                            locationName: {
                                                                 text: string;
                                                             };
                                                         };
@@ -445,7 +420,7 @@ export interface paths {
                                                                 longitude: number;
                                                                 latitude: number;
                                                             };
-                                                            name: {
+                                                            locationName: {
                                                                 text: string;
                                                             };
                                                         };
@@ -454,25 +429,25 @@ export interface paths {
                                                         pathGuidance?: {
                                                             pathGuidanceSection: {
                                                                 trackSection?: {
-                                                                    trackSectionStart?: {
+                                                                    trackStart?: {
                                                                         stopPointRef?: string;
                                                                         stopPlaceRef?: string;
                                                                         geoPosition?: {
                                                                             longitude: number;
                                                                             latitude: number;
                                                                         };
-                                                                        name: {
+                                                                        locationName: {
                                                                             text: string;
                                                                         };
                                                                     };
-                                                                    trackSectionEnd?: {
+                                                                    trackEnd?: {
                                                                         stopPointRef?: string;
                                                                         stopPlaceRef?: string;
                                                                         geoPosition?: {
                                                                             longitude: number;
                                                                             latitude: number;
                                                                         };
-                                                                        name: {
+                                                                        locationName: {
                                                                             text: string;
                                                                         };
                                                                     };
@@ -505,7 +480,7 @@ export interface paths {
                                                                 longitude: number;
                                                                 latitude: number;
                                                             };
-                                                            name: {
+                                                            locationName: {
                                                                 text: string;
                                                             };
                                                         };
@@ -516,7 +491,7 @@ export interface paths {
                                                                 longitude: number;
                                                                 latitude: number;
                                                             };
-                                                            name: {
+                                                            locationName: {
                                                                 text: string;
                                                             };
                                                         };
@@ -566,25 +541,25 @@ export interface paths {
                                                         pathGuidance?: {
                                                             pathGuidanceSection: {
                                                                 trackSection?: {
-                                                                    trackSectionStart?: {
+                                                                    trackStart?: {
                                                                         stopPointRef?: string;
                                                                         stopPlaceRef?: string;
                                                                         geoPosition?: {
                                                                             longitude: number;
                                                                             latitude: number;
                                                                         };
-                                                                        name: {
+                                                                        locationName: {
                                                                             text: string;
                                                                         };
                                                                     };
-                                                                    trackSectionEnd?: {
+                                                                    trackEnd?: {
                                                                         stopPointRef?: string;
                                                                         stopPlaceRef?: string;
                                                                         geoPosition?: {
                                                                             longitude: number;
                                                                             latitude: number;
                                                                         };
-                                                                        name: {
+                                                                        locationName: {
                                                                             text: string;
                                                                         };
                                                                     };
@@ -609,15 +584,7 @@ export interface paths {
                                                             }[];
                                                         };
                                                     };
-                                                    emissionCO2?: {
-                                                        kilogramPerPersonKm: number;
-                                                    };
                                                 }[];
-                                                unplanned?: boolean;
-                                                cancelled?: boolean;
-                                                deviation?: boolean;
-                                                delayed?: boolean;
-                                                infeasible?: boolean;
                                             };
                                         }[];
                                     };
@@ -645,14 +612,1715 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        OJPTripRefineDelivery: {
+        PathGuidanceSectionStructure: {
+            trackSection?: {
+                trackStart?: {
+                    stopPointRef?: string;
+                    stopPlaceRef?: string;
+                    geoPosition?: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    locationName: {
+                        text: string;
+                    };
+                };
+                trackEnd?: {
+                    stopPointRef?: string;
+                    stopPlaceRef?: string;
+                    geoPosition?: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    locationName: {
+                        text: string;
+                    };
+                };
+                linkProjection?: {
+                    position: {
+                        longitude: number;
+                        latitude: number;
+                    }[];
+                };
+                roadName?: string;
+                duration?: string;
+                length?: number;
+            };
+            turnDescription?: {
+                text: string;
+            };
+            guidanceAdvice?: string;
+            turnAction?: string;
+            roadName?: {
+                text: string;
+            };
+        };
+        PathGuidanceStructure: {
+            pathGuidanceSection: {
+                trackSection?: {
+                    trackStart?: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        locationName: {
+                            text: string;
+                        };
+                    };
+                    trackEnd?: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        locationName: {
+                            text: string;
+                        };
+                    };
+                    linkProjection?: {
+                        position: {
+                            longitude: number;
+                            latitude: number;
+                        }[];
+                    };
+                    roadName?: string;
+                    duration?: string;
+                    length?: number;
+                };
+                turnDescription?: {
+                    text: string;
+                };
+                guidanceAdvice?: string;
+                turnAction?: string;
+                roadName?: {
+                    text: string;
+                };
+            }[];
+        };
+        TimedLeg: {
+            legBoard: {
+                stopPointRef: string;
+                stopPointName: {
+                    text: string;
+                };
+                nameSuffix?: {
+                    text: string;
+                };
+                plannedQuay?: {
+                    text: string;
+                };
+                estimatedQuay?: {
+                    text: string;
+                };
+                serviceArrival?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                serviceDeparture: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                order?: number;
+                requestStop?: boolean;
+                unplannedStop?: boolean;
+                notServicedStop?: boolean;
+                noBoardingAtStop?: boolean;
+                noAlightingAtStop?: boolean;
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
+            };
+            legIntermediates: {
+                stopPointRef: string;
+                stopPointName: {
+                    text: string;
+                };
+                nameSuffix?: {
+                    text: string;
+                };
+                plannedQuay?: {
+                    text: string;
+                };
+                estimatedQuay?: {
+                    text: string;
+                };
+                serviceArrival: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                serviceDeparture: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                order?: number;
+                requestStop?: boolean;
+                unplannedStop?: boolean;
+                notServicedStop?: boolean;
+                noBoardingAtStop?: boolean;
+                noAlightingAtStop?: boolean;
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
+            }[];
+            legAlight: {
+                stopPointRef: string;
+                stopPointName: {
+                    text: string;
+                };
+                nameSuffix?: {
+                    text: string;
+                };
+                plannedQuay?: {
+                    text: string;
+                };
+                estimatedQuay?: {
+                    text: string;
+                };
+                serviceArrival: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                serviceDeparture?: {
+                    timetabledTime: string;
+                    estimatedTime?: string;
+                };
+                order?: number;
+                requestStop?: boolean;
+                unplannedStop?: boolean;
+                notServicedStop?: boolean;
+                noBoardingAtStop?: boolean;
+                noAlightingAtStop?: boolean;
+                expectedDepartureOccupancy?: {
+                    /** @enum {string} */
+                    fareClass: "unknown" | "firstClass" | "secondClass";
+                    /** @enum {string} */
+                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                }[];
+            };
+            service: {
+                conventionalModeOfOperation?: string;
+                operatingDayRef: string;
+                journeyRef: string;
+                publicCode?: string;
+                lineRef: string;
+                directionRef?: string;
+                mode: {
+                    /** @enum {string} */
+                    ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
+                    airSubmode?: string;
+                    busSubmode?: string;
+                    coachSubmode?: string;
+                    funicularSubmode?: string;
+                    metroSubmode?: string;
+                    tramSubmode?: string;
+                    telecabinSubmode?: string;
+                    /** @enum {string} */
+                    railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                    waterSubmode?: string;
+                    name?: {
+                        text: string;
+                    };
+                    shortName?: {
+                        text: string;
+                    };
+                };
+                productCategory?: {
+                    name?: {
+                        text: string;
+                    };
+                    shortName?: {
+                        text: string;
+                    };
+                    productCategoryRef?: string;
+                };
+                publishedLineName: {
+                    text: string;
+                };
+                trainNumber?: string;
+                attribute: {
+                    text: {
+                        text: string;
+                    };
+                    code: string;
+                    hireFacility?: string;
+                    importance?: number;
+                }[];
+                operatorRef?: string;
+                destinationStopPointRef?: string;
+                destinationText?: {
+                    text: string;
+                };
+                unplanned?: boolean;
+                cancelled?: boolean;
+                deviation?: boolean;
+            };
+            legTrack?: {
+                trackSection: {
+                    trackStart?: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        locationName: {
+                            text: string;
+                        };
+                    };
+                    trackEnd?: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        locationName: {
+                            text: string;
+                        };
+                    };
+                    linkProjection?: {
+                        position: {
+                            longitude: number;
+                            latitude: number;
+                        }[];
+                    };
+                    roadName?: string;
+                    duration?: string;
+                    length?: number;
+                }[];
+            };
+            extension?: {
+                transportTypeName?: {
+                    text: string;
+                };
+                publishedJourneyNumber?: {
+                    text: string;
+                };
+                operatorName?: {
+                    text: string;
+                };
+            };
+        };
+        TransferLeg: {
+            /** @enum {string} */
+            transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+            legStart: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                locationName: {
+                    text: string;
+                };
+            };
+            legEnd: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                locationName: {
+                    text: string;
+                };
+            };
+            duration: string;
+            length?: number;
+            pathGuidance?: {
+                pathGuidanceSection: {
+                    trackSection?: {
+                        trackStart?: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        trackEnd?: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        linkProjection?: {
+                            position: {
+                                longitude: number;
+                                latitude: number;
+                            }[];
+                        };
+                        roadName?: string;
+                        duration?: string;
+                        length?: number;
+                    };
+                    turnDescription?: {
+                        text: string;
+                    };
+                    guidanceAdvice?: string;
+                    turnAction?: string;
+                    roadName?: {
+                        text: string;
+                    };
+                }[];
+            };
+        };
+        ContinuousLeg: {
+            legStart: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                locationName: {
+                    text: string;
+                };
+            };
+            legEnd: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                locationName: {
+                    text: string;
+                };
+            };
+            service: {
+                /** @enum {string} */
+                personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                /** @enum {string} */
+                personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+            };
+            duration: string;
+            length?: number;
+            legTrack?: {
+                trackSection: {
+                    trackSectionStart?: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        name: {
+                            text: string;
+                        };
+                    };
+                    trackSectionEnd?: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        name: {
+                            text: string;
+                        };
+                    };
+                    linkProjection?: {
+                        position: {
+                            longitude: number;
+                            latitude: number;
+                        }[];
+                    };
+                    roadName?: string;
+                    duration?: string;
+                    length?: number;
+                }[];
+            };
+            pathGuidance?: {
+                pathGuidanceSection: {
+                    trackSection?: {
+                        trackStart?: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        trackEnd?: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        linkProjection?: {
+                            position: {
+                                longitude: number;
+                                latitude: number;
+                            }[];
+                        };
+                        roadName?: string;
+                        duration?: string;
+                        length?: number;
+                    };
+                    turnDescription?: {
+                        text: string;
+                    };
+                    guidanceAdvice?: string;
+                    turnAction?: string;
+                    roadName?: {
+                        text: string;
+                    };
+                }[];
+            };
+        };
+        TripLeg: {
+            legId: string;
+            duration?: string;
+            timedLeg?: {
+                legBoard: {
+                    stopPointRef: string;
+                    stopPointName: {
+                        text: string;
+                    };
+                    nameSuffix?: {
+                        text: string;
+                    };
+                    plannedQuay?: {
+                        text: string;
+                    };
+                    estimatedQuay?: {
+                        text: string;
+                    };
+                    serviceArrival?: {
+                        timetabledTime: string;
+                        estimatedTime?: string;
+                    };
+                    serviceDeparture: {
+                        timetabledTime: string;
+                        estimatedTime?: string;
+                    };
+                    order?: number;
+                    requestStop?: boolean;
+                    unplannedStop?: boolean;
+                    notServicedStop?: boolean;
+                    noBoardingAtStop?: boolean;
+                    noAlightingAtStop?: boolean;
+                    expectedDepartureOccupancy?: {
+                        /** @enum {string} */
+                        fareClass: "unknown" | "firstClass" | "secondClass";
+                        /** @enum {string} */
+                        occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    }[];
+                };
+                legIntermediates: {
+                    stopPointRef: string;
+                    stopPointName: {
+                        text: string;
+                    };
+                    nameSuffix?: {
+                        text: string;
+                    };
+                    plannedQuay?: {
+                        text: string;
+                    };
+                    estimatedQuay?: {
+                        text: string;
+                    };
+                    serviceArrival: {
+                        timetabledTime: string;
+                        estimatedTime?: string;
+                    };
+                    serviceDeparture: {
+                        timetabledTime: string;
+                        estimatedTime?: string;
+                    };
+                    order?: number;
+                    requestStop?: boolean;
+                    unplannedStop?: boolean;
+                    notServicedStop?: boolean;
+                    noBoardingAtStop?: boolean;
+                    noAlightingAtStop?: boolean;
+                    expectedDepartureOccupancy?: {
+                        /** @enum {string} */
+                        fareClass: "unknown" | "firstClass" | "secondClass";
+                        /** @enum {string} */
+                        occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    }[];
+                }[];
+                legAlight: {
+                    stopPointRef: string;
+                    stopPointName: {
+                        text: string;
+                    };
+                    nameSuffix?: {
+                        text: string;
+                    };
+                    plannedQuay?: {
+                        text: string;
+                    };
+                    estimatedQuay?: {
+                        text: string;
+                    };
+                    serviceArrival: {
+                        timetabledTime: string;
+                        estimatedTime?: string;
+                    };
+                    serviceDeparture?: {
+                        timetabledTime: string;
+                        estimatedTime?: string;
+                    };
+                    order?: number;
+                    requestStop?: boolean;
+                    unplannedStop?: boolean;
+                    notServicedStop?: boolean;
+                    noBoardingAtStop?: boolean;
+                    noAlightingAtStop?: boolean;
+                    expectedDepartureOccupancy?: {
+                        /** @enum {string} */
+                        fareClass: "unknown" | "firstClass" | "secondClass";
+                        /** @enum {string} */
+                        occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    }[];
+                };
+                service: {
+                    conventionalModeOfOperation?: string;
+                    operatingDayRef: string;
+                    journeyRef: string;
+                    publicCode?: string;
+                    lineRef: string;
+                    directionRef?: string;
+                    mode: {
+                        /** @enum {string} */
+                        ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
+                        airSubmode?: string;
+                        busSubmode?: string;
+                        coachSubmode?: string;
+                        funicularSubmode?: string;
+                        metroSubmode?: string;
+                        tramSubmode?: string;
+                        telecabinSubmode?: string;
+                        /** @enum {string} */
+                        railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                        waterSubmode?: string;
+                        name?: {
+                            text: string;
+                        };
+                        shortName?: {
+                            text: string;
+                        };
+                    };
+                    productCategory?: {
+                        name?: {
+                            text: string;
+                        };
+                        shortName?: {
+                            text: string;
+                        };
+                        productCategoryRef?: string;
+                    };
+                    publishedLineName: {
+                        text: string;
+                    };
+                    trainNumber?: string;
+                    attribute: {
+                        text: {
+                            text: string;
+                        };
+                        code: string;
+                        hireFacility?: string;
+                        importance?: number;
+                    }[];
+                    operatorRef?: string;
+                    destinationStopPointRef?: string;
+                    destinationText?: {
+                        text: string;
+                    };
+                    unplanned?: boolean;
+                    cancelled?: boolean;
+                    deviation?: boolean;
+                };
+                legTrack?: {
+                    trackSection: {
+                        trackStart?: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        trackEnd?: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        linkProjection?: {
+                            position: {
+                                longitude: number;
+                                latitude: number;
+                            }[];
+                        };
+                        roadName?: string;
+                        duration?: string;
+                        length?: number;
+                    }[];
+                };
+                extension?: {
+                    transportTypeName?: {
+                        text: string;
+                    };
+                    publishedJourneyNumber?: {
+                        text: string;
+                    };
+                    operatorName?: {
+                        text: string;
+                    };
+                };
+            };
+            transferLeg?: {
+                /** @enum {string} */
+                transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                legStart: {
+                    stopPointRef?: string;
+                    stopPlaceRef?: string;
+                    geoPosition?: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    locationName: {
+                        text: string;
+                    };
+                };
+                legEnd: {
+                    stopPointRef?: string;
+                    stopPlaceRef?: string;
+                    geoPosition?: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    locationName: {
+                        text: string;
+                    };
+                };
+                duration: string;
+                length?: number;
+                pathGuidance?: {
+                    pathGuidanceSection: {
+                        trackSection?: {
+                            trackStart?: {
+                                stopPointRef?: string;
+                                stopPlaceRef?: string;
+                                geoPosition?: {
+                                    longitude: number;
+                                    latitude: number;
+                                };
+                                locationName: {
+                                    text: string;
+                                };
+                            };
+                            trackEnd?: {
+                                stopPointRef?: string;
+                                stopPlaceRef?: string;
+                                geoPosition?: {
+                                    longitude: number;
+                                    latitude: number;
+                                };
+                                locationName: {
+                                    text: string;
+                                };
+                            };
+                            linkProjection?: {
+                                position: {
+                                    longitude: number;
+                                    latitude: number;
+                                }[];
+                            };
+                            roadName?: string;
+                            duration?: string;
+                            length?: number;
+                        };
+                        turnDescription?: {
+                            text: string;
+                        };
+                        guidanceAdvice?: string;
+                        turnAction?: string;
+                        roadName?: {
+                            text: string;
+                        };
+                    }[];
+                };
+            };
+            continuousLeg?: {
+                legStart: {
+                    stopPointRef?: string;
+                    stopPlaceRef?: string;
+                    geoPosition?: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    locationName: {
+                        text: string;
+                    };
+                };
+                legEnd: {
+                    stopPointRef?: string;
+                    stopPlaceRef?: string;
+                    geoPosition?: {
+                        longitude: number;
+                        latitude: number;
+                    };
+                    locationName: {
+                        text: string;
+                    };
+                };
+                service: {
+                    /** @enum {string} */
+                    personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                    /** @enum {string} */
+                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                };
+                duration: string;
+                length?: number;
+                legTrack?: {
+                    trackSection: {
+                        trackSectionStart?: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            name: {
+                                text: string;
+                            };
+                        };
+                        trackSectionEnd?: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            name: {
+                                text: string;
+                            };
+                        };
+                        linkProjection?: {
+                            position: {
+                                longitude: number;
+                                latitude: number;
+                            }[];
+                        };
+                        roadName?: string;
+                        duration?: string;
+                        length?: number;
+                    }[];
+                };
+                pathGuidance?: {
+                    pathGuidanceSection: {
+                        trackSection?: {
+                            trackStart?: {
+                                stopPointRef?: string;
+                                stopPlaceRef?: string;
+                                geoPosition?: {
+                                    longitude: number;
+                                    latitude: number;
+                                };
+                                locationName: {
+                                    text: string;
+                                };
+                            };
+                            trackEnd?: {
+                                stopPointRef?: string;
+                                stopPlaceRef?: string;
+                                geoPosition?: {
+                                    longitude: number;
+                                    latitude: number;
+                                };
+                                locationName: {
+                                    text: string;
+                                };
+                            };
+                            linkProjection?: {
+                                position: {
+                                    longitude: number;
+                                    latitude: number;
+                                }[];
+                            };
+                            roadName?: string;
+                            duration?: string;
+                            length?: number;
+                        };
+                        turnDescription?: {
+                            text: string;
+                        };
+                        guidanceAdvice?: string;
+                        turnAction?: string;
+                        roadName?: {
+                            text: string;
+                        };
+                    }[];
+                };
+            };
+        };
+        Trip: {
+            tripId: string;
+            duration: string;
+            /** Format: date-time */
+            startTime: string;
+            /** Format: date-time */
+            endTime: string;
+            transfers: number;
+            tripLeg: {
+                legId: string;
+                duration?: string;
+                timedLeg?: {
+                    legBoard: {
+                        stopPointRef: string;
+                        stopPointName: {
+                            text: string;
+                        };
+                        nameSuffix?: {
+                            text: string;
+                        };
+                        plannedQuay?: {
+                            text: string;
+                        };
+                        estimatedQuay?: {
+                            text: string;
+                        };
+                        serviceArrival?: {
+                            timetabledTime: string;
+                            estimatedTime?: string;
+                        };
+                        serviceDeparture: {
+                            timetabledTime: string;
+                            estimatedTime?: string;
+                        };
+                        order?: number;
+                        requestStop?: boolean;
+                        unplannedStop?: boolean;
+                        notServicedStop?: boolean;
+                        noBoardingAtStop?: boolean;
+                        noAlightingAtStop?: boolean;
+                        expectedDepartureOccupancy?: {
+                            /** @enum {string} */
+                            fareClass: "unknown" | "firstClass" | "secondClass";
+                            /** @enum {string} */
+                            occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                        }[];
+                    };
+                    legIntermediates: {
+                        stopPointRef: string;
+                        stopPointName: {
+                            text: string;
+                        };
+                        nameSuffix?: {
+                            text: string;
+                        };
+                        plannedQuay?: {
+                            text: string;
+                        };
+                        estimatedQuay?: {
+                            text: string;
+                        };
+                        serviceArrival: {
+                            timetabledTime: string;
+                            estimatedTime?: string;
+                        };
+                        serviceDeparture: {
+                            timetabledTime: string;
+                            estimatedTime?: string;
+                        };
+                        order?: number;
+                        requestStop?: boolean;
+                        unplannedStop?: boolean;
+                        notServicedStop?: boolean;
+                        noBoardingAtStop?: boolean;
+                        noAlightingAtStop?: boolean;
+                        expectedDepartureOccupancy?: {
+                            /** @enum {string} */
+                            fareClass: "unknown" | "firstClass" | "secondClass";
+                            /** @enum {string} */
+                            occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                        }[];
+                    }[];
+                    legAlight: {
+                        stopPointRef: string;
+                        stopPointName: {
+                            text: string;
+                        };
+                        nameSuffix?: {
+                            text: string;
+                        };
+                        plannedQuay?: {
+                            text: string;
+                        };
+                        estimatedQuay?: {
+                            text: string;
+                        };
+                        serviceArrival: {
+                            timetabledTime: string;
+                            estimatedTime?: string;
+                        };
+                        serviceDeparture?: {
+                            timetabledTime: string;
+                            estimatedTime?: string;
+                        };
+                        order?: number;
+                        requestStop?: boolean;
+                        unplannedStop?: boolean;
+                        notServicedStop?: boolean;
+                        noBoardingAtStop?: boolean;
+                        noAlightingAtStop?: boolean;
+                        expectedDepartureOccupancy?: {
+                            /** @enum {string} */
+                            fareClass: "unknown" | "firstClass" | "secondClass";
+                            /** @enum {string} */
+                            occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                        }[];
+                    };
+                    service: {
+                        conventionalModeOfOperation?: string;
+                        operatingDayRef: string;
+                        journeyRef: string;
+                        publicCode?: string;
+                        lineRef: string;
+                        directionRef?: string;
+                        mode: {
+                            /** @enum {string} */
+                            ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
+                            airSubmode?: string;
+                            busSubmode?: string;
+                            coachSubmode?: string;
+                            funicularSubmode?: string;
+                            metroSubmode?: string;
+                            tramSubmode?: string;
+                            telecabinSubmode?: string;
+                            /** @enum {string} */
+                            railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                            waterSubmode?: string;
+                            name?: {
+                                text: string;
+                            };
+                            shortName?: {
+                                text: string;
+                            };
+                        };
+                        productCategory?: {
+                            name?: {
+                                text: string;
+                            };
+                            shortName?: {
+                                text: string;
+                            };
+                            productCategoryRef?: string;
+                        };
+                        publishedLineName: {
+                            text: string;
+                        };
+                        trainNumber?: string;
+                        attribute: {
+                            text: {
+                                text: string;
+                            };
+                            code: string;
+                            hireFacility?: string;
+                            importance?: number;
+                        }[];
+                        operatorRef?: string;
+                        destinationStopPointRef?: string;
+                        destinationText?: {
+                            text: string;
+                        };
+                        unplanned?: boolean;
+                        cancelled?: boolean;
+                        deviation?: boolean;
+                    };
+                    legTrack?: {
+                        trackSection: {
+                            trackStart?: {
+                                stopPointRef?: string;
+                                stopPlaceRef?: string;
+                                geoPosition?: {
+                                    longitude: number;
+                                    latitude: number;
+                                };
+                                locationName: {
+                                    text: string;
+                                };
+                            };
+                            trackEnd?: {
+                                stopPointRef?: string;
+                                stopPlaceRef?: string;
+                                geoPosition?: {
+                                    longitude: number;
+                                    latitude: number;
+                                };
+                                locationName: {
+                                    text: string;
+                                };
+                            };
+                            linkProjection?: {
+                                position: {
+                                    longitude: number;
+                                    latitude: number;
+                                }[];
+                            };
+                            roadName?: string;
+                            duration?: string;
+                            length?: number;
+                        }[];
+                    };
+                    extension?: {
+                        transportTypeName?: {
+                            text: string;
+                        };
+                        publishedJourneyNumber?: {
+                            text: string;
+                        };
+                        operatorName?: {
+                            text: string;
+                        };
+                    };
+                };
+                transferLeg?: {
+                    /** @enum {string} */
+                    transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                    legStart: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        locationName: {
+                            text: string;
+                        };
+                    };
+                    legEnd: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        locationName: {
+                            text: string;
+                        };
+                    };
+                    duration: string;
+                    length?: number;
+                    pathGuidance?: {
+                        pathGuidanceSection: {
+                            trackSection?: {
+                                trackStart?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    locationName: {
+                                        text: string;
+                                    };
+                                };
+                                trackEnd?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    locationName: {
+                                        text: string;
+                                    };
+                                };
+                                linkProjection?: {
+                                    position: {
+                                        longitude: number;
+                                        latitude: number;
+                                    }[];
+                                };
+                                roadName?: string;
+                                duration?: string;
+                                length?: number;
+                            };
+                            turnDescription?: {
+                                text: string;
+                            };
+                            guidanceAdvice?: string;
+                            turnAction?: string;
+                            roadName?: {
+                                text: string;
+                            };
+                        }[];
+                    };
+                };
+                continuousLeg?: {
+                    legStart: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        locationName: {
+                            text: string;
+                        };
+                    };
+                    legEnd: {
+                        stopPointRef?: string;
+                        stopPlaceRef?: string;
+                        geoPosition?: {
+                            longitude: number;
+                            latitude: number;
+                        };
+                        locationName: {
+                            text: string;
+                        };
+                    };
+                    service: {
+                        /** @enum {string} */
+                        personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                        /** @enum {string} */
+                        personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                    };
+                    duration: string;
+                    length?: number;
+                    legTrack?: {
+                        trackSection: {
+                            trackSectionStart?: {
+                                stopPointRef?: string;
+                                stopPlaceRef?: string;
+                                geoPosition?: {
+                                    longitude: number;
+                                    latitude: number;
+                                };
+                                name: {
+                                    text: string;
+                                };
+                            };
+                            trackSectionEnd?: {
+                                stopPointRef?: string;
+                                stopPlaceRef?: string;
+                                geoPosition?: {
+                                    longitude: number;
+                                    latitude: number;
+                                };
+                                name: {
+                                    text: string;
+                                };
+                            };
+                            linkProjection?: {
+                                position: {
+                                    longitude: number;
+                                    latitude: number;
+                                }[];
+                            };
+                            roadName?: string;
+                            duration?: string;
+                            length?: number;
+                        }[];
+                    };
+                    pathGuidance?: {
+                        pathGuidanceSection: {
+                            trackSection?: {
+                                trackStart?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    locationName: {
+                                        text: string;
+                                    };
+                                };
+                                trackEnd?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    locationName: {
+                                        text: string;
+                                    };
+                                };
+                                linkProjection?: {
+                                    position: {
+                                        longitude: number;
+                                        latitude: number;
+                                    }[];
+                                };
+                                roadName?: string;
+                                duration?: string;
+                                length?: number;
+                            };
+                            turnDescription?: {
+                                text: string;
+                            };
+                            guidanceAdvice?: string;
+                            turnAction?: string;
+                            roadName?: {
+                                text: string;
+                            };
+                        }[];
+                    };
+                };
+            }[];
+        };
+        TripResult: {
+            id: string;
+            trip: {
+                tripId: string;
+                duration: string;
+                /** Format: date-time */
+                startTime: string;
+                /** Format: date-time */
+                endTime: string;
+                transfers: number;
+                tripLeg: {
+                    legId: string;
+                    duration?: string;
+                    timedLeg?: {
+                        legBoard: {
+                            stopPointRef: string;
+                            stopPointName: {
+                                text: string;
+                            };
+                            nameSuffix?: {
+                                text: string;
+                            };
+                            plannedQuay?: {
+                                text: string;
+                            };
+                            estimatedQuay?: {
+                                text: string;
+                            };
+                            serviceArrival?: {
+                                timetabledTime: string;
+                                estimatedTime?: string;
+                            };
+                            serviceDeparture: {
+                                timetabledTime: string;
+                                estimatedTime?: string;
+                            };
+                            order?: number;
+                            requestStop?: boolean;
+                            unplannedStop?: boolean;
+                            notServicedStop?: boolean;
+                            noBoardingAtStop?: boolean;
+                            noAlightingAtStop?: boolean;
+                            expectedDepartureOccupancy?: {
+                                /** @enum {string} */
+                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                /** @enum {string} */
+                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                            }[];
+                        };
+                        legIntermediates: {
+                            stopPointRef: string;
+                            stopPointName: {
+                                text: string;
+                            };
+                            nameSuffix?: {
+                                text: string;
+                            };
+                            plannedQuay?: {
+                                text: string;
+                            };
+                            estimatedQuay?: {
+                                text: string;
+                            };
+                            serviceArrival: {
+                                timetabledTime: string;
+                                estimatedTime?: string;
+                            };
+                            serviceDeparture: {
+                                timetabledTime: string;
+                                estimatedTime?: string;
+                            };
+                            order?: number;
+                            requestStop?: boolean;
+                            unplannedStop?: boolean;
+                            notServicedStop?: boolean;
+                            noBoardingAtStop?: boolean;
+                            noAlightingAtStop?: boolean;
+                            expectedDepartureOccupancy?: {
+                                /** @enum {string} */
+                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                /** @enum {string} */
+                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                            }[];
+                        }[];
+                        legAlight: {
+                            stopPointRef: string;
+                            stopPointName: {
+                                text: string;
+                            };
+                            nameSuffix?: {
+                                text: string;
+                            };
+                            plannedQuay?: {
+                                text: string;
+                            };
+                            estimatedQuay?: {
+                                text: string;
+                            };
+                            serviceArrival: {
+                                timetabledTime: string;
+                                estimatedTime?: string;
+                            };
+                            serviceDeparture?: {
+                                timetabledTime: string;
+                                estimatedTime?: string;
+                            };
+                            order?: number;
+                            requestStop?: boolean;
+                            unplannedStop?: boolean;
+                            notServicedStop?: boolean;
+                            noBoardingAtStop?: boolean;
+                            noAlightingAtStop?: boolean;
+                            expectedDepartureOccupancy?: {
+                                /** @enum {string} */
+                                fareClass: "unknown" | "firstClass" | "secondClass";
+                                /** @enum {string} */
+                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                            }[];
+                        };
+                        service: {
+                            conventionalModeOfOperation?: string;
+                            operatingDayRef: string;
+                            journeyRef: string;
+                            publicCode?: string;
+                            lineRef: string;
+                            directionRef?: string;
+                            mode: {
+                                /** @enum {string} */
+                                ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
+                                airSubmode?: string;
+                                busSubmode?: string;
+                                coachSubmode?: string;
+                                funicularSubmode?: string;
+                                metroSubmode?: string;
+                                tramSubmode?: string;
+                                telecabinSubmode?: string;
+                                /** @enum {string} */
+                                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                                waterSubmode?: string;
+                                name?: {
+                                    text: string;
+                                };
+                                shortName?: {
+                                    text: string;
+                                };
+                            };
+                            productCategory?: {
+                                name?: {
+                                    text: string;
+                                };
+                                shortName?: {
+                                    text: string;
+                                };
+                                productCategoryRef?: string;
+                            };
+                            publishedLineName: {
+                                text: string;
+                            };
+                            trainNumber?: string;
+                            attribute: {
+                                text: {
+                                    text: string;
+                                };
+                                code: string;
+                                hireFacility?: string;
+                                importance?: number;
+                            }[];
+                            operatorRef?: string;
+                            destinationStopPointRef?: string;
+                            destinationText?: {
+                                text: string;
+                            };
+                            unplanned?: boolean;
+                            cancelled?: boolean;
+                            deviation?: boolean;
+                        };
+                        legTrack?: {
+                            trackSection: {
+                                trackStart?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    locationName: {
+                                        text: string;
+                                    };
+                                };
+                                trackEnd?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    locationName: {
+                                        text: string;
+                                    };
+                                };
+                                linkProjection?: {
+                                    position: {
+                                        longitude: number;
+                                        latitude: number;
+                                    }[];
+                                };
+                                roadName?: string;
+                                duration?: string;
+                                length?: number;
+                            }[];
+                        };
+                        extension?: {
+                            transportTypeName?: {
+                                text: string;
+                            };
+                            publishedJourneyNumber?: {
+                                text: string;
+                            };
+                            operatorName?: {
+                                text: string;
+                            };
+                        };
+                    };
+                    transferLeg?: {
+                        /** @enum {string} */
+                        transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                        legStart: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        legEnd: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        duration: string;
+                        length?: number;
+                        pathGuidance?: {
+                            pathGuidanceSection: {
+                                trackSection?: {
+                                    trackStart?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        locationName: {
+                                            text: string;
+                                        };
+                                    };
+                                    trackEnd?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        locationName: {
+                                            text: string;
+                                        };
+                                    };
+                                    linkProjection?: {
+                                        position: {
+                                            longitude: number;
+                                            latitude: number;
+                                        }[];
+                                    };
+                                    roadName?: string;
+                                    duration?: string;
+                                    length?: number;
+                                };
+                                turnDescription?: {
+                                    text: string;
+                                };
+                                guidanceAdvice?: string;
+                                turnAction?: string;
+                                roadName?: {
+                                    text: string;
+                                };
+                            }[];
+                        };
+                    };
+                    continuousLeg?: {
+                        legStart: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        legEnd: {
+                            stopPointRef?: string;
+                            stopPlaceRef?: string;
+                            geoPosition?: {
+                                longitude: number;
+                                latitude: number;
+                            };
+                            locationName: {
+                                text: string;
+                            };
+                        };
+                        service: {
+                            /** @enum {string} */
+                            personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+                            /** @enum {string} */
+                            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                        };
+                        duration: string;
+                        length?: number;
+                        legTrack?: {
+                            trackSection: {
+                                trackSectionStart?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    name: {
+                                        text: string;
+                                    };
+                                };
+                                trackSectionEnd?: {
+                                    stopPointRef?: string;
+                                    stopPlaceRef?: string;
+                                    geoPosition?: {
+                                        longitude: number;
+                                        latitude: number;
+                                    };
+                                    name: {
+                                        text: string;
+                                    };
+                                };
+                                linkProjection?: {
+                                    position: {
+                                        longitude: number;
+                                        latitude: number;
+                                    }[];
+                                };
+                                roadName?: string;
+                                duration?: string;
+                                length?: number;
+                            }[];
+                        };
+                        pathGuidance?: {
+                            pathGuidanceSection: {
+                                trackSection?: {
+                                    trackStart?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        locationName: {
+                                            text: string;
+                                        };
+                                    };
+                                    trackEnd?: {
+                                        stopPointRef?: string;
+                                        stopPlaceRef?: string;
+                                        geoPosition?: {
+                                            longitude: number;
+                                            latitude: number;
+                                        };
+                                        locationName: {
+                                            text: string;
+                                        };
+                                    };
+                                    linkProjection?: {
+                                        position: {
+                                            longitude: number;
+                                            latitude: number;
+                                        }[];
+                                    };
+                                    roadName?: string;
+                                    duration?: string;
+                                    length?: number;
+                                };
+                                turnDescription?: {
+                                    text: string;
+                                };
+                                guidanceAdvice?: string;
+                                turnAction?: string;
+                                roadName?: {
+                                    text: string;
+                                };
+                            }[];
+                        };
+                    };
+                }[];
+            };
+        };
+        OJPTripDelivery: {
             responseTimestamp: string;
             requestMessageRef?: string;
             defaultLanguage?: string;
             calcTime?: string;
             tripResponseContext?: {
                 places?: {
-                    place: {
+                    location: {
                         stopPoint?: {
                             stopPointRef: string;
                             stopPointName: {
@@ -679,8 +2347,8 @@ export interface components {
                             };
                         };
                         pointOfInterest?: {
-                            publicCode: string;
-                            name: {
+                            pointOfInterestCode: string;
+                            pointOfInterestName: {
                                 text: string;
                             };
                             pointOfInterestCategory: {
@@ -693,12 +2361,6 @@ export interface components {
                             privateCode?: {
                                 system: string;
                                 value: string;
-                            };
-                            pOIAdditionalInformation?: {
-                                pOIAdditionalInformation: {
-                                    key: string;
-                                    value: string;
-                                }[];
                             };
                             topographicPlaceRef?: string;
                         };
@@ -713,7 +2375,7 @@ export interface components {
                             street?: string;
                             houseNumber?: string;
                         };
-                        name: {
+                        locationName: {
                             text: string;
                         };
                         geoPosition: {
@@ -741,13 +2403,18 @@ export interface components {
                             };
                         }[];
                         attribute: {
-                            userText: {
+                            text: {
                                 text: string;
                             };
                             code: string;
                             hireFacility?: string;
                             importance?: number;
                         }[];
+                        extension?: {
+                            locationExtensionStructure?: {
+                                [key: string]: string;
+                            };
+                        };
                     }[];
                 };
                 situations?: {
@@ -764,48 +2431,23 @@ export interface components {
                             startTime: string;
                             endTime?: string;
                         }[];
-                        alertCause: string;
                         priority?: string;
                         scopeType?: string;
-                        publishingActions?: {
-                            publishingAction: {
-                                publishAtScope: {
-                                    scopeType: string;
-                                };
-                                passengerInformationAction: {
-                                    actionRef: string;
-                                    recordedAtTime: string;
-                                    /** @enum {string} */
-                                    perspective: "general" | "stopPoint" | "vehicleJourney";
-                                    textualContent: {
-                                        summaryContent: {
-                                            summaryText: string;
-                                        };
-                                        reasonContent?: {
-                                            reasonText: string;
-                                        };
-                                        descriptionContent: {
-                                            descriptionText: string;
-                                        }[];
-                                        consequenceContent: {
-                                            consequenceText: string;
-                                        }[];
-                                        recommendationContent: {
-                                            recommendationText: string;
-                                        }[];
-                                        durationContent?: {
-                                            durationText: string;
-                                        };
-                                        remarkContent: {
-                                            remark: string;
-                                        }[];
-                                        infoLink: {
-                                            uri: string;
-                                            label?: string[];
-                                        }[];
-                                    }[];
+                        language: string;
+                        summary: string;
+                        description?: string[];
+                        detail?: string[];
+                        affects?: {
+                            stopPoints?: {
+                                affectedStopPoint?: {
+                                    stopPointRef: string;
                                 }[];
-                            }[];
+                            };
+                            vehicleJourneys?: {
+                                affectedVehicleJourney?: {
+                                    stopPointRef?: string;
+                                }[];
+                            };
                         };
                     }[];
                 };
@@ -813,16 +2455,15 @@ export interface components {
             tripResult: {
                 id: string;
                 trip: {
-                    id: string;
+                    tripId: string;
                     duration: string;
                     /** Format: date-time */
                     startTime: string;
                     /** Format: date-time */
                     endTime: string;
                     transfers: number;
-                    distance?: number;
-                    leg: {
-                        id: string;
+                    tripLeg: {
+                        legId: string;
                         duration?: string;
                         timedLeg?: {
                             legBoard: {
@@ -860,7 +2501,7 @@ export interface components {
                                     occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                 }[];
                             };
-                            legIntermediate: {
+                            legIntermediates: {
                                 stopPointRef: string;
                                 stopPointName: {
                                     text: string;
@@ -966,21 +2607,18 @@ export interface components {
                                     };
                                     productCategoryRef?: string;
                                 };
-                                publishedServiceName: {
+                                publishedLineName: {
                                     text: string;
                                 };
                                 trainNumber?: string;
                                 attribute: {
-                                    userText: {
+                                    text: {
                                         text: string;
                                     };
                                     code: string;
                                     hireFacility?: string;
                                     importance?: number;
                                 }[];
-                                originText: {
-                                    text: string;
-                                };
                                 operatorRef?: string;
                                 destinationStopPointRef?: string;
                                 destinationText?: {
@@ -989,34 +2627,28 @@ export interface components {
                                 unplanned?: boolean;
                                 cancelled?: boolean;
                                 deviation?: boolean;
-                                situationFullRefs?: {
-                                    situationFullRef: {
-                                        participantRef: string;
-                                        situationNumber: string;
-                                    }[];
-                                };
                             };
                             legTrack?: {
                                 trackSection: {
-                                    trackSectionStart?: {
+                                    trackStart?: {
                                         stopPointRef?: string;
                                         stopPlaceRef?: string;
                                         geoPosition?: {
                                             longitude: number;
                                             latitude: number;
                                         };
-                                        name: {
+                                        locationName: {
                                             text: string;
                                         };
                                     };
-                                    trackSectionEnd?: {
+                                    trackEnd?: {
                                         stopPointRef?: string;
                                         stopPlaceRef?: string;
                                         geoPosition?: {
                                             longitude: number;
                                             latitude: number;
                                         };
-                                        name: {
+                                        locationName: {
                                             text: string;
                                         };
                                     };
@@ -1031,6 +2663,17 @@ export interface components {
                                     length?: number;
                                 }[];
                             };
+                            extension?: {
+                                transportTypeName?: {
+                                    text: string;
+                                };
+                                publishedJourneyNumber?: {
+                                    text: string;
+                                };
+                                operatorName?: {
+                                    text: string;
+                                };
+                            };
                         };
                         transferLeg?: {
                             /** @enum {string} */
@@ -1042,7 +2685,7 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
@@ -1053,7 +2696,7 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
@@ -1062,25 +2705,25 @@ export interface components {
                             pathGuidance?: {
                                 pathGuidanceSection: {
                                     trackSection?: {
-                                        trackSectionStart?: {
+                                        trackStart?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
-                                        trackSectionEnd?: {
+                                        trackEnd?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1113,7 +2756,7 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
@@ -1124,7 +2767,7 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
@@ -1174,25 +2817,25 @@ export interface components {
                             pathGuidance?: {
                                 pathGuidanceSection: {
                                     trackSection?: {
-                                        trackSectionStart?: {
+                                        trackStart?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
-                                        trackSectionEnd?: {
+                                        trackEnd?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1217,15 +2860,7 @@ export interface components {
                                 }[];
                             };
                         };
-                        emissionCO2?: {
-                            kilogramPerPersonKm: number;
-                        };
                     }[];
-                    unplanned?: boolean;
-                    cancelled?: boolean;
-                    deviation?: boolean;
-                    delayed?: boolean;
-                    infeasible?: boolean;
                 };
             }[];
         };
@@ -1234,14 +2869,14 @@ export interface components {
                 serviceDelivery: {
                     responseTimestamp: string;
                     producerRef: string;
-                    OJPTripRefineDelivery: {
+                    OJPTripDelivery: {
                         responseTimestamp: string;
                         requestMessageRef?: string;
                         defaultLanguage?: string;
                         calcTime?: string;
                         tripResponseContext?: {
                             places?: {
-                                place: {
+                                location: {
                                     stopPoint?: {
                                         stopPointRef: string;
                                         stopPointName: {
@@ -1268,8 +2903,8 @@ export interface components {
                                         };
                                     };
                                     pointOfInterest?: {
-                                        publicCode: string;
-                                        name: {
+                                        pointOfInterestCode: string;
+                                        pointOfInterestName: {
                                             text: string;
                                         };
                                         pointOfInterestCategory: {
@@ -1282,12 +2917,6 @@ export interface components {
                                         privateCode?: {
                                             system: string;
                                             value: string;
-                                        };
-                                        pOIAdditionalInformation?: {
-                                            pOIAdditionalInformation: {
-                                                key: string;
-                                                value: string;
-                                            }[];
                                         };
                                         topographicPlaceRef?: string;
                                     };
@@ -1302,7 +2931,7 @@ export interface components {
                                         street?: string;
                                         houseNumber?: string;
                                     };
-                                    name: {
+                                    locationName: {
                                         text: string;
                                     };
                                     geoPosition: {
@@ -1330,13 +2959,18 @@ export interface components {
                                         };
                                     }[];
                                     attribute: {
-                                        userText: {
+                                        text: {
                                             text: string;
                                         };
                                         code: string;
                                         hireFacility?: string;
                                         importance?: number;
                                     }[];
+                                    extension?: {
+                                        locationExtensionStructure?: {
+                                            [key: string]: string;
+                                        };
+                                    };
                                 }[];
                             };
                             situations?: {
@@ -1353,48 +2987,23 @@ export interface components {
                                         startTime: string;
                                         endTime?: string;
                                     }[];
-                                    alertCause: string;
                                     priority?: string;
                                     scopeType?: string;
-                                    publishingActions?: {
-                                        publishingAction: {
-                                            publishAtScope: {
-                                                scopeType: string;
-                                            };
-                                            passengerInformationAction: {
-                                                actionRef: string;
-                                                recordedAtTime: string;
-                                                /** @enum {string} */
-                                                perspective: "general" | "stopPoint" | "vehicleJourney";
-                                                textualContent: {
-                                                    summaryContent: {
-                                                        summaryText: string;
-                                                    };
-                                                    reasonContent?: {
-                                                        reasonText: string;
-                                                    };
-                                                    descriptionContent: {
-                                                        descriptionText: string;
-                                                    }[];
-                                                    consequenceContent: {
-                                                        consequenceText: string;
-                                                    }[];
-                                                    recommendationContent: {
-                                                        recommendationText: string;
-                                                    }[];
-                                                    durationContent?: {
-                                                        durationText: string;
-                                                    };
-                                                    remarkContent: {
-                                                        remark: string;
-                                                    }[];
-                                                    infoLink: {
-                                                        uri: string;
-                                                        label?: string[];
-                                                    }[];
-                                                }[];
+                                    language: string;
+                                    summary: string;
+                                    description?: string[];
+                                    detail?: string[];
+                                    affects?: {
+                                        stopPoints?: {
+                                            affectedStopPoint?: {
+                                                stopPointRef: string;
                                             }[];
-                                        }[];
+                                        };
+                                        vehicleJourneys?: {
+                                            affectedVehicleJourney?: {
+                                                stopPointRef?: string;
+                                            }[];
+                                        };
                                     };
                                 }[];
                             };
@@ -1402,16 +3011,15 @@ export interface components {
                         tripResult: {
                             id: string;
                             trip: {
-                                id: string;
+                                tripId: string;
                                 duration: string;
                                 /** Format: date-time */
                                 startTime: string;
                                 /** Format: date-time */
                                 endTime: string;
                                 transfers: number;
-                                distance?: number;
-                                leg: {
-                                    id: string;
+                                tripLeg: {
+                                    legId: string;
                                     duration?: string;
                                     timedLeg?: {
                                         legBoard: {
@@ -1449,7 +3057,7 @@ export interface components {
                                                 occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                             }[];
                                         };
-                                        legIntermediate: {
+                                        legIntermediates: {
                                             stopPointRef: string;
                                             stopPointName: {
                                                 text: string;
@@ -1555,21 +3163,18 @@ export interface components {
                                                 };
                                                 productCategoryRef?: string;
                                             };
-                                            publishedServiceName: {
+                                            publishedLineName: {
                                                 text: string;
                                             };
                                             trainNumber?: string;
                                             attribute: {
-                                                userText: {
+                                                text: {
                                                     text: string;
                                                 };
                                                 code: string;
                                                 hireFacility?: string;
                                                 importance?: number;
                                             }[];
-                                            originText: {
-                                                text: string;
-                                            };
                                             operatorRef?: string;
                                             destinationStopPointRef?: string;
                                             destinationText?: {
@@ -1578,34 +3183,28 @@ export interface components {
                                             unplanned?: boolean;
                                             cancelled?: boolean;
                                             deviation?: boolean;
-                                            situationFullRefs?: {
-                                                situationFullRef: {
-                                                    participantRef: string;
-                                                    situationNumber: string;
-                                                }[];
-                                            };
                                         };
                                         legTrack?: {
                                             trackSection: {
-                                                trackSectionStart?: {
+                                                trackStart?: {
                                                     stopPointRef?: string;
                                                     stopPlaceRef?: string;
                                                     geoPosition?: {
                                                         longitude: number;
                                                         latitude: number;
                                                     };
-                                                    name: {
+                                                    locationName: {
                                                         text: string;
                                                     };
                                                 };
-                                                trackSectionEnd?: {
+                                                trackEnd?: {
                                                     stopPointRef?: string;
                                                     stopPlaceRef?: string;
                                                     geoPosition?: {
                                                         longitude: number;
                                                         latitude: number;
                                                     };
-                                                    name: {
+                                                    locationName: {
                                                         text: string;
                                                     };
                                                 };
@@ -1620,6 +3219,17 @@ export interface components {
                                                 length?: number;
                                             }[];
                                         };
+                                        extension?: {
+                                            transportTypeName?: {
+                                                text: string;
+                                            };
+                                            publishedJourneyNumber?: {
+                                                text: string;
+                                            };
+                                            operatorName?: {
+                                                text: string;
+                                            };
+                                        };
                                     };
                                     transferLeg?: {
                                         /** @enum {string} */
@@ -1631,7 +3241,7 @@ export interface components {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1642,7 +3252,7 @@ export interface components {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1651,25 +3261,25 @@ export interface components {
                                         pathGuidance?: {
                                             pathGuidanceSection: {
                                                 trackSection?: {
-                                                    trackSectionStart?: {
+                                                    trackStart?: {
                                                         stopPointRef?: string;
                                                         stopPlaceRef?: string;
                                                         geoPosition?: {
                                                             longitude: number;
                                                             latitude: number;
                                                         };
-                                                        name: {
+                                                        locationName: {
                                                             text: string;
                                                         };
                                                     };
-                                                    trackSectionEnd?: {
+                                                    trackEnd?: {
                                                         stopPointRef?: string;
                                                         stopPlaceRef?: string;
                                                         geoPosition?: {
                                                             longitude: number;
                                                             latitude: number;
                                                         };
-                                                        name: {
+                                                        locationName: {
                                                             text: string;
                                                         };
                                                     };
@@ -1702,7 +3312,7 @@ export interface components {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1713,7 +3323,7 @@ export interface components {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1763,25 +3373,25 @@ export interface components {
                                         pathGuidance?: {
                                             pathGuidanceSection: {
                                                 trackSection?: {
-                                                    trackSectionStart?: {
+                                                    trackStart?: {
                                                         stopPointRef?: string;
                                                         stopPlaceRef?: string;
                                                         geoPosition?: {
                                                             longitude: number;
                                                             latitude: number;
                                                         };
-                                                        name: {
+                                                        locationName: {
                                                             text: string;
                                                         };
                                                     };
-                                                    trackSectionEnd?: {
+                                                    trackEnd?: {
                                                         stopPointRef?: string;
                                                         stopPlaceRef?: string;
                                                         geoPosition?: {
                                                             longitude: number;
                                                             latitude: number;
                                                         };
-                                                        name: {
+                                                        locationName: {
                                                             text: string;
                                                         };
                                                     };
@@ -1806,15 +3416,7 @@ export interface components {
                                             }[];
                                         };
                                     };
-                                    emissionCO2?: {
-                                        kilogramPerPersonKm: number;
-                                    };
                                 }[];
-                                unplanned?: boolean;
-                                cancelled?: boolean;
-                                deviation?: boolean;
-                                delayed?: boolean;
-                                infeasible?: boolean;
                             };
                         }[];
                     };

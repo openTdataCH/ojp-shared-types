@@ -122,7 +122,8 @@ export interface paths {
                                                         metroSubmode?: string;
                                                         tramSubmode?: string;
                                                         telecabinSubmode?: string;
-                                                        railSubmode?: string;
+                                                        /** @enum {string} */
+                                                        railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                                         waterSubmode?: string;
                                                         name?: {
                                                             text: string;
@@ -234,7 +235,7 @@ export interface paths {
                                                     /** @enum {string} */
                                                     fareClass: "unknown" | "firstClass" | "secondClass";
                                                     /** @enum {string} */
-                                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                 }[];
                                             }[];
                                             onwardCall: {
@@ -269,7 +270,7 @@ export interface paths {
                                                     /** @enum {string} */
                                                     fareClass: "unknown" | "firstClass" | "secondClass";
                                                     /** @enum {string} */
-                                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                 }[];
                                             }[];
                                             service?: {
@@ -289,7 +290,8 @@ export interface paths {
                                                     metroSubmode?: string;
                                                     tramSubmode?: string;
                                                     telecabinSubmode?: string;
-                                                    railSubmode?: string;
+                                                    /** @enum {string} */
+                                                    railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                                     waterSubmode?: string;
                                                     name?: {
                                                         text: string;
@@ -431,7 +433,7 @@ export interface components {
                     /** @enum {string} */
                     fareClass: "unknown" | "firstClass" | "secondClass";
                     /** @enum {string} */
-                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                 }[];
             }[];
             onwardCall: {
@@ -466,7 +468,7 @@ export interface components {
                     /** @enum {string} */
                     fareClass: "unknown" | "firstClass" | "secondClass";
                     /** @enum {string} */
-                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                 }[];
             }[];
             service?: {
@@ -486,7 +488,8 @@ export interface components {
                     metroSubmode?: string;
                     tramSubmode?: string;
                     telecabinSubmode?: string;
-                    railSubmode?: string;
+                    /** @enum {string} */
+                    railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                     waterSubmode?: string;
                     name?: {
                         text: string;
@@ -655,7 +658,8 @@ export interface components {
                             metroSubmode?: string;
                             tramSubmode?: string;
                             telecabinSubmode?: string;
-                            railSubmode?: string;
+                            /** @enum {string} */
+                            railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                             waterSubmode?: string;
                             name?: {
                                 text: string;
@@ -767,7 +771,7 @@ export interface components {
                         /** @enum {string} */
                         fareClass: "unknown" | "firstClass" | "secondClass";
                         /** @enum {string} */
-                        occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                        occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                     }[];
                 }[];
                 onwardCall: {
@@ -802,7 +806,7 @@ export interface components {
                         /** @enum {string} */
                         fareClass: "unknown" | "firstClass" | "secondClass";
                         /** @enum {string} */
-                        occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                        occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                     }[];
                 }[];
                 service?: {
@@ -822,7 +826,8 @@ export interface components {
                         metroSubmode?: string;
                         tramSubmode?: string;
                         telecabinSubmode?: string;
-                        railSubmode?: string;
+                        /** @enum {string} */
+                        railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                         waterSubmode?: string;
                         name?: {
                             text: string;
@@ -997,7 +1002,8 @@ export interface components {
                                         metroSubmode?: string;
                                         tramSubmode?: string;
                                         telecabinSubmode?: string;
-                                        railSubmode?: string;
+                                        /** @enum {string} */
+                                        railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                         waterSubmode?: string;
                                         name?: {
                                             text: string;
@@ -1109,7 +1115,7 @@ export interface components {
                                     /** @enum {string} */
                                     fareClass: "unknown" | "firstClass" | "secondClass";
                                     /** @enum {string} */
-                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                 }[];
                             }[];
                             onwardCall: {
@@ -1144,7 +1150,7 @@ export interface components {
                                     /** @enum {string} */
                                     fareClass: "unknown" | "firstClass" | "secondClass";
                                     /** @enum {string} */
-                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                 }[];
                             }[];
                             service?: {
@@ -1164,7 +1170,8 @@ export interface components {
                                     metroSubmode?: string;
                                     tramSubmode?: string;
                                     telecabinSubmode?: string;
-                                    railSubmode?: string;
+                                    /** @enum {string} */
+                                    railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                     waterSubmode?: string;
                                     name?: {
                                         text: string;

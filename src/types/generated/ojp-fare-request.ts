@@ -87,7 +87,7 @@ export interface paths {
                                                                 /** @enum {string} */
                                                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                                                 /** @enum {string} */
-                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                             }[];
                                                         };
                                                         legIntermediates: {
@@ -122,7 +122,7 @@ export interface paths {
                                                                 /** @enum {string} */
                                                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                                                 /** @enum {string} */
-                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                             }[];
                                                         }[];
                                                         legAlight: {
@@ -157,7 +157,7 @@ export interface paths {
                                                                 /** @enum {string} */
                                                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                                                 /** @enum {string} */
-                                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                             }[];
                                                         };
                                                         service: {
@@ -177,7 +177,8 @@ export interface paths {
                                                                 metroSubmode?: string;
                                                                 tramSubmode?: string;
                                                                 telecabinSubmode?: string;
-                                                                railSubmode?: string;
+                                                                /** @enum {string} */
+                                                                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                                                 waterSubmode?: string;
                                                                 name?: {
                                                                     text: string;
@@ -218,25 +219,25 @@ export interface paths {
                                                         };
                                                         legTrack?: {
                                                             trackSection: {
-                                                                trackSectionStart?: {
+                                                                trackStart?: {
                                                                     stopPointRef?: string;
                                                                     stopPlaceRef?: string;
                                                                     geoPosition?: {
                                                                         longitude: number;
                                                                         latitude: number;
                                                                     };
-                                                                    name: {
+                                                                    locationName: {
                                                                         text: string;
                                                                     };
                                                                 };
-                                                                trackSectionEnd?: {
+                                                                trackEnd?: {
                                                                     stopPointRef?: string;
                                                                     stopPlaceRef?: string;
                                                                     geoPosition?: {
                                                                         longitude: number;
                                                                         latitude: number;
                                                                     };
-                                                                    name: {
+                                                                    locationName: {
                                                                         text: string;
                                                                     };
                                                                 };
@@ -273,7 +274,7 @@ export interface paths {
                                                                 longitude: number;
                                                                 latitude: number;
                                                             };
-                                                            name: {
+                                                            locationName: {
                                                                 text: string;
                                                             };
                                                         };
@@ -284,7 +285,7 @@ export interface paths {
                                                                 longitude: number;
                                                                 latitude: number;
                                                             };
-                                                            name: {
+                                                            locationName: {
                                                                 text: string;
                                                             };
                                                         };
@@ -293,25 +294,25 @@ export interface paths {
                                                         pathGuidance?: {
                                                             pathGuidanceSection: {
                                                                 trackSection?: {
-                                                                    trackSectionStart?: {
+                                                                    trackStart?: {
                                                                         stopPointRef?: string;
                                                                         stopPlaceRef?: string;
                                                                         geoPosition?: {
                                                                             longitude: number;
                                                                             latitude: number;
                                                                         };
-                                                                        name: {
+                                                                        locationName: {
                                                                             text: string;
                                                                         };
                                                                     };
-                                                                    trackSectionEnd?: {
+                                                                    trackEnd?: {
                                                                         stopPointRef?: string;
                                                                         stopPlaceRef?: string;
                                                                         geoPosition?: {
                                                                             longitude: number;
                                                                             latitude: number;
                                                                         };
-                                                                        name: {
+                                                                        locationName: {
                                                                             text: string;
                                                                         };
                                                                     };
@@ -344,7 +345,7 @@ export interface paths {
                                                                 longitude: number;
                                                                 latitude: number;
                                                             };
-                                                            name: {
+                                                            locationName: {
                                                                 text: string;
                                                             };
                                                         };
@@ -355,7 +356,7 @@ export interface paths {
                                                                 longitude: number;
                                                                 latitude: number;
                                                             };
-                                                            name: {
+                                                            locationName: {
                                                                 text: string;
                                                             };
                                                         };
@@ -405,25 +406,25 @@ export interface paths {
                                                         pathGuidance?: {
                                                             pathGuidanceSection: {
                                                                 trackSection?: {
-                                                                    trackSectionStart?: {
+                                                                    trackStart?: {
                                                                         stopPointRef?: string;
                                                                         stopPlaceRef?: string;
                                                                         geoPosition?: {
                                                                             longitude: number;
                                                                             latitude: number;
                                                                         };
-                                                                        name: {
+                                                                        locationName: {
                                                                             text: string;
                                                                         };
                                                                     };
-                                                                    trackSectionEnd?: {
+                                                                    trackEnd?: {
                                                                         stopPointRef?: string;
                                                                         stopPlaceRef?: string;
                                                                         geoPosition?: {
                                                                             longitude: number;
                                                                             latitude: number;
                                                                         };
-                                                                        name: {
+                                                                        locationName: {
                                                                             text: string;
                                                                         };
                                                                     };
@@ -538,7 +539,7 @@ export interface components {
                                 /** @enum {string} */
                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                 /** @enum {string} */
-                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                             }[];
                         };
                         legIntermediates: {
@@ -573,7 +574,7 @@ export interface components {
                                 /** @enum {string} */
                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                 /** @enum {string} */
-                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                             }[];
                         }[];
                         legAlight: {
@@ -608,7 +609,7 @@ export interface components {
                                 /** @enum {string} */
                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                 /** @enum {string} */
-                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                             }[];
                         };
                         service: {
@@ -628,7 +629,8 @@ export interface components {
                                 metroSubmode?: string;
                                 tramSubmode?: string;
                                 telecabinSubmode?: string;
-                                railSubmode?: string;
+                                /** @enum {string} */
+                                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                 waterSubmode?: string;
                                 name?: {
                                     text: string;
@@ -669,25 +671,25 @@ export interface components {
                         };
                         legTrack?: {
                             trackSection: {
-                                trackSectionStart?: {
+                                trackStart?: {
                                     stopPointRef?: string;
                                     stopPlaceRef?: string;
                                     geoPosition?: {
                                         longitude: number;
                                         latitude: number;
                                     };
-                                    name: {
+                                    locationName: {
                                         text: string;
                                     };
                                 };
-                                trackSectionEnd?: {
+                                trackEnd?: {
                                     stopPointRef?: string;
                                     stopPlaceRef?: string;
                                     geoPosition?: {
                                         longitude: number;
                                         latitude: number;
                                     };
-                                    name: {
+                                    locationName: {
                                         text: string;
                                     };
                                 };
@@ -724,7 +726,7 @@ export interface components {
                                 longitude: number;
                                 latitude: number;
                             };
-                            name: {
+                            locationName: {
                                 text: string;
                             };
                         };
@@ -735,7 +737,7 @@ export interface components {
                                 longitude: number;
                                 latitude: number;
                             };
-                            name: {
+                            locationName: {
                                 text: string;
                             };
                         };
@@ -744,25 +746,25 @@ export interface components {
                         pathGuidance?: {
                             pathGuidanceSection: {
                                 trackSection?: {
-                                    trackSectionStart?: {
+                                    trackStart?: {
                                         stopPointRef?: string;
                                         stopPlaceRef?: string;
                                         geoPosition?: {
                                             longitude: number;
                                             latitude: number;
                                         };
-                                        name: {
+                                        locationName: {
                                             text: string;
                                         };
                                     };
-                                    trackSectionEnd?: {
+                                    trackEnd?: {
                                         stopPointRef?: string;
                                         stopPlaceRef?: string;
                                         geoPosition?: {
                                             longitude: number;
                                             latitude: number;
                                         };
-                                        name: {
+                                        locationName: {
                                             text: string;
                                         };
                                     };
@@ -795,7 +797,7 @@ export interface components {
                                 longitude: number;
                                 latitude: number;
                             };
-                            name: {
+                            locationName: {
                                 text: string;
                             };
                         };
@@ -806,7 +808,7 @@ export interface components {
                                 longitude: number;
                                 latitude: number;
                             };
-                            name: {
+                            locationName: {
                                 text: string;
                             };
                         };
@@ -856,25 +858,25 @@ export interface components {
                         pathGuidance?: {
                             pathGuidanceSection: {
                                 trackSection?: {
-                                    trackSectionStart?: {
+                                    trackStart?: {
                                         stopPointRef?: string;
                                         stopPlaceRef?: string;
                                         geoPosition?: {
                                             longitude: number;
                                             latitude: number;
                                         };
-                                        name: {
+                                        locationName: {
                                             text: string;
                                         };
                                     };
-                                    trackSectionEnd?: {
+                                    trackEnd?: {
                                         stopPointRef?: string;
                                         stopPlaceRef?: string;
                                         geoPosition?: {
                                             longitude: number;
                                             latitude: number;
                                         };
-                                        name: {
+                                        locationName: {
                                             text: string;
                                         };
                                     };
@@ -985,7 +987,7 @@ export interface components {
                                     /** @enum {string} */
                                     fareClass: "unknown" | "firstClass" | "secondClass";
                                     /** @enum {string} */
-                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                 }[];
                             };
                             legIntermediates: {
@@ -1020,7 +1022,7 @@ export interface components {
                                     /** @enum {string} */
                                     fareClass: "unknown" | "firstClass" | "secondClass";
                                     /** @enum {string} */
-                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                 }[];
                             }[];
                             legAlight: {
@@ -1055,7 +1057,7 @@ export interface components {
                                     /** @enum {string} */
                                     fareClass: "unknown" | "firstClass" | "secondClass";
                                     /** @enum {string} */
-                                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                 }[];
                             };
                             service: {
@@ -1075,7 +1077,8 @@ export interface components {
                                     metroSubmode?: string;
                                     tramSubmode?: string;
                                     telecabinSubmode?: string;
-                                    railSubmode?: string;
+                                    /** @enum {string} */
+                                    railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                     waterSubmode?: string;
                                     name?: {
                                         text: string;
@@ -1116,25 +1119,25 @@ export interface components {
                             };
                             legTrack?: {
                                 trackSection: {
-                                    trackSectionStart?: {
+                                    trackStart?: {
                                         stopPointRef?: string;
                                         stopPlaceRef?: string;
                                         geoPosition?: {
                                             longitude: number;
                                             latitude: number;
                                         };
-                                        name: {
+                                        locationName: {
                                             text: string;
                                         };
                                     };
-                                    trackSectionEnd?: {
+                                    trackEnd?: {
                                         stopPointRef?: string;
                                         stopPlaceRef?: string;
                                         geoPosition?: {
                                             longitude: number;
                                             latitude: number;
                                         };
-                                        name: {
+                                        locationName: {
                                             text: string;
                                         };
                                     };
@@ -1171,7 +1174,7 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
@@ -1182,7 +1185,7 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
@@ -1191,25 +1194,25 @@ export interface components {
                             pathGuidance?: {
                                 pathGuidanceSection: {
                                     trackSection?: {
-                                        trackSectionStart?: {
+                                        trackStart?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
-                                        trackSectionEnd?: {
+                                        trackEnd?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1242,7 +1245,7 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
@@ -1253,7 +1256,7 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
@@ -1303,25 +1306,25 @@ export interface components {
                             pathGuidance?: {
                                 pathGuidanceSection: {
                                     trackSection?: {
-                                        trackSectionStart?: {
+                                        trackStart?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
-                                        trackSectionEnd?: {
+                                        trackEnd?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1415,7 +1418,7 @@ export interface components {
                                         /** @enum {string} */
                                         fareClass: "unknown" | "firstClass" | "secondClass";
                                         /** @enum {string} */
-                                        occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                        occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                     }[];
                                 };
                                 legIntermediates: {
@@ -1450,7 +1453,7 @@ export interface components {
                                         /** @enum {string} */
                                         fareClass: "unknown" | "firstClass" | "secondClass";
                                         /** @enum {string} */
-                                        occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                        occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                     }[];
                                 }[];
                                 legAlight: {
@@ -1485,7 +1488,7 @@ export interface components {
                                         /** @enum {string} */
                                         fareClass: "unknown" | "firstClass" | "secondClass";
                                         /** @enum {string} */
-                                        occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                        occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                     }[];
                                 };
                                 service: {
@@ -1505,7 +1508,8 @@ export interface components {
                                         metroSubmode?: string;
                                         tramSubmode?: string;
                                         telecabinSubmode?: string;
-                                        railSubmode?: string;
+                                        /** @enum {string} */
+                                        railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                         waterSubmode?: string;
                                         name?: {
                                             text: string;
@@ -1546,25 +1550,25 @@ export interface components {
                                 };
                                 legTrack?: {
                                     trackSection: {
-                                        trackSectionStart?: {
+                                        trackStart?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
-                                        trackSectionEnd?: {
+                                        trackEnd?: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
                                             geoPosition?: {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -1601,7 +1605,7 @@ export interface components {
                                         longitude: number;
                                         latitude: number;
                                     };
-                                    name: {
+                                    locationName: {
                                         text: string;
                                     };
                                 };
@@ -1612,7 +1616,7 @@ export interface components {
                                         longitude: number;
                                         latitude: number;
                                     };
-                                    name: {
+                                    locationName: {
                                         text: string;
                                     };
                                 };
@@ -1621,25 +1625,25 @@ export interface components {
                                 pathGuidance?: {
                                     pathGuidanceSection: {
                                         trackSection?: {
-                                            trackSectionStart?: {
+                                            trackStart?: {
                                                 stopPointRef?: string;
                                                 stopPlaceRef?: string;
                                                 geoPosition?: {
                                                     longitude: number;
                                                     latitude: number;
                                                 };
-                                                name: {
+                                                locationName: {
                                                     text: string;
                                                 };
                                             };
-                                            trackSectionEnd?: {
+                                            trackEnd?: {
                                                 stopPointRef?: string;
                                                 stopPlaceRef?: string;
                                                 geoPosition?: {
                                                     longitude: number;
                                                     latitude: number;
                                                 };
-                                                name: {
+                                                locationName: {
                                                     text: string;
                                                 };
                                             };
@@ -1672,7 +1676,7 @@ export interface components {
                                         longitude: number;
                                         latitude: number;
                                     };
-                                    name: {
+                                    locationName: {
                                         text: string;
                                     };
                                 };
@@ -1683,7 +1687,7 @@ export interface components {
                                         longitude: number;
                                         latitude: number;
                                     };
-                                    name: {
+                                    locationName: {
                                         text: string;
                                     };
                                 };
@@ -1733,25 +1737,25 @@ export interface components {
                                 pathGuidance?: {
                                     pathGuidanceSection: {
                                         trackSection?: {
-                                            trackSectionStart?: {
+                                            trackStart?: {
                                                 stopPointRef?: string;
                                                 stopPlaceRef?: string;
                                                 geoPosition?: {
                                                     longitude: number;
                                                     latitude: number;
                                                 };
-                                                name: {
+                                                locationName: {
                                                     text: string;
                                                 };
                                             };
-                                            trackSectionEnd?: {
+                                            trackEnd?: {
                                                 stopPointRef?: string;
                                                 stopPlaceRef?: string;
                                                 geoPosition?: {
                                                     longitude: number;
                                                     latitude: number;
                                                 };
-                                                name: {
+                                                locationName: {
                                                     text: string;
                                                 };
                                             };
@@ -1853,7 +1857,7 @@ export interface components {
                                                 /** @enum {string} */
                                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                                 /** @enum {string} */
-                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                             }[];
                                         };
                                         legIntermediates: {
@@ -1888,7 +1892,7 @@ export interface components {
                                                 /** @enum {string} */
                                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                                 /** @enum {string} */
-                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                             }[];
                                         }[];
                                         legAlight: {
@@ -1923,7 +1927,7 @@ export interface components {
                                                 /** @enum {string} */
                                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                                 /** @enum {string} */
-                                                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                                                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                             }[];
                                         };
                                         service: {
@@ -1943,7 +1947,8 @@ export interface components {
                                                 metroSubmode?: string;
                                                 tramSubmode?: string;
                                                 telecabinSubmode?: string;
-                                                railSubmode?: string;
+                                                /** @enum {string} */
+                                                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                                 waterSubmode?: string;
                                                 name?: {
                                                     text: string;
@@ -1984,25 +1989,25 @@ export interface components {
                                         };
                                         legTrack?: {
                                             trackSection: {
-                                                trackSectionStart?: {
+                                                trackStart?: {
                                                     stopPointRef?: string;
                                                     stopPlaceRef?: string;
                                                     geoPosition?: {
                                                         longitude: number;
                                                         latitude: number;
                                                     };
-                                                    name: {
+                                                    locationName: {
                                                         text: string;
                                                     };
                                                 };
-                                                trackSectionEnd?: {
+                                                trackEnd?: {
                                                     stopPointRef?: string;
                                                     stopPlaceRef?: string;
                                                     geoPosition?: {
                                                         longitude: number;
                                                         latitude: number;
                                                     };
-                                                    name: {
+                                                    locationName: {
                                                         text: string;
                                                     };
                                                 };
@@ -2039,7 +2044,7 @@ export interface components {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -2050,7 +2055,7 @@ export interface components {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -2059,25 +2064,25 @@ export interface components {
                                         pathGuidance?: {
                                             pathGuidanceSection: {
                                                 trackSection?: {
-                                                    trackSectionStart?: {
+                                                    trackStart?: {
                                                         stopPointRef?: string;
                                                         stopPlaceRef?: string;
                                                         geoPosition?: {
                                                             longitude: number;
                                                             latitude: number;
                                                         };
-                                                        name: {
+                                                        locationName: {
                                                             text: string;
                                                         };
                                                     };
-                                                    trackSectionEnd?: {
+                                                    trackEnd?: {
                                                         stopPointRef?: string;
                                                         stopPlaceRef?: string;
                                                         geoPosition?: {
                                                             longitude: number;
                                                             latitude: number;
                                                         };
-                                                        name: {
+                                                        locationName: {
                                                             text: string;
                                                         };
                                                     };
@@ -2110,7 +2115,7 @@ export interface components {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -2121,7 +2126,7 @@ export interface components {
                                                 longitude: number;
                                                 latitude: number;
                                             };
-                                            name: {
+                                            locationName: {
                                                 text: string;
                                             };
                                         };
@@ -2171,25 +2176,25 @@ export interface components {
                                         pathGuidance?: {
                                             pathGuidanceSection: {
                                                 trackSection?: {
-                                                    trackSectionStart?: {
+                                                    trackStart?: {
                                                         stopPointRef?: string;
                                                         stopPlaceRef?: string;
                                                         geoPosition?: {
                                                             longitude: number;
                                                             latitude: number;
                                                         };
-                                                        name: {
+                                                        locationName: {
                                                             text: string;
                                                         };
                                                     };
-                                                    trackSectionEnd?: {
+                                                    trackEnd?: {
                                                         stopPointRef?: string;
                                                         stopPlaceRef?: string;
                                                         geoPosition?: {
                                                             longitude: number;
                                                             latitude: number;
                                                         };
-                                                        name: {
+                                                        locationName: {
                                                             text: string;
                                                         };
                                                     };

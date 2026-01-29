@@ -91,20 +91,6 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        PlaceContext: {
-            placeRef: {
-                stopPointRef?: string;
-                stopPlaceRef?: string;
-                geoPosition?: {
-                    longitude: number;
-                    latitude: number;
-                };
-                locationName: {
-                    text: string;
-                };
-            };
-            depArrTime?: string;
-        };
         OJPStopEventRequest: {
             requestTimestamp: string;
             location: {
