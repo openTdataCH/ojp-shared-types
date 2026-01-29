@@ -104,25 +104,6 @@ components:
             name: PathGuidanceSection
           items:
             $ref: '#/components/schemas/PathGuidanceSectionStructure'
-          
-
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
-    ContinuousService:
-      type: object
-      required:
-        - personalModeOfOperation
-        - personalMode
-      xml:
-        name: ContinuousService
-      properties:
-        personalModeOfOperation:
-          $ref: './ojp-shared.yml#/components/schemas/PersonalModesOfOperationEnumeration'
-          xml:
-            name: PersonalModeOfOperation
-        personalMode:
-          $ref: './ojp-shared.yml#/components/schemas/PersonalModesEnumeration'
-          xml:
-            name: PersonalMode
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TimedLegStructure
     TimedLeg:
@@ -170,10 +151,8 @@ components:
         - legEnd
         - duration
       properties:
-        # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferTypeEnumeration
         transferType:
-          type: string
-          enum: [walk, remainInVehicle, changeWithinVehicle]
+          $ref: "./ojp-shared.yml#/components/schemas/TransferTypeEnum"
           xml:
             name: TransferType
         legStart:
@@ -217,7 +196,7 @@ components:
           xml:
             name: LegEnd
         service:
-          $ref: '#/components/schemas/ContinuousService'
+          $ref: './ojp-shared.yml#/components/schemas/ContinuousServiceStructure'
           xml:
             name: Service
         duration:
