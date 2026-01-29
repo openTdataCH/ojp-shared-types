@@ -34,6 +34,7 @@ export type OJPv1_LocationSchema = ojpV1_SharedComponents['schemas']['Location']
 export type OJPv1_GeneralAttributeSchema = ojpV1_SharedComponents['schemas']['GeneralAttribute'];
 export type OJPv1_PointOfInterestSchema = ojpV1_SharedComponents['schemas']['PointOfInterest'];
 export type OJPv1_PlaceRefSchema = ojpV1_SharedComponents['schemas']['PlaceRef'];
+export type OJPv1_PlaceContextSchema = ojpV1_SharedComponents['schemas']['PlaceContext'];
 
 export type OJPv1_TimedLegSchema = ojpV1_TripRequestResponseComponents['schemas']['TimedLeg']
 export type OJPv1_TripLegSchema = ojpV1_TripRequestResponseComponents['schemas']['TripLeg'];
@@ -43,6 +44,10 @@ export type UseRealtimeDataEnum = sharedComponents["schemas"]["UseRealtimeDataEn
 export type PersonalModesEnum = sharedComponents["schemas"]['PersonalModesEnumeration'];
 export type VehicleModesOfTransportEnum = sharedComponents["schemas"]["VehicleModesOfTransportEnum"];
 export type PlaceTypeEnum = sharedComponents["schemas"]["PlaceTypeEnum"];
+export type TransferTypeEnum = sharedComponents["schemas"]["TransferTypeEnum"];
+export type FareClassEnum = sharedComponents["schemas"]["FareClassEnum"];
+export type OccupancyLevelEnum = sharedComponents["schemas"]["OccupancyLevelEnum"];
+export type RailSubmodeEnum = sharedComponents["schemas"]["RailSubmodeEnum"];
 
 export type GeoPositionSchema = sharedComponents["schemas"]["GeoPosition"];
 export type PlaceRefSchema = sharedComponents["schemas"]["PlaceRef"];
@@ -50,6 +55,7 @@ export type InternationalTextSchema = sharedComponents["schemas"]["International
 
 export type DatedJourneySchema = sharedComponents["schemas"]["DatedJourney"];
 export type CallAtStopSchema = sharedComponents["schemas"]["CallAtStop"];
+export type ExpectedDepartureOccupancySchema = sharedComponents["schemas"]["ExpectedDepartureOccupancyStructure"];
 
 export type PlaceContextSchema = sharedComponents["schemas"]["PlaceContext"];
 export type PlaceSchema = sharedComponents['schemas']['Place']
@@ -64,20 +70,31 @@ export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 export type ProductCategorySchema = sharedComponents['schemas']['ProductCategory'];
 export type GeneralAttributeSchema = sharedComponents['schemas']['GeneralAttribute'];
 export type ModeFilterSchema = sharedComponents["schemas"]['ModeFilterStructure'];
+
 export type TrackSectionSchema = sharedComponents['schemas']['TrackSectionStructure'];
+export type OJPv1_TrackSectionSchema = ojpV1_SharedComponents['schemas']['TrackSectionStructure'];
 
 export type ResponseContextSchema = sharedComponents['schemas']['ResponseContextStructure'];
+export type OJPv1_ResponseContextSchema = ojpV1_SharedComponents['schemas']['ResponseContextStructure'];
 
 export type IndividualTransportOptionSchema = sharedComponents['schemas']['IndividualTransportOptionStructure'];
+export type LinkProjectionSchema = sharedComponents['schemas']['LinkProjection'];
+
+export type ContinuousServiceSchema = sharedComponents['schemas']['ContinuousServiceStructure'];
 
 export type PtSituationElement = sharedComponents['schemas']['PtSituationElementStructure']
 export type OJPv1_PtSituationElement = ojpV1_SharedComponents['schemas']['PtSituationElementStructure']
+
+export type ServiceArrivalDepartureSchema = sharedComponents['schemas']['SharedServiceArrivalDeparture'];
 
 export type TripRequestOJP = tripRequestComponents["schemas"]["OJP"];
 export type TripParamsSchema = tripRequestComponents["schemas"]["TripParam"];
 export type TripRequestSchema = tripRequestComponents["schemas"]["OJPTripRequest"];
 
 export type ViaPointSchema = tripRequestComponents["schemas"]["ViaPoint"];
+export type OJPv1_ViaPointSchema = ojpV1_TripRequestComponents["schemas"]["ViaPoint"];
+
+export type LegTrackSchema = sharedComponents['schemas']['LegTrackStructure'];
 
 export type TripResultSchema = tripReponseComponents['schemas']['TripResult'];
 
@@ -132,6 +149,9 @@ export type TIR_RequestOJP = tripInfoRequestComponents['schemas']['OJP'];
 export type TripInfoResponseOJP = tripInfoResponseComponents['schemas']['OJP'];
 export type TripInfoDeliverySchema = tripInfoResponseComponents['schemas']['OJPTripInfoDelivery'];
 export type TripInfoResultStructureSchema = tripInfoResponseComponents['schemas']['TripInfoResultStructure'];
+
+export type PathGuidanceSectionSchema = tripReponseComponents['schemas']['PathGuidanceSectionStructure'];
+export type OJPv1_PathGuidanceSectionSchema = ojpV1_TripRequestResponseComponents['schemas']['PathGuidanceSectionStructure'];
 
 export type OJPv1_StopEventRequestOJP = ojpV1_StopEventRequestComponents['schemas']['OJP'];
 export type OJPv1_StopEventRequestSchema = ojpV1_StopEventRequestComponents['schemas']['OJPStopEventRequest'];
