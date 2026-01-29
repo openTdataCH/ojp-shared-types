@@ -4,17 +4,17 @@ import { components as ojpV1_SharedComponents } from './generated/legacy/ojp-v1/
 
 import { components as locationInformationRequestComponents } from './generated/ojp-lir-request';
 import { components as locationInformationResponseComponents } from './generated/ojp-lir-response';
-import { components as ojpV1_locationInformationRequestComponents } from './generated/legacy/ojp-v1/ojp-lir-request';
-import { components as ojpV1_locationInformationResponseComponents } from './generated/legacy/ojp-v1/ojp-lir-response';
+import { components as ojpV1_LocationInformationRequestComponents } from './generated/legacy/ojp-v1/ojp-lir-request';
+import { components as ojpV1_LocationInformationResponseComponents } from './generated/legacy/ojp-v1/ojp-lir-response';
 
 import { components as stopEventRequestComponents } from './generated/ojp-ser-request';
 import { components as stopEventResponseComponents } from './generated/ojp-ser-response';
-import { components as ojpV1_stopEventRequestComponents } from './generated/legacy/ojp-v1/ojp-ser-request';
-import { components as ojpV1_stopEventResponseComponents } from './generated/legacy/ojp-v1/ojp-ser-response';
+import { components as ojpV1_StopEventRequestComponents } from './generated/legacy/ojp-v1/ojp-ser-request';
+import { components as ojpV1_StopEventResponseComponents } from './generated/legacy/ojp-v1/ojp-ser-response';
 
 import { components as tripInfoRequestComponents } from './generated/ojp-tir-request';
 import { components as tripInfoResponseComponents } from './generated/ojp-tir-response';
-import { components as ojpV1_tripInfoResponseComponents } from './generated/legacy/ojp-v1/ojp-tir-response';
+import { components as ojpV1_TripInfoResponseComponents } from './generated/legacy/ojp-v1/ojp-tir-response';
 
 import { components as tripRequestComponents } from './generated/ojp-tr-request';
 import { components as tripReponseComponents } from './generated/ojp-tr-response';
