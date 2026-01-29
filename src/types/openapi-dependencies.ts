@@ -63,6 +63,7 @@ const MapNS_Tags: Record<string, string> = {
   'TrackSectionEnd.StopPointRef': 'siri',
   
   'Position.Longitude': 'siri',
+  'Position.Latitude': 'siri',
 
   'LegStart.StopPointRef': 'siri',
   'LegEnd.StopPointRef': 'siri',
