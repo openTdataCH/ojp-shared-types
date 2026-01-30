@@ -50,23 +50,11 @@ export interface paths {
                                                     longitude: number;
                                                     latitude: number;
                                                 };
-                                                name: {
+                                                locationName: {
                                                     text: string;
                                                 };
                                             };
                                             depArrTime?: string;
-                                            individualTransportOption: {
-                                                itModeAndModeOfOperation: {
-                                                    /** @enum {string} */
-                                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
-                                                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
-                                                };
-                                                maxDistance?: number;
-                                                maxDuration?: string;
-                                                minDistance?: number;
-                                                minDuration?: string;
-                                                speed?: number;
-                                            }[];
                                         };
                                         destination: {
                                             placeRef: {
@@ -76,23 +64,11 @@ export interface paths {
                                                     longitude: number;
                                                     latitude: number;
                                                 };
-                                                name: {
+                                                locationName: {
                                                     text: string;
                                                 };
                                             };
                                             depArrTime?: string;
-                                            individualTransportOption: {
-                                                itModeAndModeOfOperation: {
-                                                    /** @enum {string} */
-                                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
-                                                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
-                                                };
-                                                maxDistance?: number;
-                                                maxDuration?: string;
-                                                minDistance?: number;
-                                                minDuration?: string;
-                                                speed?: number;
-                                            }[];
                                         };
                                         via: {
                                             viaPoint: {
@@ -102,14 +78,14 @@ export interface paths {
                                                     longitude: number;
                                                     latitude: number;
                                                 };
-                                                name: {
+                                                locationName: {
                                                     text: string;
                                                 };
                                             };
                                             dwellTime?: string;
                                         }[];
                                         params?: {
-                                            modeAndModeOfOperationFilter?: {
+                                            ptModeFilter?: {
                                                 exclude?: boolean;
                                                 ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                                                 personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
@@ -124,30 +100,10 @@ export interface paths {
                                                 railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                                 waterSubmode?: string;
                                             }[];
-                                            lineFilter?: {
-                                                line: {
-                                                    lineRef: string;
-                                                    directionRef?: string;
-                                                }[];
-                                                exclude?: boolean;
-                                            };
-                                            operatorFilter?: {
-                                                exclude?: boolean;
-                                                operatorRef: string[];
-                                            };
-                                            vehicleFilter?: {
-                                                exclude?: boolean;
-                                                vehicleRef: string[];
-                                                trainNumber: string[];
-                                            };
                                             walkSpeed?: number;
                                             numberOfResults?: number;
                                             numberOfResultsBefore?: number;
                                             numberOfResultsAfter?: number;
-                                            /** @enum {string} */
-                                            useRealtimeData?: "full" | "explanatory" | "none";
-                                            /** @enum {string} */
-                                            optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                                             includeAllRestrictedLines?: boolean;
                                             includeTrackSections?: boolean;
                                             includeLegProjection?: boolean;
@@ -180,7 +136,7 @@ export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
         TripParam: {
-            modeAndModeOfOperationFilter?: {
+            ptModeFilter?: {
                 exclude?: boolean;
                 ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                 personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
@@ -195,30 +151,10 @@ export interface components {
                 railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                 waterSubmode?: string;
             }[];
-            lineFilter?: {
-                line: {
-                    lineRef: string;
-                    directionRef?: string;
-                }[];
-                exclude?: boolean;
-            };
-            operatorFilter?: {
-                exclude?: boolean;
-                operatorRef: string[];
-            };
-            vehicleFilter?: {
-                exclude?: boolean;
-                vehicleRef: string[];
-                trainNumber: string[];
-            };
             walkSpeed?: number;
             numberOfResults?: number;
             numberOfResultsBefore?: number;
             numberOfResultsAfter?: number;
-            /** @enum {string} */
-            useRealtimeData?: "full" | "explanatory" | "none";
-            /** @enum {string} */
-            optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
             includeAllRestrictedLines?: boolean;
             includeTrackSections?: boolean;
             includeLegProjection?: boolean;
@@ -233,7 +169,7 @@ export interface components {
                     longitude: number;
                     latitude: number;
                 };
-                name: {
+                locationName: {
                     text: string;
                 };
             };
@@ -249,23 +185,11 @@ export interface components {
                         longitude: number;
                         latitude: number;
                     };
-                    name: {
+                    locationName: {
                         text: string;
                     };
                 };
                 depArrTime?: string;
-                individualTransportOption: {
-                    itModeAndModeOfOperation: {
-                        /** @enum {string} */
-                        personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
-                        personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
-                    };
-                    maxDistance?: number;
-                    maxDuration?: string;
-                    minDistance?: number;
-                    minDuration?: string;
-                    speed?: number;
-                }[];
             };
             destination: {
                 placeRef: {
@@ -275,23 +199,11 @@ export interface components {
                         longitude: number;
                         latitude: number;
                     };
-                    name: {
+                    locationName: {
                         text: string;
                     };
                 };
                 depArrTime?: string;
-                individualTransportOption: {
-                    itModeAndModeOfOperation: {
-                        /** @enum {string} */
-                        personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
-                        personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
-                    };
-                    maxDistance?: number;
-                    maxDuration?: string;
-                    minDistance?: number;
-                    minDuration?: string;
-                    speed?: number;
-                }[];
             };
             via: {
                 viaPoint: {
@@ -301,14 +213,14 @@ export interface components {
                         longitude: number;
                         latitude: number;
                     };
-                    name: {
+                    locationName: {
                         text: string;
                     };
                 };
                 dwellTime?: string;
             }[];
             params?: {
-                modeAndModeOfOperationFilter?: {
+                ptModeFilter?: {
                     exclude?: boolean;
                     ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                     personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
@@ -323,30 +235,10 @@ export interface components {
                     railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                     waterSubmode?: string;
                 }[];
-                lineFilter?: {
-                    line: {
-                        lineRef: string;
-                        directionRef?: string;
-                    }[];
-                    exclude?: boolean;
-                };
-                operatorFilter?: {
-                    exclude?: boolean;
-                    operatorRef: string[];
-                };
-                vehicleFilter?: {
-                    exclude?: boolean;
-                    vehicleRef: string[];
-                    trainNumber: string[];
-                };
                 walkSpeed?: number;
                 numberOfResults?: number;
                 numberOfResultsBefore?: number;
                 numberOfResultsAfter?: number;
-                /** @enum {string} */
-                useRealtimeData?: "full" | "explanatory" | "none";
-                /** @enum {string} */
-                optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                 includeAllRestrictedLines?: boolean;
                 includeTrackSections?: boolean;
                 includeLegProjection?: boolean;
@@ -372,23 +264,11 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
                             depArrTime?: string;
-                            individualTransportOption: {
-                                itModeAndModeOfOperation: {
-                                    /** @enum {string} */
-                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
-                                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
-                                };
-                                maxDistance?: number;
-                                maxDuration?: string;
-                                minDistance?: number;
-                                minDuration?: string;
-                                speed?: number;
-                            }[];
                         };
                         destination: {
                             placeRef: {
@@ -398,23 +278,11 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
                             depArrTime?: string;
-                            individualTransportOption: {
-                                itModeAndModeOfOperation: {
-                                    /** @enum {string} */
-                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
-                                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
-                                };
-                                maxDistance?: number;
-                                maxDuration?: string;
-                                minDistance?: number;
-                                minDuration?: string;
-                                speed?: number;
-                            }[];
                         };
                         via: {
                             viaPoint: {
@@ -424,14 +292,14 @@ export interface components {
                                     longitude: number;
                                     latitude: number;
                                 };
-                                name: {
+                                locationName: {
                                     text: string;
                                 };
                             };
                             dwellTime?: string;
                         }[];
                         params?: {
-                            modeAndModeOfOperationFilter?: {
+                            ptModeFilter?: {
                                 exclude?: boolean;
                                 ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
                                 personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
@@ -446,30 +314,10 @@ export interface components {
                                 railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                 waterSubmode?: string;
                             }[];
-                            lineFilter?: {
-                                line: {
-                                    lineRef: string;
-                                    directionRef?: string;
-                                }[];
-                                exclude?: boolean;
-                            };
-                            operatorFilter?: {
-                                exclude?: boolean;
-                                operatorRef: string[];
-                            };
-                            vehicleFilter?: {
-                                exclude?: boolean;
-                                vehicleRef: string[];
-                                trainNumber: string[];
-                            };
                             walkSpeed?: number;
                             numberOfResults?: number;
                             numberOfResultsBefore?: number;
                             numberOfResultsAfter?: number;
-                            /** @enum {string} */
-                            useRealtimeData?: "full" | "explanatory" | "none";
-                            /** @enum {string} */
-                            optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                             includeAllRestrictedLines?: boolean;
                             includeTrackSections?: boolean;
                             includeLegProjection?: boolean;

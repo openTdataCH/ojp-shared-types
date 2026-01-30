@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: XML OJP 2.0 API
+  title: XML OJP 1.0 API
   description: API that returns trip data in XML format.
   version: 0.0.1
 
@@ -24,41 +24,6 @@ paths:
 
 components:
   schemas:
-    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegBoardStructure
-    LegBoard:
-      type: object
-      xml:
-        name: LegBoard
-      allOf:
-        - $ref: './ojp-shared.yml#/components/schemas/CallAtStop'
-      required:
-        - stopPointRef
-        - stopPointName
-        - serviceDeparture
-
-    LegIntermediate:
-      type: object
-      xml:
-        name: LegIntermediate
-      allOf:
-        - $ref: './ojp-shared.yml#/components/schemas/CallAtStop'
-      required:
-        - stopPointRef
-        - stopPointName
-        - serviceArrival
-        - serviceDeparture
-
-    LegAlight:
-      type: object
-      xml:
-        name: LegAlight
-      allOf:
-        - $ref: './ojp-shared.yml#/components/schemas/CallAtStop'
-      required:
-        - stopPointRef
-        - stopPointName
-        - serviceArrival
-    
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PathGuidanceSectionStructure
     PathGuidanceSectionStructure:
       type: object
@@ -70,7 +35,7 @@ components:
           xml:
             name: TrackSection
         turnDescription:
-          $ref: './ojp-shared.yml#/components/schemas/InternationalText'
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
           xml:
             name: TurnDescription
         guidanceAdvice:
@@ -86,7 +51,7 @@ components:
           xml:
             name: TurnAction
         roadName:
-          $ref: './ojp-shared.yml#/components/schemas/InternationalText'
+          $ref: '../../ojp-shared.yml#/components/schemas/InternationalText'
           xml:
             name: TurnDescription
 
@@ -105,6 +70,7 @@ components:
           items:
             $ref: '#/components/schemas/PathGuidanceSectionStructure'
 
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/TimedLeg'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TimedLegStructure
     TimedLeg:
       type: object
@@ -112,22 +78,22 @@ components:
         name: TimedLeg
       required:
         - legBoard
-        - legIntermediate
+        - legIntermediates
         - legAlight
         - service
       properties:
         legBoard:
-          $ref: '#/components/schemas/LegBoard'
+          $ref: '../../ojp-tr-response.yml#/components/schemas/LegBoard'
           xml:
             name: LegBoard
-        legIntermediate:
+        legIntermediates: # in v2 is legIntermediate
           type: array
           xml:
-            name: LegIntermediate
+            name: LegIntermediates # in v2 is LegIntermediate
           items:
-            $ref: "#/components/schemas/LegIntermediate"
+            $ref: '../../ojp-tr-response.yml#/components/schemas/LegIntermediate'
         legAlight:
-          $ref: '#/components/schemas/LegAlight'
+          $ref: '../../ojp-tr-response.yml#/components/schemas/LegAlight'
           xml:
             name: LegAlight
         service:
@@ -135,9 +101,22 @@ components:
           xml:
             name: Service
         legTrack:
-          $ref: './ojp-shared.yml#/components/schemas/LegTrackStructure'
+          type: object
           xml:
             name: LegTrack
+          required:
+            - trackSection
+          properties:
+            trackSection:
+              type: array
+              xml:
+                name: TrackSection
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
+        extension:
+          $ref: './ojp-shared.yml#/components/schemas/SharedServiceExtension'
+          xml:
+            name: Extension
     # TimedLeg
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferLegStructure
@@ -152,7 +131,7 @@ components:
         - duration
       properties:
         transferType:
-          $ref: "./ojp-shared.yml#/components/schemas/TransferTypeEnum"
+          $ref: "../../ojp-shared.yml#/components/schemas/TransferTypeEnum"
           xml:
             name: TransferType
         legStart:
@@ -196,7 +175,7 @@ components:
           xml:
             name: LegEnd
         service:
-          $ref: './ojp-shared.yml#/components/schemas/ContinuousServiceStructure'
+          $ref: '../../ojp-shared.yml#/components/schemas/ContinuousServiceStructure'
           xml:
             name: Service
         duration:
@@ -208,7 +187,7 @@ components:
           xml:
             name: Length
         legTrack:
-          $ref: './ojp-shared.yml#/components/schemas/LegTrackStructure'
+          $ref: '../../ojp-shared.yml#/components/schemas/LegTrackStructure'
           xml:
             name: LegTrack
         pathGuidance:
@@ -216,18 +195,19 @@ components:
           xml:
             name: PathGuidance
 
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/Leg'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegStructure
-    Leg:
+    TripLeg:
       type: object
       xml:
-        name: Leg
+        name: TripLeg
       required:
-        - id
+        - legId
       properties:
-        id:
+        legId:
           type: string
           xml:
-            name: Id
+            name: LegId
         duration:
           type: string
           xml:
@@ -245,35 +225,25 @@ components:
           $ref: '#/components/schemas/ContinuousLeg'
           xml:
             name: ContinuousLeg
-        emissionCO2:
-          type: object
-          xml:
-            name: EmissionCO2
-          required:
-            - kilogramPerPersonKm
-          properties:
-            kilogramPerPersonKm:
-              type: number
-              xml:
-                name: KilogramPerPersonKm
 
+    # derived from '../ojp-sdk/ojp-trip-response.yaml#/components/schemas/Trip'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripStructure
     Trip:
       type: object
       xml:
         name: Trip
       required:
-        - id
+        - tripId
         - duration
         - startTime
         - endTime
         - transfers
-        - leg
+        - tripLeg
       properties:
-        id:
+        tripId:
           type: string
           xml:
-            name: Id
+            name: TripId
         duration:
           type: string
           xml:
@@ -292,36 +262,12 @@ components:
           type: number
           xml:
             name: Transfers
-        distance:
-          type: number
-          xml:
-            name: Distance
-        leg:
+        tripLeg:
           type: array
           xml:
-            name: Leg
+            name: TripLeg
           items:
-            $ref: "#/components/schemas/Leg"
-        unplanned: 
-          type: boolean
-          xml:
-            name: Unplanned
-        cancelled: 
-          type: boolean
-          xml:
-            name: Cancelled
-        deviation: 
-          type: boolean
-          xml:
-            name: Deviation
-        delayed: 
-          type: boolean
-          xml:
-            name: delayed
-        infeasible: 
-          type: boolean
-          xml:
-            name: Infeasible
+            $ref: '#/components/schemas/TripLeg'
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripResultStructure
     TripResult:

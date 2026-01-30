@@ -150,7 +150,8 @@ export interface components {
                         metroSubmode?: string;
                         tramSubmode?: string;
                         telecabinSubmode?: string;
-                        railSubmode?: string;
+                        /** @enum {string} */
+                        railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                         waterSubmode?: string;
                         name?: {
                             text: string;
@@ -237,7 +238,8 @@ export interface components {
                 metroSubmode?: string;
                 tramSubmode?: string;
                 telecabinSubmode?: string;
-                railSubmode?: string;
+                /** @enum {string} */
+                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                 waterSubmode?: string;
                 name?: {
                     text: string;
@@ -348,7 +350,8 @@ export interface components {
                 metroSubmode?: string;
                 tramSubmode?: string;
                 telecabinSubmode?: string;
-                railSubmode?: string;
+                /** @enum {string} */
+                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                 waterSubmode?: string;
                 name?: {
                     text: string;
@@ -403,7 +406,7 @@ export interface components {
                 /** @enum {string} */
                 fareClass: "unknown" | "firstClass" | "secondClass";
                 /** @enum {string} */
-                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
             }[];
             situationFullRef?: {
                 participantRef: string;
@@ -443,13 +446,60 @@ export interface components {
                     /** @enum {string} */
                     fareClass: "unknown" | "firstClass" | "secondClass";
                     /** @enum {string} */
-                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                 }[];
                 situationFullRef?: {
                     participantRef: string;
                     situationNumber: string;
                 }[];
             };
+        };
+        PlaceContext: {
+            placeRef: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                locationName: {
+                    text: string;
+                };
+            };
+            depArrTime?: string;
+        };
+        TrackSectionStructure: {
+            trackStart?: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                locationName: {
+                    text: string;
+                };
+            };
+            trackEnd?: {
+                stopPointRef?: string;
+                stopPlaceRef?: string;
+                geoPosition?: {
+                    longitude: number;
+                    latitude: number;
+                };
+                locationName: {
+                    text: string;
+                };
+            };
+            linkProjection?: {
+                position: {
+                    longitude: number;
+                    latitude: number;
+                }[];
+            };
+            roadName?: string;
+            duration?: string;
+            length?: number;
         };
     };
     responses: never;

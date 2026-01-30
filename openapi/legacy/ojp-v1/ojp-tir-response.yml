@@ -61,7 +61,7 @@ components:
               xml:
                 name: TrackSection
               items:
-                $ref: '../../ojp-shared.yml#/components/schemas/TrackSectionStructure'
+                $ref: './ojp-shared.yml#/components/schemas/TrackSectionStructure'
         extension:
           $ref: './ojp-shared.yml#/components/schemas/SharedServiceExtension'
           xml:

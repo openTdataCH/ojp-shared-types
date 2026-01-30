@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 0.1.3 - 30.01.2026
+
+- TR: adds request / response - [PR #42](https://github.com/openTdataCH/ojp-shared-types/pull/42)
+  - adds TR v1/v2 specs (removed stand-alone Trip)
+    - adds shared `TransferTypeEnum`, `RailSubmodeEnum`
+    - adds leg `emissionCO2`
+  - TRR: adds TripResponseContext
+  - separate OJP v1,v2 MapArrayTags
+  - drop `MapModelKeepPropertiesXML` dependency, is not anymore needed by `ojp-sdk-next`
+
 ## 0.1.2 - 22.01.2026
 - Updates API - [PR #40](https://github.com/openTdataCH/ojp-shared-types/pull/40)
   - updates TRR `TripRefineParam`

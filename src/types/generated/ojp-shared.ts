@@ -22,6 +22,14 @@ export interface components {
         /** @enum {string} */
         PerspectiveEnum: "general" | "stopPoint" | "vehicleJourney";
         /** @enum {string} */
+        TransferTypeEnum: "walk" | "remainInVehicle" | "changeWithinVehicle";
+        /** @enum {string} */
+        FareClassEnum: "unknown" | "firstClass" | "secondClass";
+        /** @enum {string} */
+        OccupancyLevelEnum: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+        /** @enum {string} */
+        RailSubmodeEnum: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+        /** @enum {string} */
         OptimisationMethodEnum: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
         InternationalText: {
             text: string;
@@ -172,7 +180,8 @@ export interface components {
             metroSubmode?: string;
             tramSubmode?: string;
             telecabinSubmode?: string;
-            railSubmode?: string;
+            /** @enum {string} */
+            railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
             waterSubmode?: string;
             name?: {
                 text: string;
@@ -259,7 +268,8 @@ export interface components {
                 metroSubmode?: string;
                 tramSubmode?: string;
                 telecabinSubmode?: string;
-                railSubmode?: string;
+                /** @enum {string} */
+                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                 waterSubmode?: string;
                 name?: {
                     text: string;
@@ -436,6 +446,12 @@ export interface components {
             timetabledTime: string;
             estimatedTime?: string;
         };
+        ExpectedDepartureOccupancyStructure: {
+            /** @enum {string} */
+            fareClass: "unknown" | "firstClass" | "secondClass";
+            /** @enum {string} */
+            occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+        };
         CallAtStop: {
             stopPointRef: string;
             stopPointName: {
@@ -468,7 +484,7 @@ export interface components {
                 /** @enum {string} */
                 fareClass: "unknown" | "firstClass" | "secondClass";
                 /** @enum {string} */
-                occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
             }[];
         };
         CallAtNearStop: {
@@ -504,7 +520,7 @@ export interface components {
                     /** @enum {string} */
                     fareClass: "unknown" | "firstClass" | "secondClass";
                     /** @enum {string} */
-                    occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
+                    occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                 }[];
             };
         };
@@ -546,7 +562,8 @@ export interface components {
                 metroSubmode?: string;
                 tramSubmode?: string;
                 telecabinSubmode?: string;
-                railSubmode?: string;
+                /** @enum {string} */
+                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                 waterSubmode?: string;
                 name?: {
                     text: string;
@@ -674,7 +691,8 @@ export interface components {
                         metroSubmode?: string;
                         tramSubmode?: string;
                         telecabinSubmode?: string;
-                        railSubmode?: string;
+                        /** @enum {string} */
+                        railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                         waterSubmode?: string;
                         name?: {
                             text: string;
@@ -848,14 +866,9 @@ export interface components {
             metroSubmode?: string;
             tramSubmode?: string;
             telecabinSubmode?: string;
-            railSubmode?: string;
+            /** @enum {string} */
+            railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
             waterSubmode?: string;
-        };
-        ExpectedDepartureOccupancyStructure: {
-            /** @enum {string} */
-            fareClass: "unknown" | "firstClass" | "secondClass";
-            /** @enum {string} */
-            occupancyLevel: "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
         };
         LineDirectionStructure: {
             lineRef: string;
@@ -888,6 +901,12 @@ export interface components {
                     latitude: number;
                 };
             };
+        };
+        ContinuousServiceStructure: {
+            /** @enum {string} */
+            personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
+            /** @enum {string} */
+            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
         };
     };
     responses: never;

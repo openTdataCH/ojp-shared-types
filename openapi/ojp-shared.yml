@@ -57,6 +57,42 @@ components:
       type: string
       enum: [general, stopPoint, vehicleJourney]
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferTypeEnumeration
+    TransferTypeEnum:
+      type: string
+      enum: [walk, remainInVehicle, changeWithinVehicle]
+      xml:
+        name: TransferType
+    
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__FareClassEnumeration
+    FareClassEnum:
+      type: string
+      enum: [unknown, firstClass, secondClass]
+      xml:
+        name: FareClass
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__OccupancyEnumeration
+    OccupancyLevelEnum:
+      type: string
+      enum: [unknown, empty, manySeatsAvailable, fewSeatsAvailable, standingRoomOnly]
+      xml:
+        name: FareClass
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__RailSubmodesOfTransportEnumeration
+    #     highSpeedRail                       - IC
+    #     international                       - ICE, TGV, EC, RJX, NJ, EN
+    #     interregionalRail                   - IR, IRN, IRE
+    #     railShuttle                         - ATZ
+    #     local                               - S, SN, RB, RE, PE
+    #     vehicleTunnelTransportRailService   - used by ATZ
+    RailSubmodeEnum:
+      type: string 
+      enum: [international, highSpeedRail, interregionalRail, railShuttle, local, vehicleTunnelTransportRailService]
+      xml:
+        name: RailSubmode
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__OptimisationMethodEnumeration
     OptimisationMethodEnum:
       type: string
@@ -488,7 +524,7 @@ components:
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
         railSubmode:
-          type: string
+          $ref: "#/components/schemas/RailSubmodeEnum"
           xml:
             name: RailSubmode
             namespace: "http://www.siri.org.uk/siri"
@@ -931,6 +967,28 @@ components:
           xml:
             name: EstimatedTime
 
+    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__VehicleOccupancyStructure
+    ExpectedDepartureOccupancyStructure:
+      type: object
+      xml:
+        name: ExpectedDepartureOccupancy
+      required:
+        - fareClass
+        - occupancyLevel
+      properties:
+        fareClass:
+          $ref: "#/components/schemas/FareClassEnum"
+          xml:
+            name: FareClass
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+        occupancyLevel:
+          $ref: "#/components/schemas/OccupancyLevelEnum"
+          xml:
+            name: OccupancyLevel
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__LegBoardStructure
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__CallAtStopStructure
     CallAtStop:
@@ -1365,7 +1423,7 @@ components:
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
         railSubmode:
-          type: string
+          $ref: "#/components/schemas/RailSubmodeEnum"
           xml:
             name: RailSubmode
             namespace: "http://www.siri.org.uk/siri"
@@ -1374,30 +1432,6 @@ components:
           type: string
           xml:
             name: WaterSubmode
-            namespace: "http://www.siri.org.uk/siri"
-            prefix: siri
-
-    # https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__VehicleOccupancyStructure
-    ExpectedDepartureOccupancyStructure:
-      type: object
-      xml:
-        name: ExpectedDepartureOccupancy
-      required:
-        - fareClass
-        - occupancyLevel
-      properties:
-        fareClass:
-          type: string
-          enum: [unknown, firstClass, secondClass]
-          xml:
-            name: fareClass
-            namespace: "http://www.siri.org.uk/siri"
-            prefix: siri
-        occupancyLevel:
-          type: string
-          enum: [empty, manySeatsAvailable, fewSeatsAvailable, standingRoomOnly]
-          xml:
-            name: occupancyLevel
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
 
@@ -1514,3 +1548,21 @@ components:
               $ref: '#/components/schemas/GeoPosition'
               xml:
                 name: LowerRight
+
+    # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
+    ContinuousServiceStructure:
+      type: object
+      required:
+        - personalModeOfOperation
+        - personalMode
+      xml:
+        name: ContinuousService
+      properties:
+        personalModeOfOperation:
+          $ref: './ojp-shared.yml#/components/schemas/PersonalModesOfOperationEnumeration'
+          xml:
+            name: PersonalModeOfOperation
+        personalMode:
+          $ref: './ojp-shared.yml#/components/schemas/PersonalModesEnumeration'
+          xml:
+            name: PersonalMode

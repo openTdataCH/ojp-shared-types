@@ -63,6 +63,7 @@ const MapNS_Tags: Record<string, string> = {
   'TrackSectionEnd.StopPointRef': 'siri',
   
   'Position.Longitude': 'siri',
+  'Position.Latitude': 'siri',
 
   'LegStart.StopPointRef': 'siri',
   'LegEnd.StopPointRef': 'siri',
@@ -99,9 +100,6 @@ const MapArrayTags: Record<string, boolean> = {
   'places.place': true,
   'linkProjection.position': true,
 
-  // OJP v1
-  'places.location': true,
-
   // PSituation Refs
   'situationFullRefs.situationFullRef': true,
   'situations.ptSituation': true,
@@ -122,13 +120,6 @@ const MapArrayTags: Record<string, boolean> = {
   // 'recommendationContent.recommendationText': true,
   // 'remarkContent.remark': true,
   
-  // PtSituation OJP v1
-  'callAtStop.situationFullRef': true,
-  'ptSituation.description': true,
-  'ptSituation.detail': true,
-  'stopPoints.affectedStopPoint': true,
-  'vehicleJourneys.affectedVehicleJourney': true,
-
   'itModeAndModeOfOperation.personalModeOfOperation': true,
 
   // Service
@@ -144,7 +135,7 @@ const MapArrayTags: Record<string, boolean> = {
   'timedLeg.legIntermediate': true,
   'legTrack.trackSection': true,
   'pathGuidance.pathGuidanceSection': true,
-  
+
   // TR Response, ExpectedDepartureOccupancy
   'legBoard.expectedDepartureOccupancy': true,
   'legIntermediate.expectedDepartureOccupancy': true,
@@ -154,10 +145,6 @@ const MapArrayTags: Record<string, boolean> = {
   'OJPLocationInformationDelivery.placeResult': true,
   'place.mode': true,
   'place.attribute': true,
-  // OJP 1.0
-  'OJPLocationInformationDelivery.location': true,
-  'location.mode': true,
-  'location.attribute': true,
   
   // LIR Response POI
   'pointOfInterest.pointOfInterestCategory': true,
@@ -185,18 +172,25 @@ const MapArrayTags: Record<string, boolean> = {
   'OJPTripRefineDelivery.tripResult': true,
 };
 
-// This will be deleted in the new update
+// OJP v1.0
+// - this is used by the parser.isArrayHandler - to always return arrays even when there is only one result
+// - in response (parser) XML
+const MapLegacyArrayTags: Record<string, boolean> = {
+  // OJP v1
+  'places.location': true,
 
-// TODO - this should be generated
-// Declare object properties that are / should be serialised to XML
-// - in request (builder) XML
-const MapModelKeepPropertiesXML: Record<string, string[]> = {
-  'OJPLocationInformationRequest': ['requestTimestamp', 'initialInput', 'placeRef', 'restrictions'],
-  'OJPTripRequest': ['requestTimestamp', 'origin', 'destination', 'via', 'params'],
-  'OJPStopEventRequest': ['requestTimestamp', 'location', 'params'],
-  'OJPTripRefineRequest': ['requestTimestamp', 'refineParams', 'tripResult'],
-  'OJPTripInfoRequest': ['requestTimestamp', 'journeyRef', 'operatingDayRef', 'params'],
-  'geoPosition': ['longitude', 'latitude'],
+  // PtSituation OJP v1
+  'callAtStop.situationFullRef': true,
+  'ptSituation.description': true,
+  'ptSituation.detail': true,
+  'stopPoints.affectedStopPoint': true,
+  'vehicleJourneys.affectedVehicleJourney': true,
+
+  'timedLeg.legIntermediates': true,
+
+  'OJPLocationInformationDelivery.location': true,
+  'location.mode': true,
+  'location.attribute': true,
 };
 
 // TODO - this should be generated
@@ -204,11 +198,12 @@ const MapModelKeepPropertiesXML: Record<string, string[]> = {
 const MapStringValues: Record<string, boolean> = {
   'stopPlace.stopPlaceRef': true,
   'publishedServiceName.text': true,
+  'service.operatorRef': true,
 };
 
 export const OpenAPI_Dependencies = {
   MapNS_Tags: MapNS_Tags,
   MapArrayTags: MapArrayTags,
-  MapModelKeepPropertiesXML: MapModelKeepPropertiesXML,
+  MapLegacyArrayTags: MapLegacyArrayTags,
   MapStringValues: MapStringValues,
 } as const;
