@@ -38,4 +38,4 @@ export class MyOJPRequest implements OJP_Types.TripRequestSchema {
 
 The project is released under a [MIT license](./LICENSE).
 
-Copyright (c) 2025 Open Data Platform Mobility Switzerland - [opentransportdata.swiss](https://opentransportdata.swiss/en/).
+Copyright (c) 2025 - 2026 Open Data Platform Mobility Switzerland - [opentransportdata.swiss](https://opentransportdata.swiss/en/).
