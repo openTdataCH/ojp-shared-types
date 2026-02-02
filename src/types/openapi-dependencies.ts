@@ -178,6 +178,8 @@ const MapArrayTags: Record<string, boolean> = {
 const MapLegacyArrayTags: Record<string, boolean> = {
   'places.location': true,
 
+  'trip.tripLeg': true,
+
   // PtSituation OJP v1
   'callAtStop.situationFullRef': true,
   'ptSituation.description': true,
