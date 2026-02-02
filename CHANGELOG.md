@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.5 - 02.02.2026
+- Fix OJPv1 OperatoreRef - [PR #44](https://github.com/openTdataCH/ojp-shared-types/pull/44)
+  - `OperatorRef` is under ojp: namespace for OJPv1
+  - allow MapNS_Tags to be overridden for OJPv1
+
 ## 0.1.4 - 02.02.2026
 - Fix OJPv1 Situations - [PR #43](https://github.com/openTdataCH/ojp-shared-types/pull/43)
   - adds `situationFullRef` for OJPv1 `Service`
