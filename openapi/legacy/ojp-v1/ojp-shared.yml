@@ -582,12 +582,6 @@ components:
             name: ExpectedDepartureOccupancy
           items:
             $ref: "../../ojp-shared.yml#/components/schemas/ExpectedDepartureOccupancyStructure"
-        situationFullRef:
-          type: array
-          xml:
-            name: SituationFullRef
-          items:
-            $ref: "../../ojp-shared.yml#/components/schemas/SituationFullRefStructure"
 
     # SharedLegSection
 
