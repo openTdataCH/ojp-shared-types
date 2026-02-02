@@ -176,7 +176,6 @@ const MapArrayTags: Record<string, boolean> = {
 // - this is used by the parser.isArrayHandler - to always return arrays even when there is only one result
 // - in response (parser) XML
 const MapLegacyArrayTags: Record<string, boolean> = {
-  // OJP v1
   'places.location': true,
 
   // PtSituation OJP v1
