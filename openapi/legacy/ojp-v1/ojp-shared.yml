@@ -446,6 +446,14 @@ components:
           type: boolean
           xml:
             name: Deviation
+        # compared with OJPv2 we have the array at the top-level, no <SituationFullRefs> wrapper
+        situationFullRef:
+          type: array
+          xml:
+            name: SituationFullRef
+          items:
+            $ref: "../../ojp-shared.yml#/components/schemas/SituationFullRefStructure"
+
     # DatedJourney
 
     # Variation of Place
