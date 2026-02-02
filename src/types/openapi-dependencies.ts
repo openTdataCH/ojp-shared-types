@@ -92,6 +92,11 @@ const MapNS_Tags: Record<string, string> = {
   'PlaceRef.StopPointRef': 'siri',
 };
 
+// OJP Legacy(v1): keep same k/v as in MapNS_Tags and override only some
+const MapLegacyOverrideNS_Tags: Record<string, string> = {
+  'Service.OperatorRef': 'ojp',
+}
+
 // TODO - this should be generated
 // - this is used by the parser.isArrayHandler - to always return arrays even when there is only one result
 // - in response (parser) XML
@@ -207,6 +212,7 @@ const MapStringValues: Record<string, boolean> = {
 
 export const OpenAPI_Dependencies = {
   MapNS_Tags: MapNS_Tags,
+  MapLegacyOverrideNS_Tags: MapLegacyOverrideNS_Tags,
   MapArrayTags: MapArrayTags,
   MapLegacyArrayTags: MapLegacyArrayTags,
   MapStringValues: MapStringValues,
