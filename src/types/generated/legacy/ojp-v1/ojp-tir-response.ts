@@ -303,6 +303,10 @@ export interface paths {
                                                 unplanned?: boolean;
                                                 cancelled?: boolean;
                                                 deviation?: boolean;
+                                                situationFullRef?: {
+                                                    participantRef: string;
+                                                    situationNumber: string;
+                                                }[];
                                             };
                                             journeyTrack?: {
                                                 trackSection: {
@@ -503,6 +507,10 @@ export interface components {
                 unplanned?: boolean;
                 cancelled?: boolean;
                 deviation?: boolean;
+                situationFullRef?: {
+                    participantRef: string;
+                    situationNumber: string;
+                }[];
             };
             journeyTrack?: {
                 trackSection: {
@@ -817,6 +825,10 @@ export interface components {
                     unplanned?: boolean;
                     cancelled?: boolean;
                     deviation?: boolean;
+                    situationFullRef?: {
+                        participantRef: string;
+                        situationNumber: string;
+                    }[];
                 };
                 journeyTrack?: {
                     trackSection: {
@@ -1137,6 +1149,10 @@ export interface components {
                                 unplanned?: boolean;
                                 cancelled?: boolean;
                                 deviation?: boolean;
+                                situationFullRef?: {
+                                    participantRef: string;
+                                    situationNumber: string;
+                                }[];
                             };
                             journeyTrack?: {
                                 trackSection: {

@@ -214,10 +214,6 @@ export interface paths {
                                                             /** @enum {string} */
                                                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                         }[];
-                                                        situationFullRef?: {
-                                                            participantRef: string;
-                                                            situationNumber: string;
-                                                        }[];
                                                     };
                                                 }[];
                                                 thisCall: {
@@ -255,10 +251,6 @@ export interface paths {
                                                             /** @enum {string} */
                                                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                                         }[];
-                                                        situationFullRef?: {
-                                                            participantRef: string;
-                                                            situationNumber: string;
-                                                        }[];
                                                     };
                                                 };
                                                 onwardCall: {
@@ -295,10 +287,6 @@ export interface paths {
                                                             fareClass: "unknown" | "firstClass" | "secondClass";
                                                             /** @enum {string} */
                                                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                                        }[];
-                                                        situationFullRef?: {
-                                                            participantRef: string;
-                                                            situationNumber: string;
                                                         }[];
                                                     };
                                                 }[];
@@ -358,6 +346,10 @@ export interface paths {
                                                     unplanned?: boolean;
                                                     cancelled?: boolean;
                                                     deviation?: boolean;
+                                                    situationFullRef?: {
+                                                        participantRef: string;
+                                                        situationNumber: string;
+                                                    }[];
                                                 };
                                                 operatingDays?: {
                                                     from: string;
@@ -438,10 +430,6 @@ export interface components {
                         /** @enum {string} */
                         occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                     }[];
-                    situationFullRef?: {
-                        participantRef: string;
-                        situationNumber: string;
-                    }[];
                 };
             }[];
             thisCall: {
@@ -479,10 +467,6 @@ export interface components {
                         /** @enum {string} */
                         occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                     }[];
-                    situationFullRef?: {
-                        participantRef: string;
-                        situationNumber: string;
-                    }[];
                 };
             };
             onwardCall: {
@@ -519,10 +503,6 @@ export interface components {
                         fareClass: "unknown" | "firstClass" | "secondClass";
                         /** @enum {string} */
                         occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                    }[];
-                    situationFullRef?: {
-                        participantRef: string;
-                        situationNumber: string;
                     }[];
                 };
             }[];
@@ -582,6 +562,10 @@ export interface components {
                 unplanned?: boolean;
                 cancelled?: boolean;
                 deviation?: boolean;
+                situationFullRef?: {
+                    participantRef: string;
+                    situationNumber: string;
+                }[];
             };
             operatingDays?: {
                 from: string;
@@ -638,10 +622,6 @@ export interface components {
                             /** @enum {string} */
                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                         }[];
-                        situationFullRef?: {
-                            participantRef: string;
-                            situationNumber: string;
-                        }[];
                     };
                 }[];
                 thisCall: {
@@ -679,10 +659,6 @@ export interface components {
                             /** @enum {string} */
                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                         }[];
-                        situationFullRef?: {
-                            participantRef: string;
-                            situationNumber: string;
-                        }[];
                     };
                 };
                 onwardCall: {
@@ -719,10 +695,6 @@ export interface components {
                             fareClass: "unknown" | "firstClass" | "secondClass";
                             /** @enum {string} */
                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                        }[];
-                        situationFullRef?: {
-                            participantRef: string;
-                            situationNumber: string;
                         }[];
                     };
                 }[];
@@ -782,6 +754,10 @@ export interface components {
                     unplanned?: boolean;
                     cancelled?: boolean;
                     deviation?: boolean;
+                    situationFullRef?: {
+                        participantRef: string;
+                        situationNumber: string;
+                    }[];
                 };
                 operatingDays?: {
                     from: string;
@@ -978,10 +954,6 @@ export interface components {
                                 /** @enum {string} */
                                 occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                             }[];
-                            situationFullRef?: {
-                                participantRef: string;
-                                situationNumber: string;
-                            }[];
                         };
                     }[];
                     thisCall: {
@@ -1019,10 +991,6 @@ export interface components {
                                 /** @enum {string} */
                                 occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                             }[];
-                            situationFullRef?: {
-                                participantRef: string;
-                                situationNumber: string;
-                            }[];
                         };
                     };
                     onwardCall: {
@@ -1059,10 +1027,6 @@ export interface components {
                                 fareClass: "unknown" | "firstClass" | "secondClass";
                                 /** @enum {string} */
                                 occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                            }[];
-                            situationFullRef?: {
-                                participantRef: string;
-                                situationNumber: string;
                             }[];
                         };
                     }[];
@@ -1122,6 +1086,10 @@ export interface components {
                         unplanned?: boolean;
                         cancelled?: boolean;
                         deviation?: boolean;
+                        situationFullRef?: {
+                            participantRef: string;
+                            situationNumber: string;
+                        }[];
                     };
                     operatingDays?: {
                         from: string;
@@ -1324,10 +1292,6 @@ export interface components {
                                             /** @enum {string} */
                                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                         }[];
-                                        situationFullRef?: {
-                                            participantRef: string;
-                                            situationNumber: string;
-                                        }[];
                                     };
                                 }[];
                                 thisCall: {
@@ -1365,10 +1329,6 @@ export interface components {
                                             /** @enum {string} */
                                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
                                         }[];
-                                        situationFullRef?: {
-                                            participantRef: string;
-                                            situationNumber: string;
-                                        }[];
                                     };
                                 };
                                 onwardCall: {
@@ -1405,10 +1365,6 @@ export interface components {
                                             fareClass: "unknown" | "firstClass" | "secondClass";
                                             /** @enum {string} */
                                             occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                                        }[];
-                                        situationFullRef?: {
-                                            participantRef: string;
-                                            situationNumber: string;
                                         }[];
                                     };
                                 }[];
@@ -1468,6 +1424,10 @@ export interface components {
                                     unplanned?: boolean;
                                     cancelled?: boolean;
                                     deviation?: boolean;
+                                    situationFullRef?: {
+                                        participantRef: string;
+                                        situationNumber: string;
+                                    }[];
                                 };
                                 operatingDays?: {
                                     from: string;
