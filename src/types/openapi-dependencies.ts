@@ -186,6 +186,9 @@ const MapLegacyArrayTags: Record<string, boolean> = {
   'ptSituation.detail': true,
   'stopPoints.affectedStopPoint': true,
   'vehicleJourneys.affectedVehicleJourney': true,
+  
+  // in OJPv1 there is no <SituationFullRefs> wrapper, the <SituationFullRef> are directly under <Service>
+  'service.situationFullRef': true,
 
   'timedLeg.legIntermediates': true,
 
