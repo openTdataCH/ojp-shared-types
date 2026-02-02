@@ -277,6 +277,10 @@ export interface components {
             unplanned?: boolean;
             cancelled?: boolean;
             deviation?: boolean;
+            situationFullRef?: {
+                participantRef: string;
+                situationNumber: string;
+            }[];
         };
         Location: {
             stopPoint?: {
@@ -408,10 +412,6 @@ export interface components {
                 /** @enum {string} */
                 occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
             }[];
-            situationFullRef?: {
-                participantRef: string;
-                situationNumber: string;
-            }[];
         };
         CallAtNearStop: {
             callAtStop: {
@@ -447,10 +447,6 @@ export interface components {
                     fareClass: "unknown" | "firstClass" | "secondClass";
                     /** @enum {string} */
                     occupancyLevel: "unknown" | "empty" | "manySeatsAvailable" | "fewSeatsAvailable" | "standingRoomOnly";
-                }[];
-                situationFullRef?: {
-                    participantRef: string;
-                    situationNumber: string;
                 }[];
             };
         };

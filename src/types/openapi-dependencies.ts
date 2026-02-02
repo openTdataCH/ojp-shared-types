@@ -176,8 +176,9 @@ const MapArrayTags: Record<string, boolean> = {
 // - this is used by the parser.isArrayHandler - to always return arrays even when there is only one result
 // - in response (parser) XML
 const MapLegacyArrayTags: Record<string, boolean> = {
-  // OJP v1
   'places.location': true,
+
+  'trip.tripLeg': true,
 
   // PtSituation OJP v1
   'callAtStop.situationFullRef': true,
@@ -185,6 +186,9 @@ const MapLegacyArrayTags: Record<string, boolean> = {
   'ptSituation.detail': true,
   'stopPoints.affectedStopPoint': true,
   'vehicleJourneys.affectedVehicleJourney': true,
+  
+  // in OJPv1 there is no <SituationFullRefs> wrapper, the <SituationFullRef> are directly under <Service>
+  'service.situationFullRef': true,
 
   'timedLeg.legIntermediates': true,
 

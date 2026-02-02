@@ -426,6 +426,8 @@ components:
           type: string
           xml:
             name: OperatorRef
+            namespace: "http://www.siri.org.uk/siri"
+            prefix: siri
         destinationStopPointRef:
           type: string
           xml:
@@ -446,6 +448,14 @@ components:
           type: boolean
           xml:
             name: Deviation
+        # compared with OJPv2 we have the array at the top-level, no <SituationFullRefs> wrapper
+        situationFullRef:
+          type: array
+          xml:
+            name: SituationFullRef
+          items:
+            $ref: "../../ojp-shared.yml#/components/schemas/SituationFullRefStructure"
+
     # DatedJourney
 
     # Variation of Place
@@ -582,12 +592,6 @@ components:
             name: ExpectedDepartureOccupancy
           items:
             $ref: "../../ojp-shared.yml#/components/schemas/ExpectedDepartureOccupancyStructure"
-        situationFullRef:
-          type: array
-          xml:
-            name: SituationFullRef
-          items:
-            $ref: "../../ojp-shared.yml#/components/schemas/SituationFullRefStructure"
 
     # SharedLegSection
 

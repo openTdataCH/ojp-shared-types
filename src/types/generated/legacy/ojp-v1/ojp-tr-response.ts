@@ -351,6 +351,10 @@ export interface paths {
                                                             unplanned?: boolean;
                                                             cancelled?: boolean;
                                                             deviation?: boolean;
+                                                            situationFullRef?: {
+                                                                participantRef: string;
+                                                                situationNumber: string;
+                                                            }[];
                                                         };
                                                         legTrack?: {
                                                             trackSection: {
@@ -862,6 +866,10 @@ export interface components {
                 unplanned?: boolean;
                 cancelled?: boolean;
                 deviation?: boolean;
+                situationFullRef?: {
+                    participantRef: string;
+                    situationNumber: string;
+                }[];
             };
             legTrack?: {
                 trackSection: {
@@ -1260,6 +1268,10 @@ export interface components {
                     unplanned?: boolean;
                     cancelled?: boolean;
                     deviation?: boolean;
+                    situationFullRef?: {
+                        participantRef: string;
+                        situationNumber: string;
+                    }[];
                 };
                 legTrack?: {
                     trackSection: {
@@ -1667,6 +1679,10 @@ export interface components {
                         unplanned?: boolean;
                         cancelled?: boolean;
                         deviation?: boolean;
+                        situationFullRef?: {
+                            participantRef: string;
+                            situationNumber: string;
+                        }[];
                     };
                     legTrack?: {
                         trackSection: {
@@ -2077,6 +2093,10 @@ export interface components {
                             unplanned?: boolean;
                             cancelled?: boolean;
                             deviation?: boolean;
+                            situationFullRef?: {
+                                participantRef: string;
+                                situationNumber: string;
+                            }[];
                         };
                         legTrack?: {
                             trackSection: {
@@ -2627,6 +2647,10 @@ export interface components {
                                 unplanned?: boolean;
                                 cancelled?: boolean;
                                 deviation?: boolean;
+                                situationFullRef?: {
+                                    participantRef: string;
+                                    situationNumber: string;
+                                }[];
                             };
                             legTrack?: {
                                 trackSection: {
@@ -3183,6 +3207,10 @@ export interface components {
                                             unplanned?: boolean;
                                             cancelled?: boolean;
                                             deviation?: boolean;
+                                            situationFullRef?: {
+                                                participantRef: string;
+                                                situationNumber: string;
+                                            }[];
                                         };
                                         legTrack?: {
                                             trackSection: {
