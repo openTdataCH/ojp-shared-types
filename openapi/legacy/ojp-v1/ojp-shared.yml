@@ -426,8 +426,6 @@ components:
           type: string
           xml:
             name: OperatorRef
-            namespace: "http://www.siri.org.uk/siri"
-            prefix: siri
         destinationStopPointRef:
           type: string
           xml:
