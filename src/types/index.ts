@@ -85,6 +85,7 @@ export type ContinuousServiceSchema = sharedComponents['schemas']['ContinuousSer
 
 export type PtSituationElement = sharedComponents['schemas']['PtSituationElementStructure']
 export type OJPv1_PtSituationElement = ojpV1_SharedComponents['schemas']['PtSituationElementStructure']
+export type PtSituationFullRefSchema = sharedComponents['schemas']['SituationFullRefStructure']
 
 export type ServiceArrivalDepartureSchema = sharedComponents['schemas']['SharedServiceArrivalDeparture'];
 
