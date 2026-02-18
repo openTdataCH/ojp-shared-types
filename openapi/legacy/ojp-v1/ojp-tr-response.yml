@@ -175,9 +175,16 @@ components:
           xml:
             name: LegEnd
         service:
-          $ref: '../../ojp-shared.yml#/components/schemas/ContinuousServiceStructure'
+          type: object
           xml:
             name: Service
+          required:
+            - individualMode
+          properties:
+            individualMode:
+              type: string
+              xml:
+                name: IndividualMode
         duration:
           type: string
           xml:
