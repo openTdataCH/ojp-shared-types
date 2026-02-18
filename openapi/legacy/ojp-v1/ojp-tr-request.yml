@@ -56,6 +56,15 @@ components:
           type: boolean
           xml:
             name: IncludeAllRestrictedLines
+        # https://opentransportdata.swiss/en/cookbook/open-journey-planner-ojp/ojptriprequest/
+        itModesToCover:
+          type: array
+          xml:
+            name: ItModesToCover
+          items:
+            type: string
+            xml:
+              name: ItModesToCover
         includeTrackSections:
           type: boolean
           xml:
