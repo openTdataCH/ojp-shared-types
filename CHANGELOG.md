@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.6 - 18.02.2026
+- Fix OJPv1 TR - [PR #45](https://github.com/openTdataCH/ojp-shared-types/pull/45)
+  - adds `ItModesToCover` to TR params (OJP v1)
+  - use OJPv1 ContinousService for ContinuousLeg structure
+
 ## 0.1.5 - 02.02.2026
 - Fix OJPv1 OperatoreRef - [PR #44](https://github.com/openTdataCH/ojp-shared-types/pull/44)
   - `OperatorRef` is under ojp: namespace for OJPv1
