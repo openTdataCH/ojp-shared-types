@@ -365,10 +365,7 @@ export interface paths {
                                                             };
                                                         };
                                                         service: {
-                                                            /** @enum {string} */
-                                                            personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
-                                                            /** @enum {string} */
-                                                            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                                            individualMode: string;
                                                         };
                                                         duration: string;
                                                         length?: number;
@@ -821,10 +818,7 @@ export interface components {
                             };
                         };
                         service: {
-                            /** @enum {string} */
-                            personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
-                            /** @enum {string} */
-                            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                            individualMode: string;
                         };
                         duration: string;
                         length?: number;
@@ -1273,10 +1267,7 @@ export interface components {
                                 };
                             };
                             service: {
-                                /** @enum {string} */
-                                personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
-                                /** @enum {string} */
-                                personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                individualMode: string;
                             };
                             duration: string;
                             length?: number;
@@ -1708,10 +1699,7 @@ export interface components {
                                     };
                                 };
                                 service: {
-                                    /** @enum {string} */
-                                    personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
-                                    /** @enum {string} */
-                                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                    individualMode: string;
                                 };
                                 duration: string;
                                 length?: number;
@@ -2151,10 +2139,7 @@ export interface components {
                                             };
                                         };
                                         service: {
-                                            /** @enum {string} */
-                                            personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
-                                            /** @enum {string} */
-                                            personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                            individualMode: string;
                                         };
                                         duration: string;
                                         length?: number;

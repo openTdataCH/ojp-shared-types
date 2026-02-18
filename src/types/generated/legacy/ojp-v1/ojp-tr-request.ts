@@ -105,6 +105,7 @@ export interface paths {
                                             numberOfResultsBefore?: number;
                                             numberOfResultsAfter?: number;
                                             includeAllRestrictedLines?: boolean;
+                                            itModesToCover?: string[];
                                             includeTrackSections?: boolean;
                                             includeLegProjection?: boolean;
                                             includeTurnDescription?: boolean;
@@ -156,6 +157,7 @@ export interface components {
             numberOfResultsBefore?: number;
             numberOfResultsAfter?: number;
             includeAllRestrictedLines?: boolean;
+            itModesToCover?: string[];
             includeTrackSections?: boolean;
             includeLegProjection?: boolean;
             includeTurnDescription?: boolean;
@@ -240,6 +242,7 @@ export interface components {
                 numberOfResultsBefore?: number;
                 numberOfResultsAfter?: number;
                 includeAllRestrictedLines?: boolean;
+                itModesToCover?: string[];
                 includeTrackSections?: boolean;
                 includeLegProjection?: boolean;
                 includeTurnDescription?: boolean;
@@ -319,6 +322,7 @@ export interface components {
                             numberOfResultsBefore?: number;
                             numberOfResultsAfter?: number;
                             includeAllRestrictedLines?: boolean;
+                            itModesToCover?: string[];
                             includeTrackSections?: boolean;
                             includeLegProjection?: boolean;
                             includeTurnDescription?: boolean;
