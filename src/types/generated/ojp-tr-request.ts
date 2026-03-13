@@ -140,6 +140,7 @@ export interface paths {
                                                 vehicleRef: string[];
                                                 trainNumber: string[];
                                             };
+                                            bikeTransport?: boolean;
                                             walkSpeed?: number;
                                             numberOfResults?: number;
                                             numberOfResultsBefore?: number;
@@ -211,6 +212,7 @@ export interface components {
                 vehicleRef: string[];
                 trainNumber: string[];
             };
+            bikeTransport?: boolean;
             walkSpeed?: number;
             numberOfResults?: number;
             numberOfResultsBefore?: number;
@@ -339,6 +341,7 @@ export interface components {
                     vehicleRef: string[];
                     trainNumber: string[];
                 };
+                bikeTransport?: boolean;
                 walkSpeed?: number;
                 numberOfResults?: number;
                 numberOfResultsBefore?: number;
@@ -462,6 +465,7 @@ export interface components {
                                 vehicleRef: string[];
                                 trainNumber: string[];
                             };
+                            bikeTransport?: boolean;
                             walkSpeed?: number;
                             numberOfResults?: number;
                             numberOfResultsBefore?: number;
