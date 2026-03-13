@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.7 - 13.03.2026
+- Updates TR
+  - adds `BikeTransport` TripRequest param
+
 ## 0.1.6 - 18.02.2026
 - Fix OJPv1 TR - [PR #45](https://github.com/openTdataCH/ojp-shared-types/pull/45)
   - adds `ItModesToCover` to TR params (OJP v1)
