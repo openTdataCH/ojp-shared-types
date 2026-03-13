@@ -48,6 +48,10 @@ components:
           $ref: "./ojp-shared.yml#/components/schemas/VehicleFilterStructure"
           xml:
             name: VehicleFilter
+        bikeTransport:
+          type: boolean
+          xml:
+            name: BikeTransport
         walkSpeed:
           type: number
           xml:
