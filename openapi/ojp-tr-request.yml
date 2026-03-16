@@ -80,6 +80,12 @@ components:
           type: boolean
           xml:
             name: IncludeAllRestrictedLines
+        itModeToCover:
+          type: array
+          xml:
+            name: ItModeToCover
+          items:
+            $ref: './ojp-shared.yml#/components/schemas/ItModesStructure'
         includeTrackSections:
           type: boolean
           xml:
