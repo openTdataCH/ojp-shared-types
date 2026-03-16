@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.8 - 16.03.2026
+- Updates TR - [PR #47](https://github.com/openTdataCH/ojp-shared-types/pull/47)
+  - adds `ItModesStructure` to TR `TripParam`
+
 ## 0.1.7 - 13.03.2026
 - Updates TR - [PR #46](https://github.com/openTdataCH/ojp-shared-types/pull/46)
   - adds `BikeTransport` TripRequest param
