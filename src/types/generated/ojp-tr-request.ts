@@ -150,6 +150,11 @@ export interface paths {
                                             /** @enum {string} */
                                             optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                                             includeAllRestrictedLines?: boolean;
+                                            itModeToCover?: {
+                                                /** @enum {string} */
+                                                personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                                personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                                            }[];
                                             includeTrackSections?: boolean;
                                             includeLegProjection?: boolean;
                                             includeTurnDescription?: boolean;
@@ -222,6 +227,11 @@ export interface components {
             /** @enum {string} */
             optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
             includeAllRestrictedLines?: boolean;
+            itModeToCover?: {
+                /** @enum {string} */
+                personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+            }[];
             includeTrackSections?: boolean;
             includeLegProjection?: boolean;
             includeTurnDescription?: boolean;
@@ -351,6 +361,11 @@ export interface components {
                 /** @enum {string} */
                 optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                 includeAllRestrictedLines?: boolean;
+                itModeToCover?: {
+                    /** @enum {string} */
+                    personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                    personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                }[];
                 includeTrackSections?: boolean;
                 includeLegProjection?: boolean;
                 includeTurnDescription?: boolean;
@@ -475,6 +490,11 @@ export interface components {
                             /** @enum {string} */
                             optimisationMethod?: "fastest" | "minChanges" | "leastWalking" | "leastCost" | "leastDistance" | "earliestArrival" | "latestDeparture" | "earliestArrivalAndLatestDeparture" | "minNonLevelEntrances" | "minStairs" | "bestForVisualImpairment" | "bestForAuditoryImpairment" | "environmentalSafety" | "extraSafe" | "extraReliable" | "scenic" | "quietTravel";
                             includeAllRestrictedLines?: boolean;
+                            itModeToCover?: {
+                                /** @enum {string} */
+                                personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+                                personalModeOfOperation: ("self" | "own" | "otherOwned" | "privateLift" | "lease")[];
+                            }[];
                             includeTrackSections?: boolean;
                             includeLegProjection?: boolean;
                             includeTurnDescription?: boolean;
