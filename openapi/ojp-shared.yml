@@ -1568,3 +1568,7 @@ components:
           $ref: './ojp-shared.yml#/components/schemas/PersonalModesEnumeration'
           xml:
             name: PersonalMode
+        mode:
+          $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
+          xml:
+            name: Mode
