@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.9 - 21.04.2026
+- Updates TR - [PR #48](https://github.com/openTdataCH/ojp-shared-types/pull/48)
+  - adds `ModeFilterStructure` to `ContinuousLeg` service
+
 ## 0.1.8 - 16.03.2026
 - Updates TR - [PR #47](https://github.com/openTdataCH/ojp-shared-types/pull/47)
   - adds `ItModesStructure` to TR `TripParam`
