@@ -907,6 +907,21 @@ export interface components {
             personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
             /** @enum {string} */
             personalMode: "foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other";
+            mode?: {
+                exclude?: boolean;
+                ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+                personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
+                airSubmode?: string;
+                busSubmode?: string;
+                coachSubmode?: string;
+                funicularSubmode?: string;
+                metroSubmode?: string;
+                tramSubmode?: string;
+                telecabinSubmode?: string;
+                /** @enum {string} */
+                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                waterSubmode?: string;
+            };
         };
     };
     responses: never;
