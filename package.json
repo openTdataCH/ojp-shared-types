@@ -19,6 +19,10 @@
     "generate:ts": "bash ./scripts/generate-ts.sh",
     "prepare": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/openTdataCH/ojp-shared-types.git"
+  },
   "keywords": [
     "ojp",
     "transit",
