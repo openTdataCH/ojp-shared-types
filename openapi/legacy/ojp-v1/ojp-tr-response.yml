@@ -186,6 +186,18 @@ components:
               type: string
               xml:
                 name: IndividualMode
+            bookingArrangements:
+              type: object
+              xml:
+                name: BookingArrangements
+              required:
+                - bookingArrangement
+              properties:
+                bookingArrangement:
+                  type: array
+                  items:
+                    $ref: '../../ojp-shared.yml#/components/schemas/BookingArrangementStructure'
+
         duration:
           type: string
           xml:
