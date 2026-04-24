@@ -82,6 +82,7 @@ export type IndividualTransportOptionSchema = sharedComponents['schemas']['Indiv
 export type LinkProjectionSchema = sharedComponents['schemas']['LinkProjection'];
 
 export type ContinuousServiceSchema = sharedComponents['schemas']['ContinuousServiceStructure'];
+export type BookingArrangementStructure = sharedComponents['schemas']['BookingArrangementStructure'];
 
 export type PtSituationElement = sharedComponents['schemas']['PtSituationElementStructure']
 export type OJPv1_PtSituationElement = ojpV1_SharedComponents['schemas']['PtSituationElementStructure']
