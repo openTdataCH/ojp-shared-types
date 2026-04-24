@@ -130,10 +130,11 @@ components:
         - legEnd
         - duration
       properties:
-        transferType:
-          $ref: "../../ojp-shared.yml#/components/schemas/TransferTypeEnum"
+        transferMode:
+          # cant use OJP 2.0 enum because is no 1-1 overlap with OJP 1.0
+          type: string
           xml:
-            name: TransferType
+            name: TransferMode
         legStart:
           $ref: './ojp-shared.yml#/components/schemas/PlaceRef'
           xml:
