@@ -80,6 +80,7 @@ export type OJPv1_ResponseContextSchema = ojpV1_SharedComponents['schemas']['Res
 
 export type IndividualTransportOptionSchema = sharedComponents['schemas']['IndividualTransportOptionStructure'];
 export type OJPv1_IndividualTransportOptionSchema = ojpV1_SharedComponents['schemas']['IndividualTransportOptionsStructure'];
+export type PersonalModesOfOperationEnum = sharedComponents['schemas']['PersonalModesOfOperationEnumeration']
 export type LinkProjectionSchema = sharedComponents['schemas']['LinkProjection'];
 
 export type ContinuousServiceSchema = sharedComponents['schemas']['ContinuousServiceStructure'];
