@@ -55,6 +55,13 @@ export interface paths {
                                                 };
                                             };
                                             depArrTime?: string;
+                                            individualTransportOptions?: {
+                                                mode: string;
+                                                maxDistance?: number;
+                                                maxDuration?: string;
+                                                minDistance?: number;
+                                                minDuration?: string;
+                                            }[];
                                         };
                                         params?: {
                                             includeAllRestrictedLines?: boolean;
@@ -106,6 +113,13 @@ export interface components {
                     };
                 };
                 depArrTime?: string;
+                individualTransportOptions?: {
+                    mode: string;
+                    maxDistance?: number;
+                    maxDuration?: string;
+                    minDistance?: number;
+                    minDuration?: string;
+                }[];
             };
             params?: {
                 includeAllRestrictedLines?: boolean;
@@ -141,6 +155,13 @@ export interface components {
                                 };
                             };
                             depArrTime?: string;
+                            individualTransportOptions?: {
+                                mode: string;
+                                maxDistance?: number;
+                                maxDuration?: string;
+                                minDistance?: number;
+                                minDuration?: string;
+                            }[];
                         };
                         params?: {
                             includeAllRestrictedLines?: boolean;

@@ -404,8 +404,7 @@ export interface paths {
                                                         };
                                                     };
                                                     transferLeg?: {
-                                                        /** @enum {string} */
-                                                        transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                                                        transferMode?: string;
                                                         legStart: {
                                                             stopPointRef?: string;
                                                             stopPlaceRef?: string;
@@ -501,6 +500,14 @@ export interface paths {
                                                         };
                                                         service: {
                                                             individualMode: string;
+                                                            bookingArrangements?: {
+                                                                bookingArrangement: {
+                                                                    bookingAgencyName: {
+                                                                        text: string;
+                                                                    };
+                                                                    infoUrl: string;
+                                                                }[];
+                                                            };
                                                         };
                                                         duration: string;
                                                         length?: number;
@@ -916,8 +923,7 @@ export interface components {
             };
         };
         TransferLeg: {
-            /** @enum {string} */
-            transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+            transferMode?: string;
             legStart: {
                 stopPointRef?: string;
                 stopPlaceRef?: string;
@@ -1013,6 +1019,14 @@ export interface components {
             };
             service: {
                 individualMode: string;
+                bookingArrangements?: {
+                    bookingArrangement: {
+                        bookingAgencyName: {
+                            text: string;
+                        };
+                        infoUrl: string;
+                    }[];
+                };
             };
             duration: string;
             length?: number;
@@ -1315,8 +1329,7 @@ export interface components {
                 };
             };
             transferLeg?: {
-                /** @enum {string} */
-                transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                transferMode?: string;
                 legStart: {
                     stopPointRef?: string;
                     stopPlaceRef?: string;
@@ -1412,6 +1425,14 @@ export interface components {
                 };
                 service: {
                     individualMode: string;
+                    bookingArrangements?: {
+                        bookingArrangement: {
+                            bookingAgencyName: {
+                                text: string;
+                            };
+                            infoUrl: string;
+                        }[];
+                    };
                 };
                 duration: string;
                 length?: number;
@@ -1723,8 +1744,7 @@ export interface components {
                     };
                 };
                 transferLeg?: {
-                    /** @enum {string} */
-                    transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                    transferMode?: string;
                     legStart: {
                         stopPointRef?: string;
                         stopPlaceRef?: string;
@@ -1820,6 +1840,14 @@ export interface components {
                     };
                     service: {
                         individualMode: string;
+                        bookingArrangements?: {
+                            bookingArrangement: {
+                                bookingAgencyName: {
+                                    text: string;
+                                };
+                                infoUrl: string;
+                            }[];
+                        };
                     };
                     duration: string;
                     length?: number;
@@ -2134,8 +2162,7 @@ export interface components {
                         };
                     };
                     transferLeg?: {
-                        /** @enum {string} */
-                        transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                        transferMode?: string;
                         legStart: {
                             stopPointRef?: string;
                             stopPlaceRef?: string;
@@ -2231,6 +2258,14 @@ export interface components {
                         };
                         service: {
                             individualMode: string;
+                            bookingArrangements?: {
+                                bookingArrangement: {
+                                    bookingAgencyName: {
+                                        text: string;
+                                    };
+                                    infoUrl: string;
+                                }[];
+                            };
                         };
                         duration: string;
                         length?: number;
@@ -2685,8 +2720,7 @@ export interface components {
                             };
                         };
                         transferLeg?: {
-                            /** @enum {string} */
-                            transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                            transferMode?: string;
                             legStart: {
                                 stopPointRef?: string;
                                 stopPlaceRef?: string;
@@ -2782,6 +2816,14 @@ export interface components {
                             };
                             service: {
                                 individualMode: string;
+                                bookingArrangements?: {
+                                    bookingArrangement: {
+                                        bookingAgencyName: {
+                                            text: string;
+                                        };
+                                        infoUrl: string;
+                                    }[];
+                                };
                             };
                             duration: string;
                             length?: number;
@@ -3242,8 +3284,7 @@ export interface components {
                                         };
                                     };
                                     transferLeg?: {
-                                        /** @enum {string} */
-                                        transferType: "walk" | "remainInVehicle" | "changeWithinVehicle";
+                                        transferMode?: string;
                                         legStart: {
                                             stopPointRef?: string;
                                             stopPlaceRef?: string;
@@ -3339,6 +3380,14 @@ export interface components {
                                         };
                                         service: {
                                             individualMode: string;
+                                            bookingArrangements?: {
+                                                bookingArrangement: {
+                                                    bookingAgencyName: {
+                                                        text: string;
+                                                    };
+                                                    infoUrl: string;
+                                                }[];
+                                            };
                                         };
                                         duration: string;
                                         length?: number;

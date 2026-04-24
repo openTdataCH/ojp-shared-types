@@ -55,6 +55,13 @@ export interface paths {
                                                 };
                                             };
                                             depArrTime?: string;
+                                            individualTransportOptions?: {
+                                                mode: string;
+                                                maxDistance?: number;
+                                                maxDuration?: string;
+                                                minDistance?: number;
+                                                minDuration?: string;
+                                            }[];
                                         };
                                         destination: {
                                             placeRef: {
@@ -69,6 +76,13 @@ export interface paths {
                                                 };
                                             };
                                             depArrTime?: string;
+                                            individualTransportOptions?: {
+                                                mode: string;
+                                                maxDistance?: number;
+                                                maxDuration?: string;
+                                                minDistance?: number;
+                                                minDuration?: string;
+                                            }[];
                                         };
                                         via: {
                                             viaPoint: {
@@ -110,6 +124,23 @@ export interface paths {
                                             includeLegProjection?: boolean;
                                             includeTurnDescription?: boolean;
                                             includeIntermediateStops?: boolean;
+                                            extension?: {
+                                                origin?: {
+                                                    mode: string;
+                                                    maxDistance?: number;
+                                                    maxDuration?: string;
+                                                    minDistance?: number;
+                                                    minDuration?: string;
+                                                };
+                                                destination?: {
+                                                    mode: string;
+                                                    maxDistance?: number;
+                                                    maxDuration?: string;
+                                                    minDistance?: number;
+                                                    minDuration?: string;
+                                                };
+                                                itModesToCover?: string[];
+                                            };
                                         };
                                     };
                                 };
@@ -162,6 +193,23 @@ export interface components {
             includeLegProjection?: boolean;
             includeTurnDescription?: boolean;
             includeIntermediateStops?: boolean;
+            extension?: {
+                origin?: {
+                    mode: string;
+                    maxDistance?: number;
+                    maxDuration?: string;
+                    minDistance?: number;
+                    minDuration?: string;
+                };
+                destination?: {
+                    mode: string;
+                    maxDistance?: number;
+                    maxDuration?: string;
+                    minDistance?: number;
+                    minDuration?: string;
+                };
+                itModesToCover?: string[];
+            };
         };
         ViaPoint: {
             viaPoint: {
@@ -192,6 +240,13 @@ export interface components {
                     };
                 };
                 depArrTime?: string;
+                individualTransportOptions?: {
+                    mode: string;
+                    maxDistance?: number;
+                    maxDuration?: string;
+                    minDistance?: number;
+                    minDuration?: string;
+                }[];
             };
             destination: {
                 placeRef: {
@@ -206,6 +261,13 @@ export interface components {
                     };
                 };
                 depArrTime?: string;
+                individualTransportOptions?: {
+                    mode: string;
+                    maxDistance?: number;
+                    maxDuration?: string;
+                    minDistance?: number;
+                    minDuration?: string;
+                }[];
             };
             via: {
                 viaPoint: {
@@ -247,6 +309,23 @@ export interface components {
                 includeLegProjection?: boolean;
                 includeTurnDescription?: boolean;
                 includeIntermediateStops?: boolean;
+                extension?: {
+                    origin?: {
+                        mode: string;
+                        maxDistance?: number;
+                        maxDuration?: string;
+                        minDistance?: number;
+                        minDuration?: string;
+                    };
+                    destination?: {
+                        mode: string;
+                        maxDistance?: number;
+                        maxDuration?: string;
+                        minDistance?: number;
+                        minDuration?: string;
+                    };
+                    itModesToCover?: string[];
+                };
             };
         };
         OJP: {
@@ -272,6 +351,13 @@ export interface components {
                                 };
                             };
                             depArrTime?: string;
+                            individualTransportOptions?: {
+                                mode: string;
+                                maxDistance?: number;
+                                maxDuration?: string;
+                                minDistance?: number;
+                                minDuration?: string;
+                            }[];
                         };
                         destination: {
                             placeRef: {
@@ -286,6 +372,13 @@ export interface components {
                                 };
                             };
                             depArrTime?: string;
+                            individualTransportOptions?: {
+                                mode: string;
+                                maxDistance?: number;
+                                maxDuration?: string;
+                                minDistance?: number;
+                                minDuration?: string;
+                            }[];
                         };
                         via: {
                             viaPoint: {
@@ -327,6 +420,23 @@ export interface components {
                             includeLegProjection?: boolean;
                             includeTurnDescription?: boolean;
                             includeIntermediateStops?: boolean;
+                            extension?: {
+                                origin?: {
+                                    mode: string;
+                                    maxDistance?: number;
+                                    maxDuration?: string;
+                                    minDistance?: number;
+                                    minDuration?: string;
+                                };
+                                destination?: {
+                                    mode: string;
+                                    maxDistance?: number;
+                                    maxDuration?: string;
+                                    minDistance?: number;
+                                    minDuration?: string;
+                                };
+                                itModesToCover?: string[];
+                            };
                         };
                     };
                 };
