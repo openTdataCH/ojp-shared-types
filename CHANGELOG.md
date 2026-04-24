@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.10 - 24.04.2026
+- Updates TR - TBA
+  - adds / expose `BookingArrangementStructure`
+  - updates OJP 1.0 PlaceContext.IndividualTransportOptions, TransferLeg.TransferMode
+
 ## 0.1.9 - 21.04.2026
 - Updates TR - [PR #48](https://github.com/openTdataCH/ojp-shared-types/pull/48)
   - adds `ModeFilterStructure` to `ContinuousLeg` service
