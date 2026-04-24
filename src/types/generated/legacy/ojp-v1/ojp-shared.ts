@@ -450,6 +450,13 @@ export interface components {
                 }[];
             };
         };
+        IndividualTransportOptionsStructure: {
+            mode: string;
+            maxDistance?: number;
+            maxDuration?: string;
+            minDistance?: number;
+            minDuration?: string;
+        };
         PlaceContext: {
             placeRef: {
                 stopPointRef?: string;
@@ -463,6 +470,13 @@ export interface components {
                 };
             };
             depArrTime?: string;
+            individualTransportOptions?: {
+                mode: string;
+                maxDistance?: number;
+                maxDuration?: string;
+                minDistance?: number;
+                minDuration?: string;
+            }[];
         };
         TrackSectionStructure: {
             trackStart?: {

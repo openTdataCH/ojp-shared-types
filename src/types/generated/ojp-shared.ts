@@ -902,6 +902,12 @@ export interface components {
                 };
             };
         };
+        BookingArrangementStructure: {
+            bookingAgencyName: {
+                text: string;
+            };
+            infoUrl: string;
+        };
         ContinuousServiceStructure: {
             /** @enum {string} */
             personalModeOfOperation: "self" | "own" | "otherOwned" | "privateLift" | "lease";
@@ -921,6 +927,14 @@ export interface components {
                 /** @enum {string} */
                 railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                 waterSubmode?: string;
+            };
+            bookingArrangements?: {
+                bookingArrangement: {
+                    bookingAgencyName: {
+                        text: string;
+                    };
+                    infoUrl: string;
+                }[];
             };
         };
     };

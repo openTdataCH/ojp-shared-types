@@ -1551,6 +1551,23 @@ components:
               xml:
                 name: LowerRight
 
+    BookingArrangementStructure:
+      type: object
+      xml:
+        name: BookingArrangement
+      required:
+        - bookingAgencyName
+        - infoUrl
+      properties:
+        bookingAgencyName:
+          $ref: '#/components/schemas/InternationalText'
+          xml:
+            name: BookingAgencyName
+        infoUrl:
+          type: string
+          xml:
+            name: InfoUrl
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__ContinuousServiceStructure
     ContinuousServiceStructure:
       type: object
@@ -1572,3 +1589,14 @@ components:
           $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
           xml:
             name: Mode
+        bookingArrangements:
+          type: object
+          xml:
+            name: BookingArrangements
+          required:
+            - bookingArrangement
+          properties:
+            bookingArrangement:
+              type: array
+              items:
+                $ref: './ojp-shared.yml#/components/schemas/BookingArrangementStructure'

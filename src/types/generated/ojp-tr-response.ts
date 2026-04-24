@@ -540,6 +540,14 @@ export interface paths {
                                                                 railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                                                 waterSubmode?: string;
                                                             };
+                                                            bookingArrangements?: {
+                                                                bookingArrangement: {
+                                                                    bookingAgencyName: {
+                                                                        text: string;
+                                                                    };
+                                                                    infoUrl: string;
+                                                                }[];
+                                                            };
                                                         };
                                                         duration: string;
                                                         length?: number;
@@ -1177,6 +1185,14 @@ export interface components {
                     railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                     waterSubmode?: string;
                 };
+                bookingArrangements?: {
+                    bookingArrangement: {
+                        bookingAgencyName: {
+                            text: string;
+                        };
+                        infoUrl: string;
+                    }[];
+                };
             };
             duration: string;
             length?: number;
@@ -1587,6 +1603,14 @@ export interface components {
                         /** @enum {string} */
                         railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                         waterSubmode?: string;
+                    };
+                    bookingArrangements?: {
+                        bookingArrangement: {
+                            bookingAgencyName: {
+                                text: string;
+                            };
+                            infoUrl: string;
+                        }[];
                     };
                 };
                 duration: string;
@@ -2011,6 +2035,14 @@ export interface components {
                             /** @enum {string} */
                             railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                             waterSubmode?: string;
+                        };
+                        bookingArrangements?: {
+                            bookingArrangement: {
+                                bookingAgencyName: {
+                                    text: string;
+                                };
+                                infoUrl: string;
+                            }[];
                         };
                     };
                     duration: string;
@@ -2443,6 +2475,14 @@ export interface components {
                                 /** @enum {string} */
                                 railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                 waterSubmode?: string;
+                            };
+                            bookingArrangements?: {
+                                bookingArrangement: {
+                                    bookingAgencyName: {
+                                        text: string;
+                                    };
+                                    infoUrl: string;
+                                }[];
                             };
                         };
                         duration: string;
@@ -3041,6 +3081,14 @@ export interface components {
                                     /** @enum {string} */
                                     railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                     waterSubmode?: string;
+                                };
+                                bookingArrangements?: {
+                                    bookingArrangement: {
+                                        bookingAgencyName: {
+                                            text: string;
+                                        };
+                                        infoUrl: string;
+                                    }[];
                                 };
                             };
                             duration: string;
@@ -3645,6 +3693,14 @@ export interface components {
                                                 /** @enum {string} */
                                                 railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
                                                 waterSubmode?: string;
+                                            };
+                                            bookingArrangements?: {
+                                                bookingArrangement: {
+                                                    bookingAgencyName: {
+                                                        text: string;
+                                                    };
+                                                    infoUrl: string;
+                                                }[];
                                             };
                                         };
                                         duration: string;

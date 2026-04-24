@@ -79,9 +79,12 @@ export type ResponseContextSchema = sharedComponents['schemas']['ResponseContext
 export type OJPv1_ResponseContextSchema = ojpV1_SharedComponents['schemas']['ResponseContextStructure'];
 
 export type IndividualTransportOptionSchema = sharedComponents['schemas']['IndividualTransportOptionStructure'];
+export type OJPv1_IndividualTransportOptionSchema = ojpV1_SharedComponents['schemas']['IndividualTransportOptionsStructure'];
+export type PersonalModesOfOperationEnum = sharedComponents['schemas']['PersonalModesOfOperationEnumeration']
 export type LinkProjectionSchema = sharedComponents['schemas']['LinkProjection'];
 
 export type ContinuousServiceSchema = sharedComponents['schemas']['ContinuousServiceStructure'];
+export type BookingArrangementStructure = sharedComponents['schemas']['BookingArrangementStructure'];
 
 export type PtSituationElement = sharedComponents['schemas']['PtSituationElementStructure']
 export type OJPv1_PtSituationElement = ojpV1_SharedComponents['schemas']['PtSituationElementStructure']
