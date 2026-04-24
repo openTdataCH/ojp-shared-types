@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 0.1.11 - 24.04.2026
+- Updates npm publish - [PR #50](https://github.com/openTdataCH/ojp-shared-types/pull/50)
+
 ## 0.1.10 - 24.04.2026
 - Updates TR - [PR #49](https://github.com/openTdataCH/ojp-shared-types/pull/49)
   - adds / expose `BookingArrangementStructure`
