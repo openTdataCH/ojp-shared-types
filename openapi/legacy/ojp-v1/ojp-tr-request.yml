@@ -81,6 +81,28 @@ components:
           type: boolean
           xml:
             name: IncludeIntermediateStops
+        extension:
+          type: object
+          xml:
+            name: Extension
+          properties:
+            origin:
+              $ref: "./ojp-shared.yml#/components/schemas/IndividualTransportOptionsStructure"
+              xml:
+                name: Origin
+            destination:
+              $ref: "./ojp-shared.yml#/components/schemas/IndividualTransportOptionsStructure"
+              xml:
+                name: Destination
+            # https://opentransportdata.swiss/en/cookbook/open-journey-planner-ojp/ojptriprequest/
+            itModesToCover:
+              type: array
+              xml:
+                name: ItModesToCover
+              items:
+                type: string
+                xml:
+                  name: ItModesToCover
 
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TripViaStructure
     ViaPoint:
