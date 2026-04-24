@@ -19,7 +19,16 @@
     "generate:ts": "bash ./scripts/generate-ts.sh",
     "prepare": "npm run build"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/openTdataCH/ojp-shared-types.git"
+  },
+  "keywords": [
+    "ojp",
+    "transit",
+    "mobility",
+    "sbb"
+  ],
   "author": "Vasile Cotovanu",
   "license": "MIT",
   "devDependencies": {
