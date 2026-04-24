@@ -606,6 +606,35 @@ components:
           xml:
             name: CallAtStop
 
+    # OJP v1.0 version of https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__IndividualTransportOptionStructure
+    IndividualTransportOptionsStructure:
+      type: object
+      required:
+        - mode
+      xml:
+        name: IndividualTransportOptions
+      properties:
+        mode:
+          type: string
+          xml:
+            name: Mode
+        maxDistance:
+          type: number
+          xml:
+            name: MaxDistance
+        maxDuration:
+          type: string
+          xml:
+            name: MaxDuration
+        minDistance:
+          type: number
+          xml:
+            name: MinDistance
+        minDuration:
+          type: string
+          xml:
+            name: MinDuration
+
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__PlaceContextStructure
     PlaceContext:
       type: object
@@ -622,6 +651,12 @@ components:
           type: string
           xml:
             name: DepArrTime
+        individualTransportOptions:
+          type: array
+          xml:
+            name: IndividualTransportOptions
+          items:
+            $ref: "#/components/schemas/IndividualTransportOptionsStructure"
 
     # OJP v1
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TrackSectionStructure
