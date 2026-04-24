@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 0.1.10 - 24.04.2026
-- Updates TR - TBA
+- Updates TR - [PR #49](https://github.com/openTdataCH/ojp-shared-types/pull/49)
   - adds / expose `BookingArrangementStructure`
   - updates OJP 1.0 PlaceContext.IndividualTransportOptions, TransferLeg.TransferMode
 
