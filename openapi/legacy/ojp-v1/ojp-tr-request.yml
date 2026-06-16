@@ -35,7 +35,7 @@ components:
           xml:
             name: PtModeFilter
           items:
-            $ref: "../../ojp-shared.yml#/components/schemas/ModeFilterStructure"
+            $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
         walkSpeed:
           type: number
           xml:

@@ -93,8 +93,8 @@ export interface components {
                         };
                     };
                     stopPlace?: {
-                        stopPlaceRef?: string;
-                        stopPlaceName?: {
+                        stopPlaceRef: string;
+                        stopPlaceName: {
                             text: string;
                         };
                     };
@@ -151,7 +151,7 @@ export interface components {
                         tramSubmode?: string;
                         telecabinSubmode?: string;
                         /** @enum {string} */
-                        railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                        railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
                         waterSubmode?: string;
                         name?: {
                             text: string;
@@ -221,6 +221,43 @@ export interface components {
                 text: string;
             };
         };
+        /** @enum {string} */
+        RailSubmodeEnum: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
+        ModeStructure: {
+            /** @enum {string} */
+            ptMode: "air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown";
+            airSubmode?: string;
+            busSubmode?: string;
+            coachSubmode?: string;
+            funicularSubmode?: string;
+            metroSubmode?: string;
+            tramSubmode?: string;
+            telecabinSubmode?: string;
+            /** @enum {string} */
+            railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
+            waterSubmode?: string;
+            name?: {
+                text: string;
+            };
+            shortName?: {
+                text: string;
+            };
+        };
+        ModeFilterStructure: {
+            exclude?: boolean;
+            ptMode: ("air" | "bus" | "coach" | "trolleyBus" | "metro" | "rail" | "tram" | "water" | "ferry" | "cableway" | "funicular" | "lift" | "telecabin" | "other" | "unknown")[];
+            personalMode: ("foot" | "bicycle" | "car" | "motorcycle" | "truck" | "scooter" | "other")[];
+            airSubmode?: string;
+            busSubmode?: string;
+            coachSubmode?: string;
+            funicularSubmode?: string;
+            metroSubmode?: string;
+            tramSubmode?: string;
+            telecabinSubmode?: string;
+            /** @enum {string} */
+            railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
+            waterSubmode?: string;
+        };
         DatedJourney: {
             conventionalModeOfOperation?: string;
             operatingDayRef: string;
@@ -239,7 +276,7 @@ export interface components {
                 tramSubmode?: string;
                 telecabinSubmode?: string;
                 /** @enum {string} */
-                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
                 waterSubmode?: string;
                 name?: {
                     text: string;
@@ -297,8 +334,8 @@ export interface components {
                 };
             };
             stopPlace?: {
-                stopPlaceRef?: string;
-                stopPlaceName?: {
+                stopPlaceRef: string;
+                stopPlaceName: {
                     text: string;
                 };
             };
@@ -355,7 +392,7 @@ export interface components {
                 tramSubmode?: string;
                 telecabinSubmode?: string;
                 /** @enum {string} */
-                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
                 waterSubmode?: string;
                 name?: {
                     text: string;

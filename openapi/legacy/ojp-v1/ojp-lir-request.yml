@@ -39,7 +39,7 @@ components:
           xml:
             name: Type
         modes:
-          $ref: "../../ojp-shared.yml#/components/schemas/ModeFilterStructure"
+          $ref: "./ojp-shared.yml#/components/schemas/ModeFilterStructure"
           xml:
             name: Modes
         pointOfInterestFilter:

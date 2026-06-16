@@ -59,8 +59,8 @@ export interface paths {
                                                         };
                                                     };
                                                     stopPlace?: {
-                                                        stopPlaceRef?: string;
-                                                        stopPlaceName?: {
+                                                        stopPlaceRef: string;
+                                                        stopPlaceName: {
                                                             text: string;
                                                         };
                                                     };
@@ -807,8 +807,8 @@ export interface components {
                             };
                         };
                         stopPlace?: {
-                            stopPlaceRef?: string;
-                            stopPlaceName?: {
+                            stopPlaceRef: string;
+                            stopPlaceName: {
                                 text: string;
                             };
                         };
@@ -1165,8 +1165,8 @@ export interface components {
                                         };
                                     };
                                     stopPlace?: {
-                                        stopPlaceRef?: string;
-                                        stopPlaceName?: {
+                                        stopPlaceRef: string;
+                                        stopPlaceName: {
                                             text: string;
                                         };
                                     };
