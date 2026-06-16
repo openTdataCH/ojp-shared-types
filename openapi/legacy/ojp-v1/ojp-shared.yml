@@ -568,7 +568,7 @@ components:
             namespace: "http://www.siri.org.uk/siri"
             prefix: siri
         mode:
-          $ref: '../../ojp-shared.yml#/components/schemas/ModeStructure'
+          $ref: '#/components/schemas/ModeStructure'
           xml:
             name: Mode
         productCategory:
@@ -668,7 +668,7 @@ components:
           xml:
             name: Mode
           items:
-            $ref: '../../ojp-shared.yml#/components/schemas/ModeStructure'
+            $ref: '#/components/schemas/ModeStructure'
         attribute:
           type: array
           xml:
