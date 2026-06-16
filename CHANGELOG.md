@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.12 - 16.06.2026
+- use `RailSubmodeEnum`, `ModeStructure`, `ModeFilterStructure` for OJP 1.0
+- adds `guaranteedConnection` to `TransferTypeEnum`
+
 ## 0.1.11 - 24.04.2026
 - Updates npm publish - [PR #50](https://github.com/openTdataCH/ojp-shared-types/pull/50)
 
