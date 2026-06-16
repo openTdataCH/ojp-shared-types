@@ -325,8 +325,8 @@ components:
       xml:
         name: StopPoint
       required:
-        - stopPointRef
-        - stopPointName
+        - stopPlaceRef
+        - stopPlaceName
       properties:
         stopPlaceRef:
           type: string
