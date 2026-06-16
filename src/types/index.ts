@@ -50,6 +50,8 @@ export type OccupancyLevelEnum = sharedComponents["schemas"]["OccupancyLevelEnum
 export type RailSubmodeEnum = sharedComponents["schemas"]["RailSubmodeEnum"];
 export type OptimisationMethodEnum = sharedComponents["schemas"]["OptimisationMethodEnum"];
 
+export type OJPv1_RailSubmodeEnum = ojpV1_SharedComponents["schemas"]["RailSubmodeEnum"];
+
 export type GeoPositionSchema = sharedComponents["schemas"]["GeoPosition"];
 export type PlaceRefSchema = sharedComponents["schemas"]["PlaceRef"];
 export type InternationalTextSchema = sharedComponents["schemas"]["InternationalText"];
@@ -71,6 +73,8 @@ export type ModeStructureSchema = sharedComponents['schemas']['ModeStructure'];
 export type ProductCategorySchema = sharedComponents['schemas']['ProductCategory'];
 export type GeneralAttributeSchema = sharedComponents['schemas']['GeneralAttribute'];
 export type ModeFilterSchema = sharedComponents["schemas"]['ModeFilterStructure'];
+export type OJPv1_ModeStructureSchema = ojpV1_SharedComponents['schemas']['ModeStructure'];
+export type OJPv1_ModeFilterSchema = ojpV1_SharedComponents['schemas']['ModeFilterStructure'];
 
 export type TrackSectionSchema = sharedComponents['schemas']['TrackSectionStructure'];
 export type OJPv1_TrackSectionSchema = ojpV1_SharedComponents['schemas']['TrackSectionStructure'];
@@ -117,6 +121,7 @@ export type InitialInputSchema = locationInformationRequestComponents['schemas']
 export type LIR_RequestParamsSchema = locationInformationRequestComponents['schemas']['PlaceParam'];
 export type LocationInformationRequestOJP = locationInformationRequestComponents['schemas']['OJP'];
 export type LocationInformationRequestSchema = locationInformationRequestComponents['schemas']['OJPLocationInformationRequest'];
+export type OJPv1_LIR_RequestParamsSchema = ojpV1_LocationInformationRequestComponents['schemas']['PlaceParam'];
 
 export type PlaceResultSchema = locationInformationResponseComponents['schemas']['PlaceResult'];
 export type LocationInformationRequestResponseOJP = locationInformationResponseComponents['schemas']['OJP'];
