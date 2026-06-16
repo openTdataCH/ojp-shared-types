@@ -358,6 +358,16 @@ components:
           xml:
             name: OperatorName
 
+    # OJP 2.0 https://vdvde.github.io/OJP/develop/documentation-tables/siri.html#type_siri__RailSubmodesOfTransportEnumeration
+    # OJP 1.0 https://laidig.github.io/siri-20-java/doc/schemas/siri_modes-v1_1_xsd/elements/RailSubmode.html
+    RailSubmodeEnum:
+      type: string 
+      enum: [highSpeedRailService, longDistanceTrain, interRegionalRailService, carTransportRailService, sleeperRailService, regionalRail, railShuttle, suburbanRailway, unknown]
+      xml:
+        name: RailSubmode
+        namespace: "http://www.siri.org.uk/siri"
+        prefix: siri
+
     # modified from 'openapi/ojp-shared.yml#/components/schemas/DatedJourney'
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__DatedJourneyStructure
     DatedJourney:
