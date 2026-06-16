@@ -60,7 +60,7 @@ components:
     # https://vdvde.github.io/OJP/develop/documentation-tables/ojp.html#type_ojp__TransferTypeEnumeration
     TransferTypeEnum:
       type: string
-      enum: [walk, remainInVehicle, changeWithinVehicle]
+      enum: [walk, remainInVehicle, changeWithinVehicle, guaranteedConnection]
       xml:
         name: TransferType
     
