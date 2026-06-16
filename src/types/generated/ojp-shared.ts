@@ -22,7 +22,7 @@ export interface components {
         /** @enum {string} */
         PerspectiveEnum: "general" | "stopPoint" | "vehicleJourney";
         /** @enum {string} */
-        TransferTypeEnum: "walk" | "remainInVehicle" | "changeWithinVehicle";
+        TransferTypeEnum: "walk" | "remainInVehicle" | "changeWithinVehicle" | "guaranteedConnection";
         /** @enum {string} */
         FareClassEnum: "unknown" | "firstClass" | "secondClass";
         /** @enum {string} */
@@ -120,8 +120,8 @@ export interface components {
             };
         };
         StopPlace: {
-            stopPlaceRef?: string;
-            stopPlaceName?: {
+            stopPlaceRef: string;
+            stopPlaceName: {
                 text: string;
             };
         };
@@ -205,8 +205,8 @@ export interface components {
                 };
             };
             stopPlace?: {
-                stopPlaceRef?: string;
-                stopPlaceName?: {
+                stopPlaceRef: string;
+                stopPlaceName: {
                     text: string;
                 };
             };
@@ -628,8 +628,8 @@ export interface components {
                         };
                     };
                     stopPlace?: {
-                        stopPlaceRef?: string;
-                        stopPlaceName?: {
+                        stopPlaceRef: string;
+                        stopPlaceName: {
                             text: string;
                         };
                     };

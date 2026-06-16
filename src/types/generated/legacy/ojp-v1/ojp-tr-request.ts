@@ -111,7 +111,7 @@ export interface paths {
                                                 tramSubmode?: string;
                                                 telecabinSubmode?: string;
                                                 /** @enum {string} */
-                                                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                                                railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
                                                 waterSubmode?: string;
                                             }[];
                                             walkSpeed?: number;
@@ -180,7 +180,7 @@ export interface components {
                 tramSubmode?: string;
                 telecabinSubmode?: string;
                 /** @enum {string} */
-                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
                 waterSubmode?: string;
             }[];
             walkSpeed?: number;
@@ -296,7 +296,7 @@ export interface components {
                     tramSubmode?: string;
                     telecabinSubmode?: string;
                     /** @enum {string} */
-                    railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                    railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
                     waterSubmode?: string;
                 }[];
                 walkSpeed?: number;
@@ -407,7 +407,7 @@ export interface components {
                                 tramSubmode?: string;
                                 telecabinSubmode?: string;
                                 /** @enum {string} */
-                                railSubmode?: "international" | "highSpeedRail" | "interregionalRail" | "railShuttle" | "local" | "vehicleTunnelTransportRailService";
+                                railSubmode?: "highSpeedRailService" | "longDistanceTrain" | "interRegionalRailService" | "carTransportRailService" | "sleeperRailService" | "regionalRail" | "railShuttle" | "suburbanRailway" | "unknown";
                                 waterSubmode?: string;
                             }[];
                             walkSpeed?: number;
