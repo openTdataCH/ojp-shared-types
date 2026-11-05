@@ -126,6 +126,7 @@ const MapArrayTags: Record<string, boolean> = {
   'durationContent.durationText': true,
   'remarkContent.remark': true,
   'textualContent.infoLink': true,
+  'infoLink.label': true,
   
   'itModeAndModeOfOperation.personalModeOfOperation': true,
 
