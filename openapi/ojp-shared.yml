@@ -605,11 +605,6 @@ components:
         prefix: siri
       required:
         - summaryContent
-        - descriptionContent
-        - consequenceContent
-        - recommendationContent
-        - remarkContent
-        - infoLink
       properties:
         summaryContent:
           type: object
