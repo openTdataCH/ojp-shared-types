@@ -118,12 +118,14 @@ const MapArrayTags: Record<string, boolean> = {
   'textualContent.consequenceContent': true,
   'textualContent.recommendationContent': true,
   'textualContent.remarkContent': true,
+  'summaryContent.summaryText': true,
+  'reasonContent.reasonText': true,
+  'descriptionContent.descriptionText': true,
+  'consequenceContent.consequenceText': true,
+  'recommendationContent.recommendationText': true,
+  'durationContent.durationText': true,
+  'remarkContent.remark': true,
   'textualContent.infoLink': true,
-  // technically these are also arrays - but the OJP repsonse never returned it as such
-  // 'descriptionContent.descriptionText': true,
-  // 'consequenceContent.consequenceText': true,
-  // 'recommendationContent.recommendationText': true,
-  // 'remarkContent.remark': true,
   
   'itModeAndModeOfOperation.personalModeOfOperation': true,
 
