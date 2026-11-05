@@ -171,27 +171,27 @@ export interface paths {
                                                                 perspective: "general" | "stopPoint" | "vehicleJourney";
                                                                 textualContent: {
                                                                     summaryContent: {
-                                                                        summaryText: string;
+                                                                        summaryText: string[];
                                                                     };
                                                                     reasonContent?: {
-                                                                        reasonText: string;
+                                                                        reasonText: string[];
                                                                     };
-                                                                    descriptionContent: {
-                                                                        descriptionText: string;
+                                                                    descriptionContent?: {
+                                                                        descriptionText: string[];
                                                                     }[];
-                                                                    consequenceContent: {
-                                                                        consequenceText: string;
+                                                                    consequenceContent?: {
+                                                                        consequenceText: string[];
                                                                     }[];
-                                                                    recommendationContent: {
-                                                                        recommendationText: string;
+                                                                    recommendationContent?: {
+                                                                        recommendationText: string[];
                                                                     }[];
                                                                     durationContent?: {
-                                                                        durationText: string;
+                                                                        durationText: string[];
                                                                     };
-                                                                    remarkContent: {
-                                                                        remark: string;
+                                                                    remarkContent?: {
+                                                                        remark: string[];
                                                                     }[];
-                                                                    infoLink: {
+                                                                    infoLink?: {
                                                                         uri: string;
                                                                         label?: string[];
                                                                     }[];
@@ -919,27 +919,27 @@ export interface components {
                                     perspective: "general" | "stopPoint" | "vehicleJourney";
                                     textualContent: {
                                         summaryContent: {
-                                            summaryText: string;
+                                            summaryText: string[];
                                         };
                                         reasonContent?: {
-                                            reasonText: string;
+                                            reasonText: string[];
                                         };
-                                        descriptionContent: {
-                                            descriptionText: string;
+                                        descriptionContent?: {
+                                            descriptionText: string[];
                                         }[];
-                                        consequenceContent: {
-                                            consequenceText: string;
+                                        consequenceContent?: {
+                                            consequenceText: string[];
                                         }[];
-                                        recommendationContent: {
-                                            recommendationText: string;
+                                        recommendationContent?: {
+                                            recommendationText: string[];
                                         }[];
                                         durationContent?: {
-                                            durationText: string;
+                                            durationText: string[];
                                         };
-                                        remarkContent: {
-                                            remark: string;
+                                        remarkContent?: {
+                                            remark: string[];
                                         }[];
-                                        infoLink: {
+                                        infoLink?: {
                                             uri: string;
                                             label?: string[];
                                         }[];
@@ -1277,27 +1277,27 @@ export interface components {
                                                 perspective: "general" | "stopPoint" | "vehicleJourney";
                                                 textualContent: {
                                                     summaryContent: {
-                                                        summaryText: string;
+                                                        summaryText: string[];
                                                     };
                                                     reasonContent?: {
-                                                        reasonText: string;
+                                                        reasonText: string[];
                                                     };
-                                                    descriptionContent: {
-                                                        descriptionText: string;
+                                                    descriptionContent?: {
+                                                        descriptionText: string[];
                                                     }[];
-                                                    consequenceContent: {
-                                                        consequenceText: string;
+                                                    consequenceContent?: {
+                                                        consequenceText: string[];
                                                     }[];
-                                                    recommendationContent: {
-                                                        recommendationText: string;
+                                                    recommendationContent?: {
+                                                        recommendationText: string[];
                                                     }[];
                                                     durationContent?: {
-                                                        durationText: string;
+                                                        durationText: string[];
                                                     };
-                                                    remarkContent: {
-                                                        remark: string;
+                                                    remarkContent?: {
+                                                        remark: string[];
                                                     }[];
-                                                    infoLink: {
+                                                    infoLink?: {
                                                         uri: string;
                                                         label?: string[];
                                                     }[];
