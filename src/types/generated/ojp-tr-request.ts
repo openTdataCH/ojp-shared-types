@@ -140,6 +140,11 @@ export interface paths {
                                                 vehicleRef: string[];
                                                 trainNumber: string[];
                                             };
+                                            noSingleStep?: boolean;
+                                            noStairs?: boolean;
+                                            noEscalator?: boolean;
+                                            noElevator?: boolean;
+                                            noRamp?: boolean;
                                             bikeTransport?: boolean;
                                             walkSpeed?: number;
                                             numberOfResults?: number;
@@ -217,6 +222,11 @@ export interface components {
                 vehicleRef: string[];
                 trainNumber: string[];
             };
+            noSingleStep?: boolean;
+            noStairs?: boolean;
+            noEscalator?: boolean;
+            noElevator?: boolean;
+            noRamp?: boolean;
             bikeTransport?: boolean;
             walkSpeed?: number;
             numberOfResults?: number;
@@ -351,6 +361,11 @@ export interface components {
                     vehicleRef: string[];
                     trainNumber: string[];
                 };
+                noSingleStep?: boolean;
+                noStairs?: boolean;
+                noEscalator?: boolean;
+                noElevator?: boolean;
+                noRamp?: boolean;
                 bikeTransport?: boolean;
                 walkSpeed?: number;
                 numberOfResults?: number;
@@ -480,6 +495,11 @@ export interface components {
                                 vehicleRef: string[];
                                 trainNumber: string[];
                             };
+                            noSingleStep?: boolean;
+                            noStairs?: boolean;
+                            noEscalator?: boolean;
+                            noElevator?: boolean;
+                            noRamp?: boolean;
                             bikeTransport?: boolean;
                             walkSpeed?: number;
                             numberOfResults?: number;

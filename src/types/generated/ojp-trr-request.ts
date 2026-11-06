@@ -43,6 +43,11 @@ export interface paths {
                                     OJPTripRefineRequest: {
                                         requestTimestamp: string;
                                         refineParams?: {
+                                            noSingleStep?: boolean;
+                                            noStairs?: boolean;
+                                            noEscalator?: boolean;
+                                            noElevator?: boolean;
+                                            noRamp?: boolean;
                                             numberOfResults?: number;
                                             /** @enum {string} */
                                             useRealtimeData?: "full" | "explanatory" | "none";
@@ -518,6 +523,11 @@ export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
         TripRefineParam: {
+            noSingleStep?: boolean;
+            noStairs?: boolean;
+            noEscalator?: boolean;
+            noElevator?: boolean;
+            noRamp?: boolean;
             numberOfResults?: number;
             /** @enum {string} */
             useRealtimeData?: "full" | "explanatory" | "none";
@@ -529,6 +539,11 @@ export interface components {
         OJPTripRefineRequest: {
             requestTimestamp: string;
             refineParams?: {
+                noSingleStep?: boolean;
+                noStairs?: boolean;
+                noEscalator?: boolean;
+                noElevator?: boolean;
+                noRamp?: boolean;
                 numberOfResults?: number;
                 /** @enum {string} */
                 useRealtimeData?: "full" | "explanatory" | "none";
@@ -990,6 +1005,11 @@ export interface components {
                     OJPTripRefineRequest: {
                         requestTimestamp: string;
                         refineParams?: {
+                            noSingleStep?: boolean;
+                            noStairs?: boolean;
+                            noEscalator?: boolean;
+                            noElevator?: boolean;
+                            noRamp?: boolean;
                             numberOfResults?: number;
                             /** @enum {string} */
                             useRealtimeData?: "full" | "explanatory" | "none";
