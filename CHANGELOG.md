@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## TBA
+- Updates PtSituation TextualContent - [PR #53](https://github.com/openTdataCH/ojp-shared-types/pull/53)
+  - make only `SummaryContent` required in `TextualContentStructure`
+  - enforce arrays for nested text fields and info link labels
+
 ## 0.1.12 - 16.06.2026
 - use `RailSubmodeEnum`, `ModeStructure`, `ModeFilterStructure` for OJP 1.0
 - adds `guaranteedConnection` to `TransferTypeEnum`

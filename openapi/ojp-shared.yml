@@ -605,11 +605,6 @@ components:
         prefix: siri
       required:
         - summaryContent
-        - descriptionContent
-        - consequenceContent
-        - recommendationContent
-        - remarkContent
-        - infoLink
       properties:
         summaryContent:
           type: object
@@ -621,11 +616,14 @@ components:
             - summaryText
           properties:
             summaryText:
-              type: string
+              type: array
+              minItems: 1
               xml:
                 name: SummaryText
                 namespace: "http://www.siri.org.uk/siri"
                 prefix: siri
+              items:
+                type: string
         reasonContent:
           type: object
           xml:
@@ -636,11 +634,14 @@ components:
             - reasonText
           properties:
             reasonText:
-              type: string
+              type: array
+              minItems: 1
               xml:
                 name: ReasonText
                 namespace: "http://www.siri.org.uk/siri"
                 prefix: siri
+              items:
+                type: string
         descriptionContent:
           type: array
           items:
@@ -653,11 +654,14 @@ components:
               - descriptionText
             properties:
               descriptionText:
-                type: string
+                type: array
+                minItems: 1
                 xml:
                   name: DescriptionText
                   namespace: "http://www.siri.org.uk/siri"
                   prefix: siri
+                items:
+                  type: string
         consequenceContent:
           type: array
           items:
@@ -670,11 +674,14 @@ components:
               - consequenceText
             properties:
               consequenceText:
-                type: string
+                type: array
+                minItems: 1
                 xml:
                   name: ConsequenceText
                   namespace: "http://www.siri.org.uk/siri"
                   prefix: siri
+                items:
+                  type: string
         recommendationContent:
           type: array
           items:
@@ -687,11 +694,14 @@ components:
               - recommendationText
             properties:
               recommendationText:
-                type: string
+                type: array
+                minItems: 1
                 xml:
                   name: RecommendationText
                   namespace: "http://www.siri.org.uk/siri"
                   prefix: siri
+                items:
+                  type: string
         durationContent:
           type: object
           xml:
@@ -702,11 +712,14 @@ components:
             - durationText
           properties:
             durationText:
-              type: string
+              type: array
+              minItems: 1
               xml:
                 name: DurationText
                 namespace: "http://www.siri.org.uk/siri"
                 prefix: siri
+              items:
+                type: string
         remarkContent:
           type: array
           items:
@@ -719,11 +732,14 @@ components:
               - remark
             properties:
               remark:
-                type: string
+                type: array
+                minItems: 1
                 xml:
                   name: Remark
                   namespace: "http://www.siri.org.uk/siri"
                   prefix: siri
+                items:
+                  type: string
         infoLink:
           type: array
           items:
