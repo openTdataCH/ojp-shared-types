@@ -48,6 +48,26 @@ components:
           $ref: "./ojp-shared.yml#/components/schemas/VehicleFilterStructure"
           xml:
             name: VehicleFilter
+        noSingleStep:
+          type: boolean
+          xml:
+            name: NoSingleStep
+        noStairs:
+          type: boolean
+          xml:
+            name: NoStairs
+        noEscalator:
+          type: boolean
+          xml:
+            name: NoEscalator
+        noElevator:
+          type: boolean
+          xml:
+            name: NoElevator
+        noRamp:
+          type: boolean
+          xml:
+            name: NoRamp
         bikeTransport:
           type: boolean
           xml:
