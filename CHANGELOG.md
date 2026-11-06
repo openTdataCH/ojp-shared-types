@@ -4,6 +4,8 @@
 - Updates PtSituation TextualContent - [PR #53](https://github.com/openTdataCH/ojp-shared-types/pull/53)
   - make only `SummaryContent` required in `TextualContentStructure`
   - enforce arrays for nested text fields and info link labels
+- Updates TRR, TR params - [TR with barrierefrei mode #396](https://github.com/openTdataCH/ojp-demo-app-src/issues/396), [PR #54](https://github.com/openTdataCH/ojp-shared-types/pull/54)
+  - adds accessibility in TR and TRR params
 
 ## 0.1.12 - 16.06.2026
 - use `RailSubmodeEnum`, `ModeStructure`, `ModeFilterStructure` for OJP 1.0
