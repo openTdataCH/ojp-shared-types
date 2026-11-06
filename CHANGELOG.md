@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## TBA
+## 0.1.13 - 6.11.2026
 - Updates PtSituation TextualContent - [PR #53](https://github.com/openTdataCH/ojp-shared-types/pull/53)
   - make only `SummaryContent` required in `TextualContentStructure`
   - enforce arrays for nested text fields and info link labels
