@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.1.14 - YYYY
+## 0.1.14 - 12.11.2026
 - adds external LinkProjection - [PR #56](https://github.com/openTdataCH/ojp-shared-types/pull/56)
   - adds `Extension.UseExternalCoordinates` to TIR, TRR params
 
