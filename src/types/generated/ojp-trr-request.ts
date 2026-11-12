@@ -55,6 +55,9 @@ export interface paths {
                                             includeLegProjection?: boolean;
                                             includeTurnDescription?: boolean;
                                             includeIntermediateStops?: boolean;
+                                            extension?: {
+                                                useExternalCoordinates?: boolean;
+                                            };
                                         };
                                         tripResult: {
                                             id: string;
@@ -535,6 +538,9 @@ export interface components {
             includeLegProjection?: boolean;
             includeTurnDescription?: boolean;
             includeIntermediateStops?: boolean;
+            extension?: {
+                useExternalCoordinates?: boolean;
+            };
         };
         OJPTripRefineRequest: {
             requestTimestamp: string;
@@ -551,6 +557,9 @@ export interface components {
                 includeLegProjection?: boolean;
                 includeTurnDescription?: boolean;
                 includeIntermediateStops?: boolean;
+                extension?: {
+                    useExternalCoordinates?: boolean;
+                };
             };
             tripResult: {
                 id: string;
@@ -1017,6 +1026,9 @@ export interface components {
                             includeLegProjection?: boolean;
                             includeTurnDescription?: boolean;
                             includeIntermediateStops?: boolean;
+                            extension?: {
+                                useExternalCoordinates?: boolean;
+                            };
                         };
                         tripResult: {
                             id: string;
