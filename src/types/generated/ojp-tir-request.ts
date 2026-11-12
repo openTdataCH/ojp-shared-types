@@ -50,6 +50,9 @@ export interface paths {
                                             includeTrackProjection?: boolean;
                                             includePlacesContext?: boolean;
                                             includeSituationsContext?: boolean;
+                                            extension?: {
+                                                useExternalCoordinates?: boolean;
+                                            };
                                         };
                                     };
                                 };
@@ -82,6 +85,9 @@ export interface components {
             includeTrackProjection?: boolean;
             includePlacesContext?: boolean;
             includeSituationsContext?: boolean;
+            extension?: {
+                useExternalCoordinates?: boolean;
+            };
         };
         OJPTripInfoRequest: {
             requestTimestamp: string;
@@ -93,6 +99,9 @@ export interface components {
                 includeTrackProjection?: boolean;
                 includePlacesContext?: boolean;
                 includeSituationsContext?: boolean;
+                extension?: {
+                    useExternalCoordinates?: boolean;
+                };
             };
         };
         OJP: {
@@ -113,6 +122,9 @@ export interface components {
                             includeTrackProjection?: boolean;
                             includePlacesContext?: boolean;
                             includeSituationsContext?: boolean;
+                            extension?: {
+                                useExternalCoordinates?: boolean;
+                            };
                         };
                     };
                 };
