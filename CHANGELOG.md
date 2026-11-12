@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 0.1.14 - YYYY
-- Updates TIR, TRR params
+- Updates TIR, TRR params - [PR #56](https://github.com/openTdataCH/ojp-shared-types/pull/56)
   - adds `Extension.UseExternalCoordinates` to TIR, TRR params
 
 ## 0.1.13 - 6.11.2026
