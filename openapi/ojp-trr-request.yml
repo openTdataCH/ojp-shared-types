@@ -74,6 +74,15 @@ components:
           type: boolean
           xml:
             name: IncludeIntermediateStops
+        extension:
+          type: object
+          xml:
+            name: Extension
+          properties:
+            useExternalCoordinates:
+              type: boolean
+              xml:
+                name: UseExternalCoordinates
 
     # https://vdvde.github.io/OJP/release/2.0/documentation-tables/ojp.html#type_ojp__OJPTripRefineRequestStructure
     OJPTripRefineRequest:
